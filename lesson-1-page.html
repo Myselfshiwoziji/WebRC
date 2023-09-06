@@ -4,11 +4,59 @@
     <title>Lesson 1</title>
     <link rel ="stylesheet" href = "Styles/loadingpage.css">
     <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
+    <link rel = "stylesheet" href = "Styles/mainpage.css">
 </head>
 
 <body>
+    <section class = "showcase" id = "main">
+        <header>
+            <h2 class="main_logo" id = "main-logo">Web Dev Course</h2>
+            <span class = "main_toggle" onclick="openNav()"></span>
+        </header>
+    </section>
 
+    <div id = "main_side" class="main_menu"> 
+        <a href = "javascript:void(0)" class = "closebtn" onclick="closeNav()">&times;</a>
+        <a class = "menu_btns" href = "/Webcourse_Stuff/main.html">Home</a>
+        <a class = "dropdown-btn">Introduction to HTML</a>
+
+        <div class = "sub-menu">
+            <a href ="/Webcourse_Stuff/lesson-1-page.html" class = "sub-item">Lesson 1</a>
+            <a href ="#" class = "sub-item">Lesson 2</a>
+        </div>
+
+        <a class = "dropdown-btn">Introduction to CSS</a>
+
+        <div class = "sub-menu">
+            <a href ="#" class = "sub-item">Lesson 3</a>
+            <a href ="#" class = "sub-item">Lesson 4</a>
+        </div>
+
+        <a class = "dropdown-btn" href = "#">Combining HTML and CSS</a>
+
+        <div class = "sub-menu">
+            <a href ="#" class = "sub-item">Lesson 5</a>
+            <a href ="#" class = "sub-item">Lesson 6</a>
+            <a href ="#" class = "sub-item">Lesson 7</a>
+        </div>
+
+        <a class = "dropdown-btn" href = "#">Introduction to JavaScript</a>
+
+        <div class = "sub-menu">
+            <a href ="#" class = "sub-item">Lesson 8</a>
+            <a href ="#" class = "sub-item">Lesson 9</a>
+            <a href ="#" class = "sub-item">Lesson 10</a>
+        </div>
+        <a class = "dropdown-btn" href = "#">Extra Content</a>
+
+        <div class = "sub-menu">
+            <a href ="#" class = "sub-item">Lesson 11</a>
+            <a href ="#" class = "sub-item">Lesson 12</a>
+        </div>
+    </div>
 </body>
     <div class = "loader"></div>
+    <script src = "Javascript/sidemenu.js"></script>
+    <script src = "Javascript/dropdown.js"></script>
     <script src = "Javascript/loader.js"></script>
 </html>
