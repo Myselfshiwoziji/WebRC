@@ -68,6 +68,13 @@
 }
 
 .loading_screen-hidden{
+    display: hidden;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading_screen-shown{
+    display: show;
     opacity: 0;
     visibility: hidden;
 }

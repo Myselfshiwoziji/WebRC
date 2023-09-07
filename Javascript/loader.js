@@ -8,13 +8,15 @@ function gRN(a, b) {
 var randno = gRN(1, 100);
 
 if (randno == 1) {
+  document.querySelector(".loading_screen").classList.add("loading_screen-shown")
     window.addEventListener("loading", () => {
-        const loader = document.querySelector(".loading_screen");
+
+      const loader = document.querySelector(".loading_screen");
     
-        loader.classList.add("loading_screen-hidden");
+      loader.classList.add("loading_screen-hidden");
     
-        loader.addEventListener("transitioned", ()=>{
-            document.body.removeChild(loader);
+      loader.addEventListener("transitioned", ()=>{
+        document.body.removeChild(loader);
         })
     })
   } else {
