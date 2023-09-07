@@ -5,9 +5,18 @@ function gRN(a, b) {
     return scale;
   }
   
-  var randno = gRN(1, 100);
-  if (randno == 1) {
-      console.log('you got the 1%')
+var randno = gRN(1, 100);
+
+if (randno == 1) {
+    window.addEventListener("loading", () => {
+        const loader = document.querySelector(".loading_screen");
+    
+        loader.classList.add("loading_screen-hidden");
+    
+        loader.addEventListener("transitioned", ()=>{
+            document.body.removeChild(loader);
+        })
+    })
   } else {
     window.addEventListener("load", () => {
         const loader = document.querySelector(".loader");
@@ -19,3 +28,5 @@ function gRN(a, b) {
         })
     })
   }
+
+ 
