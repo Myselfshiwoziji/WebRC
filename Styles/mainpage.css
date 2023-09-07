@@ -38,7 +38,7 @@
 
 .main_logo{
     text-transform: uppercase;
-    cursor: pointer;
+    cursor: default;
 }
 .main_toggle{
     position: relative;
@@ -144,6 +144,7 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    opacity: 0.8;
 }
 
 .main_text{
@@ -151,6 +152,7 @@
     z-index: 3;
     background-color: rgba(0, 0,0,0.5);
     mix-blend-mode: lighten;
+    margin-top: 4.5em;
 }
 
 .overlay{

@@ -25,17 +25,21 @@
     z-index: 2;
 }
 
+.showcase video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
 .lessonformat{
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color:rgba(77, 74, 74, 0.5);
-    border-top: 0.1cm;
-    border-left: 0cm;
-    border-right: 0cm;
-    border-bottom: 0cm;
-    border-style: solid;
-    border-color: black;
+    background-color:rgba(87, 87, 87, 0.55);
 }
 
 .HeaderPoint{
