@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Development Course Webpage</title>
+        <link rel = "stylesheet" href = "Styles/mainpage.css">
+        <link rel ="stylesheet" href = "Styles/loadingpage.css">
+        <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
+    </head>
+
+    <body>
+        <section class="showcase" id = "main">
+            <header>
+                <h2 class="main_logo" id = "main-logo">Web Dev Course</h2>
+                <span class = "main_toggle" onclick="openNav()"></span>
+            </header>
+
+            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+            
+                <!--https://www.pexels.com/video/blurred-video-of-scripts-being-typed-853750/ is where I found the video-->
+
+            <div class="overlay">
+
+
+            </div>
+
+
+            <div class = "main_text" id = "main-text">
+                <h2>Welcome to the</h2>
+                <h3>Web Development</h3>
+                <h3>Course Website</h3>
+                <p>Welcome to our comprehensive platform dedicated to empowering you with the fundamentals of web development. Our website is a resource for understanding the basics CSS, HTML, and JavaScript. With our short tutorials, you'll gain the knowledge and hands-on experience needed to create websites and web applications.</p>
+                <a href = "#">Get Started</a>
+
+            </div>
+
+        </section>
+
+        <div id = "main_side" class="main_menu"> 
+            <a href = "javascript:void(0)" class = "closebtn" onclick="closeNav()">&times;</a>
+            <a class = "menu_btns" href = "/Webcourse_Stuff/main.html">Home</a>
+            <a class = "dropdown-btn">Introduction to HTML</a>
+
+            <div class = "sub-menu">
+                <a href ="/Webcourse_Stuff/lesson-1-page.html" class = "sub-item">Lesson 1</a>
+                <a href ="#" class = "sub-item">Lesson 2</a>
+            </div>
+
+            <a class = "dropdown-btn">Introduction to CSS</a>
+
+            <div class = "sub-menu">
+                <a href ="#" class = "sub-item">Lesson 3</a>
+                <a href ="#" class = "sub-item">Lesson 4</a>
+            </div>
+
+            <a class = "dropdown-btn" href = "#">Combining HTML and CSS</a>
+
+            <div class = "sub-menu">
+                <a href ="#" class = "sub-item">Lesson 5</a>
+                <a href ="#" class = "sub-item">Lesson 6</a>
+                <a href ="#" class = "sub-item">Lesson 7</a>
+            </div>
+
+            <a class = "dropdown-btn" href = "#">Introduction to JavaScript</a>
+
+            <div class = "sub-menu">
+                <a href ="#" class = "sub-item">Lesson 8</a>
+                <a href ="#" class = "sub-item">Lesson 9</a>
+                <a href ="#" class = "sub-item">Lesson 10</a>
+            </div>
+            <a class = "dropdown-btn" href = "#">Extra Content</a>
+
+            <div class = "sub-menu">
+                <a href ="#" class = "sub-item">Lesson 11</a>
+                <a href ="#" class = "sub-item">Lesson 12</a>
+            </div>
+        </div>
+
+        <div class = "loader"></div>
+
+        <script src = "Javascript/sidemenu.js"></script>
+        <script src = "Javascript/dropdown.js"></script>
+        <script src = "Javascript/loader.js"></script>
+
+        <div class = "loading_screen">
+            <img src = "Imgs_and_stuff/rat.jpg">
+        </div>
+    </body>
+    
+    
+</html>
