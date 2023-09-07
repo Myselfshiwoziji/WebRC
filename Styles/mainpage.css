@@ -40,6 +40,12 @@
     text-transform: uppercase;
     cursor: default;
 }
+
+.main_logo a{
+    color: white;
+    text-decoration: none;
+}
+
 .main_toggle{
     position: relative;
     width: 60px;
