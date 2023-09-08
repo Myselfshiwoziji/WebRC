@@ -20,6 +20,16 @@
     min-width: 100%;
 }
 
+.bottom_text{
+    background-color: rgba(87, 87, 87, 0.55);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 10vh;
+    width: 100%;
+}
+
 .main_text h2{
     text-align: center;
     opacity: 1;
