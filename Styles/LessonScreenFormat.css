@@ -41,6 +41,12 @@
     opacity: 1;
 }
 
+.LectureButton_Right{
+    z-index: 2;
+    opacity: 1;
+    position: fixed(0, 0, 0, 0);
+}
+
 .showcase video{
     position: absolute;
     top: 0;

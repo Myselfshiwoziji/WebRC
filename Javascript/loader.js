@@ -10,7 +10,7 @@ var randno = gRN(1, 100);
 if (randno == 1) {
   const load = document.querySelector(".loading");
   load.classList.add("loading-priority")
-  setTimeout(1)
+  setTimeout(1000)
   load.classList.add("loading-hidden")
   window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
