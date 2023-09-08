@@ -26,6 +26,11 @@
     z-index: 2;
 }
 
+.LectureButton{
+    z-index: 2;
+    opacity: 1;
+}
+
 .showcase video{
     position: absolute;
     top: 0;
