@@ -7,7 +7,7 @@ function gRN(a, b) {
   
 var randno = gRN(1, 100);
 
-if (randno == 1) {
+if (randno == 1000) {
   window.addEventListener("load", function() {
     var loadingScreen = document.getElementById("loading-screen");
     loadingScreen.style.display = "none";
@@ -22,6 +22,5 @@ if (randno == 1) {
             document.body.removeChild(loader);
         })
     })
-  }
-
+}
  
