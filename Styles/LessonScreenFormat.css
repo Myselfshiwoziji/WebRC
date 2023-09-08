@@ -1,0 +1,74 @@
+.showcase{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0);
+    padding: 0;
+}
+
+.pageheader{
+    z-index: 1;
+}
+
+.main_text{
+    background-color: rgb(85, 84, 84);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    min-width: 100%;
+}
+
+.main_text h2{
+    text-align: center;
+    opacity: 1;
+    z-index: 2;
+}
+
+.showcase video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.lessonformat{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(87, 87, 87, 0.55);
+}
+
+.HeaderPoint{
+    font-size: 3em;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.lessonformat h3{
+    margin-left: 10px;
+}
+
+@media (max-width: 991px) {
+
+    .text h2{
+        font-size: 2em;
+    }
+
+    .text h3{
+        font-size: 2em;
+    }
+
+    .main_menu{
+        padding-top: 15px;
+    }
+
+    .main_menu a {
+        font-size: 18px;
+    }
+}

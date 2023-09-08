@@ -27,17 +27,25 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 40px 100px;
+    padding: 20px 100px;
     z-index: 5;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(41, 40, 40);
+    position: fixed;
 }
 
 .main_logo{
     text-transform: uppercase;
-    cursor: pointer;
+    cursor: default;
 }
+
+.main_logo a{
+    color: white;
+    text-decoration: none;
+}
+
 .main_toggle{
     position: relative;
     width: 60px;
@@ -141,6 +149,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 1;
     opacity: 0.8;
 }
 
@@ -149,6 +158,7 @@
     z-index: 3;
     background-color: rgba(0, 0,0,0.5);
     mix-blend-mode: lighten;
+    margin-top: 4.5em;
 }
 
 .overlay{
