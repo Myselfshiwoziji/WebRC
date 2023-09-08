@@ -1,3 +1,7 @@
+body::-webkit-scrollbar{
+    display:none;
+}
+
 .showcase{
     display: flex;
     flex-direction: column;
@@ -39,6 +43,7 @@
 .LectureButton{
     z-index: 2;
     opacity: 1;
+    transition: 0.1s ease;
 }
 
 .LectureButton_Right{
@@ -73,6 +78,14 @@
 
 .lessonformat h3{
     margin-left: 10px;
+}
+
+.LectureButton:hover{
+    opacity: 0.8;
+}
+
+.LectureButton:active{
+    opacity: 0.3;
 }
 
 @media (max-width: 991px) {
