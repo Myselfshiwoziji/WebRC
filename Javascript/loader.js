@@ -7,7 +7,7 @@ function gRN(a, b) {
   
 var randno = gRN(1, 100);
 
-if (randno >= 1) {
+if (randno == 1) {
   const load = document.querySelector(".loading");
   load.classList.add("loading-priority")
   setTimeout(1)
