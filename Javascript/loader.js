@@ -7,20 +7,33 @@ function gRN(a, b) {
   
 var randno = gRN(1, 100);
 
-if (randno == 1000) {
-  window.addEventListener("load", function() {
-    var loadingScreen = document.getElementById("loading-screen");
-    loadingScreen.style.display = "none";
-  });
-} else {
-    window.addEventListener("load", () => {
-        const loader = document.querySelector(".loader");
+if (randno >= 1) {
+  const load = document.querySelector(".loading");
+  load.classList.add("loading-priority")
+  setTimeout(1)
+  load.classList.add("loading-hidden")
+  window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+  
+    loader.classList.add("loader-hidden");
+  
+    loader.addEventListener("transitioned", ()=>{
+        document.body.removeChild(loader);
     
-        loader.classList.add("loader-hidden");
-    
-        loader.addEventListener("transitioned", ()=>{
-            document.body.removeChild(loader);
-        })
+      })
     })
+} else {
+  const load = document.querySelector(".loading");
+  load.classList.add("loading-hidden")
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader-hidden");
+
+  loader.addEventListener("transitioned", ()=>{
+      document.body.removeChild(loader);
+  
+    })
+  })
 }
  
