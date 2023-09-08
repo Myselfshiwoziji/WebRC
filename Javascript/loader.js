@@ -9,8 +9,8 @@ var randno = gRN(1, 100);
 
 if (randno == 1) {
   window.addEventListener("load", function() {
-    const loader = document.querySelector(".loading");
-    loader.style.display = "hidden"; 
+    var loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.style.display = "none";
   });
 } else {
     window.addEventListener("load", () => {
