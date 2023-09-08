@@ -205,6 +205,19 @@
     margin-left: 10px;
 }
 
+.bottom_text a{
+    display: inline-block;
+    font-size: 1em;
+    background-color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    transition: 0.2s;
+    margin-left: 10px;
+}
+
 .main_text a:hover{
     opacity: 0.8;
 }
