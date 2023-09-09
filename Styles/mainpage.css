@@ -55,6 +55,7 @@
     background-size: 90px;
     background-position: center;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .main_toggle.active{
@@ -63,6 +64,14 @@
     background-size: 50px;
     background-position: center;
     cursor: pointer;
+}
+
+.main_toggle:hover{
+    opacity: 0.6;
+}
+
+.main_toggle:active{
+    filter:brightness(50%);
 }
 .main_menu{
     height: 100%;
@@ -95,6 +104,10 @@
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease-in;
+}
+
+.dropdown-btn:active, .menu_btns:active, .closebtn:active{
+    filter: brightness(200%)
 }
 
 .sub-menu .sub-item{

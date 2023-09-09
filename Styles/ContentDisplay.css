@@ -1,0 +1,41 @@
+.ContentShown{
+    display: none;
+}
+
+.ContentButtonContainer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.prev, .next{
+    cursor: pointer;
+    user-select: none;
+    background-color: white;
+    color: black;
+    transition: 0.6s ease;
+    padding-top: 0.25cm;
+    padding-bottom: 0.25cm;
+    padding-left: 0.4cm;
+    padding-right: 0.4cm;
+}
+
+.prev:hover, .next:hover{
+    background-color: rgba(189, 184, 184, 0.8);
+}
+
+.prev:active, .next:active{
+    opacity: 0.4;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+  
