@@ -70,3 +70,7 @@
     opacity: 0.7;
     filter: brightness(80%)
 }
+
+.tabs h3:active{
+    opacity: 1;
+}
