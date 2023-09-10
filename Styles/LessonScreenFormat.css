@@ -76,11 +76,6 @@ body::-webkit-scrollbar{
     margin-top: 30px;
     margin-left: 10px;
 }
-
-.lessonformat h3{
-    margin-left: 10px;
-}
-
 .LectureButton:hover{
     opacity: 0.8;
 }
