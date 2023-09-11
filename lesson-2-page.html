@@ -23,7 +23,14 @@
                     <h2>
                         Basics of HTML
                     </h2>
-                    <a class = "LectureButton" target = "_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click here to watch the lecture</a>
+                    <dialog class = "Lecture" id="LectureVid">
+                        <div>
+                            <h2>Lesson 2 Video Recording:</h2>                               
+                            <button onclick="LectureVid.close()"></button>
+                        </div>
+                        <iframe class = "LectureVideo" src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" title = "Lesson 2 Lesson"></iframe>
+                    </dialog>
+                    <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Click here to watch the lecture</a>
                     <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
         
                 </div>
@@ -37,7 +44,7 @@
                         </div>
 
                         <div class = "tab-content">
-                            <div class = "active">
+                            <div class = "active fade">
                                 <h2 class = "HeaderPoint">What is an element in HTML?</h2>
                                 <h3>Lorem ipsum dolor sit amet. Sed enim rerum ut voluptas ipsum et eligendi consequatur. Sed vitae quae aut sint dolores quo consectetur rerum sed fuga sint. 
                                     Sed expedita accusantium aut 
@@ -54,7 +61,7 @@
                                 </h3>
                             </div>
     
-                            <div>
+                            <div class = "fade">
                                 <h2 class = "HeaderPoint">Examples of elements in HTML:</h2>
                                 <h3>Lorem ipsum dolor sit amet. Sed enim rerum ut voluptas ipsum et eligendi consequatur. Sed vitae quae aut sint dolores quo consectetur rerum sed fuga sint. 
                                     Sed expedita accusantium aut 
@@ -71,7 +78,7 @@
                                 </h3>
                             </div>
     
-                            <div>
+                            <div class = "fade">
                                 <h2 class = "HeaderPoint">Practice Work:</h2>
                                 <h3>Lorem ipsum dolor sit amet. Sed enim rerum ut voluptas ipsum et eligendi consequatur. Sed vitae quae aut sint dolores quo consectetur rerum sed fuga sint. 
                                     Sed expedita accusantium aut 

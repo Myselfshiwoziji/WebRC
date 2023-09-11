@@ -43,14 +43,89 @@ body::-webkit-scrollbar{
 .LectureButton{
     z-index: 2;
     opacity: 1;
-    transition: 0.1s ease;
+    transition: all 0.1s ease;
     display: flex;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .LectureButton_Right{
     z-index: 2;
     opacity: 1;
     position: fixed(0, 0, 0, 0);
+}
+
+.Lecture{
+    background-color: rgb(41, 40, 40);
+    margin: auto;
+    text-align: center;
+    border-style: none;
+    border-radius: 2px;
+}
+
+.Lecture div{
+    margin-top: 5px;
+}
+
+.Lecture div h2{
+    font-size: 1.5em;
+    text-align: left;
+    padding-left: 5px;
+    float:left;
+    color: white;
+    filter: brightness(90%);
+    user-select:none;
+}
+
+.Lecture div button{
+    float:right;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    margin-right: 5px;
+    border-style: none;
+    background-image: url("../Imgs_and_stuff/pngegg.png");
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: center;
+    cursor: pointer;
+    background-color: transparent;
+    margin-top: 2px;
+    transition: 0.3s ease;
+    user-select: none;
+}
+
+.Lecture div button:hover{
+    opacity:0.5;
+}
+
+.LectureVideo{
+    width: 30em;
+    height:20em;
+    border-style: none;
+    margin-bottom:-5px;
+    margin-top: 5px;
+}
+
+dialog::-webkit-scrollbar{
+    overflow: hidden;
+    display:none;
+}
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+dialog{
+    opacity:0;
+    scale:0;
+    transition: all 1s ease-in-out;
+    display:block;
+}
+dialog[open]{
+    opacity: 1;
+    scale: 1;
 }
 
 .showcase video{
@@ -78,6 +153,7 @@ body::-webkit-scrollbar{
 }
 .LectureButton:hover{
     opacity: 0.8;
+    scale: 1.1;
 }
 
 .LectureButton:active{
