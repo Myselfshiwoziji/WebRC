@@ -18,7 +18,7 @@
 }
 
 .tabs h3{
-    height: 33.33%;
+    height: 33.34%;
     display: grid;
     place-items: center;
     font-size: 1.2em;
@@ -27,6 +27,7 @@
     text-align: center;
     transition: all 0.3s ease;
     background-color: rgb(170, 165, 165);
+    width: 100%;
 }
 
 .tab-content{
