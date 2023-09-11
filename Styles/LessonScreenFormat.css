@@ -43,8 +43,10 @@ body::-webkit-scrollbar{
 .LectureButton{
     z-index: 2;
     opacity: 1;
-    transition: 0.1s ease;
+    transition: all 0.1s ease;
     display: flex;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .LectureButton_Right{
@@ -72,6 +74,7 @@ body::-webkit-scrollbar{
     float:left;
     color: white;
     filter: brightness(90%);
+    user-select:none;
 }
 
 .Lecture div button{
@@ -90,6 +93,7 @@ body::-webkit-scrollbar{
     background-color: transparent;
     margin-top: 2px;
     transition: 0.3s ease;
+    user-select: none;
 }
 
 .Lecture div button:hover{
@@ -104,6 +108,11 @@ body::-webkit-scrollbar{
     margin-top: 5px;
 }
 
+dialog::-webkit-scrollbar{
+    overflow: hidden;
+    display:none;
+}
+
 dialog::backdrop{
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -111,7 +120,7 @@ dialog::backdrop{
 dialog{
     opacity:0;
     scale:0;
-    transition: all 1s;
+    transition: all 1s ease-in-out;
     display:block;
 }
 dialog[open]{
@@ -144,6 +153,7 @@ dialog[open]{
 }
 .LectureButton:hover{
     opacity: 0.8;
+    scale: 1.1;
 }
 
 .LectureButton:active{

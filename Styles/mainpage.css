@@ -134,7 +134,7 @@
     font-size: 20px;
     color: #e2e2e2;
     display: block;
-    transition: 0.3s;
+    transition:all 0.3s ease;
     white-space: nowrap;
 }
 
@@ -216,6 +216,7 @@
     letter-spacing: 2px;
     transition: 0.2s;
     margin-left: 10px;
+    border-radius: 5px;
 }
 
 .bottom_text a{
@@ -233,6 +234,7 @@
 
 .main_text a:hover{
     opacity: 0.8;
+    scale: 1.05;
 }
 
 .main_side .menu .item .sub-menu {
