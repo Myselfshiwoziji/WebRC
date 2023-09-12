@@ -24,15 +24,17 @@
     user-select: none;
     background-color: white;
     color: black;
-    transition: 0.6s ease;
+    transition: all 0.6s ease;
     padding-top: 0.25cm;
     padding-bottom: 0.25cm;
     padding-left: 0.4cm;
     padding-right: 0.4cm;
+    border-radius: 5px;
 }
 
 .prev:hover, .next:hover{
     background-color: rgba(189, 184, 184, 0.8);
+    scale: 1.05;
 }
 
 .prev:active, .next:active{
