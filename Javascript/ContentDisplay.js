@@ -19,3 +19,8 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
 }
+
+function reset() {
+  var video = document.getElementsByClassName("LectureButton")
+  video.currentTime = 0;
+}
