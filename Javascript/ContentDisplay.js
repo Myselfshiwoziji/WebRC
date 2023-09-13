@@ -21,6 +21,6 @@ function showSlides(n) {
 }
 
 function reset() {
-  var video = document.getElementById("recording");
+  var video = document.getElementsByClassName("LectureButton")
   video.currentTime = 0;
 }
