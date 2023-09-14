@@ -2,6 +2,7 @@
     background: #ffffff;
     width: 1f;
     min-width: 30em;
+    min-height: 10em;
     font-size: 16px;
     color: black;
     display: grid;
@@ -18,7 +19,7 @@
 }
 
 .letab{
-    height: 33.34%;
+    height: 40%;
     display: grid;
     place-items: center;
     font-size: 1.2em;
