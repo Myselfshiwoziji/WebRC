@@ -2,6 +2,7 @@
     background: #ffffff;
     width: 1f;
     min-width: 30em;
+    min-height: 10em;
     font-size: 16px;
     color: black;
     display: grid;
@@ -17,8 +18,8 @@
     background-color: rgb(48,47,47);
 }
 
-.tabs h3{
-    height: 33.34%;
+.letab{
+    height: 40%;
     display: grid;
     place-items: center;
     font-size: 1.2em;
@@ -39,7 +40,6 @@
     font-size: 1.8em;
     margin-bottom: 0.5em;
     color: #000024;
-
 }
 
 .tab-content h3{
@@ -67,21 +67,54 @@
     border-right-width: 2px;
 }
 
-.tabs h3:hover{
+.letab:hover{
     opacity: 0.7;
     scale: 1.03;
 }
 
-.tabs h3:active{
+.letab:active{
     opacity: 1;
 }
 
 .fade {
     animation-name: fade;
-    animation-duration: 2s;
+    animation-duration: 1s;
+    border-left-style: solid;
+    border-left-color: rgba(0,0,0,0.2);
+    border-left-width: 2px;
+}
+
+/*Note: PLEASE DO NOT USE THE FADE CLASS ON ANYTHING, THIS IS ONLY FOR THE BUTTONS FOR THE CLASS*/
+
+
+.fade div{
+    display: block;
+    margin-left: 5px;
+}
+.contentTitle{
+    margin-top: 10px;
+    margin-bottom:10px;
+    margin-left: 10px;
+    border-top-color:rgba(0,0,0,0.2);
+    border-top-style: solid;
+}
+
+.fade div h3:nth-child(13){
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.PracticeExample{
+    margin-left: 10px;
 }
   
 @keyframes fade {
-    from {opacity: 0.2}
-    to {opacity: 1}
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }

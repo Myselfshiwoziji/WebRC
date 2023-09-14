@@ -41,61 +41,72 @@
                 <div class = "lessonformat">
                     <div class = "container">
                         <div class = "tabs">
-                            <h3 class = "active">What is an element?</h3>
-                            <h3>Examples of elements</h3>
-                            <h3>Practice Work</h3>
+                            <h3 class = "letab active">What is an element?</h3>
+                            <h3 class = "letab">Examples of elements</h3>
+                            <h3 class = "letab">Practice Work</h3>
                         </div>
 
                         <div class = "tab-content">
                             <div class = "active fade">
                                 <h2 class = "HeaderPoint">What is an element in HTML?</h2>
-                                <h3>Lorem ipsum dolor sit amet. Sed enim rerum ut voluptas ipsum et eligendi consequatur. Sed vitae quae aut sint dolores quo consectetur rerum sed fuga sint. 
-                                    Sed expedita accusantium aut 
-                                    neque harum ad modi nostrum et suscipit ullam.
-                    
-                                    Ut voluptatum dignissimos et eveniet voluptatem et fugiat reprehenderit et quam autem aut possimus beatae eos suscipit laudantium. 
-                                    Vel debitis necessitatibus eum necessitatibus 
-                                    pariatur a voluptatem ipsam. Non excepturi tempore et quisquam iusto non harum autem est magni aperiam.
-                                    
-                                    Id sunt perferendis est debitis voluptas aut natus ducimus est rerum maxime et explicabo laboriosam. 
-                                    Et pariatur vitae ut tenetur aperiam aut delectus consequatur est quas laborum et 
-                                    ducimus similique a officia enim! Non nulla sunt a eveniet illo rem quia sunt ea excepturi facere id quod sunt? 
-                                    Non asperiores quisquam aut obcaecati commodi id voluptatem aliquid ut magni ratione.
+                                <h3>In HTML, an element refers to a fundamental building block or a component of a webpage. 
+                                    It represents different parts of the content, structure, or functionality of the webpage. Each element is enclosed within tags, which define the purpose and behavior of that element. 
+                                    Examples of HTML elements include headings, paragraphs, images, links, buttons, tables, forms, and many more. 
+                                    Elements can be styled, manipulated, and arranged using CSS (Cascading Style Sheets) and can also have interactive behaviors through JavaScript
+                                    (we will discuss  CSS and Javascript later in the course).
+
                                 </h3>
                             </div>
     
                             <div class = "fade">
                                 <h2 class = "HeaderPoint">Examples of elements in HTML:</h2>
-                                <h3>Lorem ipsum dolor sit amet. Sed enim rerum ut voluptas ipsum et eligendi consequatur. Sed vitae quae aut sint dolores quo consectetur rerum sed fuga sint. 
-                                    Sed expedita accusantium aut 
-                                    neque harum ad modi nostrum et suscipit ullam.
-                    
-                                    Ut voluptatum dignissimos et eveniet voluptatem et fugiat reprehenderit et quam autem aut possimus beatae eos suscipit laudantium. 
-                                    Vel debitis necessitatibus eum necessitatibus 
-                                    pariatur a voluptatem ipsam. Non excepturi tempore et quisquam iusto non harum autem est magni aperiam.
+                                <div class = "inactive">
+                                    <h2 class = "contentTitle"> html:</h2>
+                                    <h3>This is the central element for any form of HTML based coding you will ever do. Almost everything made in the HTML script must be put inside the html element, as it defines that everything inside is an HTML Element. You can think of this tag to be similar to a sentence starter and a full stop.<br />
+                                        When you use this element, use the syntax:<br /> <code>&lt;html&gt; &lt;/html&gt;</code>
+
+                                    </h3>
                                     
-                                    Id sunt perferendis est debitis voluptas aut natus ducimus est rerum maxime et explicabo laboriosam. 
-                                    Et pariatur vitae ut tenetur aperiam aut delectus consequatur est quas laborum et 
-                                    ducimus similique a officia enim! Non nulla sunt a eveniet illo rem quia sunt ea excepturi facere id quod sunt? 
-                                    Non asperiores quisquam aut obcaecati commodi id voluptatem aliquid ut magni ratione.
-                                </h3>
+                                    <h2 class = "contentTitle">head:</h2><h3>This is an incredibly important tag for any sort of HTML document. The head element is an element that acts as a container for all sorts of metadata for the website. This basically means that all the stuff the website requires but isn't typically shown to the user will go in the header tag. For example, defining the language used for the website, the website icon in the tab, the website name displayed in the tab, etc. This element should be used inside the HTML element and not inside the body element.<br/>
+                                        When you use this element, use the syntax:<br /> <code>&lt;img src = "example_img.jpeg"&gt; &lt;/img&gt;</code>
+
+                                    </h3>
+
+
+                                    <h2 class = "contentTitle">body</h2>
+                                    <h3>This is another incredibly important element for coding using HTML. This element specifies that everything inside of it is most (if not all) visual elements. This means that almost everything inside of the body element will be visible to the user (you will later see that there are elements that control other functions that will not be visible to the user). To use this element, put it right after (and not inside) the head element.<br />
+                                        When you use this element, use the syntax:<br /> <code>&lt;body&gt; &lt;/body&gt;</code>
+                                    </h3>
+
+                                    <h2 class = "contentTitle">Heading:</h2><h3>This is a very simple element, and is basically a element that contains text for your headings in your website. Interestingly, the syntax for this element is quite unique, as you can label your headings in numerical values. For example, you can have a heading 1 and a heading 2 to differenciate between the two. To type in words for the heading to display, type them inside the heading element.
+                                        When you use this element, use the syntax:<br /> <code>&lt;h1&gt;This is a heading. Also as a note you can change the number "1" to any other whole number to number them like described as long as that number is smaller or equal to 6 &lt;/h1&gt;</code>
+
+                                    </h3>
+
+                                    <h2 class = "contentTitle">Paragraph:</h2><h3> This is another element which deals with text. However, unlike the heading paragraphs are much smaller texts that can contain much more letters  than a header. Basically, just think of this element like changing between header and normal text in Google Docs. To type in words for the paragraph to display, type them inside the paragraph element.
+                                        When you use this element, use the syntax:<br /> <code>&lt;p&gt; Hello world, this is a cool little paragraph that contains lots of knowledge &lt;/p&gt;</code>
+
+                                    </h3>
+
+                                    <h2 class = "contentTitle">Button:<h2><h3> This is qutie a straightforward element. This element, when used, creates a button that the user can click on. Much like the paragraph and heading elements, you can place the text that you want the button to display inside the button element.
+                                        When you use this element, use the syntax:<br /> <code>&lt;button&gt;Click me!&lt;/button&gt;</code>
+
+                                    </h3>
+
+                                    <h2 class = "contentTitle">Anchor:<h2><h3> The anchor element is a very important element, and you probably will see it in use quite a lot. The anchor element is a type of element in HTML that allows for text put inside of it to be interactable and, much like a button, allows for it to be clicked. The anchor element is typically seen as a way to link two different pages or destinations together. For now, think of this as a hyperlink.
+                                        When you use this element, use the syntax:<br /> <code>&lt;a&gt;Go to Youtube&lt;/a&gt;</code>
+
+                                    </h3>
+                                </div>
                             </div>
     
                             <div class = "fade">
-                                <h2 class = "HeaderPoint">Practice Work:</h2>
-                                <h3>Lorem ipsum dolor sit amet. Sed enim rerum ut voluptas ipsum et eligendi consequatur. Sed vitae quae aut sint dolores quo consectetur rerum sed fuga sint. 
-                                    Sed expedita accusantium aut 
-                                    neque harum ad modi nostrum et suscipit ullam.
-                    
-                                    Ut voluptatum dignissimos et eveniet voluptatem et fugiat reprehenderit et quam autem aut possimus beatae eos suscipit laudantium. 
-                                    Vel debitis necessitatibus eum necessitatibus 
-                                    pariatur a voluptatem ipsam. Non excepturi tempore et quisquam iusto non harum autem est magni aperiam.
-                                    
-                                    Id sunt perferendis est debitis voluptas aut natus ducimus est rerum maxime et explicabo laboriosam. 
-                                    Et pariatur vitae ut tenetur aperiam aut delectus consequatur est quas laborum et 
-                                    ducimus similique a officia enim! Non nulla sunt a eveniet illo rem quia sunt ea excepturi facere id quod sunt? 
-                                    Non asperiores quisquam aut obcaecati commodi id voluptatem aliquid ut magni ratione.
+                                <h2 class = "HeaderPoint">Additional Reading</h2>
+                                <h3>No practice work for this class as we haven't covered much ground in this lesson, but, if your interested, you can read some of these links below to help further your understanding on HTML and elements:
                                 </h3>
+                                <a href = "https://www.w3schools.com/html/html_intro.asp" target = "_blank" style = "margin-left: 50px;">&rarr;Further explanation of the general concept of how elements work and how a computer interprets them</a><br/>
+                                <a href = "https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target = "_blank" style = "margin-left: 50px;">&rarr;Further reading on all types of elements (we won't discuss every single one in class, but we will discuss the more important ones as time goes on)</a>
+
                             </div>
                         </div>
                     </div>
@@ -183,8 +194,8 @@
         <a class = "dropdown-btn">Introduction to CSS</a>
 
         <div class = "sub-menu">
-            <a href ="#" class = "sub-item">Lesson 3</a>
-            <a href ="#" class = "sub-item">Lesson 4</a>
+            <a href ="lesson-3-page.html" class = "sub-item">Lesson 3</a>
+            <a href ="lesson-4-page.html" class = "sub-item">Lesson 4</a>
         </div>
 
         <a class = "dropdown-btn">Combining HTML and CSS</a>
