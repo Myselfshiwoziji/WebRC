@@ -25,7 +25,8 @@ body::-webkit-scrollbar{
 }
 
 .footer{
-    background-color: rgba(87, 87, 87, 0.55);
+    background-color: rgb(41, 40, 40);
+    /*rgba(87, 87, 87, 0.55);*/
     display: flex;
     justify-content: space-around;
     flex-direction: row;
