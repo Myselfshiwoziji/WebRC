@@ -11,115 +11,114 @@
 
 <body>
     <section class = "showcase" id = "main">
-            <header class = "pageheader">
-                <h2 class="main_logo" id = "main-logo"><a href = "index.html">Web Dev Course</a></h2>
-                <span class = "main_toggle" onclick="openNav()"></span>
-            </header>
-            
-                <div class = "main_text" id = "main-text">
-                    <h2>
-                        Lesson 2:
-                    </h2>
-                    <h2>
-                        Basics of HTML
-                    </h2>
-                    <dialog class = "Lecture" id="LectureVid">
-                        <div>
-                            <h2>Lesson 2 Video Recording:</h2>                               
-                            <button onclick="LectureVid.close()"></button>
-                        </div>
-                        <iframe class = "LectureVideo" src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" title = "Lesson 2 Lesson" sandbox></iframe>
-                    </dialog>
-                    <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Click here to watch the lecture</a>
-                    <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+        <header class = "pageheader">
+            <h2 class="main_logo" id = "main-logo"><a href = "index.html">Web Dev Course</a></h2>
+            <span class = "main_toggle" onclick="openNav()"></span>
+        </header>
         
+        <div class = "main_text" id = "main-text">
+            <h2>
+                Lesson 2:
+            </h2>
+            <h2>
+                Basics of HTML
+            </h2>
+            <dialog class = "Lecture" id="LectureVid">
+                <div>
+                    <h2>Lesson 2 Video Recording:</h2>                               
+                    <button onclick="LectureVid.close()"></button>
                 </div>
-        
-                <div class = "lessonformat">
-                    <div class = "container">
-                        <div class = "tabs">
-                            <h3 class = "letab active">What is an attribute?</h3>
-                            <h3 class = "letab">Examples of attributes</h3>
-                            <h3 class = "letab">Practice Work</h3>
-                        </div>
+                <iframe class = "LectureVideo" src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" title = "Lesson 2 Lesson" sandbox></iframe>
+            </dialog>
+            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
+            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
 
-                        <div class = "tab-content">
-                            <div class = "active fade">
-                                <h2 class = "HeaderPoint">What is an attribute?</h2>
-                                <h3>An attribute in HTML is like a trait you give to it. It provides additional information to the element, such as its size, width, length, max_word_count, or funtionality.
+        </div>
 
-                                    For example, the "href" attribute a tag specifies the URL or web address to which the link should link to. The "src" attribute in the image tag specifies the source or location of the image file to be displayed. Similarly, the "class" attribute is used to assign a class or style to an element, allowing CSS (Cascading Style Sheets, which you will be covered in lessons 3 and 4) to apply specific formatting. More examples will be shown in the next panel.
+        <div class = "lessonformat">
+            <div class = "container">
+                <div class = "tabs">
+                    <h3 class = "letab active">What is an attribute?</h3>
+                    <h3 class = "letab">Examples of attributes</h3>
+                    <h3 class = "letab">Practice Work</h3>
+                </div>
+
+                <div class = "tab-content">
+                    <div class = "active fade">
+                        <h2 class = "HeaderPoint">What is an attribute?</h2>
+                        <h3>An attribute in HTML is like a trait you give to it. It provides additional information to the element, such as its size, width, length, max_word_count, or funtionality.
+
+                            For example, the "href" attribute a tag specifies the URL or web address to which the link should link to. The "src" attribute in the image tag specifies the source or location of the image file to be displayed. Similarly, the "class" attribute is used to assign a class or style to an element, allowing CSS (Cascading Style Sheets, which you will be covered in lessons 3 and 4) to apply specific formatting. More examples will be shown in the next panel.
 
 
 
-                                </h3>
-                            </div>
-    
-                            <div class = "fade">
-                                <h2 class = "HeaderPoint">Examples of attributes in HTML:</h2>
-                                <div class = "inactive">
-                                    <h2 class = "contentTitle"> Class:</h2>
-                                    <h3>The class attribute is used to apply one or more class names to an element. Classes are used to select and style elements with CSS or to define behavior with JavaScript. 
-                                        When you use this attribute, use the syntax:<br /> <code>&lt;button class = "exampleClass"&gt; &lt;/class&gt;</code>
-
-                                    </h3>
-                                    
-                                    <h2 class = "contentTitle">Id:</h2><h3>The id attribute is used to identify an element within a document (which is the file). It is often used for JavaScript or CSS targeting purposes. 
-                                        When you use this attribute, use the syntax:<br /> <code>&lt;button id = "exampleId"&gt; &lt;/button&gt;</code>
-                                    </h3>
-
-                                    <h2 class = "contentTitle">Src:</h2><h3>The src attribute is used to specify the source URL of external resources, such as images, audio, video, or script files.
-                                        When you use this attribute, use the syntax:<br /> <code>&lt;img src = "example_img.jpeg"&gt; &lt;/img&gt;</code>
-
-                                    </h3>
-
-                                    <h2 class = "contentTitle">Href:</h2><h3>The href attribute is used to specify the target URL of links. It is typically used with anchor elements to link to other pages or resources.
-                                        When you use this attribute, use the syntax:<br /> <code>&lt;a href = "www.google.com"&gt; &lt;/a&gt;</code>
-
-                                    </h3>
-
-                                    <h2 class = "contentTitle">Alt:</h2><h3> The alt attribute is used to provide alternative text for elements that isn't displayed, such as images. It is used for accessibility purposes and is displayed if the image fails to load/ the user is not supposed to be able to see the image.
-                                        When you use this attribute, use the syntax:<br /> <code>&lt;img alt = "example image for students"&gt; &lt;/img&gt;</code>
-
-                                    </h3>
-
-                                    <h2 class = "contentTitle">Style:<h2><h3> The style attribute is used to apply inline CSS styles to an element. It allows for the customization of various visual aspects, such as color, font-size, margin, etc. (you'll learn about the CSS attributes in lessons 3-4)
-                                        When you use this attribute, use the syntax:<br /> <code>&lt;button style = "color: blue; text-align: center"&gt; &lt;/button&gt;</code>
-
-                                    </h3>
-                                </div>
-                                
-                            </div>
-    
-                            <div class = "fade">
-                                <h2 class = "HeaderPoint">Practice Work:</h2>
-                                <div class = "inactive">
-                                    <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                        Try to replicate this example below:
-                                    </h2>
-
-                                    <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 600px;" ></iframe>
-
-                                    <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                        Descriptions for the practice excerises below:
-                                    </h2>
-                                    <h3>Practice 1: Display a blue button with white text that says "Click Me!", this button should have the class of buttonStuff </h3>
-                                    <h3>Practice 2: Display a piece of text that says "take me to Google" that when pressed, you get taken to the Google home page.</h3>
-                                    <h3>Practice 3: Display an image of your choice with a height of 100px and a width of 100px</h3>
-                                    <h3>Practice 4: Display a image of your choice and make it so that you can click the image to take you into another website</h3>
-                                </div>
-
-                            </div>
-                        </div>
+                        </h3>
                     </div>
-                    
-                </div>
 
-                <div class = "footer" id = "main-text">
-                    <a class = "LectureButton bottombuttons" href="lesson-1-page.html">Click here to go back to the previous lesson</a>
-                    <a class = "LectureButton bottombuttons" href="lesson-3-page.html">Click gere to go to the next lesson</a>
-                </div>
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Examples of attributes in HTML:</h2>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle"> Class:</h2>
+                            <h3>The class attribute is used to apply one or more class names to an element. Classes are used to select and style elements with CSS or to define behavior with JavaScript. 
+                                When you use this attribute, use the syntax:<br /> <code>&lt;button class = "exampleClass"&gt; &lt;/class&gt;</code>
 
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Id:</h2><h3>The id attribute is used to identify an element within a document (which is the file). It is often used for JavaScript or CSS targeting purposes. 
+                                When you use this attribute, use the syntax:<br /> <code>&lt;button id = "exampleId"&gt; &lt;/button&gt;</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">Src:</h2><h3>The src attribute is used to specify the source URL of external resources, such as images, audio, video, or script files.
+                                When you use this attribute, use the syntax:<br /> <code>&lt;img src = "example_img.jpeg"&gt; &lt;/img&gt;</code>
+
+                            </h3>
+
+                            <h2 class = "contentTitle">Href:</h2><h3>The href attribute is used to specify the target URL of links. It is typically used with anchor elements to link to other pages or resources.
+                                When you use this attribute, use the syntax:<br /> <code>&lt;a href = "www.google.com"&gt; &lt;/a&gt;</code>
+
+                            </h3>
+
+                            <h2 class = "contentTitle">Alt:</h2><h3> The alt attribute is used to provide alternative text for elements that isn't displayed, such as images. It is used for accessibility purposes and is displayed if the image fails to load/ the user is not supposed to be able to see the image.
+                                When you use this attribute, use the syntax:<br /> <code>&lt;img alt = "example image for students"&gt; &lt;/img&gt;</code>
+
+                            </h3>
+
+                            <h2 class = "contentTitle">Style:<h2><h3> The style attribute is used to apply inline CSS styles to an element. It allows for the customization of various visual aspects, such as color, font-size, margin, etc. (you'll learn about the CSS attributes in lessons 3-4)
+                                When you use this attribute, use the syntax:<br /> <code>&lt;button style = "color: blue; text-align: center"&gt; &lt;/button&gt;</code>
+
+                            </h3>
+                        </div>
+                        
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Practice Work:</h2>
+                        <div class = "inactive">
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Try to replicate this example below:
+                            </h2>
+
+                            <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 600px;" ></iframe>
+
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Descriptions for the practice excerises below:
+                            </h2>
+                            <h3>Practice 1: Display a blue button with white text that says "Click Me!", this button should have the class of buttonStuff </h3>
+                            <h3>Practice 2: Display a piece of text that says "take me to Google" that when pressed, you get taken to the Google home page.</h3>
+                            <h3>Practice 3: Display an image of your choice with a height of 100px and a width of 100px</h3>
+                            <h3>Practice 4: Display a image of your choice and make it so that you can click the image to take you into another website</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class = "footer" id = "main-text">
+            <a class = "LectureButton bottombuttons" href="lesson-1-page.html">Previous Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-3-page.html">Next Lesson</a>
+        </div>
     </section>
 
     <div id = "main_side" class="main_menu"></div>
