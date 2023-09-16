@@ -118,3 +118,9 @@
         transform: translateX(0px);
     }
 }
+
+#Hintparagraph{
+    display: block;
+    visibility: visible;
+}
+  
