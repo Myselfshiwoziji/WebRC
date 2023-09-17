@@ -122,5 +122,11 @@
 #Hintparagraph{
     display: block;
     visibility: visible;
+    background-color:rgba(190, 190, 190, 0.736);
+}
+
+#Hintbutton{
+    background-color:rgba(38, 76, 113, 0.619);
+    color:azure;
 }
   
