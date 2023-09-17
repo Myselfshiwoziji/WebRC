@@ -14,28 +14,34 @@
 
 <body>
     <section class = "showcase" id = "main">
-        <header class = "pageheader">
-            <h2 class="main_logo" id = "main-logo"><a href = "index.html">Web Dev Course</a></h2>
-            <span class = "main_toggle" onclick="openNav()"></span>
-        </header>
-        
-        <div class = "main_text" id = "main-text">
-            <h2>
-                Lesson 1:
-                <br>
-                Introduction to HTML
-            </h2>
-            <dialog class = "Lecture" id="LectureVid">
-                <div>
-                    <h2>Lesson 1 Video Recording:</h2>                               
-                    <button onclick="LectureVid.close()"></button>
-                </div>
-                <iframe class = "LectureVideo" src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" title = "Lesson 2 Lesson" sandbox></iframe>
-            </dialog>
-            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
-            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+            <header class = "pageheader">
+                <h2 class="main_logo" id = "main-logo"><a href = "index.html">Web Dev Course</a></h2>
+                <span class = "main_toggle" onclick="openNav()"></span>
+            </header>
+            
+                <div class = "main_text" id = "main-text">
+                    <h2>
+                        Lesson 1:
+                    </h2>
+                    <h2>
+                        Introduction to HTML
+                    </h2>
+                    <dialog class = "Lecture" id="LectureVid">
+                        <div class = "LectureVideo">
+                            <div>
+                                <h2 style = "width: 300px;;">Lesson 1 Video Recording:</h2>                               
+                                <button onclick="LectureVid.close()"></button>
+                            </div>
+                            <video controls = "true" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                                <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                            </video>
 
-        </div>
+                        </div>
+                    </dialog>
+                    <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Click here to watch the lecture</a>
+                    <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+                </div>
+                 
 
         <div class = "lessonformat">
             <div class = "container">

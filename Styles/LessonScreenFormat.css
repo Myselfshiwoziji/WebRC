@@ -74,10 +74,9 @@ body::-webkit-scrollbar{
     text-align: center;
     border-style: none;
     border-radius: 2px;
-}
+    display: flex;
+    flex-direction: column;
 
-.Lecture div{
-    margin-top: 5px;
 }
 
 .Lecture div h2{
@@ -117,8 +116,8 @@ body::-webkit-scrollbar{
     width: 30em;
     height:20em;
     border-style: none;
-    margin-bottom:-5px;
-    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 dialog::-webkit-scrollbar{
