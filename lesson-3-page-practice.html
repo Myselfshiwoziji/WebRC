@@ -4,14 +4,29 @@
 <body style="background-color: rgb(48,47,47);">
     <h2 style = "color: aliceblue">Practice 1:</h2>
     <button class = "buttonStuff" style = "text-align: center; color: black; background-color:white; border: 2px solid red; border-radius: 10px;">Click me!</button>
+    <h3>
+        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(66, 105, 131, 0.675)">Hint</button>
+        <p id="Hintparagraph" style = "display:none; visibility:hidden; background-color:rgba(38, 76, 113, 0.619); color:azure;"> &lt; button style = "color: ;background-color: ;border: ;" &gt; text &lt; /button &gt;
+         </p>
+    </h3>
 
     <h2 style = "color: aliceblue">Practice 2:</h2>
     <a href = "https://en.wikipedia.org/wiki/Impact_%28typeface%29" target = "_blank" style = "background-color: aliceblue; font-size: 20px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Impact Buttone</a>
+    <h3>
+        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(255,255,255)">Hint</button>
+        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; a href = "" target = "" style = "background-color: ;font-size: ; font-family: ;" &gt; text shown &lt; /a &gt;
+         </p>
+     </h3>
 
     <h2 style = "color: aliceblue">Practice 3:</h2>
     <a href = "lesson-2-page.html" target ="_blank">
         <img src = "Imgs_and_stuff/rat.jpg" height = "100px" width = "100px" style = "border:10px outset blue; border-radius: 100px">
     </a>
+    <h3>
+        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(255,255,255)">Hint</button>
+        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; lorem ipsum &lt; /a &gt;
+         </p>
+     </h3>
 
     <h2 style = "color: aliceblue">Practice 4:</h2>
     <h2 style = "color:brown; background-color: blanchedalmond; font-size: 25px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Chapter 1:</h2>
@@ -20,4 +35,24 @@
         A cool breeze carried the scent of coffee and adventure, as if the very air held the promise of something extraordinary. 
         Unbeknownst to our unsuspecting protagonist, their life was about to take an unexpected turn, and fate would begin to spin its captivating web.
     </p>
+    <h3>
+        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(255,255,255)">Hint</button>
+        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; the one piece is real (source: trust me bro) &gt;
+         </p>
+     </h3>
+     <script>
+        const Hintparagraphs = document.querySelectorAll("#Hintparagraph");
+        function buttonclick() {
+        for (let i = 0; i < Hintparagraphs.length; i++) {
+            const Hintparagraph = Hintparagraphs[i];
+            if (Hintparagraph.style.display === 'none') {
+                Hintparagraph.style.display = 'block';
+                Hintparagraph.style.visibility = "visible";
+            } else {
+                Hintparagraph.style.display = 'none';
+                Hintparagraph.style.visibility = "hidden";
+            }
+        }
+    }
+    </script>
 </body>
