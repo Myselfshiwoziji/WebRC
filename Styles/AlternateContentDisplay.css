@@ -27,12 +27,15 @@
     cursor:pointer;
     text-align: center;
     transition: all 0.3s ease;
-    background-color: rgb(170, 165, 165);
+    background-color: rgb(99, 99, 99);
+    color: rgb(241, 241, 241);
+    /*background-color: rgb(170, 165, 165);*/
     width: 100%;
 }
 
 .tab-content{
-    background-color: rgb(200,195,195);
+    background-color: white;
+    /*background-color: rgb(200,195,195);*/
     padding: 1em 1.5em;
 }
 
@@ -60,7 +63,8 @@
 }
 
 .tabs .active{
-    background-color: rgb(200,195,195);
+    background-color: white;
+    /*background-color: rgb(200,195,195);*/
     color:#3c48c8;
     border-right-style: solid;
     border-right-color: #3c48c8;
