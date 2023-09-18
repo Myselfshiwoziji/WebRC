@@ -3,35 +3,52 @@
     <a id = "lesson-2-page-practice"></a>
     <body style="background-color: rgb(48,47,47);">
         <h2 style = "color: aliceblue">Practice 1:</h2>
+        <button class = "buttonStuff" style = "text-align: center; color: white; background-color:blue;">Click me!</button>
         <h3>
-            <button class = "buttonStuff" style = "text-align: center; color: white; background-color:blue;">Click me!</button>
-                <button id="Hintbutton" onclick="buttonclick()" style = "background-color: rgba(66, 105, 131, 0.675)">Hint</button>
-                <p id="Hintparagraph" style = "display:none; visibility:hidden; background-color:rgba(79, 79, 79, 0.736);"> &lt; button href = "" &gt;
-                    </p>
+            <button id="Hintbutton" onclick="buttonclick()">Hint</button>
+            <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; button href = "" &gt;
+             </p>
         </h3>
 
      <h2 style = "color: aliceblue">Practice 2:</h2>
      <a href = "https://www.google.com/?safe=active&ssui=on" target = "_blank" style = "background-color: aliceblue;">take me to Google</a>
      <h3>
-        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(66, 105, 131, 0.675)">Hint</button>
-        <p id="Hintparagraph" style = "display:none; visibility:hidden; background-color:rgba(79, 79, 79, 0.736);"> &lt; a href = "" target = "" &gt; shown text &lt; /a &gt;
+        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(255,255,255)">Hint</button>
+        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; a href = "" target = "" &gt; shown text &lt; /a &gt;
          </p>
      </h3>
 
 
      <h2 style = "color: aliceblue">Practice 3:</h2>
      <img src = "Imgs_and_stuff/rat.jpg" height = "100px" width = "100px">
+     <h3>
+        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(255,255,255)">Hint</button>
+        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; img src = "link to your image" height = "" width = "" &gt;
+         </p>
+     </h3>
 
       <h2 style = "color: aliceblue">Practice 4:</h2>
      <a href = "https://www.google.com/?safe=active&ssui=on" target = "_blank">
         <img src = "Imgs_and_stuff/pngegg.png" height = "100px" width = "100px">
      </a>
+     <h3>
+        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(255,255,255)">Hint</button>
+        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; a href = "" target = "" &gt; 
+         </p>
+        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> | &lt; img src = "" height = "" width = "" &gt; 
+         </p>
+        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; /a &gt; 
+         </p>
+     </h3>
 
-     <link src = "Javascript/hintbutton.js">
+    
      <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
     </body>
     <script>
+        const Hintparagraphs = document.querySelectorAll("#Hintparagraph");
         function buttonclick() {
+        for (let i = 0; i < Hintparagraphs.length; i++) {
+            const Hintparagraph = Hintparagraphs[i];
             if (Hintparagraph.style.display === 'none') {
                 Hintparagraph.style.display = 'block';
                 Hintparagraph.style.visibility = "visible";
@@ -39,6 +56,7 @@
                 Hintparagraph.style.display = 'none';
                 Hintparagraph.style.visibility = "hidden";
             }
-        }  
+        }
+    }
     </script>
 </html>
