@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html>
 <head>
     <link rel = "stylesheet" href = "StylesForPracticePages/practice4.css">
 </head>
@@ -9,24 +9,24 @@
     <h2 style = "color: aliceblue">Practice 1:</h2>
     <button class = "buttonPractice1">Subscribe!</button>
     <h3>
-        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(66, 105, 131, 0.675)">Hint</button>
-        <p id="Hintparagraph" style = "display:none; visibility:hidden; background-color:rgba(38, 76, 113, 0.619); color:azure;"> &lt; button style = "color: ;background-color: ;border: ;" &gt; text &lt; /button &gt;
+        <button class = "hint-button" onclick="buttonclick(0)">Hint</button>
+        <p class = "hint-text" style = "display:none; visibility:hidden;"> &lt; button style = "color: ;background-color: ;border: ;" &gt; text &lt; /button &gt;
          </p>
     </h3>
 
     <h2 style = "color: aliceblue">Practice 2:</h2>
     <a class = "practice2Element">Hover for a cool effect!</a>
     <h3>
-        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(255,255,255)">Hint</button>
-        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; a href = "" target = "" style = "background-color: ;font-size: ; font-family: ;" &gt; text shown &lt; /a &gt;
+        <button class = "hint-button" onclick="buttonclick(1)" >Hint</button>
+        <p class = "hint-text" style = "display:none; visibility:hidden;"> &lt; a href = "" target = "" style = "background-color: ;font-size: ; font-family: ;" &gt; text shown &lt; /a &gt;
          </p>
      </h3>
 
     <h2 style = "color: aliceblue">Practice 3:</h2>
     <img class = "practice3ElementIMG"src = "Imgs_and_stuff/rat.jpg" height = "100px" width = "100px">
     <h3>
-        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(255,255,255)">Hint</button>
-        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; lorem ipsum &lt; /a &gt;
+        <button class = "hint-button" onclick="buttonclick(2)">Hint</button>
+        <p class = "hint-text" style = "display:none; visibility:hidden;"> &lt; lorem ipsum &lt; /a &gt;
          </p>
      </h3>
 
@@ -34,25 +34,12 @@
     <a class = "practice4Element">Show header?
         <h2 class = "practice4Element2">Hi!</h2>
     </a>
-        <button id="Hintbutton" onclick="buttonclick()" style = "color: rgba(255,255,255)">Hint</button>
-        <p id="Hintparagraph" style = "display:none; visibility:hidden;"> &lt; the one piece is real (source: trust me bro) &gt;
+        <button class = "hint-button" onclick="buttonclick(3)">Hint</button>
+        <p class = "hint-text" style = "display:none; visibility:hidden;"> &lt; the one piece is real (source: trust me bro) &gt;
          </p>
-     </h3>
-     <script>
-        const Hintparagraphs = document.querySelectorAll("#Hintparagraph");
-        function buttonclick() {
-        for (let i = 0; i < Hintparagraphs.length; i++) {
-            const Hintparagraph = Hintparagraphs[i];
-            if (Hintparagraph.style.display === 'none') {
-                Hintparagraph.style.display = 'block';
-                Hintparagraph.style.visibility = "visible";
-            } else {
-                Hintparagraph.style.display = 'none';
-                Hintparagraph.style.visibility = "hidden";
-            }
-        }
-    }
-    </script>
-    <link rel = "stylesheet" src = "Styles/AlternateContentDisplay.css">
-    <link src = "Javascript/hintbutton.js">
-</body>
+     <script src = "Javascript/hint-button.js"></script>
+     <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
+
+    </body>
+
+</html>
