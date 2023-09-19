@@ -1,0 +1,82 @@
+/*Practice 1 */
+.buttonPractice1{
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: red;
+    color: rgb(231, 227, 227);
+    font-size: 15px;
+    border-color: transparent;
+}
+
+.buttonPractice1:hover{
+    opacity: 0.9;
+}
+
+.buttonPractice1:active{
+    opacity: 0.8;
+}
+
+/*Practice 2 */
+
+.practice2Element{
+    color: white;
+    transition: 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.practice2Element:hover{
+    text-shadow: 5px 5px 5px red;
+    font-size: 45px;
+}
+
+/*Practice 3 */
+
+.practice3ElementIMG{
+    transition: 0.7s;
+    border:10px outset blue; 
+    border-radius: 100px
+}
+
+.practice3ElementIMG:hover{
+    opacity: 0.5;
+    border-radius: 30px;
+    border-color: aqua;
+    transition: 0.5s;
+}
+
+.practice3ElementIMG:active{
+    border-color:aquamarine;
+    border-radius: 50px;
+    opacity: 0.4;
+}
+
+/* Practice 4 */
+
+.practice4Element{
+    color: black;
+    background-color: white;
+    transition: 0.5s;
+    height: 50px;
+    width: 100px;
+}
+
+.practice4Element:hover{
+    opacity: 0.8;
+    background-color: black;
+    color: white;
+}
+
+.practice4Element:active .practice4Element2{
+    opacity: 1;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px white;
+}
+
+.practice4Element2{
+    color: white;
+    opacity: 0;
+    transition: 0.7s;
+    font-size: 0;
+}

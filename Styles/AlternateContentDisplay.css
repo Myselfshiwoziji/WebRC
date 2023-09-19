@@ -40,7 +40,7 @@
 }
 
 .HeaderPoint{
-    font-size: 1.8em;
+    font-size: 2.3em;
     margin-bottom: 0.5em;
     color: #000024;
 }
@@ -103,7 +103,7 @@
     border-top-style: solid;
 }
 
-.fade div h3:nth-child(13){
+.fade div h3:nth-last-child(1){
     border-bottom-style: solid;
     border-bottom-color: rgba(0,0,0,0.2);
 }
