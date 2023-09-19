@@ -1,5 +1,5 @@
 .container{
-    background: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8);
     width: 1f;
     min-width: 30em;
     min-height: 10em;
@@ -27,14 +27,14 @@
     cursor:pointer;
     text-align: center;
     transition: all 0.3s ease;
-    background-color: rgb(99, 99, 99);
+    background-color: rgba(99, 99, 99, 0.8);
     color: rgb(241, 241, 241);
     /*background-color: rgb(170, 165, 165);*/
     width: 100%;
 }
 
 .tab-content{
-    background-color: white;
+
     /*background-color: rgb(200,195,195);*/
     padding: 1em 1.5em;
 }
@@ -63,7 +63,7 @@
 }
 
 .tabs .active{
-    background-color: white;
+    background-color: rgba(255,255,255,0.8);
     /*background-color: rgb(200,195,195);*/
     color:#3c48c8;
     border-right-style: solid;
