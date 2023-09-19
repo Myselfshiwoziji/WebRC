@@ -10,8 +10,6 @@
     <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
 </head>
 
-
-
 <body>
     <section class = "showcase" id = "main">
         <header class = "pageheader">
@@ -22,31 +20,44 @@
         <div class = "main_text" id = "main-text">
             <h2>
                 Lesson 1:
-                <br>
+            </h2>
+            <h2>
                 Introduction to HTML
             </h2>
             <dialog class = "Lecture" id="LectureVid">
-                <div>
-                    <h2>Lesson 1 Video Recording:</h2>                               
-                    <button onclick="LectureVid.close()"></button>
+                <div class = "LectureVideo">
+                    <div>
+                        <h2 style = "width: 300px;;">Lesson 1 Video Recording:</h2>                               
+                        <button onclick="LectureVid.close()"></button>
+                    </div>
+                    <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                        <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                    </video>
+
                 </div>
-                <iframe class = "LectureVideo" src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" title = "Lesson 2 Lesson" sandbox></iframe>
             </dialog>
-            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
+            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lesson</a>
             <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
-
         </div>
-
+                 
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "letab active">What is an element?</h3>
+                    <h3 class = "letab active">What is HTML?</h3>
+                    <h3 class = "letab">What is an element?</h3>
                     <h3 class = "letab">Examples of elements</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
                 <div class = "tab-content">
                     <div class = "active fade">
+                        <h2 class = "HeaderPoint">What is HTML?</h2>
+                        <h3>HTML, or Hypertext Markup Language, is a type of programming language that specialises in web development. This is mainly due to how HTML is much more different than the usual programming languages that you are probably more familar to. 
+                            HTML works by creating a format for a website, and then the web browsers will then interpret your HTML file and construct the website based off of the code. Regardless, in order to make a HTML file, right click the right hand side menu in Visual Studio Code and create a file named anything you want (as long as it ends with .html).
+                        </h3>
+                    </div>
+
+                    <div class = "fade">
                         <h2 class = "HeaderPoint">What is an element in HTML?</h2>
                         <h3>In HTML, an element refers to a fundamental building block or a component of a webpage. 
                             It represents different parts of the content, structure, or functionality of the webpage. Each element is enclosed within tags, which define the purpose and behavior of that element. 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About page</title>
+    <title>About</title>
     <link rel ="stylesheet" href = "Styles/loadingpage.css">
     <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
     <link rel = "stylesheet" href = "Styles/mainpage.css">
@@ -29,27 +29,44 @@
             <div class="about-format">
                 <h2 class="about-text">
                     Welcome to the Web Dev Course!
-                    This website was designed as a teaching supplement to a school club covering the absolute basics of web development,
-                    demonstrating some of what can be done with just HTML, CSS, and JavaScript.
+                    This website was designed as a teaching supplement to a school club on the basics of web development,
+                    showing what can be done with just HTML, CSS, and JavaScript.
                     If you're currently in the club, follow along with us!
                     If not, still feel free to follow each with lesson's recorded lectures and activities.
                 </h2>
 
-                <h2 class="about-text" style = "background-color: rgb(84, 84, 84);">
-                    Website made by:
-                </h2>
+                <h1 class="about-text-header">
+                    Designed By
+                </h1>
 
-                    <img src = "Imgs_and_stuff/rat.jpg" style = "width: 200px; height: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src = "Imgs_and_stuff/rat.jpg" style = "width: 200px; height: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src = "Imgs_and_stuff/rat.jpg" style = "width: 200px; height: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src = "Imgs_and_stuff/rat.jpg" style = "width: 200px; height: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-                <h3 class = "about-text" style = "background-color: rgb(84,84,84);">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ian Chan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Colin Chan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wan-Hei Kong &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Osborn Leung
-                </h3>
-                
+                <div class="about-images">
+                    <div>
+                        <img src = "Imgs_and_stuff/rat.jpg" style = "transform: rotate(0deg);">
+                        <h1>
+                            Osborn Leung
+                        </h1>
+                    </div>
+                    <div>
+                        <img src = "Imgs_and_stuff/rat.jpg" style = "transform: rotate(120deg);">
+                        <h1>
+                            Ian Chan
+                        </h1>
+                    </div>
+                    <div>
+                        <img src = "Imgs_and_stuff/rat.jpg" style = "transform: rotate(240deg);">
+                        <h1>
+                            Colin Chan
+                        </h1>
+                    </div>
+                    <div>
+                        <img src = "Imgs_and_stuff/wanhei.png">
+                        <h1>
+                            Wan Hei Kong
+                        </h1>
+                    </div>
+                </div>
             </div>
+
             <div class = "footer" id = "main-text">
                 <a class = "LectureButton bottombuttons" target = "_self" href = "index.html">Home Page</a>
                 <a class = "LectureButton bottombuttons" target = "_self" href="lesson-1-page.html">Lesson 1</a>
@@ -60,12 +77,12 @@
     <div id = "main_side" class="main_menu"></div>
 </body>
 
-    <div class = "loader"></div>
-    <div class = "loading" src = "Imgs_and_stuff/rat.jpg"></div>
+<div class = "loader"></div>
+<div class = "loading" src = "Imgs_and_stuff/rat.jpg"></div>
 
-    <script src = "Javascript/sidemenu.js"></script>
-    <script src = "Javascript/loader.js"></script>
-    <!--<script src = "Javascript/ContentDisplay.js"></script>-->
-    <script src = "Javascript/AlternativeContentDisplay.js"></script>
+<script src = "Javascript/sidemenu.js"></script>
+<script src = "Javascript/loader.js"></script>
+<!--<script src = "Javascript/ContentDisplay.js"></script>-->
+<script src = "Javascript/AlternativeContentDisplay.js"></script>
 
 </html>

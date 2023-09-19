@@ -1,5 +1,5 @@
 .container{
-    background: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8);
     width: 1f;
     min-width: 30em;
     min-height: 10em;
@@ -27,17 +27,20 @@
     cursor:pointer;
     text-align: center;
     transition: all 0.3s ease;
-    background-color: rgb(170, 165, 165);
+    background-color: rgba(99, 99, 99, 0.8);
+    color: rgb(241, 241, 241);
+    /*background-color: rgb(170, 165, 165);*/
     width: 100%;
 }
 
 .tab-content{
-    background-color: rgb(200,195,195);
+
+    /*background-color: rgb(200,195,195);*/
     padding: 1em 1.5em;
 }
 
 .HeaderPoint{
-    font-size: 1.8em;
+    font-size: 2.3em;
     margin-bottom: 0.5em;
     color: #000024;
 }
@@ -60,7 +63,8 @@
 }
 
 .tabs .active{
-    background-color: rgb(200,195,195);
+    background-color: rgba(255,255,255,0.8);
+    /*background-color: rgb(200,195,195);*/
     color:#3c48c8;
     border-right-style: solid;
     border-right-color: #3c48c8;
@@ -99,7 +103,7 @@
     border-top-style: solid;
 }
 
-.fade div h3:nth-child(13){
+.fade div h3:nth-last-child(1){
     border-bottom-style: solid;
     border-bottom-color: rgba(0,0,0,0.2);
 }

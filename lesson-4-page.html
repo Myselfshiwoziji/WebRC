@@ -11,28 +11,33 @@
 
 <body>
     <section class = "showcase" id = "main">
-        <header class = "pageheader">
-            <h2 class="main_logo" id = "main-logo"><a href = "index.html">Web Dev Course</a></h2>
-            <span class = "main_toggle" onclick="openNav()"></span>
-        </header>
-        
-        <div class = "main_text" id = "main-text">
-            <h2>
-                Lesson 4:
-                <br>
-                Delving Deeper into CSS
-            </h2>
-            <dialog class = "Lecture" id="LectureVid">
-                <div>
-                    <h2>Lesson 4 Video Recording:</h2>                               
-                    <button onclick="LectureVid.close()"></button>
-                </div>
-                <iframe class = "LectureVideo" src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" title = "Lesson 2 Lesson" sandbox></iframe>
-            </dialog>
-            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
-            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+            <header class = "pageheader">
+                <h2 class="main_logo" id = "main-logo"><a href = "index.html">Web Dev Course</a></h2>
+                <span class = "main_toggle" onclick="openNav()"></span>
+            </header>
+            
+                <div class = "main_text" id = "main-text">
+                    <h2>
+                        Lesson 4:
+                    </h2>
+                    <h2>
+                        Delving Deeper into CSS
+                    </h2>
+                    <dialog class = "Lecture" id="LectureVid">
+                        <div class = "LectureVideo">
+                            <div>
+                                <h2 style = "width: 300px;;">Lesson 4 Video Recording:</h2>                               
+                                <button onclick="LectureVid.close()"></button>
+                            </div>
+                            <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                                <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                            </video>
 
-        </div>
+                        </div>
+                    </dialog>
+                    <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lesson</a>
+                    <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+                </div>
 
         <div class = "lessonformat">
             <div class = "container">
@@ -45,46 +50,78 @@
 
                 <div class = "tab-content">
                     <div class = "active fade">
-                        <h2 class = "HeaderPoint">Measurements using CSS</h2>
-                        <h3>An attribute in HTML is like a trait you give to it. It provides additional information to the element, such as its size, width, length, max_word_count, or funtionality.
+                        <h2 class = "HeaderPoint">Measurements using CSS:</h2>
+                        <h3 style = "margin-left: 15px;">There are a variety of different units of measurements for CSS, and knowing which one to use for different occasions can greatly change productivity and effieciency when designing a webpage. For the purposes of this course, we will only talk about the ones which we consider to be the most useful, for example:</h3>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle"> Pixels:</h2>
+                            <h3>This is one of the most common unit of measurement of CSS, and the unit of measurement we have been using in CSS for a long time now. To understand the measurement system of pixels, you should first understand that every single digital file, screen, etc, are all made of thousands upon thousands of pixels with sligntly different colors to make the illusion of what you see. 
+                                Therefore, the measurement of pixels refers to the number of pixels on the screen that it takes up. The shortened version of this unit of measurement is px.
 
-                            For example, the "href" attribute a tag specifies the URL or web address to which the link should link to. The "src" attribute in the image tag specifies the source or location of the image file to be displayed. Similarly, the "class" attribute is used to assign a class or style to an element, allowing CSS (Cascading Style Sheets, which you will be covered in lessons 3 and 4) to apply specific formatting. More examples will be shown in the next panel.
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Centimeter:</h2><h3>Much like real life centimeters are also another valid unit of measurement in web development. The centimeter used in web development and in real life are the same, so you don't need to worry about it being different. This unit of measurement is denoted with cm.
+                            </h3>
 
+                            <h2 class = "contentTitle">em:</h2><h3>This unit of measurement is much more difficult to explain, as this unit of measurement does not have a direct basis in which it is based upon. To put it simply, this unit of measurement is relative to the size of the current font size of the element. For example, 2em would mean that the text would be 2 times larger than the base font size of the element.
 
+                            </h3>
 
-                        </h3>
+                            <h2 class = "contentTitle">vw:</h2><h3>This unit of measurement is constantly changing in its value, however, this unit of measurement basically shows the width of the element relative to the width of the viewport in terms of percentage. For example, 3vw would mean that the element has a width that is the size of 3% of the viewport. If you are confused as to what a viewport is, a viewport is basically the current size of the browser that you are looking at based off of the electronics you are using.
+
+                            </h3>
+
+                            <h2 class = "contentTitle">vh:</h2><h3> This unit of measurement follows the exact same logic of the previous unit of measurement, however, this unit of measurement instead is referring to the height of both the viewport and the element.
+
+                            </h3>
+
+                            <h2 class = "contentTitle">vmin:<h2><h3> This unit of measurement is similar to vh and vw, however, it instead refers to the size of the element relative to the smallest possible viewport size (basically if you shrink a chrome tab to its smallest point). For example, 1vmin would refer to 1% of the smallest possible viewport size.
+
+                            </h3>
+
+                            <h2 class = "contentTitle">vmax:<h2><h3> This unit of measurement refers to the size of the element relative to the largest possible viewport size (basically if you enlarge a chrome tab to its largest point). For example, 1vmax would refer to 1% of the largest possible viewport size.
+
+                            </h3>
+                        </div>
+
                     </div>
 
                     <div class = "fade">
                         <h2 class = "HeaderPoint">What are pseudo-classes?</h2>
+                        <h3 style = "margin-left: 15px;">In the previous lessons, we had discussed the usages of classes and identifying them to customise their properties in CSS. However, there is one major type of class that we had not discussed, which is the pseudo-class. 
+                            Pseudo-classes add an extra layer to the customization of elements in CSS, as they add specific conditions for when the element should change properties. For example, a very common pseudo-class would be the :hover pseudo-class, which makes it so that when an element
+                            is being hovered over it should change its properties. To use a pseudo-class, simply type your regular CSS setup, however, next to the name of the element or class of the element type in : and a pseudo-class to give specific properties when the conditions of the pseudo-class are
+                            achieved. As for some examples of pseudo-classes, here are some below:
+                        </h3>
                         <div class = "inactive">
-                            <h2 class = "contentTitle"> Class:</h2>
-                            <h3>The class attribute is used to apply one or more class names to an element. Classes are used to select and style elements with CSS or to define behavior with JavaScript. 
-                                When you use this attribute, use the syntax:<br /> <code>&lt;button class = "exampleClass"&gt; &lt;/class&gt;</code>
+                            <h2 class = "contentTitle"> :Hover</h2>
+                            <h3>This is by far the most common pseudo-class, and will be one which you will get quite familiar with. Much like the name suggests, properties (or delcarations) put into any CSS code that is under the pseudo-class of :Hover will only be applied to the element if it is being hovered over with 
+                                by the user's cursor. To use this pseudo-class, you can follow the format below: <br /> <code>.exampleClass:hover{Type in declarations here}</code>
 
                             </h3>
                             
-                            <h2 class = "contentTitle">Id:</h2><h3>The id attribute is used to identify an element within a document (which is the file). It is often used for JavaScript or CSS targeting purposes. 
-                                When you use this attribute, use the syntax:<br /> <code>&lt;button id = "exampleId"&gt; &lt;/button&gt;</code>
+                            <h2 class = "contentTitle">:Active</h2><h3>This is another incredibly common pseudo-class, and it basically states that the delcarations inside this pseudo-class will only be applied when a element is clicked or has any sort of interation with it.
+                                To use this pseudo-class, you can follow the format below:<br /> <code>.exampleClass:active{Type in declarations here}</code>
                             </h3>
 
-                            <h2 class = "contentTitle">Src:</h2><h3>The src attribute is used to specify the source URL of external resources, such as images, audio, video, or script files.
-                                When you use this attribute, use the syntax:<br /> <code>&lt;img src = "example_img.jpeg"&gt; &lt;/img&gt;</code>
-
-                            </h3>
-
-                            <h2 class = "contentTitle">Href:</h2><h3>The href attribute is used to specify the target URL of links. It is typically used with anchor elements to link to other pages or resources.
-                                When you use this attribute, use the syntax:<br /> <code>&lt;a href = "www.google.com"&gt; &lt;/a&gt;</code>
+                            <h2 class = "contentTitle">:nth-child(n)</h2><h3>At first, this pseudo-class might seem weird and complicated, but it is quite easy to understand. To put it simply, let's say we have 15 or so of the same element in the same page, but we want the 6th element to be different, then we would use :nth-child:(6) to directly identify the 6th version of this element in the list and customise it.
+                                Please note that the n used in the title of this part of the website is simily filler, and you have to either replace it with a number, the word even (to denote that the trigger is every even child of the element), or the word odd (to denote that the trigger is every odd child of the element).
+                                Regardless, to use this pseudo-class, you can follow the format below:<br /> <code>.exampleClass:nth-child(n){Type in declarations here}</code>
 
                             </h3>
 
-                            <h2 class = "contentTitle">Alt:</h2><h3> The alt attribute is used to provide alternative text for elements that isn't displayed, such as images. It is used for accessibility purposes and is displayed if the image fails to load/ the user is not supposed to be able to see the image.
-                                When you use this attribute, use the syntax:<br /> <code>&lt;img alt = "example image for students"&gt; &lt;/img&gt;</code>
+                            <h2 class = "contentTitle">:focus</h2><h3>At first glance, this pseudo-class might seem like the same thing as active, when in reality it is quite different. Typically, the :focus pseudo-class is used for input type elements, as its trigger condition when the element is is focused upon. This is different to active as 
+                                when you click on something with the :focus pseudo-element, its trigger condition is only unfurfilled when the user clicks on another element or somewhere else in the page.
+                                To use this pseudo-class, you can follow the format below:<br /> <code>.exampleClass:focus{Type in declarations here}</code>
 
                             </h3>
 
-                            <h2 class = "contentTitle">Style:<h2><h3> The style attribute is used to apply inline CSS styles to an element. It allows for the customization of various visual aspects, such as color, font-size, margin, etc. (you'll learn about the CSS attributes in lessons 3-4)
-                                When you use this attribute, use the syntax:<br /> <code>&lt;button style = "color: blue; text-align: center"&gt; &lt;/button&gt;</code>
+                            <h2 class = "contentTitle">:visited</h2><h3> This is a very simple pseudo-class, and it basically states that if the link in the element was visited before, then the trigger conditions for this pseudo-class will be furfilled.
+                                To use this pseudo-class, you can follow the format below:<br /> <code>.exampleClass:visited{Type in declarations here}</code>
+
+                            </h3>
+
+                            <h2 class = "contentTitle">:link<h2><h3> This is basically the opposite of the previous pseudo-class, as it the trigger conditions for this pseudo-class is simply just links that have not been visited yet.
+                                To use this pseudo-class, you can follow the format below:<br /> <code>.exampleClass:link{Type in declarations here}</code>
 
                             </h3>
                         </div>
@@ -94,33 +131,38 @@
                     <div class = "fade">
                         <h2 class = "HeaderPoint">More CSS Declarations</h2>
                         <div class = "inactive">
-                            <h2 class = "contentTitle"> Class:</h2>
-                            <h3>The class attribute is used to apply one or more class names to an element. Classes are used to select and style elements with CSS or to define behavior with JavaScript. 
-                                When you use this attribute, use the syntax:<br /> <code>&lt;button class = "exampleClass"&gt; &lt;/class&gt;</code>
+                            <h2 class = "contentTitle"> Opacity:</h2>
+                            <h3>Opacity is a CSS declaration that, just like the name suggests, toggles how transparent the element is. This transparency is on a scale of 0 to 1, where 0 is completley transparent and 1 is completley solid.
+                                When you use this delcaration, use the syntax:<br /> <code>opacity: insert opacity level here;</code>
 
                             </h3>
                             
-                            <h2 class = "contentTitle">Id:</h2><h3>The id attribute is used to identify an element within a document (which is the file). It is often used for JavaScript or CSS targeting purposes. 
-                                When you use this attribute, use the syntax:<br /> <code>&lt;button id = "exampleId"&gt; &lt;/button&gt;</code>
+                            <h2 class = "contentTitle">Transition:</h2><h3>The transition declarations takes care of how elements transition from one declaration state to another. This delcaration works by setting the time taken (in seconds) to transition from one declaration to another.
+                                When you use this declaration, use the syntax:<br /> <code>transition: 0.2s;</code>
                             </h3>
 
-                            <h2 class = "contentTitle">Src:</h2><h3>The src attribute is used to specify the source URL of external resources, such as images, audio, video, or script files.
-                                When you use this attribute, use the syntax:<br /> <code>&lt;img src = "example_img.jpeg"&gt; &lt;/img&gt;</code>
-
-                            </h3>
-
-                            <h2 class = "contentTitle">Href:</h2><h3>The href attribute is used to specify the target URL of links. It is typically used with anchor elements to link to other pages or resources.
-                                When you use this attribute, use the syntax:<br /> <code>&lt;a href = "www.google.com"&gt; &lt;/a&gt;</code>
+                            <h2 class = "contentTitle">Text alignment:</h2><h3>The text alignment declaration, just like the name suggests, is basically the declaration in charge of changing how the text is aligned. For example, text alignment center would change the text to be aligned to the center of the element.
+                                When you use this delcaration, use the syntax:<br /> <code>text-align: left; OR right; OR center;</code>
+                                <h4 style = "font-size: 12px; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">(Please note that you can only have on attribute for text-align, and can't do something like left center.)</h4>
 
                             </h3>
 
-                            <h2 class = "contentTitle">Alt:</h2><h3> The alt attribute is used to provide alternative text for elements that isn't displayed, such as images. It is used for accessibility purposes and is displayed if the image fails to load/ the user is not supposed to be able to see the image.
-                                When you use this attribute, use the syntax:<br /> <code>&lt;img alt = "example image for students"&gt; &lt;/img&gt;</code>
+                            <h2 class = "contentTitle">Text decoration:</h2><h3>The text decoration declaration is mainly in charge of adding extra attributes to the text in an element. For example, you can add an overline, a underline, and a line-through a text. 
+                                When you use this declaration, use the syntax:<br /> <code>text-decoration: overline; OR underline; OR line-through;</code>
 
                             </h3>
 
-                            <h2 class = "contentTitle">Style:<h2><h3> The style attribute is used to apply inline CSS styles to an element. It allows for the customization of various visual aspects, such as color, font-size, margin, etc. (you'll learn about the CSS attributes in lessons 3-4)
-                                When you use this attribute, use the syntax:<br /> <code>&lt;button style = "color: blue; text-align: center"&gt; &lt;/button&gt;</code>
+                            <h2 class = "contentTitle">Text spacing:</h2><h3> When we talk about text spacing in CSS, there are multiple different declarations that can be used for text spacign that all achieve different things, however, for the sake of this class, we will only focus on line height. 
+                                Line height is a declaration that basically states how much space 1 line of text takes in an element. This space is mainly defined through the usage of the units of measurement discussed before. 
+                                When you use this declaration, use the syntax:<br /> <code>line-height: MeasurementValue;</code>
+
+                            </h3>
+
+                            <h2 class = "contentTitle">Text shadow:<h2><h3> Text shadow is, compared to the other declarations, quite unique in its own way. Text shadow adds an extra copy of the text in an element, and using the text shadow
+                                declaration you can change the displacement of the copy relative to the element, add blurriness to the element and the text color of the copy.
+                                When you use this declaration, use the syntax:<br /> <code>text-shadow: xDisplacement yDisplacement blurriness color</code>
+
+                                <h4 style = "font-size: 12px; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">(Please note that all values, excluding color, are all denoted in the CSS unit of measurements stated before.)</h4>
 
                             </h3>
                         </div>
@@ -134,15 +176,15 @@
                                 Try to replicate this example below:
                             </h2>
 
-                            <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 600px;" ></iframe>
+                            <iframe class = "PracticeExample" src = "lesson-4-page-practice.html" style = "height: 400px; width: 600px;" ></iframe>
 
                             <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
                                 Descriptions for the practice excerises below:
                             </h2>
-                            <h3>Practice 1: Display a blue button with white text that says "Click Me!", this button should have the class of buttonStuff </h3>
-                            <h3>Practice 2: Display a piece of text that says "take me to Google" that when pressed, you get taken to the Google home page.</h3>
-                            <h3>Practice 3: Display an image of your choice with a height of 100px and a width of 100px</h3>
-                            <h3>Practice 4: Display a image of your choice and make it so that you can click the image to take you into another website</h3>
+                            <h3>Practice 1: Display a simple red subscribe button that changes opacity when hovered over </h3>
+                            <h3>Practice 2: Display a piece of text that increases in size and also gets a text shadow when hovered over.</h3>
+                            <h3>Practice 3: Display an image of your choice that has rounded blue borders that changes in opacity, border color, and in the radius of the border when hovered over. The image should also change border shape and opacity when clicked.</h3>
+                            <h3>Practice 4: Display a anchor element that when the left mouse button is held over it, another Header appears with a white shadow.</h3>
                         </div>
 
                     </div>
