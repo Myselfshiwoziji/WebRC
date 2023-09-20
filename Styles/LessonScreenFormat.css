@@ -172,6 +172,30 @@ dialog[open]{
     opacity: 0.3;
 }
 
+.furtherReadingLinks{
+    transition: 0.2s;
+}
+.furtherReadingLinks:hover{
+    color: red;
+}
+
+.furtherReadingLinks:active{
+    opacity: 0.6;
+}
+
+.furtherReadingLinks:visited{
+    color: purple;
+    transition: 0.2s;
+}
+
+.furtherReadingLinks:visited:hover{
+    color: red;
+}
+
+.furtherReadingLinks:link{
+    color: blue;
+}
+
 @media (max-width: 991px) {
 
     .text h2{
