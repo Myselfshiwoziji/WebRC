@@ -26,16 +26,16 @@
                     <dialog class = "Lecture" id="LectureVid">
                         <div class = "LectureVideo">
                             <div>
-                                <h2 style = "width: 300px;;">Lesson 3 Video Recording:</h2>                               
-                                <button onclick="LectureVid.close()"></button>
+                                <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
+                                <button id = "closeButtonModal" style = "margin-bottom: 10px; margin-top: 50px;"></button>
                             </div>
-                            <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                            <video id = "modalVideo"controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
                                 <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
                             </video>
-
+        
                         </div>
                     </dialog>
-                    <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lesson</a>
+                    <a data-open-modal class = "LectureButton" id = "openModal">Watch Lecture</a>
                     <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
               </div>
        
@@ -52,20 +52,23 @@
                 <div class = "tab-content">
                     <div class = "active fade">
                         <h2 class = "HeaderPoint">What is CSS?</h2>
-                        <h3>CSS, short for Cascading Style Sheets, is a style sheet language used for describing the presentation or visual appearance of a document written in a markup language like HTML. 
-                            It defines how elements within a web page should be displayed, allowing web developers to control things like layout, colors, fonts, and other visual aspects of a website. CSS works by applying styles to HTML elements using selectors, which target specific elements or groups of elements, and then applying various properties and values to those elements to define their visual characteristics. 
+                        <h3>
+                            CSS, short for Cascading Style Sheets, is a style sheet language used for describing the visual appearance of a document written in a markup language like HTML. 
+                            It defines how elements within a web page should be displayed, giving web developers control over things like layout, colors, fonts, and other visual aspects of a website.
+                            CSS works by applying styles to HTML elements using selectors, which target specific elements or groups of elements, and then applying various properties and values to those elements to define their visual characteristics. 
                             By separating the presentation layer (CSS) from the content layer (HTML), CSS allows for consistent styling across multiple web pages and easy maintenance and updates to the overall design of a website.
                             To see some examples of how to use CSS, go to the next tab.
-
-
-
                         </h3>
                     </div>
 
                     <div class = "fade">
                         <h2 class = "HeaderPoint">Setting up CSS</h2>
-                        <h3>Much like starting your first HTML file, you can right click on the right hand side menu to create a new file. This file should not contain spaces and must end with .css to declare that it is a CSS file. Once done, pop back into your HTML document that you want to link the CSS document to and go inside the head element of the file. Once you are in there,
-                            type: <br/> <code>&lt;link rel = "stylesheet" href = "The CSS file's name"&gt;</code> <br/> Once you are done with that, you should now be able to code your CSS file such so that it should influence the visuals of the HTML page. Check out the next tab for more details regarding how to code in CSS:
+                        <h3>
+                            Much like starting your first HTML file, you can right click on the left hand side menu to create a new file.
+                            This file should not contain spaces and must end with .css to declare that it is a CSS file.
+                            Once done, return to the HTML document that you want to link the CSS document to and go inside the head element of the file.
+                            Once there, type: <br/> <code>&lt;link rel = "stylesheet" href = "The CSS file's name"&gt;</code> <br/> Once you are done with that, you should now be able to code your CSS file such so that it should influence the visuals of the HTML page.
+                            Check out the next tab for more details regarding how to style a CSS file:
                         </h3>
                     </div>
 
@@ -151,4 +154,5 @@
     <script src = "Javascript/sidemenu.js"></script>
     <script src = "Javascript/loader.js"></script>
     <script src= "Javascript/AlternativeContentDisplay.js"></script>
+    <script src = "Javascript/videoModal.js"></script>
 </html>

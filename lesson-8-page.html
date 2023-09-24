@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 2</title>
+    <title>Lesson 8</title>
     <link rel ="stylesheet" href = "Styles/loadingpage.css">
     <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
     <link rel = "stylesheet" href = "Styles/mainpage.css">
@@ -11,56 +11,72 @@
 
 <body>
     <section class = "showcase" id = "main">
-            <header class = "pageheader">
-                <h2 class="main_logo" id = "main-logo"><a href = "index.html">Web Dev Course</a></h2>
-                <span class = "main_toggle" onclick="openNav()"></span>
-            </header>
-            
-                <div class = "main_text" id = "main-text">
-                    <h2>
-                        Lesson 2:
-                    </h2>
-                    <h2>
-                        Basics of HTML
-                    </h2>
-                    <dialog class = "Lecture" id="LectureVid">
-                        <div class = "LectureVideo">
-                            <div>
-                                <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
-                                <button id = "closeButtonModal" style = "margin-bottom: 10px; margin-top: 50px;"></button>
-                            </div>
-                            <video id = "modalVideo"controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
-                                <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
-                            </video>
+        <header class = "pageheader">
+            <h2 class="main_logo" id = "main-logo"><a href = "index.html">Web Dev Course</a></h2>
+            <span class = "main_toggle" onclick="openNav()"></span>
+        </header>
         
-                        </div>
-                    </dialog>
-                    <a data-open-modal class = "LectureButton" id = "openModal">Watch Lecture</a>
-                    <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+        <div class = "main_text" id = "main-text">
+            <h2>
+                Lesson 8:
+                <br>
+                Introduction to JavaScript
+            </h2>
+            <dialog class = "Lecture" id="LectureVid">
+                <div class = "LectureVideo">
+                    <div>
+                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 8 Video Recording:</h2>                               
+                        <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+                    </div>
+                    <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                        <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                    </video>
+
                 </div>
+            </dialog>
+            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
+            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+
+        </div>
 
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "letab active">What is an attribute?</h3>
-                    <h3 class = "letab">Examples of attributes</h3>
+                    <h3 class = "letab active">What is JavaScript?</h3>
+                    <h3 class = "letab">Setting Up JavaScript</h3>
+                    <h3 class = "letab">Linking HTML and CSS</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
                 <div class = "tab-content">
                     <div class = "active fade">
-                        <h2 class = "HeaderPoint">What is an attribute?</h2>
+                        <h2 class = "HeaderPoint">What is JavaScript?</h2>
                         <h3>
-                            An attribute in HTML is like a trait you give to it. It provides additional information to the element, such as its size, width, length, max word count, or funtionality.
-                            For example, the "href" attribute specifies the URL or web address to which the hyperlink should link to.
-                            The "src" attribute in the image tag specifies the source or location of the image file to be displayed.
-                            Similarly, the "class" attribute is used to assign a class to its element, allowing CSS (Cascading Style Sheets, which will be covered in lessons 3 and 4) to apply specific formatting.
-                            More examples will be shown in the next panel.
+                            Time to bring your website to life!
+                            JavaScript, also abbreviated as JS, is a high-level, object-oriented scripting language used to program functionality to an HTML page.
+                            The language is quintessential for web developers to process user inputs and manipulate HTML and CSS content, making a website much more than a static slideshow.
+                            Javascript can interact with HTML in many ways, but most often you will link functions to buttons and other user actions,
+                            manipulating elements by finding their assigned IDs and making respective modifications.
+                            JavaScript is often paired with 3rd-party libraries such as JQuery. But for simplicity, this course will stick with fundamental JS.
                         </h3>
                     </div>
-
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Examples of attributes in HTML:</h2>
+                        <h2 class = "HeaderPoint">Setting Up JavaScript</h2>
+                        <h3>
+                            Much like CSS, right click on the left hand side menu of Visual Studio Code to create a new file.
+                            Give the file a name ending in .js to declare it for JavaScript.
+                            Once created, return to your HTML document.
+                            Unlike with CSS files, which are placed in the header, it is best practice to link your JavaScript file just before the <code>&lt;/body&gt;</code> closing tab of the <code>&lt;body&gt;</code> element.
+                            This is so all HTML elements are loaded before the script runs.
+                            Once there, type: <br/> <code> &lt;script src = "javascript_file_name.js"&gt;&lt;/script&gt;</code>
+                            <br/>
+                            Once written, you should now be able to code your JavaScript file such that it can monitor and manipulate the HTML page.
+                            Check out the next tab for more details regarding how to code in JavaScript:
+                        </h3>
+                    </div>
+                    
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">More CSS Declarations</h2>
                         <div class = "inactive">
                             <h2 class = "contentTitle"> Class:</h2>
                             <h3>The class attribute is used to apply one or more class names to an element. Classes are used to select and style elements with CSS or to define behavior with JavaScript. 
@@ -116,12 +132,11 @@
                     </div>
                 </div>
             </div>
-            
         </div>
 
         <div class = "footer" id = "main-text">
-            <a class = "LectureButton bottombuttons" href="lesson-1-page.html">Previous Lesson</a>
-            <a class = "LectureButton bottombuttons" href="lesson-3-page.html">Next Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-5-page.html">Previous Lesson</a>
+            <a class = "LectureButton bottombuttons" href="#">Next Lesson</a>
         </div>
     </section>
 
@@ -134,6 +149,5 @@
     <script src = "Javascript/sidemenu.js"></script>
     <script src = "Javascript/loader.js"></script>
     <script src= "Javascript/AlternativeContentDisplay.js"></script>
-    <script src = "Javascript/videoModal.js"></script>
 
 </html>
