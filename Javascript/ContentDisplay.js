@@ -24,3 +24,25 @@ function reset() {
   var video = document.getElementsByClassName("LectureButton")
   video.currentTime = 0;
 }
+
+let slideIndexs = 1;
+showslides(slideIndexs);
+
+function plusslides(a) {
+  showslides(slideIndexs += a);
+}
+
+function currentslide(a) {
+  showslides(slideIndexs = a);
+}
+
+function showslides(n) {
+  let i;
+  let slide = document.getElementsByClassName("ContentShown2");
+  if (n > slide.length) {slideIndexs = 1}
+  if (n < 1) {slideIndexs = slide.length}
+  for (i = 0; i < slide.length; i++) {
+    slide[i].style.display = "none";
+  }
+  slide[slideIndexs-1].style.display = "block";
+}
