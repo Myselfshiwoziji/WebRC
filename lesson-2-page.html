@@ -26,16 +26,16 @@
                     <dialog class = "Lecture" id="LectureVid">
                         <div class = "LectureVideo">
                             <div>
-                                <h2 style = "width: 300px;;">Lesson 2 Video Recording:</h2>                               
-                                <button onclick="LectureVid.close()"></button>
+                                <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
+                                <button id = "closeButtonModal" style = "margin-bottom: 10px; margin-top: 50px;"></button>
                             </div>
-                            <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                            <video id = "modalVideo"controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
                                 <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
                             </video>
-
+        
                         </div>
                     </dialog>
-                    <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lesson</a>
+                    <a data-open-modal class = "LectureButton" id = "openModal">Watch Lecture</a>
                     <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
                 </div>
 
@@ -134,5 +134,6 @@
     <script src = "Javascript/sidemenu.js"></script>
     <script src = "Javascript/loader.js"></script>
     <script src= "Javascript/AlternativeContentDisplay.js"></script>
+    <script src = "Javascript/videoModal.js"></script>
 
 </html>
