@@ -20,7 +20,7 @@
             <h2>
                 Lesson 7:
                 <br>
-                Videos and Images
+                Videos, Images and IFrames
             </h2>
             <dialog class = "Lecture" id="LectureVid">
                 <div class = "LectureVideo">
@@ -42,9 +42,9 @@
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "letab active">how do you put a video in HTML?</h3>
+                    <h3 class = "letab active">Revision: How do you put a video in HTML?</h3>
                     <h3 class = "letab">What is an IFrame?</h3>
-                    <h3 class = "letab">IFrames</h3>
+                    <h3 class = "letab">Examples of IFrames</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -55,6 +55,7 @@
                             <br> &lt; video controls &gt; &lt; source src = "Path to your video" &gt; &lt; video &gt;
                             <br> Or an image with the following syntax:
                             <br> &lt; img src = "Link to your image" &gt;
+                            <br> Similar methods and logic are used for IFrames.
                         </h3>
                     </div>
 
@@ -86,11 +87,12 @@
                             <h2 class = "contentTitle">Advertisements</h2>
                             <h3>If you've ever been to a website hosted by a company before, it is likely to have ads everywhere. This is done not by implementing every ad (which would take forever), but by setting iframes where the ads can appear, then displays more information as you click on it. Heres an example:
                             </h3>
-                            <a> <iframe src = "lesson-7-ad-example.html" width = "340px" height = "340px" styles = "align-items: center;">
+                            <a> <iframe src = "lesson-7-ad-example.html" width = "340px" height = "340px" styles = "align-items: center;" >
                             </iframe></a>
                             <h3>Heres the syntax used:
-                            <br>&lt;a&gt; &lt;iframe src = "lesson-7-ad-example.html" width = "340px" height = "340px" styles = "align-items: center;"&gt;
-                            <br> where lesson-7-ad-example is just an image with an embedded url.
+                            <br>&lt;a&gt; &lt;iframe src = "lesson-7-ad-example.html" width = "340px" height = "340px" styles = "align-items: center;"&gt;&lt;/a&gt;
+                            <br> where lesson-7-ad-example is just an image with an embedded url. 
+                            <br> Do note that when you learn JS later, you will learn the onclick() command, which is better for changing images on click. 
                             </h3>
 
 
@@ -98,6 +100,9 @@
                             <h2 class = "contentTitle">Video embedding</h2>
                             <h3>See how our lecture videos pop out a window instead of redirecting you to a youtube link? That is also done using iframes. The syntax used here is:
                                 <br> &lt;iframe&gt;&lt;href = "link to lecture video"&gt;&lt;/iframe&gt; 
+                                <br> Heres an example:
+                                <br>
+                                <iframe src = "lesson-7-page-practice-example.html" width = "340px" height = "340px"></iframe>
 
                             </h3>
 
@@ -124,7 +129,7 @@
                             </h2>
                             <h3>Practice 1: Display an image of your choice that redirects to a website when clicked (not open a new tab) </h3>
                             <h3>Practice 2: Make a button that opens a video when clicked</h3>
-                            <h3>Practice 3: Try and recreate a practice page using the template provided</h3>
+                            <h3>Practice 3: Try and create a page using the template provided with the thumbnail image being rat.jpg or otherwise</h3>
                         </div>
 
                     </div>
