@@ -1,9 +1,14 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Poppins:ital,wght@0,300;0,400;0,600;1,100;1,300;1,600&family=Tilt+Prism&display=swap');
 *{
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
+
+body{
+    font-family: 'Poppins', sans-serif;;
+}
+
 .showcase{
     position: absolute;
     right: 0px;
