@@ -23,13 +23,18 @@
                 Combining HTML and CSS
             </h2>
             <dialog class = "Lecture" id="LectureVid">
-                <div>
-                    <h2>Lesson 5 Video Recording:</h2>                               
-                    <button onclick="LectureVid.close()"></button>
+                <div class = "LectureVideo">
+                    <div>
+                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
+                        <button id = "closeButtonModal" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+                    </div>
+                    <video id = "modalVideo"controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                        <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                    </video>
+
                 </div>
-                <iframe class = "LectureVideo" src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" title = "Lesson 2 Lesson" sandbox></iframe>
             </dialog>
-            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
+            <a data-open-modal class = "LectureButton" id = "openModal">Watch Lecture</a>
             <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
 
         </div>
@@ -39,7 +44,7 @@
                 <div class = "tabs">
                     <h3 class = "letab active">What is a div element?</h3>
                     <h3 class = "letab">Linking CSS to HTML </h3>
-                    <h3 class = "letab">Organising your website</h3>
+                    <h3 class = "letab">Organising your website using paddings, borders and margins</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -72,16 +77,22 @@
                     </div>
 
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">General tips for organising your website</h2>
+                        <h2 class = "HeaderPoint">Padding, Border and Margin</h2>
                         <div class = "inactive">
-                            <h2 class = "contentTitle"> Using &lt;div&gt;:</h2>
-                            <h3> The div attribute can be used to seperate parts of your website, which can help reduce the messiness of your code. Keep your code tidy and organized. Use proper indentation and formatting to make it more readable. Comment your code to provide explanations when necessary, especially when dealing with complex div structures.
+                            <h2 class = "contentTitle"> Padding</h2>
+                            <h3> In HTML, padding refers to the space between the content of an element and its border. It allows you to create space inside an element, pushing the content away from the edges.
                             </h3>
                             
-                            <h2 class = "contentTitle">Use CSS classes:</h2><h3> Assign appropriate CSS classes to your div elements to style them easily. CSS classes help identify and select specific elements, making it easier to apply consistent styling and layout across your website.
+                            <h2 class = "contentTitle">Border</h2>
+                            <h3>In HTML, a border refers to the boundary or outline that surrounds an element. It is a visual property that helps differentiate and define the edges of an element on a web page.
+
+                                Borders can be applied to various HTML elements such as &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, and more. They can be customized in terms of color, style, and width.
                             </h3>
 
-                            <h2 class = "contentTitle">Block classes:</h2><h3>It might be easier to organise your website if you think of div as 'blocks' that seperate a section of your website from another.
+                            <h2 class = "contentTitle">Margins</h2>
+                            <h3>In HTML, a border refers to the boundary or outline that surrounds an element. It is a visual property that helps differentiate and define the edges of an element on a web page.
+
+                                Borders can be applied to various HTML elements such as &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, and more. They can be customized in terms of color, style, and width.
                             </h3>
 
                         </div>
@@ -93,7 +104,7 @@
                     <div class = "fade">
                         <h2 class = "HeaderPoint">Practice Work:</h2>
                         <div class = "inactive">
-                            <h3>There is no practice for this one, just useful skills to learn.</h3>
+                            <h3>no work, just take a good rest :&gt;</h3>
                         </div>
 
                     </div>
@@ -103,7 +114,7 @@
 
         <div class = "footer" id = "main-text">
             <a class = "LectureButton bottombuttons" href="lesson-4-page.html">Previous Lesson</a>
-            <a class = "LectureButton bottombuttons" href="#">Next Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-6-page.html">Next Lesson</a>
         </div>
     </section>
 
@@ -116,5 +127,6 @@
     <script src = "Javascript/sidemenu.js"></script>
     <script src = "Javascript/loader.js"></script>
     <script src= "Javascript/AlternativeContentDisplay.js"></script>
+    <script src = "Javascript/videoModal.js"></script>
 
 </html>

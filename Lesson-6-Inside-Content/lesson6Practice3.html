@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: aliceblue;
+            }
+
+            .timestamp{
+                background-color: black;
+                color: white;
+                position: absolute;
+                bottom: 35px;
+                right: 100px;
+                border-radius: 10px;
+                opacity: 0.85;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+            }
+
+            .thumbnail{
+                border-radius: 10px;
+            }
+
+            .informationContainer{
+                display: grid;
+                grid-template-columns: 15vw 50vw;
+            }
+
+            .channelIcon{
+                border-radius: 15vh;
+            }
+
+            h2{
+                flex-wrap: wrap;
+                font-size: 10vh;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                flex-direction: column
+            }
+
+            .otherInformation{
+                display: flex;
+            }
+
+            h3{
+                margin-left: 30vh;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 8vh;
+                color: grey;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class = "container">
+            <a target= "_blank" href = "https://www.youtube.com/watch?v=094y1Z2wpJg">
+                <img class = "thumbnail" src = "..//Imgs_and_stuff/thumbnail-4.webp" height = "110vh" width  = "200vw">
+            </a>
+            <div class = "timestamp">22:09</div>
+        </div>
+        <div class = "informationContainer">
+            <a target = "_blank" href = "https://www.youtube.com/@veritasium">
+                <img class = "channelIcon" src = "..//Imgs_and_stuff/Veritasium.jpeg" height = "40vh" width = "40h">
+            </a>
+            <div class = "otherInformation">
+                <div>
+                    <h2>The Simplest Math Problem No One Can Solve</h2>
+                </div>
+            </div>
+        </div>
+        <h3>Veritasium</h3>
+        <h3>36M views &#x2022; 2 years ago</h3>
+    </body>
+</html>
