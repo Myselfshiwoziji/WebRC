@@ -43,7 +43,7 @@
                 <div class = "tabs">
                     <h3 class = "letab active">What is JavaScript?</h3>
                     <h3 class = "letab">Setting Up JavaScript</h3>
-                    <h3 class = "letab">Linking HTML and CSS</h3>
+                    <h3 class = "letab">Modifying HTML Attributes</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -69,52 +69,97 @@
                         <h2 class = "HeaderPoint">Setting Up JavaScript</h2>
                         <h3>
                             Create a new file ending in <code>.js</code> to declare it for JavaScript.
-                            Once created, return to your HTML document.
-                        </h3>
-                        <h3>
-                            Unlike with CSS files, which are placed in the header, it is best practice to link your JavaScript file just before the <code>&lt;/body&gt;</code> closing tab.
-                            This is so all HTML elements are loaded before the script runs.
-                            Once there, type:
+                            Once created, return to your HTML document and type:
                         </h3>
                         <h3>
                             <code> &lt;script src = "javascript_file_name.js"&gt;&lt;/script&gt;</code>
                         </h3>
                         <h3>
-                            Once written, you should now be able to code your JavaScript file such that it can monitor and manipulate the HTML page.
+                            Unlike with CSS files, which are placed in the header, it is best practice to link your JavaScript file just before the <code>&lt;/body&gt;</code> closing tab.
+                            This is so all HTML elements are loaded before the script runs.
+                        </h3>
+                        <h3>
+                            Once written, you should now be able to code your JavaScript file to monitor and manipulate the HTML page.
                         </h3>
                     </div>
                     
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">More CSS Declarations</h2>
+                        <h2 class = "HeaderPoint">Modifying HTML Attributes</h2>
                         <div class = "inactive">
-                            <h2 class = "contentTitle"> Class:</h2>
-                            <h3>The class attribute is used to apply one or more class names to an element. Classes are used to select and style elements with CSS or to define behavior with JavaScript. 
-                                When you use this attribute, use the syntax:<br /> <code>&lt;button class = "exampleClass"&gt; &lt;/class&gt;</code>
-
+                            <h2 class = "contentTitle">.getElementbyID</h2>
+                            <h3>
+                                To modify an element in your HTML file, you'll first need to tell the JavaScript file where to look.
+                                The most straightforward way to do this is to first give your HTML element an id:
+                            </h3>
+                            <h3>
+                                <code>&lt;div id="exampleId"&gt;&lt;/div&gt;</code>
+                            </h3>
+                            <h3>
+                                Then declare your JavaScript variable with:
+                            </h3>
+                            <h3>
+                                <code>let exampleElement = document.getElementbyID("exampleId");</code>
                             </h3>
                             
-                            <h2 class = "contentTitle">Id:</h2><h3>The id attribute is used to identify an element within a document (which is the file). It is often used for JavaScript or CSS targeting purposes. 
-                                When you use this attribute, use the syntax:<br /> <code>&lt;button id = "exampleId"&gt; &lt;/button&gt;</code>
+                            <h2 class = "contentTitle">.innerHTML</h2>
+                            <h3>
+                                Use <code>.innerHTML</code> to read or modify the contents of your element
+                                (such as text or more HTML):
+                            </h3>
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                                <br>
+                                <code>htmlContent.innerHTML = "new HTML content";</code>
                             </h3>
 
-                            <h2 class = "contentTitle">Src:</h2><h3>The src attribute is used to specify the source URL of external resources, such as images, audio, video, or script files.
-                                When you use this attribute, use the syntax:<br /> <code>&lt;img src = "example_img.jpeg"&gt; &lt;/img&gt;</code>
-
+                            <h2 class = "contentTitle">.src</h2>
+                            <h3>
+                                Use <code>.src</code> to read and modify what external recources (i.e. images, audio and videos) an element uses:
+                            </h3>
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                                <br>
+                                <code>htmlContent.src = "new URL";</code>
                             </h3>
 
-                            <h2 class = "contentTitle">Href:</h2><h3>The href attribute is used to specify the target URL of links. It is typically used with anchor elements to link to other pages or resources.
-                                When you use this attribute, use the syntax:<br /> <code>&lt;a href = "www.google.com"&gt; &lt;/a&gt;</code>
-
+                            <h2 class = "contentTitle">.style</h2>
+                            <h3>
+                                Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
+                            </h3>
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId")
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.style.exampleStyleAttribute = "new style";
+                                </code>
+                            </h3>
+                            <h3>
+                                <code>.style</code> alone returns an object (list) containing every style attribute.
+                                Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
+                                which is simpler to read and change.
                             </h3>
 
-                            <h2 class = "contentTitle">Alt:</h2><h3> The alt attribute is used to provide alternative text for elements that isn't displayed, such as images. It is used for accessibility purposes and is displayed if the image fails to load/ the user is not supposed to be able to see the image.
-                                When you use this attribute, use the syntax:<br /> <code>&lt;img alt = "example image for students"&gt; &lt;/img&gt;</code>
-
+                            <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
+                            <h3>
+                                Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
                             </h3>
-
-                            <h2 class = "contentTitle">Style:<h2><h3> The style attribute is used to apply inline CSS styles to an element. It allows for the customization of various visual aspects, such as color, font-size, margin, etc. (you'll learn about the CSS attributes in lessons 3-4)
-                                When you use this attribute, use the syntax:<br /> <code>&lt;button style = "color: blue; text-align: center"&gt; &lt;/button&gt;</code>
-
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.add("new-class");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.remove("old-class");
+                                </code>
+                            </h3>
+                            <h3>
+                                Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
                             </h3>
                         </div>
                         
