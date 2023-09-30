@@ -1,0 +1,9 @@
+#Hintbutton{
+    display: block;
+    visibility: visible;
+}
+
+#paragraph{
+    display: none;
+    visibility: hidden;
+}
