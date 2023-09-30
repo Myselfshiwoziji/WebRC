@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <link rel = "stylesheet" href = "lesson-9-stuff/lesson-9-example.css">
+
+    <body style = "background-color: rgb(48,47,47);">
+        <button id = "#Hintbutton" onclick="buttonclick()" style = "width: 100px; height: 50px;">Click me!</button>
+        <br><a id = "#paragraph" style = "color:aliceblue; display: none; visibility: hidden;" >Hidden paragraph</a>
+        
+    </body>
+    <script>
+            const text = document.querySelectorAll("#paragraph")
+
+            function buttonclick() {
+                 for (let i = 0; i < text.length; i++) {
+                            
+                    if (text.style.display === 'none') {
+                        text.style.display = 'flex';
+                        text.style.visibility = "visible";
+                    } else {
+                        text.style.display = 'none';
+                        text.style.visibility = "hidden";
+                    }
+                }
+            } 
+    </script>
+    </html>

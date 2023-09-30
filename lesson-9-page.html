@@ -43,7 +43,7 @@
             <div class = "container">
                 <div class = "tabs">
                     <h3 class = "letab active">Events in JavaScript</h3>
-                    <h3 class = "letab">Object Orientated Programming</h3>
+                    <h3 class = "letab">More about Parameters</h3>
                     <h3 class = "letab">Variables in JavaScript</h3>
                     <h3 class = "letab">Function and Syntax of JSON</h3>
                     <h3 class = "letab">Practice Work</h3>
@@ -58,30 +58,81 @@
                         <h3>
                             In JavaScript (JS), events are actions or occurrences that happen in the user interface or the browser. These events can be triggered by various actions, such as a user clicking a button, pressing a key, or the browser finishing loading a web page.
                         </h3>
+
+                        <h2 class = "contentTitle">
+                            Event Listeners
+                        </h2>
+                        <h3>
+                            An event listener is required if you want your program to recognise that you called an event to execute a function. For every function that you put, you will have to add an event listener to an event in JS (for example, the clicking of a button). In short, Event listeners "listen" for specific events and execute a function when the event occurs.
+                        </h3>
+
                         <h2 class = "contentTitle">Types of Events in JS</h2>
-                            <h2>onclick()</h2>
+                            <h2>&nbsp;&nbsp;&nbsp;onclick()</h2>
                             <h3>
-                                The onclick() listener in JavaScript is an event handler that is used to execute a particular piece of code when an element, such as a button or a link, is clicked by the user. It is commonly used to create interactivity and trigger actions in response to user input.
+                                The onclick listener in JavaScript is an event handler that is used to execute a particular piece of code when an element, such as a button or a link, is clicked by the user. It is commonly used to create interactivity and trigger actions in response to user input.
                             </h3>
-                            <h2></h2>
+                            <h2> &nbsp;&nbsp;&nbsp;mousedown()</h2>
+                            <h3>
+                                Occurs when the mouse button is pressed down. This is different from onclick() because it detects if a mouse button is being held down instead of clicked.
+                            </h3>
+                            <h2> &nbsp;&nbsp;&nbsp;mouseover()</h2>
+                            <h3>
+                                Occurs when the mouse pointer enters an element.
+                            </h3>
+                            <h2> &nbsp;&nbsp;&nbsp;keydown()</h2>
+                            <h3>
+                                Occurs when a key is pressed and held down.
+                            </h3>
+                            <h2>&nbsp;&nbsp;&nbsp;keypress()</h2>
+                            <h3>
+                                Occurs when a key is pressed down and released.
+                            </h3>
+                            <h2>&nbsp;&nbsp;&nbsp;load()</h2>
+                            <h3>
+                                Occurs when the page/document has finished loading. This is primarily for loading screens, which we will cover in one of our extra lessons (Lesson 11 about animations)
+                            </h3>
+                        
+                        <h2 class = "contentTitle">Parameters</h2>
+                        <h3>
+                            In JavaScript, parameters are the values passed to a function when it is called. A function can have zero or more parameters, which are defined in the function's declaration. Note that parameters in JavaScript are optional, meaning that you can define a function with no parameters with empty brackets (for example, onclick())    
+                        </h3>
+                        <h2>&nbsp;&nbsp;What are parameters used for?</h2>
+                        <h3>
+                            In JavaScript, parameters are used in function definitions to specify the variables that a function expects to receive when it is called. Parameters act as placeholders for values that will be passed into the function.
+
+                            <br>Function parameters allow you to pass values to a function so that you can use and manipulate those values within the function's code. They define the inputs that a function expects, and you can specify multiple parameters separated by commas.
+                        </h3>
+
                     </div>
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Setting Up JavaScript</h2>
+                        <h2 class = "HeaderPoint">Uses and examples of parameters</h2>
+                        <h2 class = "contentTitle">Creating reusable and adaptable code:</h2>
                         <h3>
-                            Much like CSS, right click on the left hand side menu of Visual Studio Code to create a new file.
-                            Give the file a name ending in .js to declare it for JavaScript.
-                            Once created, return to your HTML document.
-                            Unlike with CSS files, which are placed in the header, it is best practice to link your JavaScript file just before the <code>&lt;/body&gt;</code> closing tab of the <code>&lt;body&gt;</code> element.
-                            This is so all HTML elements are loaded before the script runs.
-                            Once there, type: <br/> <code> &lt;script src = "javascript_file_name.js"&gt;&lt;/script&gt;</code>
-                            <br/>
-                            Once written, you should now be able to code your JavaScript file such that it can monitor and manipulate the HTML page.
-                            Check out the next tab for more details regarding how to code in JavaScript:
+                            By using parameters, you can create functions that can work with different data or conditions. This makes your code more modular, reusable, and adaptable to different scenarios.
                         </h3>
+                        <h3> Here is an example: Suppose you are making a quiz and want to make a hint button (with an id called Hintbutton) to display a hint (with id Hintparagraph), so you type:
+                            <br> &nbsp;
+                            <br> function buttonclick() {
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; document.querySelectorAll(#Hintbutton).length; i++) {
+                            
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (paragraph.style.display === 'none') {
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paragraph.style.display = 'block';
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paragraph.style.visibility = "visible";
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paragraph.style.display = 'none';
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paragraph.style.visibility = "hidden";
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>     } 
+                        </h3>
+                        <h3><br> 
+                            which produces the following results:
+                        </h3>
+                        <iframe src = "lesson-9-stuff/lesson-9-page-parameter-example.html" style = "width: auto; height: auto;"></iframe>
                     </div>
                     
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Function and Syntax of JSON</h2>
+                        <h2 class = "HeaderPoint">declaring a variable in JS</h2>
                         <div class = "inactive">
                             <h2 class = "contentTitle"> Class:</h2>
                             <h3>The class attribute is used to apply one or more class names to an element. Classes are used to select and style elements with CSS or to define behavior with JavaScript. 
@@ -117,7 +168,7 @@
                     </div>
 
                         <div class = "fade">
-                            <h2 class = "HeaderPoint">Events in JavaScript</h2>
+                            <h2 class = "HeaderPoint">Function and syntax of JSON</h2>
                             <h3>
                                 Time to bring your website to life!
                                 JavaScript, also abbreviated as JS, is a high-level, object-oriented scripting language used to program functionality to an HTML page.
