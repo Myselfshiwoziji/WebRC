@@ -160,17 +160,24 @@
                                                     <br>}
 
                         </h3>
+                        <h3>
+                            In your HTML, you can then configure each button to run the function with a different hint_id:
+                        </h3>
+                        <h3>
+                            <code>&lt;button class="hint-button" onclick="buttonclick(0)"&gt;Hint&lt;/button&gt;</code>
+                        </h3>
+                        
                         <h3> Which produces the following results:</h3>
                         <iframe src = "lesson-9-stuff/lesson-9-page-parameter-example-2.html" style = "width: auto; height: auto;"></iframe>
                     </div>
                     
                     <div class = "fade">
                         <h2 class = "HeaderPoint">Declaring a variable in JS</h2>
-                        <h3> there are 3 main types of variables you will use in JS: Var, Const, and Let.</h3>
+                        <h3> there are 3 main types of variables you will use in JS: Var, Let and Const.</h3>
                         <div class = "inactive">
                             <h2 class = "contentTitle"> Var:</h2>
-                            <h3>Variables declared with var are function-scoped, meaning that they are accessible within the function where they are declared, as well as any nested functions within that function. However, variables declared with var are not block-scoped, which means they can also be accessed outside of the block where they are declared.
-
+                            <h3>
+                                Variables declared with var are function-scoped, meaning that they are accessible within the function where they are declared, as well as any nested functions within that function. However, variables declared with var are not block-scoped, which means they can also be accessed outside of the block where they are declared.
                                 It's worth noting that the var keyword has some characteristics that can lead to unexpected behavior, such as variable hoisting and the lack of block scope.
                             </h3>
                             
@@ -185,29 +192,57 @@
                             </h3>
 
                             <h2 class = "contentTitle">Const:</h2>
-                            <h3>When a variable is declared with const, its value cannot be changed once it is assigned. This makes const variables suitable for storing values that should remain constant throughout the execution of a program.
-
+                            <h3>
+                                When a variable is declared with const, its value cannot be changed once it is assigned. This makes const variables suitable for storing values that should remain constant throughout the execution of a program.
                                 Like variables declared with let, const variables are also block-scoped. They are only accessible within the block where they are declared and they are not hoisted to the top of their scope.
-
                                 However, it's important to note that while the value of a const variable cannot be reassigned, it does not mean that the value itself is immutable. If a const variable holds an object or an array, the properties or elements of that object or array can still be modified, but the variable itself cannot be reassigned to a different object or array.
-
-                               <br /> &nbsp;
-                               <br>
-                               Overall, using const helps convey the intent that a variable should remain constant, which can enhance code readability and prevent accidental reassignments. Thus, it is recommended to use const instead of var or let when declaring a variable that do not need to be reassigned.
+                            </h3>
+                            <h3>
+                                Overall, using const helps convey the intent that a variable should remain constant, which can enhance code readability and prevent accidental reassignments. Thus, it is recommended to use const instead of var or let when declaring a variable that do not need to be reassigned.
                             </h3>
 
-
+                            <h2 class = "contentTitle">Which to Use?</h2>
+                            <h3>
+                               It is best practise to first atttempt to use <code>const</code> to prevent accidentally reasigning variables that won't be changed.
+                               If the variable will be changed, try to use <code>let</code> to keep the scope of your variable to your block.
+                               This will prevent accidentally accessing an old variable outside the relevant area if you have variables with similar names.
+                               Only declare variables with <code>var</code> if necessary
+                            </h3>
                         </div>
                         
                     </div>
 
                         <div class = "fade">
-                            <h2 class = "HeaderPoint">Function and syntax of JSON</h2>
-                            <h2 class = "contentTitle">What is JSON?</h2>
+                            <h2 class = "HeaderPoint">Function and Syntax of JSON</h2>
                             <h3>
-                                JSON (short for JavaScript Object Notation) is a lightweight data interchange format commonly used for exchanging data between a web server and a client, or between different parts of a program. It is language-independent and easy for humans to read and write, while also being easy for machines to parse and generate.
+                                JSON, or JavaScript Object Notation, is a file format designed to store key-value pairs of variables in a human readable format.
+                                Although designed for JavaScript, many programming languages now parse JSON, making it a valuable format to store and transmit data between programs.
+                            </h3>
 
-                                <br>It is based on a key-value pair structure, with data being organised into objects (unordered collections of key-value pairs) and arrays (ordered lists of values). These values can be strings, numbers, booleans, null, objects, or arrays. Keys are always strings, and each key is followed by a colon.
+                            <h2 class = "contentTitle">Creating a JSON File</h2>
+                            <h3>
+                                Like with other file types, give your file a name ending in <code>.json</code> to declare it for JSON. Such as:
+                            </h3>
+                            <h3>
+                                <code>examplefile.json</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">JSON Formatting</h2>
+                            <h3>
+                                JSON data comes in a form similar to JavaScript Objects or Python Dictionaries: with key-value pairs.
+                                Each value (either a number, string, boolean, array, null, or nested key-value pair) is assigned a string name, or key, from which the value can be called.
+                            </h3>
+
+                            <h2 class = "contentTitle">JSON Syntax</h2>
+                            <h3>
+                                JSON syntax is similar to that of JavaScript Objects, but a lot stricter!
+                                Keys must always be string, strings must always be written with double quotation marks (""), and the final value can't have a comma (known as a trailing comma).
+                            </h3>
+
+                            <h2 class = "contentTitle">Accessing JSON in JavaScript</h2>
+                            <h3>
+                                To be added.
+>>>>>>> ef6304471812c89e1aa990743f094b8e23e0d006
                             </h3>
                             <h2 class = "contentTitle">Syntax of JSON:</h2>
                         </div>
