@@ -44,6 +44,7 @@
                     <h3 class = "letab active">What is JavaScript?</h3>
                     <h3 class = "letab">Setting Up JavaScript</h3>
                     <h3 class = "letab">Modifying HTML Attributes</h3>
+                    <h3 class = "letab">JavaScript Functions</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -162,7 +163,90 @@
                                 Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
                             </h3>
                         </div>
-                        
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">JavaScript Functions</h2>
+                        <div class = "inactive">
+                            <h3>
+                                Write your code within a function so that it can be executed multiple times based on the user's input:
+                            </h3>
+                            <h3>
+                                <code>
+                                    function exampleFunction()&lcub;<br>
+                                    <pre>   alert("Hello World!")</pre>
+                                    &rcub;
+                                </code>
+                            </h3>
+                            
+                            <h3>
+                                Then declare your JavaScript variable with:
+                            </h3>
+                            <h3>
+                                <code>let exampleElement = document.getElementbyID("exampleId");</code>
+                            </h3>
+                            
+                            <h2 class = "contentTitle">.innerHTML</h2>
+                            <h3>
+                                Use <code>.innerHTML</code> to read or modify the contents of your element
+                                (such as text or more HTML):
+                            </h3>
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                                <br>
+                                <code>htmlContent.innerHTML = "new HTML content";</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">.src</h2>
+                            <h3>
+                                Use <code>.src</code> to read and modify what external recources (i.e. images, audio and videos) an element uses:
+                            </h3>
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                                <br>
+                                <code>htmlContent.src = "new URL";</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">.style</h2>
+                            <h3>
+                                Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
+                            </h3>
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId")
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.style.exampleStyleAttribute = "new style";
+                                </code>
+                            </h3>
+                            <h3>
+                                <code>.style</code> alone returns an object (list) containing every style attribute.
+                                Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
+                                which is simpler to read and change.
+                            </h3>
+
+                            <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
+                            <h3>
+                                Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
+                            </h3>
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.add("new-class");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.remove("old-class");
+                                </code>
+                            </h3>
+                            <h3>
+                                Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
+                            </h3>
+                        </div>
                     </div>
 
                     <div class = "fade">
