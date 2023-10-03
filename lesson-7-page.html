@@ -73,15 +73,27 @@
                             Once created, return to your HTML document and type:
                         </h3>
                         <h3>
-                            <code> &lt;script src = "javascript_file_name.js"&gt;&lt;/script&gt;</code>
+                            <code>&lt;script src = "javascript_file_name.js"&gt;&lt;/script&gt;</code>
                         </h3>
                         <h3>
                             Unlike with CSS files, which are placed in the header, it is best practice to link your JavaScript file just before the <code>&lt;/body&gt;</code> closing tab.
                             This is so all HTML elements are loaded before the script runs.
                         </h3>
-                        <h3>
-                            Once written, you should now be able to code your JavaScript file to monitor and manipulate the HTML page.
-                        </h3>
+
+                        <h2 class = "contentTitle">Hello, World!</h2>
+                            <h3>
+                                Now that you've linked your file, its time for your first script! Type:
+                            </h3>
+                            <h3>
+                                <code>console.log("Hello, World!");</code>
+                            </h3>
+                            <h3>
+                                and inspect your page!
+                            </h3>
+                            <h3>
+                                If you've done everything correctly, you should see your message in the "Console" tab.
+                                In the future, checking the console for error messages will be quintessential to fix bugs.
+                            </h3>
                     </div>
                     
                     <div class = "fade">
@@ -184,67 +196,6 @@
                             </h3>
                             <h3>
                                 <code>let exampleElement = document.getElementbyID("exampleId");</code>
-                            </h3>
-                            
-                            <h2 class = "contentTitle">.innerHTML</h2>
-                            <h3>
-                                Use <code>.innerHTML</code> to read or modify the contents of your element
-                                (such as text or more HTML):
-                            </h3>
-                            <h3>
-                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
-                                <br>
-                                <code>htmlContent.innerHTML = "new HTML content";</code>
-                            </h3>
-
-                            <h2 class = "contentTitle">.src</h2>
-                            <h3>
-                                Use <code>.src</code> to read and modify what external recources (i.e. images, audio and videos) an element uses:
-                            </h3>
-                            <h3>
-                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
-                                <br>
-                                <code>htmlContent.src = "new URL";</code>
-                            </h3>
-
-                            <h2 class = "contentTitle">.style</h2>
-                            <h3>
-                                Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
-                            </h3>
-                            <h3>
-                                <code>
-                                    let htmlContent = document.getElementbyID("exampleId")
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.style.exampleStyleAttribute = "new style";
-                                </code>
-                            </h3>
-                            <h3>
-                                <code>.style</code> alone returns an object (list) containing every style attribute.
-                                Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
-                                which is simpler to read and change.
-                            </h3>
-
-                            <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
-                            <h3>
-                                Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
-                            </h3>
-                            <h3>
-                                <code>
-                                    let htmlContent = document.getElementbyID("exampleId");
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.classList.add("new-class");
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.classList.remove("old-class");
-                                </code>
-                            </h3>
-                            <h3>
-                                Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
                             </h3>
                         </div>
                     </div>
