@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 5</title>
+    <link rel ="stylesheet" href = "Styles/loadingpage.css">
+    <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
+    <link rel = "stylesheet" href = "Styles/mainpage.css">
+    <link rel = "stylesheet" href = "Styles/LessonScreenFormat.css">
+    <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
+</head>
+
+<body>
+    <section class = "showcase" id = "main">
+        <header class = "pageheader">
+            <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web Dev Course&gt;</a></h2>
+            <span class = "main_toggle" onclick="openNav()"></span>
+        </header>
+        
+        <div class = "main_text" id = "main-text">
+            <h2>
+                Lesson 5:
+                <br>
+                Combining HTML and CSS
+            </h2>
+            <dialog class = "Lecture" id="LectureVid">
+                <div class = "LectureVideo">
+                    <div>
+                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
+                        <button id = "closeButtonModal" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+                    </div>
+                    <video id = "modalVideo"controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                        <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                    </video>
+
+                </div>
+            </dialog>
+            <a data-open-modal class = "LectureButton" id = "openModal">Watch Lecture</a>
+            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+
+        </div>
+
+        <div class = "lessonformat">
+            <div class = "container">
+                <div class = "tabs">
+                    <h3 class = "letab active">What is a div element?</h3>
+                    <h3 class = "letab">Linking CSS to HTML </h3>
+                    <h3 class = "letab">Padding, Border and Margin</h3>
+                    <h3 class = "letab">Practice Work</h3>
+                </div>
+
+                <div class = "tab-content">
+                    <div class = "active fade">
+                        <h2 class = "HeaderPoint">What is a div element?</h2>
+                        <h3>In HTML, a &lt;div&gt; is a container element used to logically group and organize other HTML elements on a web page. The name "div" stands for "division" or "divider." It does not have any inherent meaning or default styling but serves as a flexible and generic container that allows you to apply your own styles and structure.
+
+                            You can use the &lt;div&gt; element to create layout structures, define sections, group related elements together, apply styles, and control the positioning of elements on a webpage. It is a block-level element, meaning it starts on a new line and takes up the full width available by default, but can be styled and positioned using CSS.
+                        </h3>
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Linking CSS to HTML</h2>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle">Getting your HTML to recogise your CSS file</h2>
+                            <h3>To link a CSS document to HTML, you can use the syntax:<br /> <code>&lt;link rel = "stylesheet" href = "link to your CSS document"&gt;</code>
+
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Coding CSS directly in HTML file</h2><h3>if you want to directly put CSS code in HTML, you can use the syntax:
+                                <br /> <code>&lt; styles = "background-color: ;color: ;"&gt;</code>
+                                <br /> <code> An example: &lt;h1 style = "color: rgb(255,255,255);"&gt; hello world! &lt;/h1&gt; </code>
+                                <br /> <code>this will produce the sentence "hello world!" in white.</code>
+                                <br /> <code>Do note that all CSS assignments from lesson 3 - 4 will also work and have the same syntax.</code>
+
+                            </h2>
+                        </div>
+                        
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Padding, Border and Margin</h2>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle"> Padding</h2>
+                            <h3> In HTML, padding refers to the space between the content of an element and its border. It allows you to create space inside an element, pushing the content away from the edges.
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Border</h2>
+                            <h3>In HTML, a border refers to the boundary or outline that surrounds an element. It is a visual property that helps differentiate and define the edges of an element on a web page.
+
+                                Borders can be applied to various HTML elements such as &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, and more. They can be customized in terms of color, style, and width.
+                            </h3>
+
+                            <h2 class = "contentTitle">Margins</h2>
+                            <h3>In HTML, a border refers to the boundary or outline that surrounds an element. It is a visual property that helps differentiate and define the edges of an element on a web page.
+
+                                Borders can be applied to various HTML elements such as &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, and more. They can be customized in terms of color, style, and width.
+                            </h3>
+                        </div>
+                    </div>
+                    
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Practice Work:</h2>
+                        <div class = "inactive">
+                            <h3>no work, just take a good rest :&gt;</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "footer" id = "main-text">
+            <a class = "LectureButton bottombuttons" href="lesson-4-page.html">Previous Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-6-page.html">Next Lesson</a>
+        </div>
+    </section>
+
+    <div id = "main_side" class="main_menu"></div>
+    </body>
+
+    <div class = "loader"></div>
+    <div class = "loading" src = "Imgs_and_stuff/rat.jpg"></div>
+
+    <script src = "Javascript/sidemenu.js"></script>
+    <script src = "Javascript/loader.js"></script>
+    <script src= "Javascript/AlternativeContentDisplay.js"></script>
+    <script src = "Javascript/videoModal.js"></script>
+
+</html>

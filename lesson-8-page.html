@@ -20,8 +20,9 @@
             <h2>
                 Lesson 8:
                 <br>
-                Introduction to JavaScript
+                Further JS:
             </h2>
+    
             <dialog class = "Lecture" id="LectureVid">
                 <div class = "LectureVideo">
                     <div>
@@ -31,6 +32,7 @@
                     <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
                         <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
                     </video>
+
                 </div>
             </dialog>
             <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
@@ -41,213 +43,237 @@
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "letab active">What is JavaScript?</h3>
-                    <h3 class = "letab">Setting Up JavaScript</h3>
-                    <h3 class = "letab">Modifying HTML Attributes</h3>
-                    <h3 class = "letab">JavaScript Functions</h3>
+                    <h3 class = "letab active">Events in JavaScript</h3>
+                    <h3 class = "letab">More about Parameters</h3>
+                    <h3 class = "letab">Variables in JavaScript</h3>
+                    <h3 class = "letab">Function and Syntax of JSON</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
                 <div class = "tab-content">
                     <div class = "active fade">
-                        <h2 class = "HeaderPoint">What is JavaScript?</h2>
+                        <h2 class = "HeaderPoint">Events in JavaScript</h2>
+                        <h2 class = "contentTitle">
+                            What is an event in JS?
+                        </h2>
                         <h3>
-                            Time to bring your website to life!
+                            In JavaScript (JS), events are actions or occurrences that happen in the user interface or the browser. These events can be triggered by various actions, such as a user clicking a button, pressing a key, or the browser finishing loading a web page.
                         </h3>
+
+                        <h2 class = "contentTitle">
+                            Event Listeners
+                        </h2>
                         <h3>
-                            JavaScript, also abbreviated as JS, is a high-level, object-oriented scripting language used to program functionality to an HTML page.
-                            The language is quintessential for web developers to process user inputs and manipulate HTML and CSS content, taking a website beyond static slideshow.
+                            An event listener is required if you want your program to recognise that you called an event to execute a function. For every function that you put, you will have to add an event listener to an event in JS (for example, the clicking of a button). In short, Event listeners "listen" for specific events and execute a function when the event occurs.
                         </h3>
+
+                        <h2 class = "contentTitle">Types of Events in JS</h2>
+                            <h2>&nbsp;&nbsp;&nbsp;onclick()</h2>
+                            <h3>
+                                The onclick listener in JavaScript is an event handler that is used to execute a particular piece of code when an element, such as a button or a link, is clicked by the user. It is commonly used to create interactivity and trigger actions in response to user input.
+                            </h3>
+                            <h2> &nbsp;&nbsp;&nbsp;mousedown()</h2>
+                            <h3>
+                                Occurs when the mouse button is pressed down. This is different from onclick() because it detects if a mouse button is being held down instead of clicked.
+                            </h3>
+                            <h2> &nbsp;&nbsp;&nbsp;mouseover()</h2>
+                            <h3>
+                                Occurs when the mouse pointer enters an element.
+                            </h3>
+                            <h2> &nbsp;&nbsp;&nbsp;keydown()</h2>
+                            <h3>
+                                Occurs when a key is pressed and held down.
+                            </h3>
+                            <h2>&nbsp;&nbsp;&nbsp;keypress()</h2>
+                            <h3>
+                                Occurs when a key is pressed down and released.
+                            </h3>
+                            <h2>&nbsp;&nbsp;&nbsp;load()</h2>
+                            <h3>
+                                Occurs when the page/document has finished loading. This is primarily for loading screens, which we will cover in one of our extra lessons (Lesson 11 about animations)
+                            </h3>
+                        
+                        <h2 class = "contentTitle">Parameters</h2>
                         <h3>
-                            Javascript can interact with HTML in many ways, but most often you will link functions to buttons and other user actions,
-                            manipulating elements by finding their assigned IDs and making respective modifications.
+                            In JavaScript, parameters are the values passed to a function when it is called. A function can have zero or more parameters, which are defined in the function's declaration. Note that parameters in JavaScript are optional, meaning that you can define a function with no parameters with empty brackets (for example, onclick())    
                         </h3>
+                        <h2>&nbsp;&nbsp;What are parameters used for?</h2>
                         <h3>
-                            JavaScript is often paired with 3rd-party libraries such as JQuery. For simplicity, this course will only cover with fundamental JS.
+                            In JavaScript, parameters are used in function definitions to specify the variables that a function expects to receive when it is called. Parameters act as placeholders for values that will be passed into the function.
+
+                            <br>Function parameters allow you to pass values to a function so that you can use and manipulate those values within the function's code. They define the inputs that a function expects, and you can specify multiple parameters separated by commas.
                         </h3>
+
                     </div>
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Setting Up JavaScript</h2>
+                        <h2 class = "HeaderPoint">Uses and examples of parameters</h2>
+                        <h2 class = "contentTitle">Creating reusable and adaptable code:</h2>
                         <h3>
-                            Create a new file ending in <code>.js</code> to declare it for JavaScript.
-                            Once created, return to your HTML document and type:
+                            By using parameters, you can create functions that can work with different data or conditions. This makes your code more modular, reusable, and adaptable to different scenarios.
+                        </h3>
+                        <h3> Here is an example: Suppose you are making a quiz and want to make a hint button (with an id called Hintbutton) to display a hint (with id Hintparagraph), so you type:
+                            <br> &nbsp;
+                            <br> function buttonclick() {
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; document.querySelectorAll(#Hintbutton).length; i++) {
+                            
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (paragraph.style.display === 'none') {
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paragraph.style.display = 'block';
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paragraph.style.visibility = "visible";
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paragraph.style.display = 'none';
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paragraph.style.visibility = "hidden";
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>     } 
+                        </h3>
+                        <h3><br> 
+                            which produces the following results:
+                        </h3>
+                        <iframe src = "lesson-9-stuff/lesson-9-page-parameter-example.html" style = "width: auto; height: auto;"></iframe>
+                        <br>
+                        <h3> However, you find that if you click any button in the iframe, all paragraphs with the id paragraph will show.</h3>
+                        <h3> so instead, using parameters, you can configurate the code accordingly:</h3>
+                        <h3>
+                            const hint_texts = document.getElementsByClassName("hint-text");
+
+                            <br>function buttonclick(hint_id){  
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; hint_texts.length; i++) {
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let hint = hint_texts[i];
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let display_status = hint.style.display;
+
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i == hint_id) {
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (display_status == 'block'){
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.display = 'none';
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.visibility = "hidden";
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.display = 'block';
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.visibility = "visible";
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;else{
+                                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.display = 'none';
+                                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.visibility = "hidden";
+                                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;}
+                                                    <br>&nbsp;&nbsp;}
+                                                    <br>}
+
                         </h3>
                         <h3>
-                            <code> &lt;script src = "javascript_file_name.js"&gt;&lt;/script&gt;</code>
+                            In your HTML, you can then configure each button to run the function with a different hint_id:
                         </h3>
                         <h3>
-                            Unlike with CSS files, which are placed in the header, it is best practice to link your JavaScript file just before the <code>&lt;/body&gt;</code> closing tab.
-                            This is so all HTML elements are loaded before the script runs.
+                            <code>&lt;button class="hint-button" onclick="buttonclick(0)"&gt;Hint&lt;/button&gt;</code>
                         </h3>
-                        <h3>
-                            Once written, you should now be able to code your JavaScript file to monitor and manipulate the HTML page.
-                        </h3>
+                        
+                        <h3> Which produces the following results:</h3>
+                        <iframe src = "lesson-9-stuff/lesson-9-page-parameter-example-2.html" style = "width: auto; height: auto;"></iframe>
                     </div>
                     
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Modifying HTML Attributes</h2>
+                        <h2 class = "HeaderPoint">Declaring a variable in JS</h2>
+                        <h3> there are 3 main types of variables you will use in JS: Var, Let and Const.</h3>
                         <div class = "inactive">
-                            <h2 class = "contentTitle">.getElementbyID</h2>
+                            <h2 class = "contentTitle"> Var:</h2>
                             <h3>
-                                To modify an element in your HTML file, you'll first need to tell the JavaScript file where to look.
-                                The most straightforward way to do this is to first give your HTML element an id:
-                            </h3>
-                            <h3>
-                                <code>&lt;div id="exampleId"&gt;&lt;/div&gt;</code>
-                            </h3>
-                            <h3>
-                                Then declare your JavaScript variable with:
-                            </h3>
-                            <h3>
-                                <code>let exampleElement = document.getElementbyID("exampleId");</code>
+                                Variables declared with var are function-scoped, meaning that they are accessible within the function where they are declared, as well as any nested functions within that function. However, variables declared with var are not block-scoped, which means they can also be accessed outside of the block where they are declared.
+                                It's worth noting that the var keyword has some characteristics that can lead to unexpected behavior, such as variable hoisting and the lack of block scope.
                             </h3>
                             
-                            <h2 class = "contentTitle">.innerHTML</h2>
-                            <h3>
-                                Use <code>.innerHTML</code> to read or modify the contents of your element
-                                (such as text or more HTML):
-                            </h3>
-                            <h3>
-                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                            <h2 class = "contentTitle">Let:</h2>
+                            <h3>Variables declared with let are similar to variables declared with var in terms of their ability to store values. However, the key difference is that variables declared with let are block-scoped, meaning they are only accessible within the block where they are declared.
+
+                                Unlike var, variables declared with let are not hoisted to the top of their scope. This means that you cannot access a let variable before it has been declared in your code.
+
+                                <br>&nbsp;
                                 <br>
-                                <code>htmlContent.innerHTML = "new HTML content";</code>
+                                Thus, using let allows for better control over variable scope and can help prevent unintended issues that can occur with var. Therefore, it is generally recommended to use this instead of var when declaring variables, especially in modern JavaScript development.
                             </h3>
 
-                            <h2 class = "contentTitle">.src</h2>
+                            <h2 class = "contentTitle">Const:</h2>
                             <h3>
-                                Use <code>.src</code> to read and modify what external recources (i.e. images, audio and videos) an element uses:
+                                When a variable is declared with const, its value cannot be changed once it is assigned. This makes const variables suitable for storing values that should remain constant throughout the execution of a program.
+                                Like variables declared with let, const variables are also block-scoped. They are only accessible within the block where they are declared and they are not hoisted to the top of their scope.
+                                However, it's important to note that while the value of a const variable cannot be reassigned, it does not mean that the value itself is immutable. If a const variable holds an object or an array, the properties or elements of that object or array can still be modified, but the variable itself cannot be reassigned to a different object or array.
                             </h3>
                             <h3>
-                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
-                                <br>
-                                <code>htmlContent.src = "new URL";</code>
-                            </h3>
-
-                            <h2 class = "contentTitle">.style</h2>
-                            <h3>
-                                Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
-                            </h3>
-                            <h3>
-                                <code>
-                                    let htmlContent = document.getElementbyID("exampleId")
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.style.exampleStyleAttribute = "new style";
-                                </code>
-                            </h3>
-                            <h3>
-                                <code>.style</code> alone returns an object (list) containing every style attribute.
-                                Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
-                                which is simpler to read and change.
+                                Overall, using const helps convey the intent that a variable should remain constant, which can enhance code readability and prevent accidental reassignments. Thus, it is recommended to use const instead of var or let when declaring a variable that do not need to be reassigned.
                             </h3>
 
-                            <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
+                            <h2 class = "contentTitle">Which to Use?</h2>
                             <h3>
-                                Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
-                            </h3>
-                            <h3>
-                                <code>
-                                    let htmlContent = document.getElementbyID("exampleId");
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.classList.add("new-class");
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.classList.remove("old-class");
-                                </code>
-                            </h3>
-                            <h3>
-                                Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
+                               It is best practise to first attempt to use <code>const</code> to prevent accidentally reasigning variables that won't be changed.
+                               If the variable will be changed, try to use <code>let</code> to keep the scope of your variable to your block.
+                               This will prevent accidentally accessing an old variable outside the relevant area if you have variables with similar names.
+                               Try to only declare variables with <code>var</code> if necessary.
                             </h3>
                         </div>
+                        
                     </div>
 
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">JavaScript Functions</h2>
-                        <div class = "inactive">
+                        <div class = "fade">
+                            <h2 class = "HeaderPoint">Function and Syntax of JSON</h2>
                             <h3>
-                                Write your code within a function so that it can be executed multiple times based on the user's input:
-                            </h3>
-                            <h3>
-                                <code>
-                                    function exampleFunction()&lcub;<br>
-                                    <pre>   alert("Hello World!")</pre>
-                                    &rcub;
-                                </code>
-                            </h3>
-                            
-                            <h3>
-                                Then declare your JavaScript variable with:
-                            </h3>
-                            <h3>
-                                <code>let exampleElement = document.getElementbyID("exampleId");</code>
-                            </h3>
-                            
-                            <h2 class = "contentTitle">.innerHTML</h2>
-                            <h3>
-                                Use <code>.innerHTML</code> to read or modify the contents of your element
-                                (such as text or more HTML):
-                            </h3>
-                            <h3>
-                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
-                                <br>
-                                <code>htmlContent.innerHTML = "new HTML content";</code>
+                                JSON, or JavaScript Object Notation, is a file format designed to store key-value pairs of variables in a human readable format.
+                                Although designed for JavaScript, many programming languages now parse JSON, making it a valuable format to store and transmit data between programs.
                             </h3>
 
-                            <h2 class = "contentTitle">.src</h2>
+                            <h2 class = "contentTitle">Creating a JSON File</h2>
                             <h3>
-                                Use <code>.src</code> to read and modify what external recources (i.e. images, audio and videos) an element uses:
+                                Like with other file types, give your file a name ending in <code>.json</code> to declare it for JSON. Such as:
                             </h3>
                             <h3>
-                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
-                                <br>
-                                <code>htmlContent.src = "new URL";</code>
+                                <code>examplefile.json</code>
                             </h3>
 
-                            <h2 class = "contentTitle">.style</h2>
+                            <h2 class = "contentTitle">JSON Formatting</h2>
                             <h3>
-                                Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
-                            </h3>
-                            <h3>
-                                <code>
-                                    let htmlContent = document.getElementbyID("exampleId")
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.style.exampleStyleAttribute = "new style";
-                                </code>
-                            </h3>
-                            <h3>
-                                <code>.style</code> alone returns an object (list) containing every style attribute.
-                                Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
-                                which is simpler to read and change.
+                                JSON data comes in a form similar to JavaScript Objects or Python Dictionaries: with key-value pairs.
+                                Each value (either a number, string, boolean, array, null, or nested key-value pair) is assigned a string name, or key, from which the value can be called.
                             </h3>
 
-                            <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
+                            <h2 class = "contentTitle">JSON Syntax</h2>
                             <h3>
-                                Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
+                                JSON syntax is similar to that of JavaScript Objects, but a lot stricter!
+                                Keys must always be string, strings must always be written with double quotation marks (""), and the final value can't have a comma (known as a trailing comma).
                             </h3>
+
+                            <h2 class = "contentTitle">Accessing JSON in JavaScript</h2>
                             <h3>
-                                <code>
-                                    let htmlContent = document.getElementbyID("exampleId");
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.classList.add("new-class");
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.classList.remove("old-class");
-                                </code>
+                                To be added.
+>>>>>>> ef6304471812c89e1aa990743f094b8e23e0d006
                             </h3>
+                            <h2 class = "contentTitle">Syntax of JSON:</h2>
                             <h3>
-                                Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
+                                The syntax of JSON is pretty similar to python, as with JS. Although JSON files only accept strings as keys, they are not limited to numbers and letters. Some other exampels can include: Booleans (true or False), Objects, or Arrays.
+
+                                <br> However, a difference from python, is that data in JSON is alway stored in Key-Value pairs. The keys must be enclosed in strings, then followed by a colon (<code>:</code>), then the corresponding value. 
+                                    If you wish to have multiple key pairs, they can be seperated by commas. Here is an example of a JSON object:
+                                    <br>{
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"name": "John Doe",
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"age": 30,
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"email": "johndoe@example.com",
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"address": {
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"street": "123 Main St",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"city": "Anytown",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"state": "Anystate",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"postalCode": "12345"
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;},
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"phoneNumbers": [
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "home",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"number": "555-1234"
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "work",
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"number": "555-5678"
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+                                                <br>}
                             </h3>
                         </div>
-                    </div>
+                        <div class = "fade">
 
                     <div class = "fade">
                         <h2 class = "HeaderPoint">Practice Work:</h2>
@@ -274,7 +300,7 @@
 
         <div class = "footer" id = "main-text">
             <a class = "LectureButton bottombuttons" href="lesson-7-page.html">Previous Lesson</a>
-            <a class = "LectureButton bottombuttons" href="lesson-9-page.html">Next Lesson</a>
+            <a class = "LectureButton bottombuttons" href="#">Next Lesson</a>
         </div>
     </section>
 
