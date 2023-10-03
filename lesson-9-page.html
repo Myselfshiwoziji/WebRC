@@ -250,7 +250,27 @@
 
                                 <br> However, a difference from python, is that data in JSON is alway stored in Key-Value pairs. The keys must be enclosed in strings, then followed by a colon (<code>:</code>), then the corresponding value. 
                                     If you wish to have multiple key pairs, they can be seperated by commas. Here is an example of a JSON object:
-                                <br> {}
+                                    <br>{
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"name": "John Doe",
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"age": 30,
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"email": "johndoe@example.com",
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"address": {
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"street": "123 Main St",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"city": "Anytown",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"state": "Anystate",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"postalCode": "12345"
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;},
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"phoneNumbers": [
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "home",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"number": "555-1234"
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "work",
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"number": "555-5678"
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+                                                <br>}
                             </h3>
                         </div>
                         <div class = "fade">
