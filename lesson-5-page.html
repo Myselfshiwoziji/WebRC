@@ -7,6 +7,8 @@
     <link rel = "stylesheet" href = "Styles/mainpage.css">
     <link rel = "stylesheet" href = "Styles/LessonScreenFormat.css">
     <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
+    <link rel ="stylesheet" href = "Styles/ContentDisplay.css">
+    <link rel = "stylesheet" href = "Styles/Modal.css">
 </head>
 
 <body>
@@ -20,12 +22,12 @@
             <h2>
                 Lesson 5:
                 <br>
-                Combining HTML and CSS
+                Displaying Elements
             </h2>
             <dialog class = "Lecture" id="LectureVid">
                 <div class = "LectureVideo">
                     <div>
-                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
+                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 5 Video Recording:</h2>                               
                         <button id = "closeButtonModal" style = "margin-bottom: 10px; margin-top: 50px;"></button>
                     </div>
                     <video id = "modalVideo"controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
@@ -42,66 +44,295 @@
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "letab active">What is a div element?</h3>
-                    <h3 class = "letab">Linking CSS to HTML </h3>
-                    <h3 class = "letab">Padding, Border and Margin</h3>
+                    <h3 class = "letab active">What is the display declaration?</h3>
+                    <h3 class = "letab">What is the position declaration?</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
                 <div class = "tab-content">
                     <div class = "active fade">
-                        <h2 class = "HeaderPoint">What is a div element?</h2>
-                        <h3>In HTML, a &lt;div&gt; is a container element used to logically group and organize other HTML elements on a web page. The name "div" stands for "division" or "divider." It does not have any inherent meaning or default styling but serves as a flexible and generic container that allows you to apply your own styles and structure.
-
-                            You can use the &lt;div&gt; element to create layout structures, define sections, group related elements together, apply styles, and control the positioning of elements on a webpage. It is a block-level element, meaning it starts on a new line and takes up the full width available by default, but can be styled and positioned using CSS.
+                        <h2 class = "HeaderPoint">What is a display declaration?</h2>
+                        <h3 style = "margin-left: 15px;">In CSS, a display declaration is used to define how an HTML element is rendered or displayed on a webpage. It determines the type of box model used for an element, which affects its positioning, layout, and interaction with other elements.
+                            The display property in CSS offers several values that can be assigned to an element. Some common values include:
                         </h3>
-                    </div>
 
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">Linking CSS to HTML</h2>
                         <div class = "inactive">
-                            <h2 class = "contentTitle">Getting your HTML to recogise your CSS file</h2>
-                            <h3>To link a CSS document to HTML, you can use the syntax:<br /> <code>&lt;link rel = "stylesheet" href = "link to your CSS document"&gt;</code>
+                            <h2 class = "contentTitle">None:<h2><h3> This is a the most simple attribute for the display declaration, as, just like the name suggests, it causes the element that has this declaration to not appear at all. It should also be noted that the usage of the none attribute will also cause the element to not take up any physical space either.
+                                When you use this declaration, use the syntax:<br /> <code>display: none;</code>
+                            </h3>
+
+                            <h2 class = "contentTitle"> Block:</h2>
+                            <h3>When using this attribute in conjunction with the display declaration, it causes the element that was defined to have a block display to create a rectangular block that takes up the entire screen. This rectangular shape might not originally be seen, but when you use the Command Shift C on the element you will see that it has an invisible size of the rectangle.
+                                When you use this declaration, use the syntax:<br /> <code>display: block;</code>
 
                             </h3>
                             
-                            <h2 class = "contentTitle">Coding CSS directly in HTML file</h2><h3>if you want to directly put CSS code in HTML, you can use the syntax:
-                                <br /> <code>&lt; styles = "background-color: ;color: ;"&gt;</code>
-                                <br /> <code> An example: &lt;h1 style = "color: rgb(255,255,255);"&gt; hello world! &lt;/h1&gt; </code>
-                                <br /> <code>this will produce the sentence "hello world!" in white.</code>
-                                <br /> <code>Do note that all CSS assignments from lesson 3 - 4 will also work and have the same syntax.</code>
+                            <h2 class = "contentTitle">Inline:</h2><h3>When you use the inline attribute to the display declaration, it causes the the element that has this declaration to have a size that changes depending on the amount of space that the elements inside of it take up. 
+                                For example, when you have a div that has this attribute, then the size of the div will only be as large as the total area that the elements inside of it take up. What's interesting about this element is that unlike the block attribute, if there are any extra space left over
+                                by the Inline element, then that space can be taken up by other Inline elements. Side note: you can actually add a hyphen to end of the inline and chain on another attribute to have the element take on multiple attributes.
+                                When you use this declaration, use the syntax:<br /> <code>display: inline;</code>
+                            </h3>
 
-                            </h2>
+                            <h2 class = "contentTitle">Grid:</h2><h3>When you use this attribute, it turns the element that has this declaration into a gridbox. This basically measn that elements inside the container element will be placed in grid like formats based off of how you want it to look like. Once you do turn the element into a gridbox, there will be a variety of different extra declarations and new concepts open for you to use to customise the gridbox's display options, such as:
+                            </h3>
+                            <dialog class = "ExampleDisplay" id = "eDisplay1">
+                                <div class = "content-container">
+                                    <div class = "ContentShown minifade">
+                                        <div class = "headercontainer">
+                                            <h2 class = "HeaderPoint">grid-template-columns:</h2>
+                                            <button id = "closeButtonModal" onclick="eDisplay1.close()"></button>
+                                        </div>
+                                        <h3>When you use this declaration in a element that has the display type of a grid, you will be able to customise the width and quantity of grid rows there are in a grid. For example, using <code>grid-template-columns: 200px 200px 200px;</code> would create 3 columns that have the width of 200 pixels. Please note that in a grid format the content inside the grid will be displayed horizontally, and will wrap to a new line when there isnt enought space for a another element to fit inside.
+                                            Also as another note, you can type <code>grid-template-columns: repeat (number of rows, size of the row);</code> to create multiple identical rows of the same size without needing to constantly type it out.
+                                        </h3>
+                                        <div class = "ContentButtonContainer">
+                                            <a class="prev" onclick="plusSlides(-1)">&#10094; Previous</a>
+                                            <a class="next" onclick="plusSlides(1)"> Next &#10095;</a>
+                                        </div>
+                                    </div>
+
+                                    <div class = "ContentShown minifade">
+                                        <div class = "headercontainer">
+                                            <h2 class = "HeaderPoint">The fr unit:</h2>
+                                            <button id = "closeButtonModal" onclick="eDisplay1.close()"></button>
+                                        </div>
+
+                                        <h3>Interstingly, when using the grid display declaration, a new unit of measurement is open to be used by you. This unit is quite important when designing grid formats as it allows for precise customisation of the grid rows. To understand this, let's first understand what the fr unit represents.
+                                            The fr unit is a unit of measurement that basically symbolises the fraction of space in an element that it takes up. For example, if we were to type <br/><code>grid-template-columns: 1fr 1fr 1fr</code>, we would create 3 rows in our grid element that all each take up 1/3rd of the width of the element.
+                                        </h3>
+                                        <div class = "ContentButtonContainer">
+                                            <a class="prev" onclick="plusSlides(-1)">&#10094; Previous</a>
+                                            <a class="next" onclick="plusSlides(1)"> Next &#10095;</a>
+                                        </div>
+                                    </div>
+
+                                    <div class = "ContentShown minifade">
+                                        <div class = "headercontainer">
+                                            <h2 class = "HeaderPoint">grid-auto-rows:</h2>
+                                            <button id = "closeButtonModal" onclick="eDisplay1.close()"></button>
+                                        </div>
+
+                                        <h3>Much like grid-template-columns the declaration grid-auto-rows controls the size of the gridboxes. However, this declaration controls the opposite of the grid-template-columns declaration, as this declaration controls the height of a gridbox. Just as another side note but all rules that follow the grid-template-columns also apply here (eg using repeat the element wrapping);
+                                        </h3>
+                                        <div class = "ContentButtonContainer">
+                                            <a class="prev" onclick="plusSlides(-1)">&#10094; Previous</a>
+                                            <a class="next" onclick="plusSlides(1)"> Next &#10095;</a>
+                                        </div>
+                                    </div>
+
+                                    <div class = "ContentShown minifade">
+                                        <div class = "headercontainer">
+                                            <h2 class = "HeaderPoint">grid-column-start and grid-column-end:</h2>
+                                            <button id = "closeButtonModal" onclick="eDisplay1.close()"></button>
+                                        </div>
+
+                                        <h3>These declarations are not used for the grid element itself, but instead for the elements inside the grid element. These declarations mainly allow you to change the side of the grid boxes width. To understand how to use this declaration, let's first look at the diagram below:</h3>
+                                        <img src = "Imgs_and_stuff/1_diagram_numbered_grid_lines.png" height = "350px" width = "600px">
+                                        <h3>In the diagram above, we can see that there the lined borders of each gridbox are all labeled from 1-4. As we are currently only focusing on modifying the width, lets lust care about the ones labeled in grey spots.
+                                            The reason as to why we are doing this is because to customise the individual grid boxes width you have to set the origin point and the ending point for the width of the gridbox using the number of the gridbox lines.
+                                            For example, if we were to do <code>grid-column-start: 2; grid-column-end: 4;</code> for the first gridbox then the first gridbox would take up the space starting from the second gridline and ending at the fourth gridline (in accordance to the diagram).
+                                        </h3>
+                                        <div class = "ContentButtonContainer">
+                                            <a class="prev" onclick="plusSlides(-1)">&#10094; Previous</a>
+                                            <a class="next" onclick="plusSlides(1)"> Next &#10095;</a>
+                                        </div>
+                                    </div>
+
+                                    <div class = "ContentShown minifade">
+                                        <div class = "headercontainer">
+                                            <h2 class = "HeaderPoint">grid-row-start and grid-row-end</h2>
+                                            <button id = "closeButtonModal" onclick="eDisplay1.close()"></button>
+                                        </div>
+
+                                        <h3>Much like the previous declaration grid-row-start and grid-row-end basically follow the exact same logic as grid-column-start and grid-column-end but instead for the height. To demonstrate, lets follow the diagram below.</h3>
+                                        <img src = "Imgs_and_stuff/1_diagram_numbered_grid_lines.png" height = "350px" width = "600px">
+                                        <h3>In accordance to this diagram, if I were to give box 1 the declarations of <code>grid-row-start: 2; grid-row-end: 3</code>, then the top of box 1 would start and the second gridline row, and end at the third gridline row.
+                                        </h3>
+                                        <div class = "ContentButtonContainer">
+                                            <a class="prev" onclick="plusSlides(-1)">&#10094; Previous</a>
+                                            <a class="next" onclick="plusSlides(1)"> Next &#10095;</a>
+                                        </div>
+                                    </div>
+
+                                    <div class = "ContentShown minifade">
+                                        <div class = "headercontainer">
+                                            <h2 class = "HeaderPoint">row-gap and column-gap</h2>
+                                            <button id = "closeButtonModal" onclick="eDisplay1.close()"></button>
+                                        </div>
+
+                                        <h3>This is quite a simple declaration, and it basically states that the size of the gap between each gridbox in each row and column. For example, if I were to set the row-gap to 5px and the column-gap to 10px, then every gridbox in the grid would have a gap of 5px between each other in the x-axis and 10px in the y-axis.</h3>
+                                        <div class = "ContentButtonContainer">
+                                            <a class="prev" onclick="plusSlides(-1)">&#10094; Previous</a>
+                                            <a class="next" onclick="plusSlides(1)"> Next &#10095;</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </dialog>
+                            <a data-open-modal class = "LeButton" onclick="eDisplay1.showModal()">See Examples</a>
+                                
+
+                            <h2 class = "contentTitle">Flex:</h2><h3> This is one of the most important display attributes you will use, and probably will be the one you will use the most often. The flex attribute to the display attribute turns a element into a highly flexible and customisible container that can easily allow for easy access to a variety of alignment techniques. 
+                                Much like the grid attribute, using this option for your display attribute allows for new declarations to be used. For example:
+                                </h3>
+                                <dialog class = "ExampleDisplay" id = "eDisplay2">
+                                    <div class = "content-container">
+                                        <div class = "ContentShown2 minifade">
+                                            <div class = "headercontainer">
+                                                <h2 class = "HeaderPoint">flex-direction:</h2>
+                                                <button id = "closeButtonModal" onclick="eDisplay2.close()"></button>
+                                            </div>
+                                            <h3>When using this declaration, the content inside the flexbox will change its orientation. Typically, when we make a website, the default settings for arranging elements by a computer is vertically, however, with 
+                                                flex-direction we are able to change it so that the content inside the flexbox can be arranged horizontally. To do this, we can type in <code>flex-direction: row</code> to set the alignment settings in the flexbox to
+                                                display elements in a horizontal line. As a side note, you can also manually set the flexbox to display elements in a vertical line using the declaration <code>flex-direction: column</code>
+                                            </h3>
+                                            <div class = "ContentButtonContainer">
+                                                <a class="prev2" onclick="plusslides(-1)">&#10094; Previous</a>
+                                                <a class="next2" onclick="plusslides(1)"> Next &#10095;</a>
+                                            </div>
+                                        </div>
+    
+                                        <div class = "ContentShown2 minifade">
+                                            <div class = "headercontainer">
+                                                <h2 class = "HeaderPoint">align-items:</h2>
+                                                <button id = "closeButtonModal" onclick="eDisplay2.close()"></button>
+                                            </div>
+
+                                            <h3>The align-items declaration is quite useful in a variety of different scenarios, as it allows you to align all of the content in the element to a <u>specific area in the y-axis</u>. The align-items declaration has four main values. These values are, start, center, end, and stretch.
+                                                The start value for the align-items declaration causes all the items inside the flexbox to be aligned to the top of the flexbox, and the end value fot eh align-items declaration causes all the elements inside the flexbox to be aligned to the bottom of the flexbox.
+                                                The center value for the align-items declaration, much like what the name suggests, causes the elements inside the flexbox to be aligned to the dead center of the container. Finally, the stretch value causes all the elements to take up all the space in the flexbox evenly.
+                                            </h3>
+
+                                            <div class = "ContentButtonContainer">
+                                                <a class="prev2" onclick="plusslides(-1)">&#10094; Previous</a>
+                                                <a class="next2" onclick="plusslides(1)"> Next &#10095;</a>
+                                            </div>
+                                        </div>
+    
+                                        <div class = "ContentShown2 minifade">
+                                            <div class = "headercontainer">
+                                                <h2 class = "HeaderPoint">justify-content:</h2>
+                                                <button id = "closeButtonModal" onclick="eDisplay2.close()"></button>
+                                            </div>
+    
+                                            <h3>Much like the previous declaration, the justify-content declaration also controls the alignment of the elements relative to the flexbox itself. However, this declaration controls the alignment of the elements relative to the x-axis of the flexbox. The justify-content declaration has multiple
+                                                main values that are used to change the alignment of the elements, such as, center, flex-start, flex-end, space-between, and space-around. The flex-start value for the justify-content declaration causes the elements to be aligned towards the left of the flexbox, whereas the flex-end value causes it to be aligned
+                                                to the right. The center value causes the elements to be aligned in the center of the x-axis. The space-between value causes the elements to have an equal amount of space placed between them, and basically allows for the elements to be evenly spaced such so that it takes up the entire space of the flexbox (Note: this makes it so that the starting element
+                                                will be placed in the left corner of the flexbox, and the final one will be placed in the right corner.). Finally, the space-around value causes the elements to have some space before and after the element. This basically means that the element has some space in the left and the right of it.
+                                            </h3>
+                                            <div class = "ContentButtonContainer">
+                                                <a class="prev2" onclick="plusslides(-1)">&#10094; Previous</a>
+                                                <a class="next2" onclick="plusslides(1)"> Next &#10095;</a>
+                                            </div>
+                                        </div>
+    
+                                        <div class = "ContentShown2 minifade">
+                                            <div class = "headercontainer">
+                                                <h2 class = "HeaderPoint">align-self and justify-self</h2>
+                                                <button id = "closeButtonModal" onclick="eDisplay2.close()"></button>
+                                            </div>
+    
+                                            <h3>The align-self and the justify-self syntax is another way of re-aligning elements in the flexbox, however, rather than manipulating every single element, the -self syntax allows for the manipulation of a single element in the flexbox and it's own alignment. 
+                                                This is quite useful when creating unique web designs and restructuring your website's content. To use these declarations, you have to put it in the style of a specific element inside a flexbox, and then type in a specific value for this alignment (note: the values
+                                                in question here are the exact same as the previous two slides).
+                                            </h3>
+                
+                                            <div class = "ContentButtonContainer">
+                                                <a class="prev2" onclick="plusslides(-1)">&#10094; Previous</a>
+                                                <a class="next2" onclick="plusslides(1)"> Next &#10095;</a>
+                                            </div>
+                                        </div>
+
+                                        <div class = "ContentShown2 minifade">
+                                            <div class = "headercontainer">
+                                                <h2 class = "HeaderPoint">Order:</h2>
+                                                <button id = "closeButtonModal" onclick="eDisplay2.close()"></button>
+                                            </div>
+    
+                                            <h3>This is quite a simple declaration, as it simply decides which element goes first in the alignment of a sequence of multiple elements. For example, if I have a red, blue and yellow button, and I give the yellow button the value of <code>order: 1;</code>, then the yellow button will be the first one displayed in the sequence of elements.
+                                            </h3>
+                                            <div class = "ContentButtonContainer">
+                                                <a class="prev2" onclick="plusslides(-1)">&#10094; Previous</a>
+                                                <a class="next2" onclick="plusslides(1)"> Next &#10095;</a>
+                                            </div>
+                                        </div>
+    
+                                        <div class = "ContentShown2 minifade">
+                                            <div class = "headercontainer">
+                                                <h2 class = "HeaderPoint">row-gap and column-gap</h2>
+                                                <button id = "closeButtonModal" onclick="eDisplay2.close()"></button>
+                                            </div>
+    
+                                            <h3>The row-gap and column-gap declaration makes a return, as it can be both used in gridboxes and flexboxes, but to quicky recap on what it does, this is quite a simple declaration, and it basically states that the size of the gap between each element in flexbox for each row and column. 
+                                                For example, if I were to set the row-gap to 5px and the column-gap to 10px, then every gridbox in the grid would have a gap of 5px between each other in the x-axis and 10px in the y-axis.</h3>
+                                            <div class = "ContentButtonContainer">
+                                                <a class="prev2" onclick="plusslides(-1)">&#10094; Previous</a>
+                                                <a class="next2" onclick="plusslides(1)"> Next &#10095;</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dialog>
+
+
+                            <a data-open-modal class = "LeButton" onclick="eDisplay2.showModal()">See Examples</a>
+                        </div>
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">What is the position declaration:</h2>
+                        <h3>In CSS (Cascading Style Sheets), the "position" declaration is used to specify how an element is positioned within its containing element or the web page as a whole. 
+                            It controls the layout and placement of elements on the page. The "position" property can have several values:</h3>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle"> Static:</h2>
+                            <h3>This is the most basic position value, and is actually the default setting for the position of you don't change the positon value yourself. The static value for position basically means that the element itself
+                                can easily be manipulated on where its location on the webpage, and simply follows the normal flow of the webpage.
+                                When you use this declaration, use the syntax:<br /> <code>position: static;</code>
+
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Fixed:</h2><h3>This value for the position declaration causes the element to be stuck to the screen regardless of where the user scrolls to on the webpage. An example of this would be the youtub search bar, and how 
+                                it always sticks to the top of the Youtube homepage. When manipulating the placement of the fixed element, you can use the declarations: </h3>
+
+                                <h3 style = "margin-left: 30px;">&#x2022; top</h3>
+                                <h3 style = "margin-left: 30px;">&#x2022; bottom</h3>
+                                <h3 style = "margin-left: 30px;">&#x2022; left</h3>
+                                <h3 style = "margin-left: 30px;">&#x2022; right</h3>
+                            <h3>These declarations allow you to manipulate how far the element is from the its container element's top, bottom, left and right. For example, if I were to type <code>left:0; right: 0;</code> it would cause the element to be 0px away from the right hand side corner.</h3>
+
+
+                            <h2 class = "contentTitle">Absolute:</h2><h3>This value for the position declaration is shares alot of similarities to the Fixed vale, however, the unlike the fixed value, the absolute value only sticks itself to a fixed position inside of an element rather than on the screen itself.
+                                An example of this would be the video length display box on every Youtube video when you boot up the homepage. Much like the fixed value, the top, bottom, left, and right declarations are also used to manipulate where the element will be fixed inside of its parent element.
+                                When you use this declaration, use the syntax:<br /> <code>position: absolute;</code>
+
+                            </h3>
+
+                            <h2 class = "contentTitle">Sticky:</h2><h3>This value for the position declaration is very different from the other values, as it is sort of like a combination of them. This value for the declartion allows for you to make elements stick to your screen when you scroll pass them.
+                                For example, if I were to scroll down a page, and the top of my webpage touches an element with the sticky position, then it will be stuck there similar to that of an fixed value position element. However, when I scroll back to the place where the sticky element was taken from, it returns
+                                back to its original position, similar to that of a static element.
+                                When you use this declaration, use the syntax:<br /> <code>position: sticky;</code>
+
+                            </h3>
                         </div>
                         
                     </div>
-
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">Padding, Border and Margin</h2>
-                        <div class = "inactive">
-                            <h2 class = "contentTitle"> Padding</h2>
-                            <h3> In HTML, padding refers to the space between the content of an element and its border. It allows you to create space inside an element, pushing the content away from the edges.
-                            </h3>
-                            
-                            <h2 class = "contentTitle">Border</h2>
-                            <h3>In HTML, a border refers to the boundary or outline that surrounds an element. It is a visual property that helps differentiate and define the edges of an element on a web page.
-
-                                Borders can be applied to various HTML elements such as &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, and more. They can be customized in terms of color, style, and width.
-                            </h3>
-
-                            <h2 class = "contentTitle">Margins</h2>
-                            <h3>In HTML, a border refers to the boundary or outline that surrounds an element. It is a visual property that helps differentiate and define the edges of an element on a web page.
-
-                                Borders can be applied to various HTML elements such as &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, and more. They can be customized in terms of color, style, and width.
-                            </h3>
-                        </div>
-                    </div>
                     
+
                     <div class = "fade">
                         <h2 class = "HeaderPoint">Practice Work:</h2>
                         <div class = "inactive">
-                            <h3>no work, just take a good rest :&gt;</h3>
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Try to replicate this example below:
+                            </h2>
+
+                            <iframe class = "PracticeExample" src = "lesson-5-page-practice.html" style = "height: 400px; width: 600px;" ></iframe>
+
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Descriptions for the practice excerises below:
+                            </h2>
+                            <h3>Practice 1: Display a header that has four main buttons to touch, and the header sticks to your screen wherever your scroll </h3>
+                            <h3>Practice 2: A basic example of a website with a sticky header that sticks and unsticks to your screen when you scroll past it</h3>
+                            <h3>Practice 3: Recreating a Youtube Thumbnail of your choice (for this example we used Veretasium's Video on the Collatz Conjecture)</h3>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -114,7 +345,7 @@
     </section>
 
     <div id = "main_side" class="main_menu"></div>
-    </body>
+</body>
 
     <div class = "loader"></div>
     <div class = "loading" src = "Imgs_and_stuff/rat.jpg"></div>
@@ -123,5 +354,6 @@
     <script src = "Javascript/loader.js"></script>
     <script src= "Javascript/AlternativeContentDisplay.js"></script>
     <script src = "Javascript/videoModal.js"></script>
+    <script src = "Javascript/ContentDisplay.js"></script>
 
 </html>

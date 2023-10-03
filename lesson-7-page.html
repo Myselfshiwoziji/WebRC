@@ -20,7 +20,7 @@
             <h2>
                 Lesson 7:
                 <br>
-                Videos, Images and IFrames
+                Introduction to JavaScript
             </h2>
             <dialog class = "Lecture" id="LectureVid">
                 <div class = "LectureVideo">
@@ -31,7 +31,6 @@
                     <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
                         <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
                     </video>
-
                 </div>
             </dialog>
             <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
@@ -42,77 +41,212 @@
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "letab active">Revision: How do you put a video in HTML?</h3>
-                    <h3 class = "letab">What is an IFrame?</h3>
-                    <h3 class = "letab">Examples of IFrames</h3>
+                    <h3 class = "letab active">What is JavaScript?</h3>
+                    <h3 class = "letab">Setting Up JavaScript</h3>
+                    <h3 class = "letab">Modifying HTML Attributes</h3>
+                    <h3 class = "letab">JavaScript Functions</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
                 <div class = "tab-content">
                     <div class = "active fade">
-                        <h2 class = "HeaderPoint">Videos and Images in HTML</h2>
-                        <h3> Incase you forgot, embed in HTML, you can embed a video with the following syntax:
-                            <br> &lt; video controls &gt; &lt; source src = "Path to your video" &gt; &lt; video &gt;
-                            <br> Or an image with the following syntax:
-                            <br> &lt; img src = "Link to your image" &gt;
-                            <br> Similar methods and logic are used for IFrames.
+                        <h2 class = "HeaderPoint">What is JavaScript?</h2>
+                        <h3>
+                            Time to bring your website to life!
+                        </h3>
+                        <h3>
+                            JavaScript, also abbreviated as JS, is a high-level, object-oriented scripting language used to program functionality to an HTML page.
+                            The language is quintessential for web developers to process user inputs and manipulate HTML and CSS content, taking a website beyond static slideshow.
+                        </h3>
+                        <h3>
+                            Javascript can interact with HTML in many ways, but most often you will link functions to buttons and other user actions,
+                            manipulating elements by finding their assigned IDs and making respective modifications.
+                        </h3>
+                        <h3>
+                            JavaScript is often paired with 3rd-party libraries such as JQuery. For simplicity, this course will only cover with fundamental JS.
                         </h3>
                     </div>
-
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">What is an IFrame?</h2>
-                        <div class = "inactive">
-                            <h2 class = "contentTitle"> What are IFrames?</h2>
-                            <h3> IFrames, or otherwise known as Incline Frames, are HTML elements that allow you to embed another HTML document within the current page, essentially creating a rectangular window that displays the content of another document. When you use an iframe, you specify the source URL of the document you want to display within it, then 
-                                the content of the document specified by the source URL will be loaded and rendered inside the IFrame. In short, IFrames allows you to incorporate external content, such as videos, maps, and social media feeds, into your webpage, as well as control their styles like you would do in CSS.
-                            </h3>
-                            
-                            <h2 class = "contentTitle">How do i use an IFrame?</h2>
-                            <h3> The syntax for IFrames are similar to that of images and videos, with it being:
-                                <br> &lt; iframe src = "link to your website " width = " " height = " "&gt; &lt;/iframe &gt;
-                            </h3>
-                        </div>
-                        
+                        <h2 class = "HeaderPoint">Setting Up JavaScript</h2>
+                        <h3>
+                            Create a new file ending in <code>.js</code> to declare it for JavaScript.
+                            Once created, return to your HTML document and type:
+                        </h3>
+                        <h3>
+                            <code> &lt;script src = "javascript_file_name.js"&gt;&lt;/script&gt;</code>
+                        </h3>
+                        <h3>
+                            Unlike with CSS files, which are placed in the header, it is best practice to link your JavaScript file just before the <code>&lt;/body&gt;</code> closing tab.
+                            This is so all HTML elements are loaded before the script runs.
+                        </h3>
+                        <h3>
+                            Once written, you should now be able to code your JavaScript file to monitor and manipulate the HTML page.
+                        </h3>
                     </div>
                     
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Examples of how IFrames are used:</h2>
+                        <h2 class = "HeaderPoint">Modifying HTML Attributes</h2>
                         <div class = "inactive">
-                            <h2 class = "contentTitle"> Practice page</h2>
-                            <h3> Remember how at the end of every page there was a practice document? Well, it is created using iframes with the following syntax:
-                                <br> &lt; iframe src = "lesson-lesson_no-practice.html" width = "600px" height = "600px"&gt;&lt;/iframe&gt;
-
+                            <h2 class = "contentTitle">.getElementbyID</h2>
+                            <h3>
+                                To modify an element in your HTML file, you'll first need to tell the JavaScript file where to look.
+                                The most straightforward way to do this is to first give your HTML element an id:
+                            </h3>
+                            <h3>
+                                <code>&lt;div id="exampleId"&gt;&lt;/div&gt;</code>
+                            </h3>
+                            <h3>
+                                Then declare your JavaScript variable with:
+                            </h3>
+                            <h3>
+                                <code>let exampleElement = document.getElementbyID("exampleId");</code>
                             </h3>
                             
-                            <h2 class = "contentTitle">Advertisements</h2>
-                            <h3>If you've ever been to a website hosted by a company before, it is likely to have ads everywhere. This is done not by implementing every ad (which would take forever), but by setting iframes where the ads can appear, then displays more information as you click on it. Heres an example:
+                            <h2 class = "contentTitle">.innerHTML</h2>
+                            <h3>
+                                Use <code>.innerHTML</code> to read or modify the contents of your element
+                                (such as text or more HTML):
                             </h3>
-                            <a> <iframe src = "lesson-7-ad-example.html" width = "340px" height = "340px" style = "align-items: center;" >
-                            </iframe></a>
-                            <h3>Heres the syntax used:
-                            <br>&lt;a&gt; &lt;iframe src = "lesson-7-ad-example.html" width = "340px" height = "340px" style = "align-items: center;"&gt;&lt;/a&gt;
-                            <br> where lesson-7-ad-example is just an image with an embedded url. 
-                            <br> Do note that when you learn JS later, you will learn the onclick() command, which is better for changing images on click. 
-                            </h3>
-
-
-
-                            <h2 class = "contentTitle">Video embedding</h2>
-                            <h3>See how our lecture videos pop out a window instead of redirecting you to a youtube link? That is also done using iframes. The syntax used here is:
-                                <br> &lt;iframe&gt;&lt;href = "link to video"&gt;&lt;/iframe&gt; 
-                                <br> Heres an example:
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
                                 <br>
-                                <iframe src = "lesson-7-page-practice-example.html" width = "340px" height = "340px" style = "align-self: center;"></iframe>
-
+                                <code>htmlContent.innerHTML = "new HTML content";</code>
                             </h3>
 
-                            <h2 class = "contentTitle">Other things</h2>
-                            <h3>There, are of course a lot more examples of iframes being used, so be creative about the use of them!
-
+                            <h2 class = "contentTitle">.src</h2>
+                            <h3>
+                                Use <code>.src</code> to read and modify what external recources (i.e. images, audio and videos) an element uses:
+                            </h3>
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                                <br>
+                                <code>htmlContent.src = "new URL";</code>
                             </h3>
 
+                            <h2 class = "contentTitle">.style</h2>
+                            <h3>
+                                Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
+                            </h3>
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId")
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.style.exampleStyleAttribute = "new style";
+                                </code>
+                            </h3>
+                            <h3>
+                                <code>.style</code> alone returns an object (list) containing every style attribute.
+                                Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
+                                which is simpler to read and change.
+                            </h3>
+
+                            <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
+                            <h3>
+                                Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
+                            </h3>
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.add("new-class");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.remove("old-class");
+                                </code>
+                            </h3>
+                            <h3>
+                                Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
+                            </h3>
                         </div>
-                        
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">JavaScript Functions</h2>
+                        <div class = "inactive">
+                            <h3>
+                                Write your code within a function so that it can be executed multiple times based on the user's input:
+                            </h3>
+                            <h3>
+                                <code>
+                                    function exampleFunction()&lcub;<br>
+                                    <pre>   alert("Hello World!")</pre>
+                                    &rcub;
+                                </code>
+                            </h3>
+                            
+                            <h3>
+                                Then declare your JavaScript variable with:
+                            </h3>
+                            <h3>
+                                <code>let exampleElement = document.getElementbyID("exampleId");</code>
+                            </h3>
+                            
+                            <h2 class = "contentTitle">.innerHTML</h2>
+                            <h3>
+                                Use <code>.innerHTML</code> to read or modify the contents of your element
+                                (such as text or more HTML):
+                            </h3>
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                                <br>
+                                <code>htmlContent.innerHTML = "new HTML content";</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">.src</h2>
+                            <h3>
+                                Use <code>.src</code> to read and modify what external recources (i.e. images, audio and videos) an element uses:
+                            </h3>
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                                <br>
+                                <code>htmlContent.src = "new URL";</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">.style</h2>
+                            <h3>
+                                Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
+                            </h3>
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId")
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.style.exampleStyleAttribute = "new style";
+                                </code>
+                            </h3>
+                            <h3>
+                                <code>.style</code> alone returns an object (list) containing every style attribute.
+                                Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
+                                which is simpler to read and change.
+                            </h3>
+
+                            <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
+                            <h3>
+                                Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
+                            </h3>
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.add("new-class");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.remove("old-class");
+                                </code>
+                            </h3>
+                            <h3>
+                                Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
+                            </h3>
+                        </div>
                     </div>
 
                     <div class = "fade">
@@ -122,14 +256,15 @@
                                 Try to replicate this example below:
                             </h2>
 
-                            <iframe class = "PracticeExample" src = "lesson-7-page-practice.html" style = "height: 400px; width: 600px;" ></iframe>
+                            <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 600px;" ></iframe>
 
                             <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
                                 Descriptions for the practice excerises below:
                             </h2>
-                            <h3>Practice 1: Display an image of your choice that redirects to a website when clicked (not open a new tab) </h3>
-                            <h3>Practice 2: Make a button that opens a video when clicked</h3>
-                            <h3>Practice 3: Try and create a page using the template provided with the thumbnail image being rat.jpg or otherwise</h3>
+                            <h3>Practice 1: Display a blue button with white text that says "Click Me!", this button should have the class of buttonStuff </h3>
+                            <h3>Practice 2: Display a piece of text that says "take me to Google" that when pressed, you get taken to the Google home page.</h3>
+                            <h3>Practice 3: Display an image of your choice with a height of 100px and a width of 100px</h3>
+                            <h3>Practice 4: Display a image of your choice and make it so that you can click the image to take you into another website</h3>
                         </div>
 
                     </div>

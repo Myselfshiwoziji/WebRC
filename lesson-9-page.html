@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 9</title>
+    <title>Lesson 8</title>
     <link rel ="stylesheet" href = "Styles/loadingpage.css">
     <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
     <link rel = "stylesheet" href = "Styles/mainpage.css">
@@ -18,14 +18,15 @@
         
         <div class = "main_text" id = "main-text">
             <h2>
-                Lesson 9:
+                Lesson 8:
                 <br>
-                Further JavaScript
+                Events, parameters and OOP
             </h2>
+    
             <dialog class = "Lecture" id="LectureVid">
                 <div class = "LectureVideo">
                     <div>
-                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 9 Video Recording:</h2>                               
+                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 8 Video Recording:</h2>                               
                         <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
                     </div>
                     <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
@@ -45,7 +46,7 @@
                     <h3 class = "letab active">Events in JavaScript</h3>
                     <h3 class = "letab">More about Parameters</h3>
                     <h3 class = "letab">Variables in JavaScript</h3>
-                    <h3 class = "letab">Function and Syntax of JSON</h3>
+                    <!--h3 class = "letab">Function and Syntax of JSON</h3-->
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -128,7 +129,7 @@
                         <h3><br> 
                             which produces the following results:
                         </h3>
-                        <iframe src = "lesson-9-stuff/lesson-9-page-parameter-example.html" style = "width: auto; height: auto;"></iframe>
+                        <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example.html" style = "width: auto; height: auto;"></iframe>
                         <br>
                         <h3> However, you find that if you click any button in the iframe, all paragraphs with the id paragraph will show.</h3>
                         <h3> so instead, using parameters, you can configurate the code accordingly:</h3>
@@ -167,7 +168,7 @@
                         </h3>
                         
                         <h3> Which produces the following results:</h3>
-                        <iframe src = "lesson-9-stuff/lesson-9-page-parameter-example-2.html" style = "width: auto; height: auto;"></iframe>
+                        <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example-2.html" style = "width: auto; height: auto;"></iframe>
                     </div>
                     
                     <div class = "fade">
@@ -202,16 +203,16 @@
 
                             <h2 class = "contentTitle">Which to Use?</h2>
                             <h3>
-                               It is best practise to first atttempt to use <code>const</code> to prevent accidentally reasigning variables that won't be changed.
+                               It is best practise to first attempt to use <code>const</code> to prevent accidentally reasigning variables that won't be changed.
                                If the variable will be changed, try to use <code>let</code> to keep the scope of your variable to your block.
                                This will prevent accidentally accessing an old variable outside the relevant area if you have variables with similar names.
-                               Only declare variables with <code>var</code> if necessary
+                               Try to only declare variables with <code>var</code> if necessary.
                             </h3>
                         </div>
                         
                     </div>
 
-                        <div class = "fade">
+                        <!-- div class = "fade">
                             <h2 class = "HeaderPoint">Function and Syntax of JSON</h2>
                             <h3>
                                 JSON, or JavaScript Object Notation, is a file format designed to store key-value pairs of variables in a human readable format.
@@ -241,9 +242,38 @@
                             <h2 class = "contentTitle">Accessing JSON in JavaScript</h2>
                             <h3>
                                 To be added.
+>>>>>>> ef6304471812c89e1aa990743f094b8e23e0d006
+                            </h3>
+                            <h2 class = "contentTitle">Syntax of JSON:</h2>
+                            <h3>
+                                The syntax of JSON is pretty similar to python, as with JS. Although JSON files only accept strings as keys, they are not limited to numbers and letters. Some other exampels can include: Booleans (true or False), Objects, or Arrays.
+
+                                <br> However, a difference from python, is that data in JSON is alway stored in Key-Value pairs. The keys must be enclosed in strings, then followed by a colon (<code>:</code>), then the corresponding value. 
+                                    If you wish to have multiple key pairs, they can be seperated by commas. Here is an example of a JSON object:
+                                    <br>{
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"name": "John Doe",
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"age": 30,
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"email": "johndoe@example.com",
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"address": {
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"street": "123 Main St",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"city": "Anytown",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"state": "Anystate",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"postalCode": "12345"
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;},
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;"phoneNumbers": [
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "home",
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"number": "555-1234"
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "work",
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"number": "555-5678"
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+                                                <br>}
                             </h3>
                         </div>
-                        <div class = "fade">
+                        <div class = "fade"-->
 
                     <div class = "fade">
                         <h2 class = "HeaderPoint">Practice Work:</h2>
@@ -269,7 +299,7 @@
         </div>
 
         <div class = "footer" id = "main-text">
-            <a class = "LectureButton bottombuttons" href="lesson-8-page.html">Previous Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-7-page.html">Previous Lesson</a>
             <a class = "LectureButton bottombuttons" href="#">Next Lesson</a>
         </div>
     </section>
