@@ -2,16 +2,16 @@
 
 ### Welcome to the Web Dev Course Repository!
 
-This website was designed as a teaching supplement to a school coding club,
-showing what can be done with HTML, CSS, and JavaScript.
+This website was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
 
-If you're currently in the club, follow along with us on the website!
-If not, still feel free to follow along with the website's recorded lectures and activities.
+If you're currently in the club, follow along with us on the website! If not, still feel free to follow along with the website's recorded lectures and activities.
 
 ### Created By
-- Osborn Leung
-- Ian Chan
-- Colin Chan
+- Osborn Leung (Myselfshiwoziji)
+- Ian Chan (IC0510)
+- Colin Chan (ColKol)
+
+With supervision by Pat Stafford.
 
 ### Rat
 ![Rat](/Imgs_and_stuff/rat.jpg)
