@@ -10,10 +10,16 @@
     gap: 2rem;
 }
 
+.about-images div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .about-images img{
     border-radius: 50%;
     width: 200px;
-    height: 200px; 
+    height: 200px;
 }
 
 .about-images h1{
@@ -28,4 +34,5 @@
     font-size: 3rem;
     text-align: center;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 }
