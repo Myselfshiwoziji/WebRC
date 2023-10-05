@@ -181,21 +181,28 @@
                         <h2 class = "HeaderPoint">JavaScript Functions</h2>
                         <div class = "inactive">
                             <h3>
-                                Write your code within a function so that it can be executed multiple times based on the user's input:
+                                Write your code within a function so that it can be executed on call:
                             </h3>
                             <h3>
                                 <code>
                                     function exampleFunction()&lcub;<br>
-                                    <pre>   alert("Hello World!")</pre>
+                                    <pre>   alert("Hello, World!")</pre>
                                     &rcub;
                                 </code>
                             </h3>
-                            
+
+                            <h2 class = "contentTitle">The <code>onClick</code> Event</h2>
                             <h3>
-                                Then declare your JavaScript variable with:
+                                The simplest way to link your JavaScript function to a user input is with the <code>onClick</code> event assigned to buttons.
+                                In your HTML, type:
                             </h3>
                             <h3>
-                                <code>let exampleElement = document.getElementbyID("exampleId");</code>
+                                <code>
+                                    &lt;button onClick="exampleFunction()"&gt;Example Button&lt;/button&gt;
+                                </code>
+                            </h3>
+                            <h3>
+                                to create a button connected to your example function. Clicking it should now run your code!
                             </h3>
                         </div>
                     </div>
@@ -204,7 +211,7 @@
                         <h2 class = "HeaderPoint">Practice Work:</h2>
                         <div class = "inactive">
                             <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                Try to replicate this example below:
+                                Time to put HTML attributes and functions together!
                             </h2>
 
                             <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 600px;" ></iframe>
