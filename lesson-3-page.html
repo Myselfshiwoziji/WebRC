@@ -25,7 +25,7 @@
                     <dialog class = "Lecture" id="LectureVid">
                         <div class = "LectureVideo">
                             <div>
-                                <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
+                                <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 3 Video Recording:</h2>                               
                                 <button id = "closeButtonModal" style = "margin-bottom: 10px; margin-top: 50px;"></button>
                             </div>
                             <video id = "modalVideo"controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
@@ -45,6 +45,7 @@
                     <h3 class = "letab active">What is CSS?</h3>
                     <h3 class = "letab">Setting up CSS</h3>
                     <h3 class = "letab">CSS Declarations</h3>
+                    <h3 class = "letab">Padding, Border, and Margin</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -53,9 +54,12 @@
                         <h2 class = "HeaderPoint">What is CSS?</h2>
                         <h3>
                             CSS, short for Cascading Style Sheets, is a style sheet language used for describing the visual appearance of a document written in a markup language like HTML. 
-                            It defines how elements within a web page should be displayed, giving web developers control over things like layout, colors, fonts, and other visual aspects of a website.
-                            CSS works by applying styles to HTML elements using selectors, which target specific elements or groups of elements, and then applying various properties and values to those elements to define their visual characteristics. 
+                            It defines how elements within a web page should be displayed, giving web developers control over things like layout, colors, fonts, and other visual aspects of a website. 
+                        </h3>
+                        <h3>CSS works by applying styles to HTML elements using selectors, which target specific elements or groups of elements, and then applying various properties and values to those elements to define their visual characteristics. 
                             By separating the presentation layer (CSS) from the content layer (HTML), CSS allows for consistent styling across multiple web pages and easy maintenance and updates to the overall design of a website.
+                        </h3>
+                        <h3>
                             To see some examples of how to use CSS, go to the next tab.
                         </h3>
                     </div>
@@ -113,6 +117,39 @@
 
                         </div>
                         
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Padding, Border and Margin</h2>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle"> Padding</h2>
+                            <h3> In HTML, padding refers to the space between the content of an element and its border. It allows you to create space inside an element, pushing the content away from the edges, or shrink or increase the inside of the element to a degree. To customise the padding of an element using CSS, you can type:<br>
+                                <code>padding: INSERT VALUE HERE;</code> <br><br> If you want to be much more specific on exactly which area of the padding that you want to customise you can type a dash and a direction (top, left, right, and bottom) after the padding to specify 
+                                which padding you want to change. For example: <br> <code>padding-left: 8px;</code>
+                            </h3>
+                            <img src = "Imgs_and_stuff/Padding-Example.png" style = "margin-left: 16px;" height = 380px width = 460px>
+                            <h3 style = "font-size: 12px; margin-left: 16px;">Diagram showing where the padding is in an element</h3>
+                            
+                            <h2 class = "contentTitle">Border</h2>
+                            <h3>In HTML, a border refers to the boundary or outline that surrounds an element. It is a visual property that helps differentiate and define the edges of an element on a web page.
+
+                                Borders can be applied to various HTML elements such as &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, and more. They can be customized in terms of color, style, and width.
+                            </h3>
+                            <img src = "Imgs_and_stuff/Border-Example.png" style = "margin-left: 16px;" height = 380px width = 460px>
+                            <h3 style = "font-size: 12px; margin-left: 16px;">Diagram showing where the border is in an element</h3>
+
+                            <h2 class = "contentTitle">Margins</h2>
+                            <h3>Much like in English, the margin is basically the space between where the element originally was and where it currently is. This might sound confusing at first, but when you first place a element
+                                on a page, there is going to be a default placement for the element on the page. If you use a declaration such as <code>margin-left: 20px;</code>, then the element will shift from its original position to 20px to the 
+                                right of its original position.
+                            </h3>
+                            <h3>
+                                To customise the margin of the element, you can use the declaration: <br> <code>margin: top Spacing right Spacing bottom Spacing left Spacing;</code> <br> Alternativly, much like the padding 
+                                declaration, you can add a dash and then type in the direction of the margin (top, bottom, left, right) to specify exactly where you want to place a margin spacing on your element.
+                            </h3>
+                            <img src = "Imgs_and_stuff/Margin-Example.png" style = "margin-left: 16px;" height = 380px width = 460px>
+                            <h3 style = "font-size: 12px; margin-left: 16px;">Diagram showing where the margin is in an element</h3>
+                        </div>
                     </div>
 
                     <div class = "fade">

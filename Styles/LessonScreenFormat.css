@@ -56,10 +56,12 @@ h3{
     transition: all 0.1s ease;
     display: flex;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 30px;
+    margin-top: 30px;
 }
 
 .bottombuttons{
+    margin: 0;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 5px;
@@ -184,6 +186,8 @@ dialog[open]{
 
 .furtherReadingLinks{
     transition: 0.2s;
+    padding-left: 1em;
+    display: inline-block;
 }
 .furtherReadingLinks:hover{
     color: red;
