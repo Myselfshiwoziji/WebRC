@@ -23,8 +23,10 @@
 
 .about-images img{
     border-radius: 50%;
-    width: 180px;
-    height: 190px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 80% 80%;
 }
 
 .about-images h1{
