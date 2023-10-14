@@ -11,8 +11,9 @@ If you're currently in the club, follow along with us on the website! If not, st
 - Ian Chan (IC0510)
 - Colin Chan (ColKol)
 - Wan Hei Kong (Snycretism)
+- Nathan Li
 
-With supervision by Pat Stafford.
+With supervision by Patrick Stafford.
 
 ### Rat
 ![Rat](/Imgs_and_stuff/rat.jpg)
