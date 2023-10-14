@@ -36,14 +36,12 @@
 
 .about-images div h2{
     font-weight: 300;
-    font-family: 'Poppins', sans-serif;
     font-weight:lighter;
     font-size: 15px;
 }
 
 .about-text{
     margin-bottom: 2rem;
-    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
     text-align: center;
