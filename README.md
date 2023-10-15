@@ -4,7 +4,7 @@
 
 This website was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
 
-If you're currently in the club, follow along with us on the website! If not, still feel free to follow along with the website's content and activities.
+If you're currently in the club, follow along with us on the website! If not, there's still content, activities, and past recordings accessible anytime.
 
 ### Created By
 - Osborn Leung (Myselfshiwoziji)
@@ -13,7 +13,7 @@ If you're currently in the club, follow along with us on the website! If not, st
 - Wan Hei Kong (Snycretism)
 - Nathan Li
 
-With supervision by Patrick Stafford.
+Under supervision by Patrick Stafford.
 
 ### Rat
 ![Rat](/Imgs_and_stuff/rat.jpg)
