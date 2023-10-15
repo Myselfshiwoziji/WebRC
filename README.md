@@ -1,6 +1,6 @@
-# Web Dev Course
+# Web Dev Renaissance
 
-### Welcome to the Web Dev Course Repository!
+### Welcome to the Web Dev Renaissance Repository!
 
 This website was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
 
