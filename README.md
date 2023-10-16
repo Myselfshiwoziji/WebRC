@@ -1,6 +1,6 @@
-# Web Dev Renaissance
+# WebRC
 
-### Welcome to the Web Dev Renaissance Repository!
+### Welcome to the WebRC Repository!
 
 This website was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
 
