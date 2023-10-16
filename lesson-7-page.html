@@ -45,6 +45,7 @@
                     <h3 class = "letab">Setting Up JavaScript</h3>
                     <h3 class = "letab">Modifying HTML Attributes</h3>
                     <h3 class = "letab">JavaScript Functions</h3>
+                    <h3 class = "letab">Mathematical Functions</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -213,6 +214,76 @@
                     </div>
 
                     <div class = "fade">
+                        <h2 class = "HeaderPoint">Mathematical Functions in JS</h2>
+                        <h3>
+                            Some people will roll their eyes over this, but it is pretty important so lets get it done with.
+                        </h3>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle">Math.floor()</h2>
+                            <h3>
+                                This function floors the value that is in the brackets, which means it takes the lower integer bound of the number
+                                <br> For example, if you have the number 5.3, it would round to 5
+                                <br> Another example, if you have a number 4.9, it would still round to 4
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Math.ceil()</h2>
+                            <h3>
+                                This function is the opposite of the floor function. It takes the upper bound of the number inside the bracket (rounding up).
+                                <br> For example, if you have a number 10.1, it would round to 11.
+                                <br> Another example, if you have a number &pi;, it would round to 4.
+                            </h3>
+
+                            <h2 class = "contentTitle">Math.random()</h2>
+                            <h3>
+                                Math.random() does what you think it does. It returns a random value from 0 to 1.
+                                <br> *Note: This 'randomly' generated function is called a persudo random function, since it is not truly random. If you would like to learn more about how computers generate 'random' numbers, go to this wikipedia page:
+                            </h3>
+                            <button href = "https://en.wikipedia.org/wiki/Pseudorandomness">Link</button>
+
+
+                            <h2 class = "contentTitle">Floating point arithematic </h2>
+                            <h3>
+                                Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
+                            </h3>
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId")
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.style.exampleStyleAttribute = "new style";
+                                </code>
+                            </h3>
+                            <h3>
+                                <code>.style</code> alone returns an object (list) containing every style attribute.
+                                Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
+                                which is simpler to read and change.
+                            </h3>
+
+                            <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
+                            <h3>
+                                Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
+                            </h3>
+                            <h3>
+                                <code>
+                                    let htmlContent = document.getElementbyID("exampleId");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.add("new-class");
+                                </code>
+                                <br>
+                                <code>
+                                    htmlContent.classList.remove("old-class");
+                                </code>
+                            </h3>
+                            <h3>
+                                Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class = "fade">
                         <h2 class = "HeaderPoint">Practice Work:</h2>
                         <div class = "inactive">
                             <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
@@ -225,7 +296,7 @@
                                 Descriptions for the practice excerises below:
                             </h2>
                             <h3>Practice 1: Create a paragraph element and a button, then make the button change the text and color of the paragraph.
-                            <br>Practice 2: Make something
+                            <br>Practice 2: Make a paragraph element and a button, then make the button change the colour of the text every time you click on it to a random colour (*Note: If you are a beginner, you might struggle at this!)
                             </h3>
                         </div>
 
