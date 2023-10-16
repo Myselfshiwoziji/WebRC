@@ -5,8 +5,8 @@ function gRN(a, b) {
     return scale;
 }
 
+var number = gRN(0, 100);
 function chance() {
-    var number = gRN(0, 100);
     if (number == 1) {
         Image.swap
     } else {
