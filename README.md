@@ -1,6 +1,6 @@
-# WebRC
+# Web@RC
 
-### Welcome to the WebRC Repository!
+### Welcome to the Web@RC Repository!
 
 This website was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
 
