@@ -19,5 +19,5 @@ function colourchange() {
     g = gRN(0, 255);
     b = gRN(0, 255);
     textchange.style.color = `rgb(${r}, ${g}, ${b})`;
-    textchange.innerHTML = "Cool looking text!";
+    textchange.innerHTML = "This text changes color!";
 }
