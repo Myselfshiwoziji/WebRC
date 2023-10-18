@@ -38,7 +38,7 @@
             <button class="hint-button" onclick="buttonclick(1)">Hint</button>
 
             <p class="hint-text" style = "display:none; visibility:hidden;">
-                function gRN(a, b) {
+                function getRandomNumber(a, b) {
                     <br>&emsp;var diff = b - a;
                     <br>&emsp;var rando = Math.random();
                     <br>&emsp;var scale = Math.floor(rando * (diff + 1)) + a;
@@ -48,9 +48,9 @@
                 <br>const textchange = document.getElementById("textchange");
                 
                 <br>function colourchange() {
-                    <br>&emsp;r = gRN(0, 255);
-                    <br>&emsp;g = gRN(0, 255);
-                    <br>&emsp;b = gRN(0, 255);
+                    <br>&emsp;r = getRandomNumber(0, 255);
+                    <br>&emsp;g = getRandomNumber(0, 255);
+                    <br>&emsp;b = getRandomNumber(0, 255);
                     <br>&emsp;textchange.style.color = `rgb(${r}, ${g}, ${b})`;
                     <br>&emsp;textchange.innerHTML = "Cool looking text!";
                 <br>}
