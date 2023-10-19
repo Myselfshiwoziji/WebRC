@@ -17,7 +17,7 @@ const textchange = document.getElementById("textchange");
 function colourchange() {
     r = gRN(0, 255);
     g = gRN(0, 255);
-    b = gRN(0, 255);
+    b = gRN(0, 255); 
     textchange.style.color = `rgb(${r}, ${g}, ${b})`;
-    textchange.innerHTML = "This text changes color!";
+    textchange.innerHTML = `This text changes color! The RGB values are: rgb(${r}, ${g}, ${b})`;
 }

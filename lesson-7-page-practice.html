@@ -38,6 +38,7 @@
             <button class="hint-button" onclick="buttonclick(1)">Hint</button>
 
             <p class="hint-text" style = "display:none; visibility:hidden;">
+                //This generates a random number from a to b<br>
                 function getRandomNumber(a, b) {
                     <br>&emsp;var diff = b - a;
                     <br>&emsp;var rando = Math.random();
@@ -50,9 +51,9 @@
                 <br>function colourchange() {
                     <br>&emsp;r = getRandomNumber(0, 255);
                     <br>&emsp;g = getRandomNumber(0, 255);
-                    <br>&emsp;b = getRandomNumber(0, 255);
-                    <br>&emsp;textchange.style.color = `rgb(${r}, ${g}, ${b})`;
-                    <br>&emsp;textchange.innerHTML = "Cool looking text!";
+                    <br>&emsp;b = getRandomNumber(0, 255); //getting random r,g,b values
+                    <br>&emsp;textchange.style.color = `rgb(${r}, ${g}, ${b})`; //puts the rgb values into their corresponding hues
+                    <br>&emsp;textchange.innerHTML = "This text changes colour!";
                 <br>}
 
             </p>
