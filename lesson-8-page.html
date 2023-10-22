@@ -45,8 +45,9 @@
                 <div class = "tabs">
                     <h3 class = "letab active">Events in JavaScript</h3>
                     <h3 class = "letab">More about Parameters</h3>
-                    <h3 class = "letab">Variables in JavaScript</h3>
+                    <!--h3 class = "letab">Variables in JavaScript</h3-->
                     <!--h3 class = "letab">Function and Syntax of JSON</h3-->
+                    <h3 class = "letab">Mathematical functions in JS</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -137,26 +138,26 @@
                             const hint_texts = document.getElementsByClassName("hint-text");
 
                             <br>function buttonclick(hint_id){  
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; hint_texts.length; i++) {
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let hint = hint_texts[i];
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let display_status = hint.style.display;
+                                <br>&emsp;for (let i = 0; i &lt; hint_texts.length; i++) {
+                                    <br>&emsp;&emsp;let hint = hint_texts[i];
+                                    <br>&emsp;&emsp;let display_status = hint.style.display;
 
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i == hint_id) {
-                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (display_status == 'block'){
-                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.display = 'none';
-                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.visibility = "hidden";
-                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{
-                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.display = 'block';
-                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.visibility = "visible";
-                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                                    <br>&emsp;if (i == hint_id) {
+                                        <br>&emsp;&emsp;if (display_status == 'block'){
+                                            <br>&emsp;&emsp;&emsp;hint.style.display = 'none';
+                                            <br>&emsp;&emsp;&emsp;hint.style.visibility = "hidden";
+                                            <br>&emsp;&emsp;}
+                                            <br>&emsp;&emsp;else{
+                                                <br>&emsp;&emsp;&emsp;hint.style.display = 'block';
+                                                <br>&emsp;&emsp;&emsp;hint.style.visibility = "visible";
+                                                <br>&emsp;&emsp;}
+                                                <br>&emsp;}
 
-                                                <br>&nbsp;&nbsp;&nbsp;&nbsp;else{
-                                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.display = 'none';
-                                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint.style.visibility = "hidden";
-                                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;}
-                                                    <br>&nbsp;&nbsp;}
+                                                <br>&emsp;&emsp;else{
+                                                    <br>&emsp;&emsp;&emsp;hint.style.display = 'none';
+                                                    <br>&emsp;&emsp;&emsp;hint.style.visibility = "hidden";
+                                                    <br>&emsp;&emsp;}
+                                                    <br>&emsp;}
                                                     <br>}
 
                         </h3>
@@ -171,7 +172,7 @@
                         <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example-2.html" style = "width: auto; height: auto;"></iframe>
                     </div>
                     
-                    <div class = "fade">
+                    <!--div class = "fade">
                         <h2 class = "HeaderPoint">Declaring a variable in JS</h2>
                         <h3> there are 3 main types of variables you will use in JS: Var, Let and Const.</h3>
                         <div class = "inactive">
@@ -210,6 +211,35 @@
                             </h3>
                         </div>
                         
+                    </div-->
+
+                                        <div class = "fade">
+                        <h2 class = "HeaderPoint">Mathematical Functions in JS</h2>
+                        <h3>
+                            Some people will roll their eyes over this, but it is pretty important so lets get it done with.
+                        </h3>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle">Math.floor()</h2>
+                            <h3>
+                                This function floors the value that is in the brackets, which means it takes the lower integer bound of the number
+                                <br> For example, if you have the number 5.3, it would round to 5
+                                <br> Another example, if you have a number 4.9, it would still round to 4
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Math.ceil()</h2>
+                            <h3>
+                                This function is the opposite of the floor function. It takes the upper bound of the number inside the bracket (rounding up).
+                                <br> For example, if you have a number 10.1, it would round to 11.
+                                <br> Another example, if you have a number &pi;, it would round to 4.
+                            </h3>
+
+                            <h2 class = "contentTitle">Math.random()</h2>
+                            <h3>
+                                Math.random() does what you think it does. It returns a random value from 0 to 1.
+                                <br> *Note: This 'randomly' generated function is called a persudo random function, since it is not truly random. If you would like to learn more about how computers generate 'random' numbers, <a href = "https://en.wikipedia.org/wiki/Pseudorandomness" target="_blank">go to this wikipedia page.</a>
+                            </h3>
+
+                        </div>
                     </div>
 
                     <div class = "fade">
