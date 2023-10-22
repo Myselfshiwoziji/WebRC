@@ -45,7 +45,8 @@
                     <h3 class = "letab">Setting Up JavaScript</h3>
                     <h3 class = "letab">Modifying HTML Attributes</h3>
                     <h3 class = "letab">JavaScript Functions</h3>
-                    <h3 class = "letab">Mathematical Functions</h3>
+                    <!--h3 class = "letab">Mathematical Functions</h3-->
+                    <h3 class = "letab">Variables in JS</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -213,7 +214,7 @@
                         </div>
                     </div>
 
-                    <div class = "fade">
+                    <!--div class = "fade">
                         <h2 class = "HeaderPoint">Mathematical Functions in JS</h2>
                         <h3>
                             Some people will roll their eyes over this, but it is pretty important so lets get it done with.
@@ -240,6 +241,47 @@
                             </h3>
 
                         </div>
+                    </div-->
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Declaring a variable in JS</h2>
+                        <h3> there are 3 main types of variables you will use in JS: Var, Let and Const.</h3>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle"> Var:</h2>
+                            <h3>
+                                Variables declared with var are function-scoped, meaning that they are accessible within the function where they are declared, as well as any nested functions within that function. However, variables declared with var are not block-scoped, which means they can also be accessed outside of the block where they are declared.
+                                It's worth noting that the var keyword has some characteristics that can lead to unexpected behavior, such as variable hoisting and the lack of block scope.
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Let:</h2>
+                            <h3>Variables declared with let are similar to variables declared with var in terms of their ability to store values. However, the key difference is that variables declared with let are block-scoped, meaning they are only accessible within the block where they are declared.
+
+                                Unlike var, variables declared with let are not hoisted to the top of their scope. This means that you cannot access a let variable before it has been declared in your code.
+
+                                <br>&nbsp;
+                                <br>
+                                Thus, using let allows for better control over variable scope and can help prevent unintended issues that can occur with var. Therefore, it is generally recommended to use this instead of var when declaring variables, especially in modern JavaScript development.
+                            </h3>
+
+                            <h2 class = "contentTitle">Const:</h2>
+                            <h3>
+                                When a variable is declared with const, its value cannot be changed once it is assigned. This makes const variables suitable for storing values that should remain constant throughout the execution of a program.
+                                Like variables declared with let, const variables are also block-scoped. They are only accessible within the block where they are declared and they are not hoisted to the top of their scope.
+                                However, it's important to note that while the value of a const variable cannot be reassigned, it does not mean that the value itself is immutable. If a const variable holds an object or an array, the properties or elements of that object or array can still be modified, but the variable itself cannot be reassigned to a different object or array.
+                            </h3>
+                            <h3>
+                                Overall, using const helps convey the intent that a variable should remain constant, which can enhance code readability and prevent accidental reassignments. Thus, it is recommended to use const instead of var or let when declaring a variable that do not need to be reassigned.
+                            </h3>
+
+                            <h2 class = "contentTitle">Which to Use?</h2>
+                            <h3>
+                               If your variable isn't going to be modified during the duration of your code, use <code>const</code> to prevent accidentally accessing or reasigning values.
+                               If the variable will be changed, try to use <code>let</code> to keep the scope of your variable to your block.
+                               This will prevent accidentally accessing an old variable outside the relevant area if you have variables with similar names.
+                               Try to only declare variables with <code>var</code> if necessary.
+                            </h3>
+                        </div>
+                        
                     </div>
 
                     <div class = "fade">

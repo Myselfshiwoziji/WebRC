@@ -94,25 +94,25 @@
                             </h3>
                             <h3>
                                 {
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;"name": "John Doe",
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;"age": 30,
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;"email": "johndoe@example.com",
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;"address": {
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"street": "123 Main St",
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"city": "Anytown",
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"state": "Anystate",
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"postalCode": "12345"
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;},
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;"phoneNumbers": [
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "home",
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"number": "555-1234"
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "work",
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"number": "555-5678"
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+                                <br>&emsp;"name": "John Doe",
+                                <br>&&emsp;"age": 30,
+                                <br>&emsp;"email": "johndoe@example.com",
+                                <br>&emsp;"address": {
+                                <br>&emsp;&emsp;"street": "123 Main St",
+                                <br>&emsp;&emsp;"city": "Anytown",
+                                <br>&emsp;&emsp;"state": "Anystate",
+                                <br>&emsp;&emsp;"postalCode": "12345"
+                                <br>&emsp;},
+                                <br>&emsp;"phoneNumbers": [
+                                <br>&emsp;&emsp;{
+                                <br>&emsp;&emsp;&emsp;"type": "home",
+                                <br>&emsp;&emsp;&emsp;"number": "555-1234"
+                                <br>&emsp;&emsp;},
+                                <br>&emsp;&emsp;{
+                                <br>&emsp;&emsp;&emsp;"type": "work",
+                                <br>&emsp;&emsp;&emsp;"number": "555-5678"
+                                <br>&emsp;&emsp;}
+                                <br>&emsp;]
                                 <br>}
                             </h3>
                             <h2 class = "contentTitle">Accessing JSON in JavaScript</h2>
@@ -125,10 +125,10 @@
                                     fetch('./level-plan.json')
                                     <br>.then(response => response.json())
                                     <br>.then(data => {
-                                    <br>var objectFromJSON = data;
+                                    <br>&emsp;var objectFromJSON = data;
                                     <br>.})
                                     <br>..catch(error => {
-                                    <br>.console.log('Error:', error);
+                                    <br>&emsp;.console.log('Error:', error);
                                     <br>.});
                                 </code>
                             </h3>
