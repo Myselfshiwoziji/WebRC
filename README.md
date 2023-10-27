@@ -13,7 +13,7 @@ If you're currently in the club, follow along with us on the website! If not, th
 - Wan Hei Kong (Snycretism)
 - Nathan Li
 
-Under supervision by Patrick Stafford.
+Under the supervision of Patrick Stafford.
 
 ### Rat
 ![Rat](/Imgs_and_stuff/rat.jpg)
