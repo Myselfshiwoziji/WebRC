@@ -230,63 +230,6 @@
                             </h3>
                         </div>
 
-                    <!--div class = "fade">
-                        <h2 class = "HeaderPoint">JavaScript Functions</h2>
-                        <div class = "inactive">
-                            <h3>
-                                Write your code within a function so that it can be executed on call:
-                            </h3>
-                            <h3>
-                                <code>
-                                    function exampleFunction()&lcub;<br>
-                                    <pre>   alert("Hello, World!")</pre>
-                                    &rcub;
-                                </code>
-                            </h3>
-
-                            <h2 class = "contentTitle">The <code>onClick</code> Event</h2>
-                            <h3>
-                                The simplest way to link your JavaScript function to a user input is with the <code>onClick</code> event assigned to buttons.
-                                In your HTML, type:
-                            </h3>
-                            <h3>
-                                <code>
-                                    &lt;button onClick="exampleFunction()"&gt;Example Button&lt;/button&gt;
-                                </code>
-                            </h3>
-                            <h3>
-                                to create a button connected to your example function. Clicking it should now run your code!
-                            </h3>
-                        </div>
-                    </div-->
-
-                    <!--div class = "fade">
-                        <h2 class = "HeaderPoint">Mathematical Functions in JS</h2>
-                        <h3>
-                            Some people will roll their eyes over this, but it is pretty important so lets get it done with.
-                        </h3>
-                        <div class = "inactive">
-                            <h2 class = "contentTitle">Math.floor()</h2>
-                            <h3>
-                                This function floors the value that is in the brackets, which means it takes the lower integer bound of the number
-                                <br> For example, if you have the number 5.3, it would round to 5
-                                <br> Another example, if you have a number 4.9, it would still round to 4
-                            </h3>
-                            
-                            <h2 class = "contentTitle">Math.ceil()</h2>
-                            <h3>
-                                This function is the opposite of the floor function. It takes the upper bound of the number inside the bracket (rounding up).
-                                <br> For example, if you have a number 10.1, it would round to 11.
-                                <br> Another example, if you have a number &pi;, it would round to 4.
-                            </h3>
-
-                            <h2 class = "contentTitle">Math.random()</h2>
-                            <h3>
-                                Math.random() does what you think it does. It returns a random value from 0 to 1.
-                                <br> *Note: This 'randomly' generated function is called a persudo random function, since it is not truly random. If you would like to learn more about how computers generate 'random' numbers, <a href = "https://en.wikipedia.org/wiki/Pseudorandomness" target="_blank">go to this wikipedia page.</a>
-                            </h3>
-
-                        </div-->
                     </div>
 
                     <div class = "fade">
@@ -329,72 +272,6 @@
                         </div>
                         
                     </div>
-
-                    <!--div class = "fade">
-                        <h2 class = "HeaderPoint">Uses and examples of parameters</h2>
-                        <h2 class = "contentTitle">Creating reusable and adaptable code:</h2>
-                        <h3>
-                            By using parameters, you can create functions that can work with different data or conditions. This makes your code more modular, reusable, and adaptable to different scenarios.
-                        </h3>
-                        <h3> Here is an example: Suppose you are making a quiz and want to make a hint button (with an id called Hintbutton) to display a hint (with id Hintparagraph), so you type:
-                            <br> &nbsp;
-                            <br> function buttonclick() {
-                            <br> &emsp;for (let i = 0; i &lt; document.querySelectorAll(#Hintbutton).length; i++) {
-                            
-                            <br> &emsp;&emsp;if (paragraph.style.display === 'none') {
-                            <br> &emsp;&emsp;&emsp;paragraph.style.display = 'block';
-                            <br> &emsp;&emsp;&emsp;paragraph.style.visibility = "visible";
-                            <br> &emsp;&emsp;} else {
-                            <br> &emsp;&emsp;&emsp;paragraph.style.display = 'none';
-                            <br> &emsp;&emsp;&emsp;paragraph.style.visibility = "hidden";
-                            <br> &emsp;&emsp;}
-                            <br> &emsp;}
-                            <br>} 
-                        </h3>
-                        <h3><br> 
-                            which produces the following results:
-                        </h3>
-                        <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example.html" style = "width: auto; height: auto;"></iframe>
-                        <br>
-                        <h3> However, you find that if you click any button in the iframe, all paragraphs with the id paragraph will show.</h3>
-                        <h3> so instead, using parameters, you can configurate the code accordingly:</h3>
-                        <h3>
-                            const hint_texts = document.getElementsByClassName("hint-text");
-
-                            <br>function buttonclick(hint_id){  
-                                <br>&emsp;for (let i = 0; i &lt; hint_texts.length; i++) {
-                                    <br>&emsp;&emsp;let hint = hint_texts[i];
-                                    <br>&emsp;&emsp;let display_status = hint.style.display;
-
-                                    <br>&emsp;if (i == hint_id) {
-                                        <br>&emsp;&emsp;if (display_status == 'block'){
-                                            <br>&emsp;&emsp;&emsp;hint.style.display = 'none';
-                                            <br>&emsp;&emsp;&emsp;hint.style.visibility = "hidden";
-                                            <br>&emsp;&emsp;}
-                                            <br>&emsp;&emsp;else{
-                                                <br>&emsp;&emsp;&emsp;hint.style.display = 'block';
-                                                <br>&emsp;&emsp;&emsp;hint.style.visibility = "visible";
-                                                <br>&emsp;&emsp;}
-                                                <br>&emsp;}
-
-                                                <br>&emsp;&emsp;else{
-                                                    <br>&emsp;&emsp;&emsp;hint.style.display = 'none';
-                                                    <br>&emsp;&emsp;&emsp;hint.style.visibility = "hidden";
-                                                    <br>&emsp;&emsp;}
-                                                    <br>&emsp;}
-                                                    <br>}
-
-                        </h3>
-                        <h3>
-                            In your HTML, you can then configure each button to run the function with a different hint_id:
-                        </h3>
-                        <h3>
-                            <code>&lt;button class="hint-button" onclick="buttonclick(0)"&gt;Hint&lt;/button&gt;</code>
-                        </h3>
-                        
-                        <h3> Which produces the following results:</h3>
-                        <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example-2.html" style = "width: auto; height: auto;"></iframe>
-                    </div-->
 
                     <div class = "fade">
                         <h2 class = "HeaderPoint">Practice Work:</h2>
