@@ -51,10 +51,16 @@
     animation: practice 3s linear infinite;
 }
 
-#practice_animation_2 {
+#practice_animation_2:hover {
     animation: practice_2 6s ease-out infinite;
 }
 
 #practice_animation_3 {
+    display: inline-block;
     animation: practice_3 5s linear infinite;
+}
+
+#practice_animation_3:hover {
+    display: inline-block;
+    animation: practice_3 2s linear infinite;
 }
