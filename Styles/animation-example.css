@@ -51,7 +51,7 @@
     animation: practice 3s linear infinite;
 }
 
-#practice_animation_2:hover {
+#practice_animation_2 {
     animation: practice_2 6s ease-out infinite;
 }
 
