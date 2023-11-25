@@ -96,7 +96,7 @@
                             </h3>
                             <h3>
                                 If you've done everything correctly, you should see your message in the "Console" tab.
-                                In the future, you'll need to check the console for error messages fix bugs.
+                                In the future, you'll need to check the console for error messages in order to fix bugs.
                             </h3>
                             <img style = "margin-left: 16px"src = "Imgs_and_stuff/ConsoleLogExample.png" height = "190px" width = "600px">
                             <h3 style = "font-size: 12px; margin-left: 16px">What you should see when you run the js file in the console (also please ignore the mutations, as it is basically saying that something is changing in what it is)</h3>
@@ -144,51 +144,54 @@
                                 <code>htmlContent.src = "new URL";</code>
                             </h3>
                             <div class = "inactive">
+                                <h2 class = "contentTitle">.style</h2>
+                                <h3>
+                                    Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
+                                </h3>
+                                <h3>
+                                    <code>
+                                        let htmlContent = document.getElementbyID("exampleId")
+                                    </code>
+                                    <br>
+                                    <code>
+                                        htmlContent.style.exampleStyleAttribute = "new style";
+                                    </code>
+                                </h3>
+                                <h3>
+                                    <code>.style</code> alone returns an object (list) containing every style attribute.
+                                    Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
+                                    which is simpler to read and change.
+                                </h3>
 
-                            <h2 class = "contentTitle">.style</h2>
-                            <h3>
-                                Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
-                            </h3>
-                            <h3>
-                                <code>
-                                    let htmlContent = document.getElementbyID("exampleId")
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.style.exampleStyleAttribute = "new style";
-                                </code>
-                            </h3>
-                            <h3>
-                                <code>.style</code> alone returns an object (list) containing every style attribute.
-                                Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
-                                which is simpler to read and change.
-                            </h3>
-
-                            <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
-                            <h3>
-                                Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
-                            </h3>
-                            <h3>
-                                <code>
-                                    let htmlContent = document.getElementbyID("exampleId");
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.classList.add("new-class");
-                                </code>
-                                <br>
-                                <code>
-                                    htmlContent.classList.remove("old-class");
-                                </code>
-                            </h3>
-                            <h3>
-                                Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
-                            </h3>
+                                <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
+                                <h3>
+                                    Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
+                                </h3>
+                                <h3>
+                                    <code>
+                                        let htmlContent = document.getElementbyID("exampleId");
+                                    </code>
+                                    <br>
+                                    <code>
+                                        htmlContent.classList.add("new-class");
+                                    </code>
+                                    <br>
+                                    <code>
+                                        htmlContent.classList.remove("old-class");
+                                    </code>
+                                </h3>
+                                <h3>
+                                    Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
+                                </h3>
+                            </div>
                         </div>
                     </div>
 
                     <div class = "fade">
-                    <h2 class = "HeaderPoint">Events in JavaScript</h2>
+                        <h2 class = "HeaderPoint">Events in JavaScript</h2>
+                        <div>
+
+                        </div>
                         <h2 class = "contentTitle">
                             What is an event in JS?
                         </h2>
@@ -204,32 +207,30 @@
                         </h3>
 
                         <h2 class = "contentTitle">Types of Events in JS</h2>
-                            <h2>&nbsp;&nbsp;&nbsp;onclick()</h2>
-                            <h3>
-                                The onclick listener in JavaScript is an event handler that is used to execute a particular piece of code when an element, such as a button or a link, is clicked by the user. It is commonly used to create interactivity and trigger actions in response to user input.
-                            </h3>
-                            <h2> &nbsp;&nbsp;&nbsp;mousedown()</h2>
-                            <h3>
-                                Occurs when the mouse button is pressed down. This is different from onclick() because it detects if a mouse button is being held down instead of clicked.
-                            </h3>
-                            <h2> &nbsp;&nbsp;&nbsp;mouseover()</h2>
-                            <h3>
-                                Occurs when the mouse pointer enters an element.
-                            </h3>
-                            <h2> &nbsp;&nbsp;&nbsp;keydown()</h2>
-                            <h3>
-                                Occurs when a key is pressed and held down.
-                            </h3>
-                            <h2>&nbsp;&nbsp;&nbsp;keypress()</h2>
-                            <h3>
-                                Occurs when a key is pressed down and released.
-                            </h3>
-                            <h2>&nbsp;&nbsp;&nbsp;load()</h2>
-                            <h3>
-                                Occurs when the page/document has finished loading. This is primarily for loading screens, which we will cover in one of our extra lessons (Lesson 11 about animations)
-                            </h3>
-                        </div>
-
+                        <h2>&nbsp;&nbsp;&nbsp;onclick()</h2>
+                        <h3>
+                            The onclick listener in JavaScript is an event handler that is used to execute a particular piece of code when an element, such as a button or a link, is clicked by the user. It is commonly used to create interactivity and trigger actions in response to user input.
+                        </h3>
+                        <h2> &nbsp;&nbsp;&nbsp;mousedown()</h2>
+                        <h3>
+                            Occurs when the mouse button is pressed down. This is different from onclick() because it detects if a mouse button is being held down instead of clicked.
+                        </h3>
+                        <h2> &nbsp;&nbsp;&nbsp;mouseover()</h2>
+                        <h3>
+                            Occurs when the mouse pointer enters an element.
+                        </h3>
+                        <h2> &nbsp;&nbsp;&nbsp;keydown()</h2>
+                        <h3>
+                            Occurs when a key is pressed and held down.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp;keypress()</h2>
+                        <h3>
+                            Occurs when a key is pressed down and released.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp;load()</h2>
+                        <h3>
+                            Occurs when the page/document has finished loading. This is primarily for loading screens, which we will cover in one of our extra lessons (Lesson 11 about animations)
+                        </h3>
                     </div>
 
                     <div class = "fade">
@@ -270,7 +271,6 @@
                                Try to only declare variables with <code>var</code> if necessary.
                             </h3>
                         </div>
-                        
                     </div>
 
                     <div class = "fade">
@@ -285,14 +285,16 @@
                             <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
                                 Descriptions for the practice excerises below:
                             </h2>
-                            <h3>Practice 1: Create a paragraph element and a button, then make the button change the text and color of the paragraph.
-                            <!--br>Practice 2: Make a paragraph element and a button, then make the button change the colour of the text every time you click on it to a random colour (*Note: If you are a beginner, you might struggle at this!)
-                            <br>(*Note 2: To put a variable inside of a string, instead of using quotations ('') you can use graves (``) instead, and instead of square brackets[] you use ${} to call a variable instead.)<br-->
+                            <h3>
+                                Practice 1: Create a paragraph element and a button, then make the button change the text and color of the paragraph.
+                            </h3>
+                            <h3>
+                                Practice 2: Make a paragraph element and a button, then make the button change the colour of the text every time you click on it to a random colour... then change the text to show the RGB values of said color!
+                            </h3>
+                            <h3>
+                                &emsp;(To put a variable inside of a string, instead of using quotations ('') you can use graves (``) instead, and instead of square brackets[] you use ${} to call a variable instead.)
                             </h3>
                         </div>
-
-                        
-
                     </div>
                 </div>
             </div>
