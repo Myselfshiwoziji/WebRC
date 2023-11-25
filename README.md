@@ -2,9 +2,9 @@
 
 ### Welcome to the Web@RC Repository!
 
-This website was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
+[This website](https://myselfshiwoziji.github.io/WebRC) was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
 
-If you're currently in the club, [follow along with us on the website!](https://myselfshiwoziji.github.io/WebRC) If not, there's still content, activities, and past recordings accessible anytime.
+If you're currently in the club, follow along with us! If you're not, there's still content, activities, and past recordings accessible on the website anytime.
 
 ### Created By
 - Osborn Leung (Myselfshiwoziji)
