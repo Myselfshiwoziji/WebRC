@@ -4,7 +4,7 @@
 
 This website was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
 
-If you're currently in the club, follow along with us on the website! If not, there's still content, activities, and past recordings accessible anytime.
+If you're currently in the club, [follow along with us on the website!](https://myselfshiwoziji.github.io/WebRC) If not, there's still content, activities, and past recordings accessible anytime.
 
 ### Created By
 - Osborn Leung (Myselfshiwoziji)
