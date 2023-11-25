@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 9</title>
+    <title>Lesson 8</title>
     <link rel ="stylesheet" href = "Styles/loadingpage.css">
     <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
     <link rel = "stylesheet" href = "Styles/mainpage.css">
@@ -11,175 +11,241 @@
 
 <body>
     <section class = "showcase" id = "main">
-        <header class = "pageheader">
-            <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web@RC&gt;</a></h2>
-            <span class = "main_toggle" onclick="openNav()"></span>
-        </header>
+            <header class = "pageheader">
+                <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web@RC&gt;</a></h2>
+                <span class = "main_toggle" onclick="openNav()"></span>
+            </header>
+            
+                <div class = "main_text" id = "main-text">
+                    <h2>
+                        Lesson 8:
+                        <br>
+                        Game Development: Introduction to Phaser
+                    </h2>
+                    <dialog class = "Lecture" id="LectureVid">
+                        <div class = "LectureVideo">
+                            <div>
+                                <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 8 Video Recording:</h2>                               
+                                <button id = "closeButtonModal" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+                            </div>
+                            <video id = "modalVideo"controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                                <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                            </video>
         
-        <div class = "main_text" id = "main-text">
-            <h2>
-                Lesson 8:
-                <br>
-                JSON syntax and usage
-            </h2>
-    
-            <dialog class = "Lecture" id="LectureVid">
-                <div class = "LectureVideo">
-                    <div>
-                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 9 Video Recording:</h2>                               
-                        <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
-                    </div>
-                    <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
-                        <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
-                    </video>
-
-                </div>
-            </dialog>
-            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
-            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
-
-        </div>
+                        </div>
+                    </dialog>
+                    <a data-open-modal class = "LectureButton" id = "openModal">Watch Recording</a>
+                    <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+              </div>
+       
 
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "active letab">Introduction to JSON</h3>
-                    <h3 class = "letab">Syntax of JSON</h3>
-                    <h3 class = "letab">Usage of JSON</h3>
+                    <h3 class = "letab active">Classes and Sub-classes</h3>
+                    <h3 class = "letab">Making sprites</h3>
+                    <h3 class = "letab">Latency, tickrate, framerate and 'lag'</h3>
+                    <h3 class = "letab">Setting up phaser</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
-                <!--div class = "tab-content">
+                <div class = "tab-content">
                     <div class = "active fade">
-                        <h2 class = "HeaderPoint">Conditional Statements</h2>
+                        <h2 class = "HeaderPoint">What are classes?</h2>
                         <h3>
-                            You'll need the conditional statements <code>if</code>, <code>else if</code>, and <code>else</code> if your code will run differently depending on the user's input.
-                        </h3>
-                        <h2 class = "contentTitle">Comparison Operators</h2>
-                        <h3>
-                            To craft an <code>if else</code> statement, you'll need to compare two variables using one of several <b>comparison operators.</b>
-                        </h3>
-                        <h2>&nbsp;&nbsp;&nbsp; !=, !==</h2>
-                        <h3>
-                            Similar to the above equalities, but return true if values are not equivalent.
-                        </h3>
-                        <h2>&nbsp;&nbsp;&nbsp; ==, ===</h2>
-                        <h3>
-                            Returns true if two values are the same. "==" is a loose equality comparison whereas "===" is a strict equality comparison which will also compare data type.
-                            This means ("1" == 1) will return true, whereas ("1" === 1) will return false.
-                        </h3>
-                        <h2>&nbsp;&nbsp;&nbsp; &lt;, &gt;</h2>
-                        <h3>
-                            Returns true if the left value is smaller or greater than the right.
-                            This usually applies to integers and floats, but strings can also compared in alphabetical order, with A the smallest and Z the largest.
-                        </h3>
-                        <h2>&nbsp;&nbsp;&nbsp; &lt;=, &gt;=</h2>
-                        <h3>
-                            Similar to the above inequalities, but also returns true if two values are equal.
-                        </h3>
-                        
-                        <h2 class = "contentTitle">Conditional Statements</h2>
-                        <h2>&nbsp;&nbsp;&nbsp; <code>if () {}</code></h2>
-                        <h3>
-                            Compares two values and runs code in the {} brackets if the condition is met.
-                        </h3>
-                        <h2>&nbsp;&nbsp;&nbsp; <code>else if () {}</code></h2>
-                        <h3>
-                            Compares two values only if a preceding <code>if</code> statement is not met.
-                        </h3>
-                        <h2>&nbsp;&nbsp;&nbsp; <code>else {}</code></h2>
-                        <h3>
-                            Runs code in the {} brackets if all preceding <code>if</code> and <code>else if</code> statements fail. Does not process a comparison.
-                        </h3>
-                        <h2 class = "contentTitle">Switch</h2>
-                    </div-->
-                    
-                    <div class = "tab-content">
-                    <div class = "active fade">
-                        <h2 class = "HeaderPoint">What is JSON?</h2>
-                        <h3>
-                            JSON, or JavaScript Object Notation, is a file format designed to store key-value pairs of variables in a human readable format.
-                            Although designed for JavaScript, many programming languages now parse JSON, making it a valuable format to store and transmit data between programs.
+                            Classes in Javascript are an easy way to define and create objects with a blueprint for their properties and methods. Much like Json, they can be used to easily store information about an object.
                         </h3>
 
-                        <h2 class = "contentTitle">Creating a JSON File</h2>
+                        <h2 class = "contentTitle">Method</h2>
                         <h3>
-                            Like with other file types, give your file a name ending in <code>.json</code> to declare it for JSON. Such as:
+                            Methods in Javascript are functions that are associated with a class or an object, which represents behavior or actions that objects of the class can perform. When a method is called, it can access and manipulate the data within the object it belongs to, and it can also interact with other objects or perform other operations.
                         </h3>
+
+                        <h2 class = "contentTitle">Constructor</h2>
                         <h3>
-                            <code>examplefile.json</code>
+                            A constructor is a special method that is called when an instance of a class is created. It is used to initialize the newly created object and to set initial values for its properties and perform any other setup that may be required.
                         </h3>
-                        <h2 class = "contentTitle">What can JSON be used for?</h2>
-                        <h2>
-                            &nbsp;&nbsp;Storing Data/ Data transmittion
-                            </h2>
+
+                        <h2 class = "contentTitle">Making classes</h2>
                         <h3>
-                            JSON is often used to send data between a server and a client as part of web APIs (Application Programming Interfaces). It allows for structured and organized transfer of data, making it ideal for applications that interact with remote servers.
-                        </h3>
-                    </div>
-                    <div class = "fade">
-                        <div class = "inactive">
-                            <h2 class = "HeaderPoint">JSON Syntax</h2>
-                            <h3>
-                                JSON data comes in a form similar to JavaScript Objects or Python Dictionaries: with key-value pairs.
-                                Each value (either a number, string, boolean, array, null, or nested key-value pair) is assigned a string name (the key), from which the value can be called.
-                            </h3>
-                            <h3>
-                                However, JSON syntax is a lot stricter than Python or JavaScript!
-                                Every key must be a string, enclosed in double quotation marks (<code>""</code>), then followed by a colon (<code>:</code>), then the corresponding value. 
-                                If you wish to have multiple key pairs, they can be seperated by commas, but the final element can never have a comma. Here is an example of a JSON object:
-                            </h3>
-                            <h3>
-                                {
-                                <br>&emsp;"name": "John Doe",
-                                <br>&&emsp;"age": 30,
-                                <br>&emsp;"email": "johndoe@example.com",
-                                <br>&emsp;"address": {
-                                <br>&emsp;&emsp;"street": "123 Main St",
-                                <br>&emsp;&emsp;"city": "Anytown",
-                                <br>&emsp;&emsp;"state": "Anystate",
-                                <br>&emsp;&emsp;"postalCode": "12345"
-                                <br>&emsp;},
-                                <br>&emsp;"phoneNumbers": [
-                                <br>&emsp;&emsp;{
-                                <br>&emsp;&emsp;&emsp;"type": "home",
-                                <br>&emsp;&emsp;&emsp;"number": "555-1234"
-                                <br>&emsp;&emsp;},
-                                <br>&emsp;&emsp;{
-                                <br>&emsp;&emsp;&emsp;"type": "work",
-                                <br>&emsp;&emsp;&emsp;"number": "555-5678"
-                                <br>&emsp;&emsp;}
-                                <br>&emsp;]
+                            To make a class, you use the syntax:
+                            <code>class example {
+                                <br>&emsp;constructor(property1, property2) {
+                                <br>&emsp;&emsp;this.property1 = some property 1;
+                                <br>&emsp;&emsp;this.property2 = some property 2;
+                                <br>&emsp;}
+
+                                <br><br>&emsp;method1 {
+                                    <br>&emsp;&emsp;method logic here
+                                <br>&emsp;}
+
+                                <br><br>&emsp;method2 {
+                                    <br>&emsp;&emsp;method logic here
+                                <br>&emsp;}
                                 <br>}
+                            </code>
+                            <br><br>Keep in mind that you can have as many properties and methods as you want. To assign something to a class, use the syntax: 
+                            <br><code>let name_of_object = new example(property1, property2)</code><br> but replace name of object with the name of what you want to call it, example to your class name, and the properties.
+                            <br><br> To call a method, use the syntax:
+                            <br><code>name_of_object.method1()</code><br> and replace the placeholders accordingly.
+
+                        </h3>
+                        
+                        <h2 class = "contentTitle">Example of classes</h2>
+                        <h3>Say, you want to have a class 'Circle' that you can call, and you want to be able to get its area. You can make a class like this:<code>
+                            <br>class Circle {
+                                <br>&emsp;constructor(radius) {
+                                    <br>&emsp;&emsp;this.radius = radius;
+                                <br>&emsp;}
+                              
+                                <br><br>&emsp;getArea() {
+                                    <br>&emsp;&emsp;return Math.PI * this.radius * this.radius;
+                                <br>&emsp;}
+                              
+                                <br><br>&emsp;setRadius(newRadius) {
+                                    <br>&emsp;&emsp;this.radius = newRadius;
+                                <br>&emsp;}
+                              <br>}</code>
+                              <br> In this example, you can see that the properties are radius, and the methods are getArea() and setRadius(newRadius).
+                        </h3>
+                        <h3><br>
+                            Or, you want to have a counter that you can add or delete values from: <code>
+                                <br>class Counter {
+                                    <br>&emsp;constructor() {
+                                        <br>&emsp;&emsp;this.count = 0;
+                                    <br>&emsp;}
+                                  
+                                    <br><br>&emsp;increment() {
+                                        <br>&emsp;&emsp;this.count++;
+                                    <br>&emsp;}
+                                  
+                                    <br><br>&emsp;decrement() {
+                                        <br>&emsp;&emsp;this.count--;
+                                    <br>&emsp;}
+                                  <br>}
+                            </code>
+                            <br><br>As you can see, calling the increment() function in the class Counter would raise it by 1, while calling decrement() would decrease the counter by 1.
+
+                        </h3>
+
+                        <h2 class = "contentTitle">Subclasses</h2>
+                        <h3>
+                            Sub-classes, also known as derived classes or child classes, are classes that inherit properties and methods from another class, known as the superclass, base class, or parent class. When a class inherits from another class, it automatically gains access to all the public and protected members (properties and methods) of the parent class.
+                            The sub-class can also add its own methods and properties, as well as override or extend the behavior of the inherited methods.
+
+                            For example, consider this class:<code>
+                            class Animal {
+                                <br>&emsp;constructor(name) {
+                                    <br>&emsp;&emsp;this.name = name;
+                                <br>&emsp;}
+                                
+                                <br>&emsp;speak() {
+                                    <br>&emsp;&emsp;console.log(this.name + ' makes a noise.');
+                                <br>&emsp;}
+                              <br>}</code>
+
+                              <br>As seen from the example, the class animal makes a noise whenever it speaks. However, what if we specifically want a dog (which belongs under the class animal) to bark instead? 
+                              To do that, we can assign a sub-class:
+                              <code>
+                                <br>class Dog extends Animal {
+                                    <br>&emsp;speak() {
+                                        <br>&emsp;&emsp;console.log(this.name + ' barks.');
+                                    <br>&emsp;}
+                                  <br>}
+                              </code>
+                              
+                              <br>As seen from above, you can use <code>extend</code> to make a subclass (in this case dog of animal), which has all the properties of the class <code>animal</code> but also special methods.
+
+                        </h3>
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Setting up CSS</h2>
+                        <h3>
+                            Much like starting your first HTML file, you can right click on the left hand side menu to create a new file.
+                            This file should not contain spaces and must end with .css to declare that it is a CSS file.
+                            Once done, return to the HTML document that you want to link the CSS document to and go inside the head element of the file.
+                            Once there, type: <br/> <code>&lt;link rel = "stylesheet" href = "The CSS file's name"&gt;</code> <br/> Once you are done with that, you should now be able to code your CSS file such so that it should influence the visuals of the HTML page.
+                            Check out the next tab for more details regarding how to style a CSS file:
+                        </h3>
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">CSS Declarations</h2>
+                        <h3>CSS Declarations are simple lines of code that help us define exact attributes (or in this case styles) that we want specific elements to take on. To use CSS Declarations, you have to follow the syntax shown below:</h3>
+                        <div style = "background-color: rgba(45, 43, 43, 0.8); color: aliceblue; margin-left: 10px;">
+                            <code>.className{<br/>Insert CSS Declarations here <br />}</code>
+                        </div>
+                        
+                        <div class = "inactive">
+                            <h2 class = "contentTitle"> Color:</h2>
+                            <h3>This is a very simple declaration to understand, as this declaration simply changes the color of text within the element to a color of your choice. When choosing a color, you have to use the RGB system to create your desired color. To use this declaration use the syntax shown below<br /> 
+                                <code>color: rgb(0,0,0);</code> <br/>
                             </h3>
-                            <h2 class = "contentTitle">Accessing JSON in JavaScript</h2>
+                            <h3 style = "margin-top: 10px">
+                                (Note: when using rgb Visual Studio Code already gives you a large variety of diffeent colors to work with, so you often don't fully need to manually type in the rgb values of the color you want) 
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Background color:</h2><h3>This is another simple declaration to understand, as it simply changes the background color of the element. Much like the color declaration, you also have to utilise the rgb system to select your colors.
+                                When you use this declaration, use the syntax:<br /> <code>background-color: rgb(0,0,0);</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">Font Size:</h2><h3>This declaration is in charge of what the size of the text will be. To use this, you have to define the font size as a specific size in terms of pixels (we will discuss alternate unit of measurements other than pixels later).
+                                When you use this delcaration, use the syntax:<br /> <code>font-size: 16px;</code>
+
+                            </h3>
+
+                            <h2 class = "contentTitle">Font Family:<h2><h3> This delcaration is used to change the font of the selected element. To use it, simply just state what font you would like to use (eg: Arial, Times New Roman, etc). However, there are many fonts that are unsupported in CSS, so if you want to import your own fonts that you would like to use, please check out <a target = "_blank" href = "https://www.youtube.com/watch?v=g15mF_XAOB8&list=PL0eyrZgxdwhwP0AxnbBiDBCi53LK9uCMZ&index=13&t=0s">this tutorial</a>.
+                                When you use this declaration, use the syntax:<br /> <code>font-family: 'Times New Roman', Times, serif;</code>
+
+                            </h3>
+
+                            <h2 class = "contentTitle">Border:</h2><h3>This declaration is used to add borders to your selected elements. When using this declaration, you have to first declare the width of the border (for now use pixels), then declare the style of the border (which can be: solid, dotted, double, dashed, inset, outset, ridge, groove, and hidden), and finally declare a color for the border (once again, you have to use the RGB system to define the color).
+                                An example of how the syntax would look like would be:<br /> <code>border: 5px, solid, rgb(0,0,0);</code>
+
+                            </h3>
+
+                            <h2 class = "contentTitle">Border radius:</h2><h3> This is a very simple declaration and links back to the previous declaration on borders. The border radius declaration simply declares how round the edges of the border will become. To use this, you have to input how round you want to make the borders using pixels (or other supported units of measurement in Visual Studio Code). <br/> Note: if you want to make a completley circular border, you can set the border radius to the height of the element.
+                                When you use this delcaration, use the syntax:<br /> <code>border-radius: 2px;</code>
+
+                            </h3>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Padding, Border and Margin</h2>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle"> Padding</h2>
+                            <h3> In HTML, padding refers to the space between the content of an element and its border. It allows you to create space inside an element, pushing the content away from the edges, or shrink or increase the inside of the element to a degree. To customise the padding of an element using CSS, you can type:<br>
+                                <code>padding: INSERT VALUE HERE;</code> <br><br> If you want to be much more specific on exactly which area of the padding that you want to customise you can type a dash and a direction (top, left, right, and bottom) after the padding to specify 
+                                which padding you want to change. For example: <br> <code>padding-left: 8px;</code>
+                            </h3>
+                            <img src = "Imgs_and_stuff/Padding-Example.png" style = "margin-left: 16px;" height = 380px width = 460px>
+                            <h3 style = "font-size: 12px; margin-left: 16px;">Diagram showing where the padding is in an element</h3>
+                            
+                            <h2 class = "contentTitle">Border</h2>
+                            <h3>In HTML, a border refers to the boundary or outline that surrounds an element. It is a visual property that helps differentiate and define the edges of an element on a web page.
+
+                                Borders can be applied to various HTML elements such as &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, and more. They can be customized in terms of color, style, and width.
+                            </h3>
+                            <img src = "Imgs_and_stuff/Border-Example.png" style = "margin-left: 16px;" height = 380px width = 460px>
+                            <h3 style = "font-size: 12px; margin-left: 16px;">Diagram showing where the border is in an element</h3>
+
+                            <h2 class = "contentTitle">Margins</h2>
+                            <h3>Much like in English, the margin is basically the space between where the element originally was and where it currently is. This might sound confusing at first, but when you first place a element
+                                on a page, there is going to be a default placement for the element on the page. If you use a declaration such as <code>margin-left: 20px;</code>, then the element will shift from its original position to 20px to the 
+                                right of its original position.
+                            </h3>
                             <h3>
-                                Accessing your JSON file in JavaScript is a little more complicated than defining an src or href as before.
-                                There are many ways to link a JSON file to your script, one way is with fetch API:
+                                To customise the margin of the element, you can use the declaration: <br> <code>margin: top Spacing right Spacing bottom Spacing left Spacing;</code> <br> Alternativly, much like the padding 
+                                declaration, you can add a dash and then type in the direction of the margin (top, bottom, left, right) to specify exactly where you want to place a margin spacing on your element.
                             </h3>
-                            <h3>
-                                <code>
-                                    fetch('./level-plan.json')
-                                    <br>.then(response => response.json())
-                                    <br>.then(data => {
-                                    <br>&emsp;var objectFromJSON = data;
-                                    <br>.})
-                                    <br>..catch(error => {
-                                    <br>&emsp;.console.log('Error:', error);
-                                    <br>.});
-                                </code>
-                            </h3>
+                            <img src = "Imgs_and_stuff/Margin-Example.png" style = "margin-left: 16px;" height = 380px width = 460px>
+                            <h3 style = "font-size: 12px; margin-left: 16px;">Diagram showing where the margin is in an element</h3>
                         </div>
                     </div>
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">Why do we need JSON files?</h2>
-                        <div class = "inactive">
-                            <h2 class = "contentTitle">&nbsp;Backend</h2>
-                            <h3>
-                                This course will not be covering backend in our 9 lessons, but if you stay for lessons 10 - 12 (the extra lessons). we will talk about backend, nodes, animations, save data, etc. which can help you make an interactable website.
-                            </h3>
-                        </div>
-                        </div>
 
                     <div class = "fade">
                         <h2 class = "HeaderPoint">Practice Work:</h2>
@@ -188,20 +254,20 @@
                                 Try to replicate this example below:
                             </h2>
 
-                            <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
+                            <iframe class = "PracticeExample" src = "lesson-3-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
 
                             <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
                                 Descriptions for the practice excerises below:
                             </h2>
-                            <h3>Practice 1: Display a blue button with white text that says "Click Me!", this button should have the class of buttonStuff </h3>
-                            <h3>Practice 2: Display a piece of text that says "take me to Google" that when pressed, you get taken to the Google home page.</h3>
-                            <h3>Practice 3: Display an image of your choice with a height of 100px and a width of 100px</h3>
-                            <h3>Practice 4: Display a image of your choice and make it so that you can click the image to take you into another website</h3>
+                            <h3>Practice 1: Display a white button with white text that says "Click Me!", this button should have the class of buttonStuff and should have rounded red borders </h3>
+                            <h3>Practice 2: Display a piece of text that says "Impact Buttone" that when pressed, you get taken to the impact font wiki page. This button should also have the Impact font and a font size of 20px;</h3>
+                            <h3>Practice 3: Display a profile picture-like icon that is completely rounded and has a border color of your choice.</h3>
+                            <h3>Practice 4: Display a chapter extract from a book that is written in brown text, with the heading using the font Franklin Gothic Medium and the paragraph using Times New Roman.</h3>
                         </div>
 
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
 
         <div class = "footer" id = "main-text">
@@ -219,5 +285,5 @@
     <script src = "Javascript/sidemenu.js"></script>
     <script src = "Javascript/loader.js"></script>
     <script src= "Javascript/AlternativeContentDisplay.js"></script>
-
+    <script src = "Javascript/videoModal.js"></script>
 </html>
