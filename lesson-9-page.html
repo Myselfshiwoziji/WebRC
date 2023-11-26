@@ -44,7 +44,7 @@
                 <div class = "tabs">
                     <h3 class = "letab active">Classes and Sub-classes</h3>
                     <h3 class = "letab">Making sprites</h3>
-                    <h3 class = "letab">Update, Time, Delta and other time related events</h3>
+                    <h3 class = "letab">Time, Delta and other time related events</h3>
                     <h3 class = "letab">Setting up phaser</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
@@ -210,16 +210,19 @@
                                 Within your game code, you would typically define the update function as part of a game object, such as a player character, enemy, or any element that requires regular updates. 
                                 The update function is automatically called by the game engine or framework on every frame render, with the time and delta parameters being passed in. For example:
                                
-                                <br>update(time, delta) {
+                                <code><br>update(time, delta) {
                                     <br>&emsp;update logic here
                                     <br>&emsp;this.player.x += (10px * delta); // This would move the player 10px per frame.
                                     <br>&emsp;other logic based on time and delta
-                                    <br>}
+                                    <br>}</code>
                             </h3>
 
-                            <h2 class = "contentTitle">Framerate<h2>
+                            <h2 class = "contentTitle">Framerate and tickrate<h2>
                                 <h3>
-                                    Stuff here
+                                    Framerate refers to the number of individual frames or images that are displayed or rendered in one second. Note that this does not have any relevance with how much the game communicates with the server.
+                                    <br><br>However,tickrate refers to the frequency at which the game server or simulation engine updates and processes game states and interactions. This has nothing to do with framerate, and is a seperate quantity used to indicate how many times the computer sends information (ticks) to the server per second. So, you can have a framerate of 60fps, and a tickrate of 20tps (which means the game updates once every 3 frames), which is pretty standard in modern fps games.
+                                    <br><br>This is also whats meant as 'frameskip'. This is a technique usually used to reduce lag or load on the server, which basically skips irrelevant frames (frames that are not ticks) to improve performance. This sacrifices some graphical smoothness, but also reduces the latency.
+
                                 </h3>
                         </div>
                         
