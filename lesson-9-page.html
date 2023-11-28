@@ -42,15 +42,39 @@
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "letab active">Classes and Sub-classes</h3>
+                    <h3 class = "letab active">Setting up phaser</h3>
+                    <h3 class = "letab">Classes and Sub-classes</h3>
                     <h3 class = "letab">Making sprites</h3>
                     <h3 class = "letab">Time, Delta and other time related events</h3>
-                    <h3 class = "letab">Setting up phaser</h3>
-                    <h3 class = "letab">Practice Work</h3>
+                    <h3 class = "letab">Stringing everything together</h3>
                 </div>
 
                 <div class = "tab-content">
                     <div class = "active fade">
+                            <h2 class = "HeaderPoint">Its almost time to get typing!</h2><h3>Final stretch, once we set everything up, you can begin making your game!</h3>
+                            <div class = "inactive">
+                                <h2 class = "contentTitle">Downloading phaser</h2>
+                                <a href = "https://phaser.io/download/stable" target = "_blank">
+                                    Click this link to go to the website to download phaser.
+                                </a>
+                                
+                                <h2 class = "contentTitle">Downloading Nodejs</h2>
+                                <a href = "https://nodejs.org/en/download" target="_blank">
+                                    Click me to go to the website to download Nodejs.
+                                </a>
+    
+                                <h2 class = "contentTitle">Copy and paste this command in your repositories terminal in Visual Studio Code</h2>
+                                <h3>
+                                    git clone git@github.com:photonstorm/phaser3-project-template.git MyProject
+                                    <br>cd MyProject
+                                    <br>npm install
+                                    <br>npm start
+                                </h3>
+    
+                            </div>
+                        </div>
+
+                        <div class = "fade">
                         <h2 class = "HeaderPoint">What are classes?</h2>
                         <h3>
                             Classes in Javascript are an easy way to define and create objects with a blueprint for their properties and methods. Much like Json, they can be used to easily store information about an object.
@@ -64,6 +88,7 @@
                         <h2 class = "contentTitle">Constructor</h2>
                         <h3>
                             A constructor is a special method that is called when an instance of a class is created. It is used to initialize the newly created object and to set initial values for its properties and perform any other setup that may be required.
+                             Think of it like attributes that a class has, that is loaded before any of the methods take place.
                         </h3>
 
                         <h2 class = "contentTitle">Making classes</h2>
@@ -185,10 +210,27 @@
                         <h2 class = "HeaderPoint">Making sprites</h2>
                         <h3>
                             To make sprites, I recommend you use a software that makes a sprite sheet for you, given that you draw the animations. This reduces the amount of load on the local host when loading an animation, which can improve its optimisation.
-                            However, if you are not familiar with spritesheets or do not have a software that can do such thing, putting pngs of animations are also fine.
+                            However, if you are not familiar with spritesheets or do not have a software that can do such thing, putting pngs of animations are also fine. If you don't have a sprite making software, there is this <a href = "https://www.piskelapp.com/p/create/sprite">Online application</a> that can make pixel art, although you can make other sprites.
                         </h3>
                         <h2 class = "contentTitle">create()</h2>
-                        <h3></h3>
+                        <h3>
+                        Create(), not to be confused with object.create(), a default command in Javascript, in phaser is defined as a special built-in constructor to generate game content, without the need of external files. Within the <code>create()</code> method, you can include code to create sprites, set up physics, add text or buttons, and perform various other initializations necessary for setting up the game environment. For example:
+                        <br><code>create() {
+                            <br>&emsp;var player = this.add.sprite(100, 100, 'player');
+                            <br>&emsp;this.physics.add.existing(player);
+                            <br>&emsp;this.add.text(50, 50, 'Welcome to the game', { font: '24px Arial', fill: '#ffffff' });
+                            <br>&emsp;Other methods or functions...
+                        <br>}</code>
+                        <br>Note that the syntax for adding sprites is <code>this.add.sprite(x coordinate, y coordinate, sprite1, sprite2, ...)</code>, where x and y coordinates are measured from the top left of the screen (0,0) in pixels.
+                        <br>Thus, the general syntax for create would be:<code>
+                        <br>create() {
+                            <br>&emsp;var object = this.add.sprite(x-coordinate,y-coordinate, sprite1, sprite2, ...)
+                            <br>&emsp;Methods or functions of sprite
+                        <br>}</code>
+                        <br>Be sure to switch object, coordinates, and sprites accordingly.
+
+
+                        </h3>
                     </div>
 
                     <div class = "fade">
@@ -212,7 +254,7 @@
                                
                                 <code><br>update(time, delta) {
                                     <br>&emsp;update logic here
-                                    <br>&emsp;this.player.x += (10px * delta); // This would move the player 10px per frame.
+                                    <br>&emsp;this.player.x += (10px * delta); // This would move the player 10px per frame. 
                                     <br>&emsp;other logic based on time and delta
                                     <br>}</code>
                             </h3>
@@ -229,45 +271,44 @@
                     </div>
 
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Its almost time to get typing!</h2><h3>Final stretch, once we set everything up, you can begin making your game!</h3>
+                        <h2 class = "HeaderPoint">Stringing everything together</h2>
                         <div class = "inactive">
-                            <h2 class = "contentTitle">Downloading phaser</h2>
-                            <a href = "https://phaser.io/download/stable" target = "_blank">
-                                Click this link to go to the website to download phaser.
-                            </a>
-                            
-                            <h2 class = "contentTitle">Downloading Nodejs</h2>
-                            <a href = "https://nodejs.org/en/download" target="_blank">
-                                Click me to go to the website to download Nodejs.
-                            </a>
-
-                            <h2 class = "contentTitle">Copy and paste this command in your repositories terminal in Visual Studio Code</h2>
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Time to put everything together!
+                            </h2>
                             <h3>
-                                git clone git@github.com:photonstorm/phaser3-project-template.git MyProject
-                                <br>cd MyProject
-                                <br>npm install
-                                <br>npm start
+                                To put everything together, first you need to make some sprites. It doesnt have to be complicated, but i recommend making 3 types of sprites for our lessons (they will be used in the next lesson), 1 walking animation, 1 action animation (swinging of a sword, shooting of gun, or otherwise), and 1 dying animation, as well as atleast 1 background. (you can see where this is leading up to, we will be making a vampire-slayer or soul-knight type of survival game next lesson.)
+                                <br>For example:
+
                             </h3>
 
-                        </div>
-                    </div>
+                            <h2 class = "contentTitle">Putting sprites in your repository</h2>
+                            <h3>
+                                This should be quite explanatory, but to put sprites, I recommend you to have a folder for your sprites, for easier referencing and developing. 
+                                You can simply import your spritesheets in the folder, like this:<br>
+                                <img src ="Imgs_and_stuff/rat.jpg" style = "width:400px; height:400px">
+                                <h3>If you want to, you can also have a seperate folder for backgrounds, although it is not necessary.</h3>
+                            </h3>
 
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">Practice Work:</h2>
-                        <div class = "inactive">
-                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                Try to replicate this example below:
-                            </h2>
+                            <h2 class = "HeaderPoint">Creating your classes</h2>
+                            <h3>
+                                There are 5 main classes you need to create. The first one will be the players, one for the enemies, one for the UI, one for the background, and one for the loading screens. Same as always, I recommend you put your classes in a seperate .js file, for easier troubleshooting and debugging later on (so you dont spend half your time finding your classes)
+                            </h3>
 
-                            <iframe class = "PracticeExample" src = "lesson-3-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
+                            <h2 class = "contentTitle">Classes: player</h2>
+                            <h3>
+                                For your player class, you should have the constructors for loading the sprite on the screen, somewhere you choose
+                            </h3>
 
-                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                Descriptions for the practice excerises below:
-                            </h2>
-                            <h3>Practice 1: Display a white button with white text that says "Click Me!", this button should have the class of buttonStuff and should have rounded red borders </h3>
-                            <h3>Practice 2: Display a piece of text that says "Impact Buttone" that when pressed, you get taken to the impact font wiki page. This button should also have the Impact font and a font size of 20px;</h3>
-                            <h3>Practice 3: Display a profile picture-like icon that is completely rounded and has a border color of your choice.</h3>
-                            <h3>Practice 4: Display a chapter extract from a book that is written in brown text, with the heading using the font Franklin Gothic Medium and the paragraph using Times New Roman.</h3>
+                            <h2 class = "contentTitle">Classes: enemies</h2>
+                            <h3>
+                                For enemies, basic instructors would be their sprites and animations. We will talk more about AI tracking and actions next lesson.
+                            </h3>
+
+                            <h2 class = "contentTitle">UI, Background and loading screens</h2>
+                            <h3>
+                                For saving time, you can make these a general class, then assign subclasses of UI, Background and loading screen. We will talk more about why next lesson, as well as constructing the code for our game.
+                            </h3>
                         </div>
 
                     </div>
