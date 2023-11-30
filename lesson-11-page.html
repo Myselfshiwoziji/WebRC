@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 11</title>
+    <link rel ="stylesheet" href = "Styles/loadingpage.css">
+    <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
+    <link rel = "stylesheet" href = "Styles/mainpage.css">
+    <link rel = "stylesheet" href = "Styles/LessonScreenFormat.css">
+    <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
+</head>
+
+<body>
+    <section class = "showcase" id = "main">
+        <header class = "pageheader">
+            <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web@RC&gt;</a></h2>
+            <span class = "main_toggle" onclick="openNav()"></span>
+        </header>
+        
+        <div class = "main_text" id = "main-text">
+            <h2>
+                Lesson 11:
+                <br>
+                Login Systems
+            </h2>
+    
+            <dialog class = "Lecture" id="LectureVid">
+                <div class = "LectureVideo">
+                    <div>
+                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 9 Video Recording:</h2>                               
+                        <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+                    </div>
+                    <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                        <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                    </video>
+
+                </div>
+            </dialog>
+            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
+            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+
+        </div>
+
+        <div class = "lessonformat">
+            <div class = "container">
+                <div class = "tabs">
+                    <h3 class = "active letab">Databases and MongoDB</h3>
+                    <h3 class = "letab">Schemas</h3>
+                    <h3 class = "letab">Mongoose functions in NodeJS</h3>
+                    <h3 class = "letab">Registration Systems</h3>
+                    <h3 class = "letab">Login Systems</h3>
+                </div>
+                    
+                <div class = "tab-content">
+                    <div class = "active fade">
+                        <h2 class = "HeaderPoint">Databases</h2>
+                        <h2 class = "contentTitle">What are databases?</h2>
+                        <h3>
+                            So far in the course, we have talked about the basic structure of a Backend System, however, there is one part of the system which we have yet to talk about, databases. 
+                            Databases are storage enviroments which can help store, filter, and organize large amounts of data for you to utilise in your website. <br><br>
+
+                            Currently, there are two types of databases in the world, SQL databases and NoSQL databases. SQL and NoSQL databases are quite different in nature, as SQL databases are more heavily geared towards
+                            a rigid system which is more difficult to scale, whereas NOSQL databases are provide much more flexible and dynamic sorting systems, and are more easier to scale. However, SQL databases
+                            tend to also be much more better geared towards handling more relational based information (ie: transactions) whereas NoSQL databases are geared towards more dynamic forms of information (ie: login systems or big data)
+                        </h3>
+
+                        <h2 class = "contentTitle">Using a database</h2>
+                        <h3>
+                            For the purposes of this course, we will be teaching you how to use NoSQL databases rather than SQL databases using MongoDB. First, start by making a MongoDB account by going to <a href = "https://www.mongodb.com/" target="_blank">mongodb.com</a> 
+                            and making your first project. Once the project is initialised, go to the Database tab and create your new database. In the database creation screen, you will see that there are a variety of providers and server locations for you to 
+                            configure and choose for deployment. For the purposes of this couse, choose the shared cluster options and select the cloud provider and region corresponding to where you are in the world (eg: If you live in HK and Google Cloud provides servers
+                            in HK, you can choose that for starting up your database).<br><br>
+                            After this, it should ask you to make a general login profile for the database itself, so please set that and remember both the username and password for later, as it will be crucial for accessing your database.
+                        </h3>
+                        <h2 class = "contentTitle">Connecting the database to your NodeJS application</h2>
+                        <h3>
+                            Once you have finished making your database, you should see on your database tab that your new database is ready for deployment and usage. So, to connect the database to your NodeJS Web Application,
+                            you need to click on the connect button and select the "drivers" option and then pick the Node.JS driver to see the general format required for you to use in order to connect to the NoSQL Database.
+                            You can then just copy the code that they've given you and place it directly in your main Server.JS file, and then replace the &lt;username&gt; and &lt;password&gt; with the actual username and password you set.
+                        </h3>
+
+                        <h3>You can then start running the code using the command <code>npm run devStart</code> or whatever the name for your nodemon command is named in the console and you should see that it should say that you are connected to the 
+                            database in the console.
+                        </h3>
+
+                        <h3>
+                            Note: if there are any errors, it might be either due to your WiFi connection blocking the connection due to the firewall or not having the pre-requesite library installed and defined for running this code. 
+                        </h3>
+                    </div>
+                    <div class = "fade">
+                        <div class = "inactive">
+                            <h2 class = "HeaderPoint">Schemas</h2>
+                            <h2 class = "contentTitle">What is a schema?</h2>
+                            <h3>
+                                Before we even begin to implement some data into our database using NodeJS, we must first create a Schema for the database to organize our data. A schema is basically a simple layout strucure that the database reads in order
+                                to understand what data goes where and the categories which they fall under. Think of it similar to that of a blueprint for the database.
+                            </h3>
+
+                            <h2 class = "contentTitle">Creating a schema</h2>
+                            <h3>
+                                Setting up a basic schema is quite simple in NodeJS, and is quite a straightforward process. As we are working to create a Login System for this lesson, we will create a user information schema. Let's start by making a folder to store 
+                                all of our schemas named "models" (the name is arbitrary, and you can really name it anything). We then need to make a new JavaScript file in our models folder and name it approprately. Since the schema is for user information, lets
+                                call it "userInfo".  
+                            </h3>
+
+                            <h3>
+                                In your new JavaScript file, we need to first define all the required libraries that we will use. First, import the library called mongoose using the same method shown in Lesson 10. If you haven't installed the mongoose library yet, you 
+                                can run the command <code>npm install mongoose</code> in the terminal to download it. 
+                            </h3>
+
+                            <h3>
+                                After this, we need to then create a new constant variable for our schema. For the purposes of this lesson, let's call it the "userSetupSchema". We then need to equate this constant to a new mongoose schema. To do this,
+                                we have to type in the "new" statement before typing mongoose.Schema with a curly bracket in the parathesis. If done correctly, this is what you should have so far:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                <code>
+                                    const mongoose = require('mongoose')<br><br>
+                                    const userSetupSchema = new mongoose.Schema({<br><br>})
+                                </code>
+                                </div>
+                            </h3>
+
+
+                            <h2 class = "contentTitle">Defining the schema properties</h2>
+                            <h3>
+                                After this, we can then finally define the contents of the Schema itself inside the curly brackets. We can do this by first naming the types of data we want to save on the schema. Lets start by making a username category.
+                                Firstly, type in "username" inside the curly brackets, and then put a colon and then a curly bracket after it. Inside these curly brackets, we can then define the details of the data itself. Firstly, lets start by defining
+                                the type of data that the "username" is. Since the username is a typed out response from the user, we can define the type as a string (to the people who already have experience with the different types of variables in coding,
+                                all of them basically can be used in the types section). We can define the type by first typing in "type:" in the curly brackets, and follow it up with its value (in this case we would type in "String"). 
+                            </h3>
+
+                            <h3>
+                                We also need the username to be required for any user, so we don't have any users with blank or undefined username values sitting around in the database. Thus, to do this, we will put a comma after the "String" and then type in "required: true" in order
+                                to define it as a required value to create a user. If you followed everything correctly, you should end up with something like this:
+                            </h3>
+
+                            <img src = "Imgs_and_stuff/Screen Shot 2023-11-20 at 10.54.22 PM.png" loading="lazy" height="200px" width="400px" style = "margin-left: 16px;">
+
+                            <h3>
+                                As a side note, you can view all the possible data types on <a href = "https://mongoosejs.com/docs/schematypes.html#what-is-a-schematype" target = "_blank">this link</a>, and, just like shown in the image, if you want to add more data labels 
+                                to your new schema, you can do the exact same process as shown before. However, you also need to add a comma after the curly brackets at the end of each data type.
+                            </h3>
+
+                            <h2 class = "contentTitle">Exporting and using your schema outside of the schema model</h2>
+                            <h3>
+                                After all of this, we still need to link our schema to the actual database and be able to access it outside of the schema file itself. Thus, to do this, we can first define a new 
+                                constant variable outside of the userSetupSchema area and set it equal to "mongoose.model('INSERT_REFERENCE_NAME', userSetupSchema)". We can then call the module export function on this specific constant variable.
+                                If you did this correctly, the code should look something like this:
+                            </h3>
+                            <h3>
+                                <div class = "codeDiv">
+                                <code>
+                                    const mongoose = require('mongoose')<br><br>
+                                    const userSetupSchema = new mongoose.Schema({<br>&nbsp;&nbsp;&nbsp;Insert schema properties here...<br>})<br><br>
+                                    const userStuff = mongoose.model('userInfo', userSetupSchema)<br>
+                                    module.exports = userStuff
+                                </code>
+                                </div>
+                            </h3>
+
+                        </div>
+                    </div>
+
+                    <div class = "fade">
+                        <div class = "inactive">
+                            <h2 class = "HeaderPoint">Mongoose functions in NodeJS</h2>
+                            <h3>Now that we have our own schema set up, we can now finally begin adding information to our database through our website. To do this, we have to first define a constant variable that 
+                                acts as a link between the current file and the schema itself. To do this, we can simply do this in the same way we connected router files back in lesson 10. For the purposes of this tutorial,
+                                lets simply call this constant as "userInfo" 
+                            </h3>
+
+                            <h2 class = "contentTitle">.findOne({})</h2>
+                            <h3>
+                                The first command which we will be looking at is the .findOne function. This function allows us to find a specific document in the database based on specific query parameters. For example,
+                                if I were to type out <code>userInfo.findOne( { username: 'Jason' } )</code> this would cause the code to essentially search your connected database for a document with a username value of "Jason".
+                                Of course, you can use all sorts of parameters inside the findOne brackets, and you can even chain multiple requirements for the document using a comma after every curly bracket.
+                            </h3>
+
+                            <h2 class = "contentTitle">.deleteOne({})</h2>
+                            <h3>
+                                This is the next major command which you need to know when using Mongoose, as it allows us to delete specific documents from the database entirely. Much like the previous function, deleteOne
+                                takes in a set of parameters inside its curly brackets in order to find a corresponding document to delete. For example, if I were to run the code <code>userInfo.deleteOne({ email: 'jason123@gmail.com'})</code>
+                                it would cause the system to find a singular document that has that corresponding email value. It should be noted that if you had multiple documents that all shared the same email value the system would just 
+                                choose one at random to delete. Thus, in order to delete multiple documents, you would have to use the:
+                            </h3>
+
+                            <h2 class = "contentTitle">.deleteMany({})</h2>
+                            <h3>
+                                This is another function that acts similar to that of the deleteOne function. However, it instead deletes all instances of a specific parameter. Much like the deleteOne function, this function allows you to remove 
+                                documents stored on the database. However, this function deletes all instances of a specific parameter value passed in the curly brackets. For example, if we were to type <code>userInfo.deleteMany({ username: Josh })</code>
+                                then all documents with the username of Josh will be removed from the database.
+                            </h3>
+
+                            <h2 class = "contentTitle">.updateOne({}) and .updateMany({})</h2>
+                            <h3>
+                                This function allows you to update a specifc document and its specific values in the database. This function works similarly to the other functions, but the syntax is a bit different. First, to update a document,
+                                you have to first specify a specific identifying trait for the document that you want to update. After that you have to then specify the specific section that you want to update and its new value. To demonstrate this, you can 
+                                write the following code <code>userInfo.updateOne({username: "Bob"}, {$set{ email: xXxBob2023@gmail.com}})</code>
+                            </h3>
+                            
+                            <h3>
+                                In this provided example, the identifying trait for the document we want to update was a document with tbe username of "Bob". After identifing the document, we then used a $set function to set the new value
+                                for the email value for the document to xXxBob2023@gmail.com. Please note that the update function also follows the same ideas a rules as .deleteOne({}), and will only update ONE document. If you want 
+                                to update multiple documents, you can change the function from .updateOne({}) to .updateMany({})
+                            </h3>
+
+                            <h2 class = "contentTitle">.replaceOne({})</h2>
+                            <h3>
+                                For the replaceOne function, it works by simply first finding a target document in a given specific parameter, and then replacing the document with a brand new one in its place. We can to this by passing paramters into the
+                                the curly brackets to first define the parameters for the document we want to replace, and then, much like creating a new document, we specify the values of the new document and then replace the file. For example, if we type the following code:
+                                <code>userInfo.replaceOne({ username: "Osby"}, {<br>&nbsp;&nbsp;&nbsp;username: 'Osborn', <br>&nbsp;&nbsp;&nbsp;password: 'newPassword', <br>&nbsp;&nbsp;&nbsp;email: 'osborn1@gmail.com'<br>})</code>
+                            </h3>
+
+                            <h3>
+                                This simple line of code basically finds a document with the username value of "Osby", and then replacing it with a new document with a username of 'Osborn', a password of 'newPassword', and a email of 'osborn1@gmail.com'.                           
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Registration Systems</h2>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle">Outline for the Registration System</h2>
+
+                            <h3>
+                                Before we start making the registration system, we need to first define how it works and how it flows. Firstly, we need the users to type in the credentials in the registration page and submit it to the system. The system should then 
+                                go through the database to make sure that the user does not arleady exist, and if they do, cancel the registration process. Otherwise, the password will then be encrypted and saved into the database to guarantee the safety of the users 
+                                privacy and security.
+                            </h3>
+
+
+                            <h2 class = "contentTitle">Creating the Registration system</h2>
+
+                            <h3>
+                                Let's first start by making a registration page with a form element with the inputs for the username, email, and password. These parameters must exist in your userInfo model, and must have the name element value of 
+                                'name', 'email', and 'password' respectivley.
+                            </h3>
+
+                            <h3>
+                                Since we want to do the registration system to kick in after the submission of the form, we need to first place all of these registration system inside the router.post() functions inside the '/register' page. Once this is done, we can then 
+                                start by having a findOne function to check if a user with the same email and/or same username. After this, we can then pass a .then() directly after the findOne function, with the variable of user passed inside of it and an arrow followed by curly brackets 
+                                to start the .then() function as an actual function.
+                            </h3>
+
+                            <h3>
+                                Doing all of this should net you a current product that looks roughly like this:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                <code>
+                                    router.post('/register', (req, res)=>{<br>
+                                        &nbsp;&nbsp;&nbsp;userInfo.findOne({username: req.body.username}, {email: req.body.email}).then(user=>{<br><br>
+                                        &nbsp;&nbsp;&nbsp;})<br>
+                                    })
+
+                                </code>
+                                </div>
+                            </h3>
+
+                            <h3>
+                                Now, after this, we can then pass in a couple of statements inside the .then() functions. Firstly, pass in a if() statement with the parameters of user. This if statement basically checks whether or not the user 
+                                does exist in the database, and if they do exist, execute all the functions in this if statement. Inside this if statement, we can simply pass in the function of res.redirect('/register'). This basically means that if the 
+                                user does exist in the database, they would immediately be booted to the registration page again in order for them to redo the registration.
+                            </h3>
+
+                            <h3>
+                                Next, we can then put an else statement with a variable called newUser. This newUser variable can then be equated to the function new userInfo({}). Inside the curly brackets for this function, we can then start buildiing the 
+                                credentials for the new user. Firstly, we can put the username and define it as req.body.username. After this, we can put a comma and define the email as req.body.email, and lastly define the password as req.body.password. Doing all of this 
+                                will give you code that looks something like this:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                    <code>
+                                        router.post('/register', (req, res)=>{<br>
+                                            &nbsp;&nbsp;&nbsp;userInfo.findOne({username: req.body.username}, {email: req.body.email}).then(user=>{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(user){<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/register');<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var newUser = new userInfo({<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username: req.body.username,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: req.body.email,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: req.body.password<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                            &nbsp;&nbsp;&nbsp;})<br>
+                                        })
+                                    </code>
+                                </div>
+                            </h3>
+
+                            <h2 class = "contentTitle">Encrypting the password</h2>
+                            <h3>
+                                Now that the details of the newUser is saved, we now need to encrypt the new users password and save it to the database. To do this, we need to leverage the bycrpt library, so download bycrpt in the console, and 
+                                import it into this file. Now, after this is done, we now need to call upon the function bcrypt.genSalt() to help hash the password. Inside the genSalt function, pass the number 10, put a comma, and then pass in two parameters, 
+                                (err, salt) and put an arrow and curly brackets to turn it into a function.
+                            </h3>
+
+                            <h3>
+                                After doing this, we can then put in the function bycrpt.hash() and pass in a couple of variables. Firstly, pass in newUser.password, salt, and (err, hash). Then using an arrow and curly brackets turn this into yet another function.
+                                Inside this function, firstly create a if statement for the err variable, and inside type in throw err. This makes it so that if there is an error anywhere during the encryption process, it will immediatley display the error on the website.
+                                Next, we can then simply equate the newUser.password to the hash variable, and then type in newUser.save(). this .save() function allows us to save documents into the database, and this line in its entirity basically makes a new 
+                                document with all the details for the new user. Now, you can then pass a .then() function with the user variable and redirect them to the login page to log in.
+                            </h3>
+
+                            <h3>
+                                Doing all of this should give you the finished code that looks like this:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                    <code>
+                                        router.post('/register', (req, res)=>{<br>
+                                            &nbsp;&nbsp;&nbsp;userInfo.findOne({username: req.body.username}, {email: req.body.email}).then(user=>{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(user){<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/register');<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var newUser = new userInfo({<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username: req.body.username,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: req.body.email,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: req.body.password<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bcrypt.genSalt(10, (err,salt)=>{<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bcrypt.hash(newUser.password,salt,(err,hash)=>{<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(err) throw err<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newUser.password=hash;<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newUser.save().then(user=>{<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/login');<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                            &nbsp;&nbsp;&nbsp;})<br>
+                                    </code>
+                                </div>
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Creating a Login System</h2>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle">Introduction to Passport JS</h2>
+                            <h3>
+                                In order to help us make the whole login authentication system much easier, we can simply just use the powerful Passport JS library to help take care of it for us. Since we are doing a 
+                                manual login system, we will be utilising the local Passport JS system to help us. 
+                            </h3>
+                            
+
+                            <h2 class = "contentTitle">Creating the login routing file</h2>
+                            <h3>
+                                First, lets create a new router file for all of our authentication, login, and registration systems. You can refer back to lesson 10 to see how we can create a router file and how we can utilise that to
+                                create tidy but complex systems for our websites.
+                            </h3>
+
+                            <h3>
+                                One key difference, however, is that we will need to also import in our passport-local library into this router file, along with the schema that we made earlier and the mongoose library. 
+                                Once done, simply make a router.get function for a /login page, a /registration page, and a user page that the users will access after logging in. Now that the basic setup is done, create a 
+                                .ejs file for each of the pages, and make sure that the /login page as a form html element that has a two required input elements that have a name of "name" and a name of "password".
+                            </h3>
+
+
+                            <h2 class = "contentTitle">Authenticating the login</h2>
+                            <h3>
+                                Now that we have our login routing file created, we can start working on the authentication system for logging in. To do this, let us first start by creating file for the authentication code of the project.
+                                We can do this by creating a new file in the project, and then naming it authentication.js. In this file, we can then import the passport.js library, the express.js library, the passport-local library, and the 
+                                bcrypt library. Please note that you should set this up like a router file, and should follow those setup steps back in lesson 10. Also, when you define your passport-local, please name it as LocalStrategy.
+                            </h3>
+                            <h3>
+
+                                After this, create a passport.use() function in the JavaScript file. The passport.use function allows us to define a new strategy for the system to use to validate its users. A strategy is basically just a simple set of parameters for the 
+                                system to follow in order to decide wheter or not to authenticate or not authenticate the user. Please note that you have to place this passport.use() function inside the module.exports function. You can do this by 
+                                equating the module.exports function to an async function that passes (pasport) in it.
+                            </h3>
+
+                            <h3>
+                                In the passport.use() parameters, we need to pass in the argument of 'new LocalStrategy'. The LocalStrategy should be defined earlier as the passport-local library that you downloaded earlier. Once we 
+                                create a new LocalStrategy, we need to then pass 3 additional parameters for setting it up. Firstly, type out "local" (with the quotation signs) in front of the new LocalStrategy parameter, and then place a comma after it.
+                                Secondly, place a bracket right after the LocalStrategy which has curly brackets inside of it, this curly bracket should then define usernameField as 'name'. Lastly, simply create a new function with the parameters of (name, password, and done).
+                                Putting this all together should give you code that looks like this:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                    <code>
+                                        module.exports = async function (passport){<br> 
+                                            &nbsp;&nbsp;&nbsp;passport.use("local", new LocalStrategy({usernameField: 'name'}), async function (name,password,done) =>  &nbsp;&nbsp;&nbsp;{<br><br>
+                                                &nbsp;&nbsp;&nbsp;})<br>
+                                        }
+                                    </code>
+                                </div>
+                            </h3>
+
+                            <h3>
+                                Now that we have this function for a LocalStrategy set up, we can now define that exactly the LocalStrategy is and does. Firstly, lets check if the user really exists in the
+                                database. We can do this by calling on the userInfo constant and using the findOne function to find a user with the same username as the one typed out in the body of the webpage.
+                                To do this, we can pass a try catch function in the LocalStrategy in order to detect errors and check whether or not a user exists. 
+                            </h3>
+
+                            <h3>
+                                After implementing a Try Catch function, we can then create a constant variable called "user" and equate it to finding a user with the same username as the "name" variable that was passed earlier.
+                                We can put an await function right before the userInfo command in order to make sure that the code absolutley finds the value of the constant. After this, we can put a simple if statement for when
+                                there is no value for the user, and then in the if command call upon the return function with the parameters of null and false.
+                            </h3>
+
+                            <h3>
+                                Doing all of this will allow for the LocalStrategy to check for whether or not the username typed in by the user exists, and then returns with a null return, which basically means
+                                that the user is not verified. If this was done correctly, it should look something like this:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                    <code> module.exports = async function (password){<br>
+                                        &nbsp;&nbsp;&nbsp;passport.use("local", new LocalStrategy({usernameField: 'name'}), async function (name,password,done) =>  &nbsp;&nbsp;&nbsp;{<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try{<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const user = await userInfo.findOne({ username: name});<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!user){<br<br><br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done (null, false)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;} catch {<br><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;&nbsp;})<br>
+                                    }
+                                        <!-- &nbsp;function (username,password,done){<br><br>
+                                        })) -->
+                                    </code>
+                                </div>
+                                <!-- <code>app.get("/", (req,res)=>{<br>
+                                        &nbsp res.render ("INSERT_EJS_FILE_NAME",{<br>
+                                            &nbsp;&nbsp;&nbsp; INSERT_VARIABLE_NAME = VARIABLE_VALUE<br>
+                                        &nbsp;&nbsp;})<br>
+                                    })
+                                </code> -->
+                            </h3>
+
+                            <h3>
+                                Now that this is done, we can now start working on checking the password of the user, and autheenticating them if all is working correctly. Since we had used bcrypt to 
+                                hash our users password, simply doing a direct comparision to what the user typed out and the password stored on the database would not work at all. So, we have to first de-scramble
+                                the password stored on the database for comparison.
+                            </h3>
+
+                            <h3>
+                                We can simply do this by using the bcrypt.compare() function, and passing in the brackets the password, user.password, and another bracket that contains err and isMatch. After this 
+                                new bracket, you can then construct a arrow using the equal sign and a greater than sign and then passing a curly bracket for the function. Inside the curly bracket, we can first start 
+                                by making a if statement to check if err is true, and if it is, we can simply use the command throw err, which basically makes it so that if a error occured, it would show the error on the webpage.
+                            </h3>
+
+                            <h3>
+                                Next, we can then construct a if statement for the isMatch variable. Within this if statement, we can simply just call upon the return done function, but pass in the values (null, user). This makes it
+                                so that if the passwords do indeed match, then the user will be authenticated by the library. After this, we can follow up on the if statement with an else statement, and pass the function of return done with the 
+                                parameters of (null, false). Doing this will make it so that if the passwords do not match, then the system will not authenticate the user
+                            </h3>
+
+                            <h3>
+                                Finally, we can go back to the catch function and pass (err), then inside the catch function we can just call upon the return done fucntion with the parameters of (err). This makes it so that 
+                                if there is an error within the system when looking for the user, it would immediately let the user know through the webpage. Regardless, doing all of the above should give you a 
+                                code that looks like this:
+                            </h3>
+
+
+                            <h3>
+                                <div class = "codeDiv">
+                                    <code>module.exports = async function(passport){<br>
+                                        &nbsp;&nbsp;&nbsp;passport.use("local", new LocalStrategy({usernameField: 'name'}), async function (name,password,done) =>  &nbsp;&nbsp;&nbsp;{<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const user = await userInfo.findOne({ username: name});<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!user){<br<br><br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done (null, false)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                                            
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bcrypt.compare(password, user.password, (err, isMatch)=>{<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (err) throw err;<br><br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isMatch){<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done(null, user);<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done (null, false)<br>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} catch (err){<br>
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done(err);<br>
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                                    &nbsp;&nbsp;&nbsp;})<br>
+                                                                }
+                                        <!-- &nbsp;function (username,password,done){<br><br>
+                                        })) -->
+                                    </code>
+                                </div>
+                                <!-- <code>app.get("/", (req,res)=>{<br>
+                                        &nbsp res.render ("INSERT_EJS_FILE_NAME",{<br>
+                                            &nbsp;&nbsp;&nbsp; INSERT_VARIABLE_NAME = VARIABLE_VALUE<br>
+                                        &nbsp;&nbsp;})<br>
+                                    })
+                                </code> -->
+                            </h3>
+                            
+
+                            <h2 class = "contentTitle">Session, Success, and Failure</h2>
+                            <h3>
+                                Now that the main LocalStrategy is working, we now need to make a couple of changes in order for this to fully work. Firstly, lets go back to the file with our router for the login page, and then create 
+                                a post router function. In the post router function, we can then pass in the function passport.authenticate along with the 'local' name to make a function. To do this, we can simply type out the following code:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                    <code>
+                                        router.post('/login/password', passport.authenticate('local', {<br><br>
+
+                                          }));
+                                    </code>
+                                </div>
+                            </h3>
+
+                            <h3>
+                                Now that this is done, we can now pass in two important functions inside the authentication function to redirect users to specific pages based on whether or not they were authenticated or not.
+                                To do this, we can first utilise the function called successRedirect, and put a colon right after it and then type in the page we want to redirect the authenticated user to as a string. After this, put a comma to
+                                seperate it for the second function, which is failureRedirect. We can put a colon right after this function and then type in the page we want to redirect users that could not be authenticated as a string. If you do all of this,
+                                the code should look something like this:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                    <code>
+                                        router.post('/login/password', passport.authenticate('local', {<br>
+                                            &nbsp;&nbsp;&nbsp;successRedirect: '/',<br>
+                                            &nbsp;&nbsp;&nbsp;failureRedirect: '/login'<br>
+                                          }));
+                                    </code>
+                                </div>
+                            </h3>
+
+                            <h3>
+                                But heres where we run into a problem, running the current code crashes the website. So, to fix this, we need to establish a session for the users. This basically will signal the website on when the user is currently on the website,
+                                and allows us to save the user login information such so that we can use it throughout their time using the website. We can start by firstly downloading the express-session library and naming is as "session" inside the server.js file. 
+                                After that, we can then using a app.use() function and pass the session({}) function inside of it.
+                            </h3>
+
+                            <h3>
+                                Inside the session function, we need to first define the secret, which is essentially the secret key to accessing the user session data. We can do this by typing in session: and then typing in a string for the secret key that you would like to 
+                                set it to. After this, put a comma after the session varable, and then define the resave function. The resave function basically is a boolean variable that controls whether or not the user info is saved when logging in. For the purposes of this course, 
+                                please set this to true. After this, we then need to finally define the saveUninitialized variable, which is also just a boolean. This variable controls whether or not a "unauthenticated" user is saved to the 
+                                session storage. Since this can eat quite a bit of server storage, please set this to false. Doing all of this should give you code that looks like:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                    <code>
+                                        app.use(session({<br>
+                                            &nbsp;&nbsp;&nbsp;session:'secretKey',<br>
+                                            &nbsp;&nbsp;&nbsp;resave: true,<br>
+                                            &nbsp;&nbsp;&nbsp;saveUninitialized: false<br>
+                                        }))
+                                    </code>
+                                </div>
+                            </h3>
+
+                            <h3>
+                                After this, you can then simply just type out require('./filePath/authentication.js')(passport); with all the library constants to finish off routing the authentication to the main server file. However, we still have one last thing to do for this login system.
+                                Go back to the authentication file, and after the passport.use() function (but still inside the module.exports function) pass in the function passport.serializeUser(). Inside the passport.serializeUser() brackets, pass a function with the parameters of (user, cb) and place a second 
+                                function called process.nextTick(). Once again, in the brackets of process.nextTick, place yet another function without any parameters. Inside this second function, type in <code>cb(null, { id: user.id, username: user.username})</code>
+                            </h3>
+
+                            <h3>
+                                Now that this is done, we now need to make a deserialising function for the user. So go outside the passport.serializeUser() (but not outside the module.exports function) and type in passport.deserializeUser(). Inside the brackets, then pass in a function with the parameters of (user, cb), and once again 
+                                pass in a second function called process.nextTick(), and then passing a function without parameters inside process.nextTick(). Finally, inside the second function without parameters, type in the code <code>return cb(null, user).</code> Once that is done, your code should look something like this:
+                            </h3>
+
+                            <h3>
+                                <div class = "codeDiv">
+                                    <code>
+                                        passport.serializeUser(function(user, cb) {<br>
+                                            &nbsp;&nbsp;&nbsp;process.nextTick(function() {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb(null, { id: user.id, username: user.username });<br>
+                                                &nbsp;&nbsp;&nbsp;});<br>
+                                          });<br><br>
+                                          
+                                          passport.deserializeUser(function(user, cb) {<br>
+                                            &nbsp;&nbsp;&nbsp;process.nextTick(function() {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return cb(null, user);<br>
+                                                &nbsp;&nbsp;&nbsp;});<br>
+                                          });
+                                    </code>
+                                </div>
+                            </h3>
+                        
+                            <h3>
+                                Finally, after all of this, run your code and test it out! You should now see that you have a complete functioning login system!
+                            </h3>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "footer" id = "main-text">
+            <a class = "LectureButton bottombuttons" href="lesson-8-page.html">Previous Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-10-page.html">Next Lesson</a>
+        </div>
+    </section>
+
+    <div id = "main_side" class="main_menu"></div>
+</body>
+
+    <div class = "loader"></div>
+    <div class = "loading" src = "Imgs_and_stuff/rat.jpg"></div>
+
+    <script src = "Javascript/sidemenu.js"></script>
+    <script src = "Javascript/loader.js"></script>
+    <script src= "Javascript/AlternativeContentDisplay.js"></script>
+
+</html>
