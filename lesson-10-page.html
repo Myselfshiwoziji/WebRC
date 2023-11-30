@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 9</title>
+    <title>Lesson 10</title>
     <link rel ="stylesheet" href = "Styles/loadingpage.css">
     <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
     <link rel = "stylesheet" href = "Styles/mainpage.css">
@@ -18,9 +18,9 @@
         
         <div class = "main_text" id = "main-text">
             <h2>
-                Lesson 10:
+                Lesson 9:
                 <br>
-                Backend with NodeJS
+                Website deployment & further git commands
             </h2>
     
             <dialog class = "Lecture" id="LectureVid">
@@ -43,296 +43,115 @@
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "active letab">Introduction to Backend</h3>
-                    <h3 class = "letab">Importing libraries</h3>
-                    <h3 class = "letab">Setting up your Backend Systems</h3>
-                    <h3 class = "letab">Setting up webpages</h3>
-                    <h3 class = "letab">Routes and Pagination</h3>
+                    <h3 class = "active letab">How to deploy your website</h3>
+                    <h3 class = "letab">Custom domains</h3>
+                    <h3 class = "letab">Git commands 2</h3>
+                    <h3 class = "letab">Practice Work</h3>
                 </div>
                     
-                <div class = "tab-content">
+                    <div class = "tab-content">
                     <div class = "active fade">
-                        <h2 class = "HeaderPoint">What is the Backend?</h2>
+                        <h2 class = "HeaderPoint">What is JSON?</h2>
                         <h3>
-                            So far in the course you have been learning what developers call "Frontend development". Frontend development is the development of websites on a more visual and interactable level. For example,
-                            what you see in a website, the multiple interactable elements in a website, etc. Basically, Frontend Development is simply the development of the graphical user interface of a website. <br><br>
+                            JSON, or JavaScript Object Notation, is a file format designed to store key-value pairs of variables in a human readable format.
+                            Although designed for JavaScript, many programming languages now parse JSON, making it a valuable format to store and transmit data between programs.
+                        </h3>
 
-                            However, the concept of Backend Development is the exact opposite. Backend Development is basically the development of the underlying systems in a website. For example, registration of users in a 
-                            website, login systems, authentication systems, transaction systems, etc. Thus, in this final portion of the course, we will teach you how to design systems for your website to give it even more 
-                            functionality, and we hope that by the end of it, you will become a full fledged Fullstack Developer!
+                        <h2 class = "contentTitle">Creating a JSON File</h2>
+                        <h3>
+                            Like with other file types, give your file a name ending in <code>.json</code> to declare it for JSON. Such as:
+                        </h3>
+                        <h3>
+                            <code>examplefile.json</code>
+                        </h3>
+                        <h2 class = "contentTitle">What can JSON be used for?</h2>
+                        <h2>
+                            &nbsp;&nbsp;Storing Data/ Data transmittion
+                            </h2>
+                        <h3>
+                            JSON is often used to send data between a server and a client as part of web APIs (Application Programming Interfaces). It allows for structured and organized transfer of data, making it ideal for applications that interact with remote servers.
                         </h3>
                     </div>
                     <div class = "fade">
                         <div class = "inactive">
-                            <h2 class = "HeaderPoint">Importing libraries</h2>
-                            <h2 class = "contentTitle">Why do we import libraries?</h2>
+                            <h2 class = "HeaderPoint">JSON Syntax</h2>
                             <h3>
-                                Importing libraries are highly important when developing a Backend System, as they can help give your extra functions in your code in order to optimise runtime and 
-                                develop code faster and easier. Libraries can also provide you with new functions that base NodeJs does not support or provide. 
-                            </h3>
-                            <h2 class = "contentTitle">How to import libraries</h2>
-                            <h3>
-                                Importing libraries is quite easy to do for Nodejs files on Visual Studio Code. If you go to the terminal tab on the top of Visual Studio Code and click New Terminal you can open up the
-                                console for Visual Studio Code. Whenever you want to download libraries for NodeJS, you can search them up online, take the title of the library, and then in the console type:
-
+                                JSON data comes in a form similar to JavaScript Objects or Python Dictionaries: with key-value pairs.
+                                Each value (either a number, string, boolean, array, null, or nested key-value pair) is assigned a string name (the key), from which the value can be called.
                             </h3>
                             <h3>
-                                <div class = "codeDiv">
+                                However, JSON syntax is a lot stricter than Python or JavaScript!
+                                Every key must be a string, enclosed in double quotation marks (<code>""</code>), then followed by a colon (<code>:</code>), then the corresponding value. 
+                                If you wish to have multiple key pairs, they can be seperated by commas, but the final element can never have a comma. Here is an example of a JSON object:
+                            </h3>
+                            <h3>
+                                {
+                                <br>&emsp;"name": "John Doe",
+                                <br>&&emsp;"age": 30,
+                                <br>&emsp;"email": "johndoe@example.com",
+                                <br>&emsp;"address": {
+                                <br>&emsp;&emsp;"street": "123 Main St",
+                                <br>&emsp;&emsp;"city": "Anytown",
+                                <br>&emsp;&emsp;"state": "Anystate",
+                                <br>&emsp;&emsp;"postalCode": "12345"
+                                <br>&emsp;},
+                                <br>&emsp;"phoneNumbers": [
+                                <br>&emsp;&emsp;{
+                                <br>&emsp;&emsp;&emsp;"type": "home",
+                                <br>&emsp;&emsp;&emsp;"number": "555-1234"
+                                <br>&emsp;&emsp;},
+                                <br>&emsp;&emsp;{
+                                <br>&emsp;&emsp;&emsp;"type": "work",
+                                <br>&emsp;&emsp;&emsp;"number": "555-5678"
+                                <br>&emsp;&emsp;}
+                                <br>&emsp;]
+                                <br>}
+                            </h3>
+                            <h2 class = "contentTitle">Accessing JSON in JavaScript</h2>
+                            <h3>
+                                Accessing your JSON file in JavaScript is a little more complicated than defining an src or href as before.
+                                There are many ways to link a JSON file to your script, one way is with fetch API:
+                            </h3>
+                            <h3>
                                 <code>
-                                    npm install INSERT_TITLE_NAME
+                                    fetch('./level-plan.json')
+                                    <br>.then(response => response.json())
+                                    <br>.then(data => {
+                                    <br>&emsp;var objectFromJSON = data;
+                                    <br>.})
+                                    <br>..catch(error => {
+                                    <br>&emsp;.console.log('Error:', error);
+                                    <br>.});
                                 </code>
-                                </div>
-                            </h3>
-                            <h2 class = "contentTitle">Libraries you need to import for this course</h2>
-                            <h3>
-                                For this course, we will be using a variety of libraries in order to assist us to create a variety of backend systems. Thus, please run this line of code in the console below before
-                                going any further:
-                            </h3>
-                            <h3>
-                                <div class = "codeDiv">
-                                <code>
-                                    npm install express --save passport-local bcrypt mongoose mongodb --save-dev nodemon
-                                </code>
-                                </div>
-                            </h3>
-                            <h2 class = "contentTitle">Where to find NodeJS libraries</h2>
-                            <h3>
-                                If you ever want to try and use other NodeJS libraries for access to other functions, you can use the website <a href = "https://www.npmjs.com/" target = "_blank">npmjs.com</a>!
-                            </h3>
-
-                        </div>
-                    </div>
-
-                    <div class = "fade">
-                        <div class = "inactive">
-                            <h2 class = "HeaderPoint">Setting up your backend systems</h2>
-                            <h3>
-                                To start developing your Backend Systems for your website, first download NodeJS from the internet. This JavaScript Runtime can help us use Javascript to create complex systems
-                                that can deal with the systems that we want to create.
-                            </h3>
-                            <h3>
-                                Once you finish downloading NodeJs to your system, start by making a new Javascript file and typing the following syntax below:
-                            </h3>
-                            <h3>
-                                <div class = "codeDiv">
-                                <code>const express = require('express');<br>
-                                const app = express();<br>
-                                const bcrypt = require('bcrypt')<br>
-                                const passport = require('passport')<br>
-                                const mongoose = require('mongoose')<br><br>
-                                
-                                app.listen(3000)
-                                </code>
-                                </div>
-                            </h3>
-                            <h2 class = "contentTitle">Explanation for the code:</h2>
-                            <h3>
-                                The code above is a general setup for our server that we are going to run whenever we jumpstart out website. Of course, right now the code is barren due to us not putting in 
-                                any content or specific configurations for now. But to generally explain what is going on above in our small server Javascript file, basically the constant variables are helping us 
-                                declare which libraries we want to use in the server, and then designating them to a specific name (eg: the encryption library "Bcrypt" being assigned to the variable name "bcrypt"). 
-                                Typically, when you want to use a library in a NodeJS file you would use this simple format to call on it after you downloaded the library (there are some exceptions to this, and you will
-                                see the exceptions later on in the course).
-                            </h3>
-
-                            <h3>
-                                As for the line <code>const app = express();</code> this essentially is saying that we want the app to use express js as its main way of displaying content. Finally, the app.listen syntax
-                                allows us to define which port we want to host our server on. For now, since we don't have a real server, we will host it locally on our own individual machine. There is really not much reason
-                                as to why we chose to use port 3000 over port 5000 or other valid ones other than being standard protocol.
-                            </h3>
-                            <h2 class = "contentTitle">Running the NodeJS File</h2>
-                            <h3>
-                                Once you finish downloading your libraries and have this code done, what you can do is then go into the package.json file in your index on the right, and then 
-                                go to the "scripts" section and type in the code:<br>
-                                <div class = "codeDiv">
-                                    <code>"devStart": "nodemon INSERT_FULL_JS_FILE_NAME"</code>
-                                </div>
-                            </h3>
-                            <h3>
-                                What this does is that it sets the syntax of devStart as a way to jumpstart the server for your backend systems. So go to the terminal, and then type in the line:
-                            </h3>
-                            <h3>
-                                <div class = "codeDiv">
-                                    <code> npm run devStart</code>
-                                </div>
-                            </h3>
-                            <h3>
-                                Now what should happen is that you should now see that when you go to your browser of choice and then type in localhost:3000 you should see your new website. Of course, right now, there is no 
-                                content at all in the website, so go to the next part of this course and let's take a look at how we can add some html and css to help give this page an actual look.
                             </h3>
                         </div>
                     </div>
-
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Setting up webpages</h2>
+                        <h2 class = "HeaderPoint">Why do we need JSON files?</h2>
                         <div class = "inactive">
-                            <h2 class = "contentTitle">Setting up Express JS</h2>
+                            <h2 class = "contentTitle">&nbsp;Backend</h2>
                             <h3>
-                                To make our webpages, let us first start by making a new file called "views", and then making a new ejs file. Much like HTML, CSS, and JavaScript to make an 
-                                ejs file we can simply create a new file and end the title of the file with .ejs
+                                This course will not be covering backend in our 9 lessons, but if you stay for lessons 10 - 12 (the extra lessons). we will talk about backend, nodes, animations, save data, etc. which can help you make an interactable website.
                             </h3>
-                            <h3>
-                                Once that is done, go back to your main JavaScript file and type out the following code before the app.listen line:<br>
-                                <div class = "codeDiv">
-                                    <code>app.set('view engine', 'ejs');<br>
-                                        app.set('views', './views')<br>
-                                        app.use(express.urlencoded({ extended: false }))
-                                    </code>
-                                </div>
-                            </h3>
-                            <h3>
-                                This code above basically does three main things, the first thing it does is that it sets the default file for what the webpage will look like as an ejs file. It then 
-                                sets the "views" file we set up earlier as where the ejs files are stored. Finally, the urlencoded function makes it so that middleware functions are not directly put into 
-                                the url (you will learn more about this later).
-                            </h3>
-
-                            <h2 class = "contentTitle">Setting up a webpage</h2>
-                            <h3>
-                                Now that we have the general setup for using Express JS we can then go back to our .ejs file and customise it to look like how we want it to look like when it is 
-                                displayed in the webpage. This is done by using simple HTML, much like before. 
-                            </h3>
-                            <h3>
-                                After that, we can then go back to our main Javascript backend file and then type in the following code to set up our homepage:<br>
-                                <div class = "codeDiv">  
-                                    <code>
-                                        app.get("/", (req, res)=>{<br>
-                                        &nbsp app.render('INSERT_EJS_FILE_NAME')<br>
-                                        })
-                                    </code>
-
-                                </div>
-
-                            </h3>
-                            <h3>
-                                What this code above does is that it basically makes it so when the user accesses the / page (or the default url for the website) it will render the ejs file of our choice.
-                                Since we already set the server to interpret the rendered files as ejs files we don't need to add the .ejs after the end of our file name in the render function.
-                            </h3>
-                            <h2 class = "contentTitle">Going further with Express JS</h2>
-                            <h3>
-                                Express JS has some interesting features which can be used in order to further control what is displayed to a user of the webpage better than what base HTML could offer. One
-                                example of this would be passing specific variables to be loaded into a page. You can do this by first adding this element into anywhere into ejs file:<br>
-                                <%= INSERT_VARIABLE_NAME %>
-                            </h3>
-                            <h3>
-                                This basically makes it so that there is now a variable that can be manipulated and placed anywhere in the ejs file. Typically you would use this to customise and load user specific info
-                                (eg loading the user's username in the homepage of the website after logging in). In order to set the value of this string variable, you can add the following to your app.render line:<br>
-                            </h3>
-                            <h3>
-                                <div class = "codeDiv">
-                                    <code>app.get("/", (req,res)=>{<br>
-                                            &nbsp res.render ("INSERT_EJS_FILE_NAME",{<br>
-                                                &nbsp;&nbsp;&nbsp; INSERT_VARIABLE_NAME = VARIABLE_VALUE<br>
-                                            &nbsp;&nbsp;})<br>
-                                        })
-                                    </code>
-                                </div>
-                                <!-- <code>app.get("/", (req,res)=>{<br>
-                                        &nbsp res.render ("INSERT_EJS_FILE_NAME",{<br>
-                                            &nbsp;&nbsp;&nbsp; INSERT_VARIABLE_NAME = VARIABLE_VALUE<br>
-                                        &nbsp;&nbsp;})<br>
-                                    })
-                                </code> -->
-                            </h3>
-                            <h3>
-                                If you want to, you can have multiple of these variables in your webpage, all you need to do is add a comma after the first defined variable value in the render function, and then type in the next
-                                variable you want to define and use in the webpage you are loading.
-                            </h3>
-
-                            <h2 class = "contentTitle">Adding CSS and JavaScript</h2>
-                            <h3>
-                                Unlike base HTML, loading in CSS and JavaScript files into your .ejs file is a bit different, and requires a different process and setup to load them in. In order to add CSS and JavaScript files to 
-                                your webpage, first make a new folder and name it "public", and then make two sub folders inside of them named "CSS" and "JavaScript". Much like the file names suggest, place all the CSS and Javascript
-                                files in these folders respectivley.
-                            </h3>
-                            <h3>
-                                After that, put the following line of code inside your main JavaScript file:
-                            </h3>
-                            <h3>
-                                <code>
-                                    app.use(express.static(path.join(__dirname, 'public')));
-                                </code>
-                            </h3>
-                            <h3>
-                                What this line above does is that it sets the main directory file for finding CSS, JavaScript, and other files that are going to be loaded into the .ejs files.
-                            </h3>
-                            <h3>
-                                After this, go back to your ejs files in your view folder, and then add a CSS file from the CSS folder you created using the standardised syntax you are used to. However, an important thing to now note is that
-                                you firstly don't have to reference the folder that the CSS folder is inside of, as it already knows which folder to look into. You also need to define MIME types everytime you load something in.
-                                An example of this would be:
-                            </h3>
-                            <h3>
-                                <code>
-                                    &lt;link rel = "stylesheet" href = "/css/example.css" type = "text/css"&gt;
-                                </code>
-                            </h3>
-                            <h3>
-                                You need to follow this sort of formatting for any file that you have to import into your HTML file. You also need to change the type to the appropriate type (for example JavaScript would not
-                                have the type of "text/css"). To see all the possible MIME types for HTML, you can refer to <a href = "https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types" target="_blank">this website</a>.
-                            </h3>
-
                         </div>
-                    </div>
+                        </div>
 
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Routes and pagination</h2>
+                        <h2 class = "HeaderPoint">Practice Work:</h2>
                         <div class = "inactive">
-                            <h2 class = "contentTitle">What is a route?</h2>
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Try to replicate this example below:
+                            </h2>
 
-                            <h3>
-                                In NodeJS, and in all other website development languages, a route refers to a specific URL pattern or path that is used to access specific areas of a website. Let's take Youtube as an example
-                                of what a route is. In Youtube, if you go to the base <a href = "https://www.youtube.com/feed/subscriptions" target="_blank">youtube.com/feed/subscriptions</a> link you will see content from the channels you subscribed to. However, if you type <a href = "https://www.youtube.com/feed/history" target = "_blank">youtube.com/feed/history</a> 
-                                instead of loading your subscribed youtuber new videos it loads your user watch history.
-                            </h3>
-                            <h3>
-                                In this example, it shows that the /feed would be its own route, as it is a route that is individual to the youtube homepage that takes care of displaying subscriptions, watch history, etc.
-                            </h3>
+                            <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
 
-
-                            <h2 class = "contentTitle">Setting up a router in NodeJS</h2>
-                            <h3>
-                                Setting up a router is quite simple in NodeJS, but can be quite a powerful tool. The first thing you want to do is set up a routes folder in your project to house all 
-                                the routes in your website. After that, make a JavaScript file that will be your new router that will take care of your new routes. Once you enter the new router file, the setup for the file is exactly the same
-                                as your main JavaScript file. However, rather than using the syntax "app" you will use "router" instead, as this file is not the main app file but rather a branch off router.
-                            </h3>
-                            <h3>
-                                After this setup, you need to add a couple of new lines specific code for the router to work. Firstly, you need to add the following two lines of code to your Router JS file:
-                            </h3>
-                            <h3>
-                                <div class = "codeDiv">
-                                <code>
-                                    router = express.Router();<br>
-                                    module.exports = router;
-
-                                </code>
-                                </div>
-                                <br>
-                                <p style ="font-size: 14px">Note: please replace the app.listen function with the module.exports function in your router file</p>
-                            </h3>
-                            <h3>
-                                These two simple lines of code basically make it so that the file is defined as a router file, and is allowed to send data or functions from the router file to the 
-                                main file server file.
-                            </h3>
-                            <h3>
-                                The last thing we then need to do is to call the router file in the main server JS file in order to link the two together. We can do this by adding two simple lines of code shown below:
-                            </h3>
-                            <h3>
-                                <div class = "codeDiv">
-                                <code>
-                                    const routerName = require("./routerFolderName/RouterFileName.js")<br>
-                                    app.use("/Insert_Router_Name", routerName)
-                                </code>
-                                </div>
-                            </h3>
-                            <h3>
-                                What these two lines of code above do in the main Server JS file is that it first defines the router file that we want to use as a specific name, and then we then use 
-                                the app.use function in order to define when the router is called into action, and that is only when, in the URL, it features the /Insert_Router_name in it.
-                            </h3>
-
-                            <h2 class = "contentTitle">The concept of pagination</h2>
-                            <h3>
-                                Pagination is a very important concept to understand in web development, and is one we will be using for developing our backend software. Pagination refers to the idea of having
-                                individual pages to take care of every single step of a function. For example, if we were to make a login system (which will be taught next class), we could have a page for the intiial login step
-                                (when the user types in their username and password), a page for verifying whether or not exist, and two seperate pages for whether or not they can pass through into the main user page or not.
-                            </h3>
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Descriptions for the practice excerises below:
+                            </h2>
+                            <h3>Practice 1: Display a blue button with white text that says "Click Me!", this button should have the class of buttonStuff </h3>
+                            <h3>Practice 2: Display a piece of text that says "take me to Google" that when pressed, you get taken to the Google home page.</h3>
+                            <h3>Practice 3: Display an image of your choice with a height of 100px and a width of 100px</h3>
+                            <h3>Practice 4: Display a image of your choice and make it so that you can click the image to take you into another website</h3>
                         </div>
 
                     </div>
@@ -341,8 +160,8 @@
         </div>
 
         <div class = "footer" id = "main-text">
-            <a class = "LectureButton bottombuttons" href="lesson-8-page.html">Previous Lesson</a>
-            <a class = "LectureButton bottombuttons" href="lesson-10-page.html">Next Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-9-page.html">Previous Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-11-page.html">Next Lesson</a>
         </div>
     </section>
 

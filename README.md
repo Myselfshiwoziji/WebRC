@@ -2,9 +2,9 @@
 
 ### Welcome to the Web@RC Repository!
 
-This website was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
+[This website](https://myselfshiwoziji.github.io/WebRC) was designed as a teaching supplement to a school coding club, showing what can be done with HTML, CSS, and JavaScript.
 
-If you're currently in the club, follow along with us on the website! If not, there's still content, activities, and past recordings accessible anytime.
+If you're currently in the club, follow along with us! If you're not, there's still content, activities, and past recordings accessible on this website anytime.
 
 ### Created By
 - Osborn Leung (Myselfshiwoziji)
@@ -13,7 +13,7 @@ If you're currently in the club, follow along with us on the website! If not, th
 - Wan Hei Kong (Snycretism)
 - Nathan Li
 
-Under the supervision of Patrick Stafford.
+Under the supervision of Pat Stafford.
 
 ### Rat
 ![Rat](/Imgs_and_stuff/rat.jpg)

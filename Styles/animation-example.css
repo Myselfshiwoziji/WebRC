@@ -1,0 +1,66 @@
+@keyframes example {
+    0% {background-color: rgb(0,0,0);}
+    34% {background-color: rgb(255,0,0);
+         font-size: 30px;}
+    67% {background-color: blue;}
+    100% {background-color: rgb(0,255,0);}
+}
+
+@keyframes practice {
+    0% {color: rgb(0,0,0);}
+    34% {color: rgb(255,0,0);}
+    67% {color: rgb(0,0,255);}
+    100% {color: rgb(0,255,0);}
+}
+
+@keyframes practice_2 {
+    0% {color: rgb(0,0,0);}
+    50% {color: rgb(255,255,255);
+        font-size: 30px;}
+    
+    100% {color:rgb(20,200,200)}
+}
+
+@keyframes practice_3 {
+    0% {color: rgb(0,0,0);}
+    100% {color:rgb(255,255,255);
+        transform: rotate(360deg);}
+}
+
+#animation {
+    animation: example 2s linear infinite;
+}
+
+#animation_ease {
+    animation: example 2s ease infinite;
+}
+
+#animation_ease_in {
+    animation: example 2s ease-in infinite;
+}
+
+#animation_ease_out {
+    animation: example 2s ease-out infinite;
+}
+
+#animation_ease_in_out {
+    animation: example 2s ease-in-out infinite;
+}
+
+#practice_animation {
+    animation: practice 3s linear infinite;
+}
+
+#practice_animation_2 {
+    animation: practice_2 6s ease-out infinite;
+}
+
+#practice_animation_3 {
+    display: inline-block;
+    animation: practice_3 5s linear infinite;
+}
+
+#practice_animation_3:hover {
+    display: inline-block;
+    animation: practice_3 2s linear infinite;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 8</title>
+    <title>Lesson 9</title>
     <link rel ="stylesheet" href = "Styles/loadingpage.css">
     <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
     <link rel = "stylesheet" href = "Styles/mainpage.css">
@@ -20,13 +20,13 @@
             <h2>
                 Lesson 7:
                 <br>
-                Events, parameters and OOP
+                JSON syntax and usage
             </h2>
     
             <dialog class = "Lecture" id="LectureVid">
                 <div class = "LectureVideo">
                     <div>
-                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 8 Video Recording:</h2>                               
+                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 9 Video Recording:</h2>                               
                         <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
                     </div>
                     <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
@@ -35,7 +35,7 @@
 
                 </div>
             </dialog>
-            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Recording</a>
+            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
             <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
 
         </div>
@@ -43,246 +43,142 @@
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <!--h3 class = "letab active">Events in JavaScript</h3-->
-                    <h3 class = "active letab">JavaScript Functions</h3>
-                    <h3 class = "letab">More about Parameters</h3>
-                    <!--h3 class = "letab">Variables in JavaScript</h3-->
-                    <!--h3 class = "letab">Function and Syntax of JSON</h3-->
-                    <h3 class = "letab">Mathematical functions in JS</h3>
-                    <h3 class = "letab">If Else</h3>
+                    <h3 class = "active letab">Introduction to JSON</h3>
+                    <h3 class = "letab">Syntax of JSON</h3>
+                    <h3 class = "letab">Usage of JSON</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
-                <div class = "tab-content">
-                    <!--div class = "active fade">
-                        <h2 class = "HeaderPoint">Events in JavaScript</h2>
-                        <h2 class = "contentTitle">
-                            What is an event in JS?
-                        </h2>
-                        <h3>
-                            In JavaScript (JS), events are actions or occurrences that happen in the user interface or the browser. These events can be triggered by various actions, such as a user clicking a button, pressing a key, or the browser finishing loading a web page.
-                        </h3>
-
-                        <h2 class = "contentTitle">
-                            Event Listeners
-                        </h2>
-                        <h3>
-                            An event listener is required if you want your program to recognise that you called an event to execute a function. For every function that you put, you will have to add an event listener to an event in JS (for example, the clicking of a button). In short, Event listeners "listen" for specific events and execute a function when the event occurs.
-                        </h3>
-
-                        <h2 class = "contentTitle">Types of Events in JS</h2>
-                            <h2>&nbsp;&nbsp;&nbsp;onclick()</h2>
-                            <h3>
-                                The onclick listener in JavaScript is an event handler that is used to execute a particular piece of code when an element, such as a button or a link, is clicked by the user. It is commonly used to create interactivity and trigger actions in response to user input.
-                            </h3>
-                            <h2> &nbsp;&nbsp;&nbsp;mousedown()</h2>
-                            <h3>
-                                Occurs when the mouse button is pressed down. This is different from onclick() because it detects if a mouse button is being held down instead of clicked.
-                            </h3>
-                            <h2> &nbsp;&nbsp;&nbsp;mouseover()</h2>
-                            <h3>
-                                Occurs when the mouse pointer enters an element.
-                            </h3>
-                            <h2> &nbsp;&nbsp;&nbsp;keydown()</h2>
-                            <h3>
-                                Occurs when a key is pressed and held down.
-                            </h3>
-                            <h2>&nbsp;&nbsp;&nbsp;keypress()</h2>
-                            <h3>
-                                Occurs when a key is pressed down and released.
-                            </h3>
-                            <h2>&nbsp;&nbsp;&nbsp;load()</h2>
-                            <h3>
-                                Occurs when the page/document has finished loading. This is primarily for loading screens, which we will cover in one of our extra lessons (Lesson 11 about animations)
-                            </h3>
-                        
-                        <h2 class = "contentTitle">Parameters</h2>
-                        <h3>
-                            In JavaScript, parameters are the values passed to a function when it is called. A function can have zero or more parameters, which are defined in the function's declaration. Note that parameters in JavaScript are optional, meaning that you can define a function with no parameters with empty brackets (for example, onclick())    
-                        </h3>
-                        <h2>&nbsp;&nbsp;What are parameters used for?</h2>
-                        <h3>
-                            In JavaScript, parameters are used in function definitions to specify the variables that a function expects to receive when it is called. Parameters act as placeholders for values that will be passed into the function.
-
-                            <br>Function parameters allow you to pass values to a function so that you can use and manipulate those values within the function's code. They define the inputs that a function expects, and you can specify multiple parameters separated by commas.
-                        </h3>
-
-                    </div-->
-
+                <!--div class = "tab-content">
                     <div class = "active fade">
-                        <h2 class = "HeaderPoint">JavaScript Functions</h2>
-                        <div class = "inactive">
-                            <h3>
-                                Write your code within a function so that it can be executed on call:
-                            </h3>
-                            <h3>
-                                <code>
-                                    function exampleFunction()&lcub;<br>
-                                    <pre>   alert("Hello, World!")</pre>
-                                    &rcub;
-                                </code>
-                            </h3>
-
-                            <h2 class = "contentTitle">The <code>onClick</code> Event</h2>
-                            <h3>
-                                The simplest way to link your JavaScript function to a user input is with the <code>onClick</code> event assigned to buttons.
-                                In your HTML, type:
-                            </h3>
-                            <h3>
-                                <code>
-                                    &lt;button onClick="exampleFunction()"&gt;Example Button&lt;/button&gt;
-                                </code>
-                            </h3>
-                            <h3>
-                                to create a button connected to your example function. Clicking it should now run your code!
-                            </h3>
-                        </div>
-                    </div>
-
-
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">Uses and examples of parameters</h2>
-                        <h2 class = "contentTitle">Creating reusable and adaptable code:</h2>
+                        <h2 class = "HeaderPoint">Conditional Statements</h2>
                         <h3>
-                            By using parameters, you can create functions that can work with different data or conditions. This makes your code more modular, reusable, and adaptable to different scenarios.
+                            You'll need the conditional statements <code>if</code>, <code>else if</code>, and <code>else</code> if your code will run differently depending on the user's input.
                         </h3>
-                        <h3> Here is an example: Suppose you are making a quiz and want to make a hint button (with an id called Hintbutton) to display a hint (with id Hintparagraph), so you type:
-                            <br> &nbsp;
-                            <br> function buttonclick() {
-                            <br> &emsp;for (let i = 0; i &lt; document.querySelectorAll(#Hintbutton).length; i++) {
-                            
-                            <br> &emsp;&emsp;if (paragraph.style.display === 'none') {
-                            <br> &emsp;&emsp;&emsp;paragraph.style.display = 'block';
-                            <br> &emsp;&emsp;&emsp;paragraph.style.visibility = "visible";
-                            <br> &emsp;&emsp;} else {
-                            <br> &emsp;&emsp;&emsp;paragraph.style.display = 'none';
-                            <br> &emsp;&emsp;&emsp;paragraph.style.visibility = "hidden";
-                            <br> &emsp;&emsp;}
-                            <br> &emsp;}
-                            <br>} 
-                        </h3>
-                        <h3><br> 
-                            which produces the following results:
-                        </h3>
-                        <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example.html" style = "width: auto; height: auto;"></iframe>
-                        <br>
-                        <h3> However, you find that if you click any button in the iframe, all paragraphs with the id paragraph will show.</h3>
-                        <h3> so instead, using parameters, you can configurate the code accordingly:</h3>
+                        <h2 class = "contentTitle">Comparison Operators</h2>
                         <h3>
-                            const hint_texts = document.getElementsByClassName("hint-text");
-
-                            <br>function buttonclick(hint_id){  
-                                <br>&emsp;for (let i = 0; i &lt; hint_texts.length; i++) {
-                                    <br>&emsp;&emsp;let hint = hint_texts[i];
-                                    <br>&emsp;&emsp;let display_status = hint.style.display;
-
-                                    <br>&emsp;if (i == hint_id) {
-                                        <br>&emsp;&emsp;if (display_status == 'block'){
-                                            <br>&emsp;&emsp;&emsp;hint.style.display = 'none';
-                                            <br>&emsp;&emsp;&emsp;hint.style.visibility = "hidden";
-                                            <br>&emsp;&emsp;}
-                                            <br>&emsp;&emsp;else{
-                                                <br>&emsp;&emsp;&emsp;hint.style.display = 'block';
-                                                <br>&emsp;&emsp;&emsp;hint.style.visibility = "visible";
-                                                <br>&emsp;&emsp;}
-                                                <br>&emsp;}
-
-                                                <br>&emsp;&emsp;else{
-                                                    <br>&emsp;&emsp;&emsp;hint.style.display = 'none';
-                                                    <br>&emsp;&emsp;&emsp;hint.style.visibility = "hidden";
-                                                    <br>&emsp;&emsp;}
-                                                    <br>&emsp;}
-                                                    <br>}
-
+                            To craft an <code>if else</code> statement, you'll need to compare two variables using one of several <b>comparison operators.</b>
                         </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; !=, !==</h2>
                         <h3>
-                            In your HTML, you can then configure each button to run the function with a different hint_id:
+                            Similar to the above equalities, but return true if values are not equivalent.
                         </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; ==, ===</h2>
                         <h3>
-                            <code>&lt;button class="hint-button" onclick="buttonclick(0)"&gt;Hint&lt;/button&gt;</code>
+                            Returns true if two values are the same. "==" is a loose equality comparison whereas "===" is a strict equality comparison which will also compare data type.
+                            This means ("1" == 1) will return true, whereas ("1" === 1) will return false.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; &lt;, &gt;</h2>
+                        <h3>
+                            Returns true if the left value is smaller or greater than the right.
+                            This usually applies to integers and floats, but strings can also compared in alphabetical order, with A the smallest and Z the largest.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; &lt;=, &gt;=</h2>
+                        <h3>
+                            Similar to the above inequalities, but also returns true if two values are equal.
                         </h3>
                         
-                        <h3> Which produces the following results:</h3>
-                        <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example-2.html" style = "width: auto; height: auto;"></iframe>
-                    </div>
-                    
-                    <!--div class = "fade">
-                        <h2 class = "HeaderPoint">Declaring a variable in JS</h2>
-                        <h3> there are 3 main types of variables you will use in JS: Var, Let and Const.</h3>
-                        <div class = "inactive">
-                            <h2 class = "contentTitle"> Var:</h2>
-                            <h3>
-                                Variables declared with var are function-scoped, meaning that they are accessible within the function where they are declared, as well as any nested functions within that function. However, variables declared with var are not block-scoped, which means they can also be accessed outside of the block where they are declared.
-                                It's worth noting that the var keyword has some characteristics that can lead to unexpected behavior, such as variable hoisting and the lack of block scope.
-                            </h3>
-                            
-                            <h2 class = "contentTitle">Let:</h2>
-                            <h3>Variables declared with let are similar to variables declared with var in terms of their ability to store values. However, the key difference is that variables declared with let are block-scoped, meaning they are only accessible within the block where they are declared.
-
-                                Unlike var, variables declared with let are not hoisted to the top of their scope. This means that you cannot access a let variable before it has been declared in your code.
-
-                                <br>&nbsp;
-                                <br>
-                                Thus, using let allows for better control over variable scope and can help prevent unintended issues that can occur with var. Therefore, it is generally recommended to use this instead of var when declaring variables, especially in modern JavaScript development.
-                            </h3>
-
-                            <h2 class = "contentTitle">Const:</h2>
-                            <h3>
-                                When a variable is declared with const, its value cannot be changed once it is assigned. This makes const variables suitable for storing values that should remain constant throughout the execution of a program.
-                                Like variables declared with let, const variables are also block-scoped. They are only accessible within the block where they are declared and they are not hoisted to the top of their scope.
-                                However, it's important to note that while the value of a const variable cannot be reassigned, it does not mean that the value itself is immutable. If a const variable holds an object or an array, the properties or elements of that object or array can still be modified, but the variable itself cannot be reassigned to a different object or array.
-                            </h3>
-                            <h3>
-                                Overall, using const helps convey the intent that a variable should remain constant, which can enhance code readability and prevent accidental reassignments. Thus, it is recommended to use const instead of var or let when declaring a variable that do not need to be reassigned.
-                            </h3>
-
-                            <h2 class = "contentTitle">Which to Use?</h2>
-                            <h3>
-                               If your variable isn't going to be modified during the duration of your code, use <code>const</code> to prevent accidentally accessing or reasigning values.
-                               If the variable will be changed, try to use <code>let</code> to keep the scope of your variable to your block.
-                               This will prevent accidentally accessing an old variable outside the relevant area if you have variables with similar names.
-                               Try to only declare variables with <code>var</code> if necessary.
-                            </h3>
-                        </div>
-                        
+                        <h2 class = "contentTitle">Conditional Statements</h2>
+                        <h2>&nbsp;&nbsp;&nbsp; <code>if () {}</code></h2>
+                        <h3>
+                            Compares two values and runs code in the {} brackets if the condition is met.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; <code>else if () {}</code></h2>
+                        <h3>
+                            Compares two values only if a preceding <code>if</code> statement is not met.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; <code>else {}</code></h2>
+                        <h3>
+                            Runs code in the {} brackets if all preceding <code>if</code> and <code>else if</code> statements fail. Does not process a comparison.
+                        </h3>
+                        <h2 class = "contentTitle">Switch</h2>
                     </div-->
-
-                        <div class = "fade">
-                        <h2 class = "HeaderPoint">Mathematical Functions in JS</h2>
+                    
+                    <div class = "tab-content">
+                    <div class = "active fade">
+                        <h2 class = "HeaderPoint">What is JSON?</h2>
                         <h3>
-                            Some people will roll their eyes over this, but it is pretty important so lets get it done with.
+                            JSON, or JavaScript Object Notation, is a file format designed to store key-value pairs of variables in a human readable format.
+                            Although designed for JavaScript, many programming languages now parse JSON, making it a valuable format to store and transmit data between programs.
                         </h3>
+
+                        <h2 class = "contentTitle">Creating a JSON File</h2>
+                        <h3>
+                            Like with other file types, give your file a name ending in <code>.json</code> to declare it for JSON. Such as:
+                        </h3>
+                        <h3>
+                            <code>examplefile.json</code>
+                        </h3>
+                        <h2 class = "contentTitle">What can JSON be used for?</h2>
+                        <h2>
+                            &nbsp;&nbsp;Storing Data/ Data transmittion
+                            </h2>
+                        <h3>
+                            JSON is often used to send data between a server and a client as part of web APIs (Application Programming Interfaces). It allows for structured and organized transfer of data, making it ideal for applications that interact with remote servers.
+                        </h3>
+                    </div>
+                    <div class = "fade">
                         <div class = "inactive">
-                            <h2 class = "contentTitle">Math.floor()</h2>
+                            <h2 class = "HeaderPoint">JSON Syntax</h2>
                             <h3>
-                                This function floors the value that is in the brackets, which means it takes the lower integer bound of the number
-                                <br> For example, if you have the number 5.3, it would round to 5
-                                <br> Another example, if you have a number 4.9, it would still round to 4
+                                JSON data comes in a form similar to JavaScript Objects or Python Dictionaries: with key-value pairs.
+                                Each value (either a number, string, boolean, array, null, or nested key-value pair) is assigned a string name (the key), from which the value can be called.
                             </h3>
-                            
-                            <h2 class = "contentTitle">Math.ceil()</h2>
                             <h3>
-                                This function is the opposite of the floor function. It takes the upper bound of the number inside the bracket (rounding up).
-                                <br> For example, if you have a number 10.1, it would round to 11.
-                                <br> Another example, if you have a number &pi;, it would round to 4.
+                                However, JSON syntax is a lot stricter than Python or JavaScript!
+                                Every key must be a string, enclosed in double quotation marks (<code>""</code>), then followed by a colon (<code>:</code>), then the corresponding value. 
+                                If you wish to have multiple key pairs, they can be seperated by commas, but the final element can never have a comma. Here is an example of a JSON object:
                             </h3>
-
-                            <h2 class = "contentTitle">Math.random()</h2>
                             <h3>
-                                Math.random() does what you think it does. It returns a random value from 0 to 1.
-                                <br> *Note: This 'randomly' generated function is called a persudo random function, since it is not truly random. If you would like to learn more about how computers generate 'random' numbers, <a href = "https://en.wikipedia.org/wiki/Pseudorandomness" target="_blank">go to this wikipedia page.</a>
+                                {
+                                <br>&emsp;"name": "John Doe",
+                                <br>&&emsp;"age": 30,
+                                <br>&emsp;"email": "johndoe@example.com",
+                                <br>&emsp;"address": {
+                                <br>&emsp;&emsp;"street": "123 Main St",
+                                <br>&emsp;&emsp;"city": "Anytown",
+                                <br>&emsp;&emsp;"state": "Anystate",
+                                <br>&emsp;&emsp;"postalCode": "12345"
+                                <br>&emsp;},
+                                <br>&emsp;"phoneNumbers": [
+                                <br>&emsp;&emsp;{
+                                <br>&emsp;&emsp;&emsp;"type": "home",
+                                <br>&emsp;&emsp;&emsp;"number": "555-1234"
+                                <br>&emsp;&emsp;},
+                                <br>&emsp;&emsp;{
+                                <br>&emsp;&emsp;&emsp;"type": "work",
+                                <br>&emsp;&emsp;&emsp;"number": "555-5678"
+                                <br>&emsp;&emsp;}
+                                <br>&emsp;]
+                                <br>}
                             </h3>
-
+                            <h2 class = "contentTitle">Accessing JSON in JavaScript</h2>
+                            <h3>
+                                Accessing your JSON file in JavaScript is a little more complicated than defining an src or href as before.
+                                There are many ways to link a JSON file to your script, one way is with fetch API:
+                            </h3>
+                            <h3>
+                                <code>
+                                    fetch('./level-plan.json')
+                                    <br>.then(response => response.json())
+                                    <br>.then(data => {
+                                    <br>&emsp;var objectFromJSON = data;
+                                    <br>.})
+                                    <br>..catch(error => {
+                                    <br>&emsp;.console.log('Error:', error);
+                                    <br>.});
+                                </code>
+                            </h3>
                         </div>
                     </div>
-
-                        <div class = "fade">
-                            <h2 class = "HeaderPoint">If Else Statements</h2>
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Why do we need JSON files?</h2>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle">&nbsp;Backend</h2>
                             <h3>
-                                You'll need the conditional statements <code>if</code>, <code>else if</code>, and <code>else</code> if your code will run differently depending on the user's input.
+                                This course will not be covering backend in our 9 lessons, but if you stay for lessons 10 - 12 (the extra lessons). we will talk about backend, nodes, animations, save data, etc. which can help you make an interactable website.
                             </h3>
-                            <h2 class = "contentTitle">If Else</h2>
-                            <h2 class = "contentTitle">Switch</h2>
+                        </div>
                         </div>
 
                     <div class = "fade">
@@ -292,13 +188,13 @@
                                 Try to replicate this example below:
                             </h2>
 
-                     
+                            <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
 
                             <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
                                 Descriptions for the practice excerises below:
                             </h2>
-                            <h3>Practice 1: stuff</h3>
-                            <h3>Practice 2:stuff 2</h3>
+                            <h3>Practice 1: Display a blue button with white text that says "Click Me!", this button should have the class of buttonStuff </h3>
+                            <h3>Practice 2: Display a piece of text that says "take me to Google" that when pressed, you get taken to the Google home page.</h3>
                             <h3>Practice 3: Display an image of your choice with a height of 100px and a width of 100px</h3>
                             <h3>Practice 4: Display a image of your choice and make it so that you can click the image to take you into another website</h3>
                         </div>
