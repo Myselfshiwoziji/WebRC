@@ -1,154 +1,154 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Lesson 5/title>
-    <link rel ="stylesheet" href = "Styles/loadingpage.css">
-    <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
-    <link rel = "stylesheet" href = "Styles/mainpage.css">
-    <link rel = "stylesheet" href = "Styles/LessonScreenFormat.css">
-    <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
-</head>
+    <head>
+        <title>Lesson 5 title</title>
+        <link rel ="stylesheet" href = "Styles/loadingpage.css">
+        <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
+        <link rel = "stylesheet" href = "Styles/mainpage.css">
+        <link rel = "stylesheet" href = "Styles/LessonScreenFormat.css">
+        <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
+    </head>
 
-<body>
-    <section class = "showcase" id = "main">
-        <header class = "pageheader">
-            <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web@RC&gt;</a></h2>
-            <span class = "main_toggle" onclick="openNav()"></span>
-        </header>
-        
-        <div class = "main_text" id = "main-text">
-            <h2>
-                Lesson 5:
-                <br>
-                Animations
-            </h2>
-            <dialog class = "Lecture" id="LectureVid">
-                <div class = "LectureVideo">
-                    <div>
-                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
-                        <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+    <body>
+        <section class = "showcase" id = "main">
+            <header class = "pageheader">
+                <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web@RC&gt;</a></h2>
+                <span class = "main_toggle" onclick="openNav()"></span>
+            </header>
+            
+            <div class = "main_text" id = "main-text">
+                <h2>
+                    Lesson 5:
+                    <br>
+                    Animations
+                </h2>
+                <dialog class = "Lecture" id="LectureVid">
+                    <div class = "LectureVideo">
+                        <div>
+                            <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
+                            <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+                        </div>
+                        <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                            <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                        </video>
+
                     </div>
-                    <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
-                        <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
-                    </video>
+                </dialog>
+                <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Recording</a>
+                <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
 
-                </div>
-            </dialog>
-            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Recording</a>
-            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+            </div>
 
-        </div>
-
-        <div class = "lessonformat">
-            <div class = "container">
-                <div class = "tabs">
-                    <h3 class = "letab active">What are animations?</h3>
-                    <h3 class = "letab">Making Animations</h3>
-                    <h3 class = "letab">Animations and HTML attributes</h3>
-                    <h3 class = "letab">Practice Work</h3>
-                </div>
-
-                <div class = "tab-content">
-                    <div class = "active fade">
-                        <h2 class = "HeaderPoint">Animations</h2>
-                        <h3> Animations in HTML and CSS are techniques used to bring elements on a web page to life, creating movement and visual effects. They allow developers to add dynamic and interactive elements to their websites, enhancing the user experience.
-                        </h3>
+            <div class = "lessonformat">
+                <div class = "container">
+                    <div class = "tabs">
+                        <h3 class = "letab active">What are animations?</h3>
+                        <h3 class = "letab">Making Animations</h3>
+                        <h3 class = "letab">Animations and HTML attributes</h3>
+                        <h3 class = "letab">Practice Work</h3>
                     </div>
 
-
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">Making animations</h2>
-                        <div class = "inactive">
-                            <h2 class = "contentTitle">Keyframes</h2>
-                            <h3> Keyframes are static frames where something happens. These will serve as your pivot points to manipulate your animation around, with the animations essentially being the smooth connections between the keyframes.
-                                <br>
-                                <br> To make a keyframe, you insert a <code>@keyframe</code> in CSS, then selecting your name, and assign what you want to keyframe to do. Use percentages to indicate what you want the keyframe to do at a specific completion precentage (starting at 0% and ending at 100%) For example:
-                                <code>
-                                    <br>@keyframes example {
-                                        <br>&emsp;0% {background-color:rgb(0,0,0);}
-                                        <br>&emsp;34% {background-color:rgb(255,0,0);
-                                        <br>&emsp;&emsp;&emsp;font-size:30px;}
-                                        <br>&emsp;67% {background-color:rgb(0,255,0);}
-                                        <br>&emsp;100% {background-color:rgb(0,0,255);}
-                                    <br>}
-
-                                    <br>#animation {
-                                        <br>&emsp;animation: example 2s linear infinite
-                                    <br>}
-                                </code>
-
-                                <br><br>To reference the animation, just insert the id into the anchor/ paragraph/ otherwise that you want the animation to be played on.
-                                <br> for example, using the keyframes above:
-                                <br><code>&lt;a id = 'animation'&gt;hi!&lt;/a&gt;</code>
-                                <br> if you used the example above, you should get these results:
+                    <div class = "tab-content">
+                        <div class = "active fade">
+                            <h2 class = "HeaderPoint">Animations</h2>
+                            <h3> Animations in HTML and CSS are techniques used to bring elements on a web page to life, creating movement and visual effects. They allow developers to add dynamic and interactive elements to their websites, enhancing the user experience.
                             </h3>
-
-                            <iframe src="lesson-6-anim-page-example.html"></iframe>
-
-                            <h2 class = "contentTitle">Ids with animations</h2>
-                            <h3>
-                                Has you have seen above, you can see that we have used an ID for the 
-
-                            </h3>
-
-                        </div>
-                                                    
-                    </div>
-                    
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">Assigning HTML to animations % examples</h2>
-                        <h3>Contrary to the name, if you want to assign html attributes, it would be easier to do it in CSS. To do it in CSS, you can:</h3>
-                        <div class = "inactive">
-
-                            <h2 class = "HeaderPoint">Duration</h2>
-                            <h3>assigning the <code>animation-duration</code> attribute to an animation can control its duration. (make sure to specify whether its in miliseconds or seconds)</h3>
-
-                            <h2 class = "HeaderPoint">Timing</h2>
-                            <h3>This defines how fast an animation is played during the time which it is played. The prompts can include <code>ease</code>, which is a prompt where it goes from slow to fast exponentially (ease-in, ease-out, and ease-in-out), and <code>linear</code> where it goes from slow to fast in a linear manner.</code> </h3>
-                            <br> Heres an example of how different timings change, given the same animation as above (take note that all of these animations are 2s long):
-                            <br><iframe src = "lesson-6-anim-page-example-timing.html" style="width: 500px; height: 550px;"></iframe>
-
-
-                            <h2 class = "HeaderPoint">Iterations</h2>
-                            <h3>Iterations is the number of times an animation is played. using <code>animation-iteration-count</code>, you can control the amount of times its played, from <code>1</code> to <code>infinite</code> for continuous looping. Or, you can just do it in the id with the syntax <code>animation: [name] [duration of animation] [Timing] [iterations]</code>
-                                For example, with the example above, you can see that the name is example, the animation is 2s long, it goes linearly to completion, and it loops infinitely.</h3>
-
-                            <h2 class = "HeaderPoint">Other customisation commands</h2>
-                            <h3> In fact, all other HTML attributes works in animations as well! The only difference is that the object will return to the original state after the animation is played. Such, other commands such as displays, margins, scale, position, etc. works just as the same as if you were assigning a class.</h3>
-                        </div>
-                    </div>
-
-
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">Practice Work:</h2>
-                        <div class = "inactive">
-                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                Try to replicate this example below:
-                            </h2>
-
-                            <iframe class = "PracticeExample" src = "lesson-6-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
-
-                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                Descriptions for the practice excerises below:
-                            </h2>
-                            <h3>Practice 1: Make a text that changes its own text colour from red to blue to green in 3s linearly.</h3>
-                            <h3>Practice 2: Make text that rapidly exapnds and changes to white from black, then slowly reduces its size back and changes colour, all in the span of 6s.</h3>
-                            <h3>Practice 3: Make a text that rotates itself 360˚ while changing colours in 5s that speeds itself up once you hover over it.</h3>
                         </div>
 
+
+                        <div class = "fade">
+                            <h2 class = "HeaderPoint">Making animations</h2>
+                            <div class = "inactive">
+                                <h2 class = "contentTitle">Keyframes</h2>
+                                <h3> Keyframes are static frames where something happens. These will serve as your pivot points to manipulate your animation around, with the animations essentially being the smooth connections between the keyframes.
+                                    <br>
+                                    <br> To make a keyframe, you insert a <code>@keyframe</code> in CSS, then selecting your name, and assign what you want to keyframe to do. Use percentages to indicate what you want the keyframe to do at a specific completion precentage (starting at 0% and ending at 100%) For example:
+                                    <code>
+                                        <br>@keyframes example {
+                                            <br>&emsp;0% {background-color:rgb(0,0,0);}
+                                            <br>&emsp;34% {background-color:rgb(255,0,0);
+                                            <br>&emsp;&emsp;&emsp;font-size:30px;}
+                                            <br>&emsp;67% {background-color:rgb(0,255,0);}
+                                            <br>&emsp;100% {background-color:rgb(0,0,255);}
+                                        <br>}
+
+                                        <br>#animation {
+                                            <br>&emsp;animation: example 2s linear infinite
+                                        <br>}
+                                    </code>
+
+                                    <br><br>To reference the animation, just insert the id into the anchor/ paragraph/ otherwise that you want the animation to be played on.
+                                    <br> for example, using the keyframes above:
+                                    <br><code>&lt;a id = 'animation'&gt;hi!&lt;/a&gt;</code>
+                                    <br> if you used the example above, you should get these results:
+                                </h3>
+
+                                <iframe src="lesson-6-anim-page-example.html"></iframe>
+
+                                <h2 class = "contentTitle">Ids with animations</h2>
+                                <h3>
+                                    Has you have seen above, you can see that we have used an ID for the 
+
+                                </h3>
+
+                            </div>
+                                                        
+                        </div>
+                        
+                        <div class = "fade">
+                            <h2 class = "HeaderPoint">Assigning HTML to animations % examples</h2>
+                            <h3>Contrary to the name, if you want to assign html attributes, it would be easier to do it in CSS. To do it in CSS, you can:</h3>
+                            <div class = "inactive">
+
+                                <h2 class = "HeaderPoint">Duration</h2>
+                                <h3>assigning the <code>animation-duration</code> attribute to an animation can control its duration. (make sure to specify whether its in miliseconds or seconds)</h3>
+
+                                <h2 class = "HeaderPoint">Timing</h2>
+                                <h3>This defines how fast an animation is played during the time which it is played. The prompts can include <code>ease</code>, which is a prompt where it goes from slow to fast exponentially (ease-in, ease-out, and ease-in-out), and <code>linear</code> where it goes from slow to fast in a linear manner.</code> </h3>
+                                <br> Heres an example of how different timings change, given the same animation as above (take note that all of these animations are 2s long):
+                                <br><iframe src = "lesson-6-anim-page-example-timing.html" style="width: 500px; height: 550px;"></iframe>
+
+
+                                <h2 class = "HeaderPoint">Iterations</h2>
+                                <h3>Iterations is the number of times an animation is played. using <code>animation-iteration-count</code>, you can control the amount of times its played, from <code>1</code> to <code>infinite</code> for continuous looping. Or, you can just do it in the id with the syntax <code>animation: [name] [duration of animation] [Timing] [iterations]</code>
+                                    For example, with the example above, you can see that the name is example, the animation is 2s long, it goes linearly to completion, and it loops infinitely.</h3>
+
+                                <h2 class = "HeaderPoint">Other customisation commands</h2>
+                                <h3> In fact, all other HTML attributes works in animations as well! The only difference is that the object will return to the original state after the animation is played. Such, other commands such as displays, margins, scale, position, etc. works just as the same as if you were assigning a class.</h3>
+                            </div>
+                        </div>
+
+
+                        <div class = "fade">
+                            <h2 class = "HeaderPoint">Practice Work:</h2>
+                            <div class = "inactive">
+                                <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                    Try to replicate this example below:
+                                </h2>
+
+                                <iframe class = "PracticeExample" src = "lesson-6-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
+
+                                <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                    Descriptions for the practice excerises below:
+                                </h2>
+                                <h3>Practice 1: Make a text that changes its own text colour from red to blue to green in 3s linearly.</h3>
+                                <h3>Practice 2: Make text that rapidly exapnds and changes to white from black, then slowly reduces its size back and changes colour, all in the span of 6s.</h3>
+                                <h3>Practice 3: Make a text that rotates itself 360˚ while changing colours in 5s that speeds itself up once you hover over it.</h3>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class = "footer" id = "main-text">
-            <a class = "LectureButton bottombuttons" href="lesson-5-page.html">Previous Lesson</a>
-            <a class = "LectureButton bottombuttons" href="lesson-7-page.html">Next Lesson</a>
-        </div>
-    </section>
+            <div class = "footer" id = "main-text">
+                <a class = "LectureButton bottombuttons" href="lesson-5-page.html">Previous Lesson</a>
+                <a class = "LectureButton bottombuttons" href="lesson-7-page.html">Next Lesson</a>
+            </div>
+        </section>
 
-    <div id = "main_side" class="main_menu"></div>
-</body>
+        <div id = "main_side" class="main_menu"></div>
+    </body>
 
     <div class = "loader"></div>
     <div class = "loading" src = "Imgs_and_stuff/rat.jpg"></div>
