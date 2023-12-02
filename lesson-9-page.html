@@ -216,8 +216,7 @@
                         <h3>
                         Create(), not to be confused with object.create(), a default command in Javascript, in phaser is defined as a special built-in constructor to generate game content, without the need of external files. Within the <code>create()</code> method, you can include code to create sprites, set up physics, add text or buttons, and perform various other initializations necessary for setting up the game environment. For example:
                         <br><code>create() {
-                            <br>&emsp;var player = this.add.sprite(100, 100, 'player');
-                            <br>&emsp;this.physics.add.existing(player);
+                            <br>&emsp;var screen = this.add.image(100, 100, 'screen'); //we will talk about adding sprites later on
                             <br>&emsp;this.add.text(50, 50, 'Welcome to the game', { font: '24px Arial', fill: '#ffffff' });
                             <br>&emsp;Other methods or functions...
                         <br>}</code>
@@ -228,8 +227,27 @@
                             <br>&emsp;Methods or functions of sprite
                         <br>}</code>
                         <br>Be sure to switch object, coordinates, and sprites accordingly.
+                        </h3>
 
+                        <h2 class = "contentTitle">createPlayer()</h2>
+                        <h3> This command is quite self-explanatory... it creates the player. You use the syntax:
+                            <br>createPlayer() {
+                                <br>&emsp;const player = this.physics.add.sprite(x-coordinate, y-coordinate, sprite )
+                                <br>&emsp;player.setCollideWorldBounds(true) // this is to ensure the player doesnt fall out of your screen
 
+                                <br><br>&emsp;this.anims.create({
+                                    <br>&emsp;&emsp;key: 
+                                    <br>&emsp;&emsp;frames:
+                                    <br>&emsp;&emsp;frameRate:
+                                    <br>&emsp;&emsp;repeat: // -1 for infinite looping
+
+                                <br>&emsp;})
+                            <br>}
+                        </h3>
+
+                        <h2 class = "contentTitle">preload()</h2>
+                        <h3>
+                            The preload() function is a function you put inside of a class where it preloads everything in the class as you call it (similar to an instructor). However, as implied, they are already loaded before you call the class, meaning they are global variables.
                         </h3>
                     </div>
 
@@ -292,12 +310,12 @@
 
                             <h2 class = "HeaderPoint">Creating your classes</h2>
                             <h3>
-                                There are 5 main classes you need to create. The first one will be the players, one for the enemies, one for the UI, one for the background, and one for the loading screens. Same as always, I recommend you put your classes in a seperate .js file, for easier troubleshooting and debugging later on (so you dont spend half your time finding your classes)
+                                In phaser, the main class 'Phaser.scene' will be the class for scenes. To add a scene, you have to input a subclass as a child to the parent class Phaser.scene. And to make a loading screen, you have to use <code>export default class class_here extends Phaser.scene{}</code> instead. It is recommended that you save this scene as a loading or menu screen.
                             </h3>
 
                             <h2 class = "contentTitle">Classes: player</h2>
                             <h3>
-                                For your player class, you should have the constructors for loading the sprite on the screen, somewhere you choose
+                                For your player class, you should have the constructors for loading the sprite on the screen,
                             </h3>
 
                             <h2 class = "contentTitle">Classes: enemies</h2>
