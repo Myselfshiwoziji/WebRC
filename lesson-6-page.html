@@ -1,154 +1,487 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Lesson 5 title</title>
-        <link rel ="stylesheet" href = "Styles/loadingpage.css">
-        <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
-        <link rel = "stylesheet" href = "Styles/mainpage.css">
-        <link rel = "stylesheet" href = "Styles/LessonScreenFormat.css">
-        <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
-    </head>
+<head>
+    <title>Lesson 6</title>
+    <link rel ="stylesheet" href = "Styles/loadingpage.css">
+    <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
+    <link rel = "stylesheet" href = "Styles/mainpage.css">
+    <link rel = "stylesheet" href = "Styles/LessonScreenFormat.css">
+    <link rel = "stylesheet" href = "Styles/AlternateContentDisplay.css">
+</head>
 
-    <body>
-        <section class = "showcase" id = "main">
-            <header class = "pageheader">
-                <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web@RC&gt;</a></h2>
-                <span class = "main_toggle" onclick="openNav()"></span>
-            </header>
-            
-            <div class = "main_text" id = "main-text">
-                <h2>
-                    Lesson 5:
-                    <br>
-                    Animations
-                </h2>
-                <dialog class = "Lecture" id="LectureVid">
-                    <div class = "LectureVideo">
-                        <div>
-                            <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 6 Video Recording:</h2>                               
-                            <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+<body>
+    <section class = "showcase" id = "main">
+        <header class = "pageheader">
+            <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web@RC&gt;</a></h2>
+            <span class = "main_toggle" onclick="openNav()"></span>
+        </header>
+        
+        <div class = "main_text" id = "main-text">
+            <h2>
+                Lesson 6:
+                <br>
+                Introduction to JavaScript
+            </h2>
+            <dialog class = "Lecture" id="LectureVid">
+                <div class = "LectureVideo">
+                    <div>
+                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 7 Video Recording:</h2>                               
+                        <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+                    </div>
+                    <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                        <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                    </video>
+                </div>
+            </dialog>
+            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Recording</a>
+            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+
+        </div>
+
+        <div class = "lessonformat">
+            <div class = "container">
+                <div class = "tabs">
+                    <h3 class = "letab active">What is JavaScript?</h3>
+                    <h3 class = "letab">Setting Up JavaScript</h3>
+                    <h3 class = "letab">Modifying HTML Attributes</h3>
+                    <h3 class = "letab">Events in JavaScript</h3>
+                    <h3 class = "letab">Variables in JS</h3>
+                    <h3 class = "letab">JavaScript Functions</h3>
+                    <h3 class = "letab">More about Parameters</h3>
+                    <h3 class = "letab">Mathematical functions in JS</h3>
+                    <h3 class = "letab">If Else</h3>
+                    <h3 class = "letab">Practice Work</h3>
+                </div>
+
+                <div class = "tab-content">
+                    <div class = "active fade">
+                        <h2 class = "HeaderPoint">What is JavaScript?</h2>
+                        <h3>
+                            Time to bring your website to life!
+                        </h3>
+                        <h3>
+                            JavaScript, also abbreviated as JS, is a high-level, object-oriented scripting language used to program functionality to an HTML page.
+                            The language is quintessential for web developers to process user inputs and manipulate HTML and CSS content, taking a website beyond static slideshow.
+                        </h3>
+                        <h3>
+                            Javascript can interact with HTML in many ways, but most often you will link functions to buttons and other user actions,
+                            manipulating elements by finding their assigned IDs and making respective modifications.
+                        </h3>
+                        <h3>
+                            JavaScript is often paired with 3rd-party libraries such as JQuery. For simplicity, this course will only cover with fundamental JS.
+                        </h3>
+                    </div>
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Setting Up JavaScript</h2>
+                        <h3>
+                            Create a new file ending in <code>.js</code> to declare it for JavaScript.
+                            Once created, return to your HTML document and type:
+                        </h3>
+                        <h3>
+                            <code>&lt;script src = "javascript_file_name.js"&gt;&lt;/script&gt;</code>
+                        </h3>
+                        <h3>
+                            Unlike with CSS files, which are placed in the header, it is best practice to link your JavaScript file just before the <code>&lt;/body&gt;</code> closing tab.
+                            This is so all HTML elements are loaded before the script runs.
+                        </h3>
+
+                        <h2 class = "contentTitle">Hello, World!</h2>
+                            <h3>
+                                Now that you've linked your file, its time for your first script! Type:
+                            </h3>
+                            <h3>
+                                <code>console.log("Hello, World!");</code>
+                            </h3>
+                            <h3>
+                                and inspect your page!
+                            </h3>
+                            <h3>
+                                If you've done everything correctly, you should see your message in the "Console" tab.
+                                In the future, you'll need to check the console for error messages in order to fix bugs.
+                            </h3>
+                            <img style = "margin-left: 16px"src = "Imgs_and_stuff/ConsoleLogExample.png" height = "190px" width = "600px">
+                            <h3 style = "font-size: 12px; margin-left: 16px">What you should see when you run the js file in the console (also please ignore the mutations, as it is basically saying that something is changing in what it is)</h3>
+                    </div>
+                    
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Modifying HTML Attributes</h2>
+                        <h3>
+                            Remember HTML Attributes from lesson 2? It's time to modify them with JavaScript!
+                        </h3>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle">.getElementbyID</h2>
+                            <h3>
+                                To modify any element in your HTML file, you'll first need to tell the JavaScript file where to look.
+                                The most straightforward way to do this is to first give your HTML element an id:
+                            </h3>
+                            <h3>
+                                <code>&lt;div id="exampleId"&gt;&lt;/div&gt;</code>
+                            </h3>
+                            <h3>
+                                Then declare your JavaScript variable with:
+                            </h3>
+                            <h3>
+                                <code>let exampleElement = document.getElementbyID("exampleId");</code>
+                            </h3>
+                            
+                            <h2 class = "contentTitle">.innerHTML</h2>
+                            <h3>
+                                Use <code>.innerHTML</code> to read or modify the contents of your element
+                                (such as text or more HTML):
+                            </h3>
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                                <br>
+                                <code>htmlContent.innerHTML = "new HTML content";</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">.src</h2>
+                            <h3>
+                                Use <code>.src</code> to read and modify what external recources (i.e. images, audio and videos) an element uses:
+                            </h3>
+                            <h3>
+                                <code>let htmlContent = document.getElementbyID("exampleId");</code>
+                                <br>
+                                <code>htmlContent.src = "new URL";</code>
+                            </h3>
+                            <div class = "inactive">
+                                <h2 class = "contentTitle">.style</h2>
+                                <h3>
+                                    Use <code>.style.exampleStyleAttribute</code> to read and modify the visual appearance of an element:
+                                </h3>
+                                <h3>
+                                    <code>
+                                        let htmlContent = document.getElementbyID("exampleId")
+                                    </code>
+                                    <br>
+                                    <code>
+                                        htmlContent.style.exampleStyleAttribute = "new style";
+                                    </code>
+                                </h3>
+                                <h3>
+                                    <code>.style</code> alone returns an object (list) containing every style attribute.
+                                    Adding <code>.exampleStyleAttribute</code> specifies a single attribute (such as color, font-size, etc.)
+                                    which is simpler to read and change.
+                                </h3>
+
+                                <h2 class = "contentTitle">.classList.add(); and .classList.remove();</h2>
+                                <h3>
+                                    Use the <code>.classList.add();</code> and <code>.classList.remove();</code> functions to modify an element's class:
+                                </h3>
+                                <h3>
+                                    <code>
+                                        let htmlContent = document.getElementbyID("exampleId");
+                                    </code>
+                                    <br>
+                                    <code>
+                                        htmlContent.classList.add("new-class");
+                                    </code>
+                                    <br>
+                                    <code>
+                                        htmlContent.classList.remove("old-class");
+                                    </code>
+                                </h3>
+                                <h3>
+                                    Changing the class allows you to change a wide range of styles — and control animations if the class links keyframes.
+                                </h3>
+                            </div>
                         </div>
-                        <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
-                            <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
-                        </video>
-
-                    </div>
-                </dialog>
-                <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Recording</a>
-                <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
-
-            </div>
-
-            <div class = "lessonformat">
-                <div class = "container">
-                    <div class = "tabs">
-                        <h3 class = "letab active">What are animations?</h3>
-                        <h3 class = "letab">Making Animations</h3>
-                        <h3 class = "letab">Animations and HTML attributes</h3>
-                        <h3 class = "letab">Practice Work</h3>
                     </div>
 
-                    <div class = "tab-content">
-                        <div class = "active fade">
-                            <h2 class = "HeaderPoint">Animations</h2>
-                            <h3> Animations in HTML and CSS are techniques used to bring elements on a web page to life, creating movement and visual effects. They allow developers to add dynamic and interactive elements to their websites, enhancing the user experience.
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Events in JavaScript</h2>
+                        <div>
+
+                        </div>
+                        <h2 class = "contentTitle">
+                            What is an event in JS?
+                        </h2>
+                        <h3>
+                            In JavaScript (JS), events are actions or occurrences that happen in the user interface or the browser. These events can be triggered by various actions, such as a user clicking a button, pressing a key, or the browser finishing loading a web page.
+                        </h3>
+
+                        <h2 class = "contentTitle">
+                            Event Listeners
+                        </h2>
+                        <h3>
+                            An event listener is required if you want your program to recognise that you called an event to execute a function. For every function that you put, you will have to add an event listener to an event in JS (for example, the clicking of a button). In short, Event listeners "listen" for specific events and execute a function when the event occurs.
+                        </h3>
+
+                        <h2 class = "contentTitle">Types of Events in JS</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;onclick()</h2>
+                        <h3>
+                            The onclick listener in JavaScript is an event handler that is used to execute a particular piece of code when an element, such as a button or a link, is clicked by the user. It is commonly used to create interactivity and trigger actions in response to user input.
+                        </h3>
+                        <h2> &nbsp;&nbsp;&nbsp;mousedown()</h2>
+                        <h3>
+                            Occurs when the mouse button is pressed down. This is different from onclick() because it detects if a mouse button is being held down instead of clicked.
+                        </h3>
+                        <h2> &nbsp;&nbsp;&nbsp;mouseover()</h2>
+                        <h3>
+                            Occurs when the mouse pointer enters an element.
+                        </h3>
+                        <h2> &nbsp;&nbsp;&nbsp;keydown()</h2>
+                        <h3>
+                            Occurs when a key is pressed and held down.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp;keypress()</h2>
+                        <h3>
+                            Occurs when a key is pressed down and released.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp;load()</h2>
+                        <h3>
+                            Occurs when the page/document has finished loading. This is primarily for loading screens, which we will cover in one of our extra lessons (Lesson 11 about animations)
+                        </h3>
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Declaring a variable in JS</h2>
+                        <h3> there are 3 main types of variables you will use in JS: Var, Let and Const.</h3>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle"> Var:</h2>
+                            <h3>
+                                Variables declared with var are function-scoped, meaning that they are accessible within the function where they are declared, as well as any nested functions within that function. However, variables declared with var are not block-scoped, which means they can also be accessed outside of the block where they are declared.
+                                It's worth noting that the var keyword has some characteristics that can lead to unexpected behavior, such as variable hoisting and the lack of block scope.
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Let:</h2>
+                            <h3>Variables declared with let are similar to variables declared with var in terms of their ability to store values. However, the key difference is that variables declared with let are block-scoped, meaning they are only accessible within the block where they are declared.
+
+                                Unlike var, variables declared with let are not hoisted to the top of their scope. This means that you cannot access a let variable before it has been declared in your code.
+
+                                <br>&nbsp;
+                                <br>
+                                Thus, using let allows for better control over variable scope and can help prevent unintended issues that can occur with var. Therefore, it is generally recommended to use this instead of var when declaring variables, especially in modern JavaScript development.
+                            </h3>
+
+                            <h2 class = "contentTitle">Const:</h2>
+                            <h3>
+                                When a variable is declared with const, its value cannot be changed once it is assigned. This makes const variables suitable for storing values that should remain constant throughout the execution of a program.
+                                Like variables declared with let, const variables are also block-scoped. They are only accessible within the block where they are declared and they are not hoisted to the top of their scope.
+                                However, it's important to note that while the value of a const variable cannot be reassigned, it does not mean that the value itself is immutable. If a const variable holds an object or an array, the properties or elements of that object or array can still be modified, but the variable itself cannot be reassigned to a different object or array.
+                            </h3>
+                            <h3>
+                                Overall, using const helps convey the intent that a variable should remain constant, which can enhance code readability and prevent accidental reassignments. Thus, it is recommended to use const instead of var or let when declaring a variable that do not need to be reassigned.
+                            </h3>
+
+                            <h2 class = "contentTitle">Which to Use?</h2>
+                            <h3>
+                               If your variable isn't going to be modified during the duration of your code, use <code>const</code> to prevent accidentally accessing or reasigning values.
+                               If the variable will be changed, try to use <code>let</code> to keep the scope of your variable to your block.
+                               This will prevent accidentally accessing an old variable outside the relevant area if you have variables with similar names.
+                               Try to only declare variables with <code>var</code> if necessary.
                             </h3>
                         </div>
+                    </div>
 
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">JavaScript Functions</h2>
+                        <div class = "inactive">
+                            <h3>
+                                Write your code within a function so that it can be executed on call:
+                            </h3>
+                            <h3>
+                                <code>
+                                    function exampleFunction()&lcub;<br>
+                                    <pre>   alert("Hello, World!")</pre>
+                                    &rcub;
+                                </code>
+                            </h3>
 
-                        <div class = "fade">
-                            <h2 class = "HeaderPoint">Making animations</h2>
-                            <div class = "inactive">
-                                <h2 class = "contentTitle">Keyframes</h2>
-                                <h3> Keyframes are static frames where something happens. These will serve as your pivot points to manipulate your animation around, with the animations essentially being the smooth connections between the keyframes.
-                                    <br>
-                                    <br> To make a keyframe, you insert a <code>@keyframe</code> in CSS, then selecting your name, and assign what you want to keyframe to do. Use percentages to indicate what you want the keyframe to do at a specific completion precentage (starting at 0% and ending at 100%) For example:
-                                    <code>
-                                        <br>@keyframes example {
-                                            <br>&emsp;0% {background-color:rgb(0,0,0);}
-                                            <br>&emsp;34% {background-color:rgb(255,0,0);
-                                            <br>&emsp;&emsp;&emsp;font-size:30px;}
-                                            <br>&emsp;67% {background-color:rgb(0,255,0);}
-                                            <br>&emsp;100% {background-color:rgb(0,0,255);}
-                                        <br>}
-
-                                        <br>#animation {
-                                            <br>&emsp;animation: example 2s linear infinite
-                                        <br>}
-                                    </code>
-
-                                    <br><br>To reference the animation, just insert the id into the anchor/ paragraph/ otherwise that you want the animation to be played on.
-                                    <br> for example, using the keyframes above:
-                                    <br><code>&lt;a id = 'animation'&gt;hi!&lt;/a&gt;</code>
-                                    <br> if you used the example above, you should get these results:
-                                </h3>
-
-                                <iframe src="lesson-6-anim-page-example.html"></iframe>
-
-                                <h2 class = "contentTitle">Ids with animations</h2>
-                                <h3>
-                                    Has you have seen above, you can see that we have used an ID for the 
-
-                                </h3>
-
-                            </div>
-                                                        
+                            <h2 class = "contentTitle">The <code>onClick</code> Event</h2>
+                            <h3>
+                                The simplest way to link your JavaScript function to a user input is with the <code>onClick</code> event assigned to buttons.
+                                In your HTML, type:
+                            </h3>
+                            <h3>
+                                <code>
+                                    &lt;button onClick="exampleFunction()"&gt;Example Button&lt;/button&gt;
+                                </code>
+                            </h3>
+                            <h3>
+                                to create a button connected to your example function. Clicking it should now run your code!
+                            </h3>
                         </div>
+                    </div>
+
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Uses and examples of parameters</h2>
+                        <h2 class = "contentTitle">Creating reusable and adaptable code:</h2>
+                        <h3>
+                            By using parameters, you can create functions that can work with different data or conditions. This makes your code more modular, reusable, and adaptable to different scenarios.
+                        </h3>
+                        <h3> Here is an example: Suppose you are making a quiz and want to make a hint button (with an id called Hintbutton) to display a hint (with id Hintparagraph), so you type:
+                            <br> &nbsp;
+                            <br> function buttonclick() {
+                            <br> &emsp;for (let i = 0; i &lt; document.querySelectorAll(#Hintbutton).length; i++) {
+                            
+                            <br> &emsp;&emsp;if (paragraph.style.display === 'none') {
+                            <br> &emsp;&emsp;&emsp;paragraph.style.display = 'block';
+                            <br> &emsp;&emsp;&emsp;paragraph.style.visibility = "visible";
+                            <br> &emsp;&emsp;} else {
+                            <br> &emsp;&emsp;&emsp;paragraph.style.display = 'none';
+                            <br> &emsp;&emsp;&emsp;paragraph.style.visibility = "hidden";
+                            <br> &emsp;&emsp;}
+                            <br> &emsp;}
+                            <br>} 
+                        </h3>
+                        <h3><br> 
+                            which produces the following results:
+                        </h3>
+                        <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example.html" style = "width: auto; height: auto;"></iframe>
+                        <br>
+                        <h3> However, you find that if you click any button in the iframe, all paragraphs with the id paragraph will show.</h3>
+                        <h3> so instead, using parameters, you can configurate the code accordingly:</h3>
+                        <h3>
+                            const hint_texts = document.getElementsByClassName("hint-text");
+
+                            <br>function buttonclick(hint_id){  
+                                <br>&emsp;for (let i = 0; i &lt; hint_texts.length; i++) {
+                                    <br>&emsp;&emsp;let hint = hint_texts[i];
+                                    <br>&emsp;&emsp;let display_status = hint.style.display;
+
+                                    <br>&emsp;if (i == hint_id) {
+                                        <br>&emsp;&emsp;if (display_status == 'block'){
+                                            <br>&emsp;&emsp;&emsp;hint.style.display = 'none';
+                                            <br>&emsp;&emsp;&emsp;hint.style.visibility = "hidden";
+                                            <br>&emsp;&emsp;}
+                                            <br>&emsp;&emsp;else{
+                                                <br>&emsp;&emsp;&emsp;hint.style.display = 'block';
+                                                <br>&emsp;&emsp;&emsp;hint.style.visibility = "visible";
+                                                <br>&emsp;&emsp;}
+                                                <br>&emsp;}
+
+                                                <br>&emsp;&emsp;else{
+                                                    <br>&emsp;&emsp;&emsp;hint.style.display = 'none';
+                                                    <br>&emsp;&emsp;&emsp;hint.style.visibility = "hidden";
+                                                    <br>&emsp;&emsp;}
+                                                    <br>&emsp;}
+                                                    <br>}
+
+                        </h3>
+                        <h3>
+                            In your HTML, you can then configure each button to run the function with a different hint_id:
+                        </h3>
+                        <h3>
+                            <code>&lt;button class="hint-button" onclick="buttonclick(0)"&gt;Hint&lt;/button&gt;</code>
+                        </h3>
                         
-                        <div class = "fade">
-                            <h2 class = "HeaderPoint">Assigning HTML to animations % examples</h2>
-                            <h3>Contrary to the name, if you want to assign html attributes, it would be easier to do it in CSS. To do it in CSS, you can:</h3>
-                            <div class = "inactive">
+                        <h3> Which produces the following results:</h3>
+                        <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example-2.html" style = "width: auto; height: auto;"></iframe>
+                    </div>
+                    
 
-                                <h2 class = "HeaderPoint">Duration</h2>
-                                <h3>assigning the <code>animation-duration</code> attribute to an animation can control its duration. (make sure to specify whether its in miliseconds or seconds)</h3>
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Mathematical Functions in JS</h2>
+                        <h3>
+                            Some people will roll their eyes over this, but it is pretty important so lets get it done with.
+                        </h3>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle">Math.floor()</h2>
+                            <h3>
+                                This function floors the value that is in the brackets, which means it takes the lower integer bound of the number
+                                <br> For example, if you have the number 5.3, it would round to 5
+                                <br> Another example, if you have a number 4.9, it would still round to 4
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Math.ceil()</h2>
+                            <h3>
+                                This function is the opposite of the floor function. It takes the upper bound of the number inside the bracket (rounding up).
+                                <br> For example, if you have a number 10.1, it would round to 11.
+                                <br> Another example, if you have a number &pi;, it would round to 4.
+                            </h3>
 
-                                <h2 class = "HeaderPoint">Timing</h2>
-                                <h3>This defines how fast an animation is played during the time which it is played. The prompts can include <code>ease</code>, which is a prompt where it goes from slow to fast exponentially (ease-in, ease-out, and ease-in-out), and <code>linear</code> where it goes from slow to fast in a linear manner.</code> </h3>
-                                <br> Heres an example of how different timings change, given the same animation as above (take note that all of these animations are 2s long):
-                                <br><iframe src = "lesson-6-anim-page-example-timing.html" style="width: 500px; height: 550px;"></iframe>
+                            <h2 class = "contentTitle">Math.random()</h2>
+                            <h3>
+                                Math.random() does what you think it does. It returns a random value from 0 to 1.
+                                <br> *Note: This 'randomly' generated function is called a persudo random function, since it is not truly random. If you would like to learn more about how computers generate 'random' numbers, <a href = "https://en.wikipedia.org/wiki/Pseudorandomness" target="_blank">go to this wikipedia page.</a>
+                            </h3>
 
-
-                                <h2 class = "HeaderPoint">Iterations</h2>
-                                <h3>Iterations is the number of times an animation is played. using <code>animation-iteration-count</code>, you can control the amount of times its played, from <code>1</code> to <code>infinite</code> for continuous looping. Or, you can just do it in the id with the syntax <code>animation: [name] [duration of animation] [Timing] [iterations]</code>
-                                    For example, with the example above, you can see that the name is example, the animation is 2s long, it goes linearly to completion, and it loops infinitely.</h3>
-
-                                <h2 class = "HeaderPoint">Other customisation commands</h2>
-                                <h3> In fact, all other HTML attributes works in animations as well! The only difference is that the object will return to the original state after the animation is played. Such, other commands such as displays, margins, scale, position, etc. works just as the same as if you were assigning a class.</h3>
-                            </div>
                         </div>
+                    </div>
 
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">If Else</h2>
+                        <h2 class = "contentTitle">Conditional Statements</h2>
+                        <h3>
+                            You'll need the conditional statements <code>if</code>, <code>else if</code>, and <code>else</code> if your code will run differently depending on the user's input.
+                        </h3>
 
-                        <div class = "fade">
-                            <h2 class = "HeaderPoint">Practice Work:</h2>
-                            <div class = "inactive">
-                                <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                    Try to replicate this example below:
-                                </h2>
+                        <h2>&nbsp;&nbsp;&nbsp; <code>if () {}</code></h2>
+                        <h3>
+                            Compares two values and runs code in the {} brackets if the condition is met.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; <code>else if () {}</code></h2>
+                        <h3>
+                            Compares two values only if a preceding <code>if</code> statement is not met.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; <code>else {}</code></h2>
+                        <h3>
+                            Runs code in the {} brackets if all preceding <code>if</code> and <code>else if</code> statements fail. Does not process a comparison.
+                        </h3>
 
-                                <iframe class = "PracticeExample" src = "lesson-6-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
+                        <h2 class = "contentTitle">Comparison Operators</h2>
+                        <h3>
+                            To craft an <code>if else</code> statement, you'll need to compare two variables using one of several <b>comparison operators.</b>
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; !=, !==</h2>
+                        <h3>
+                            Similar to the above equalities, but return true if values are not equivalent.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; ==, ===</h2>
+                        <h3>
+                            Returns true if two values are the same. "==" is a loose equality comparison whereas "===" is a strict equality comparison which will also compare data type.
+                            This means ("1" == 1) will return true, whereas ("1" === 1) will return false.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; &lt;, &gt;</h2>
+                        <h3>
+                            Returns true if the left value is smaller or greater than the right.
+                            This usually applies to integers and floats, but strings can also compared in alphabetical order, with A the smallest and Z the largest.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; &lt;=, &gt;=</h2>
+                        <h3>
+                            Similar to the above inequalities, but also returns true if two values are equal.
+                        </h3>
 
-                                <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                    Descriptions for the practice excerises below:
-                                </h2>
-                                <h3>Practice 1: Make a text that changes its own text colour from red to blue to green in 3s linearly.</h3>
-                                <h3>Practice 2: Make text that rapidly exapnds and changes to white from black, then slowly reduces its size back and changes colour, all in the span of 6s.</h3>
-                                <h3>Practice 3: Make a text that rotates itself 360˚ while changing colours in 5s that speeds itself up once you hover over it.</h3>
-                            </div>
+                        <h2 class = "contentTitle">Switch</h2>
+                    </div>
 
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Practice Work:</h2>
+                        <div class = "inactive">
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Time to put what you've learnt together!
+                            </h2>
+
+                            <iframe class = "PracticeExample" src = "lesson-7-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
+
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Descriptions for the practice excerises below:
+                            </h2>
+                            <h3>
+                                Practice 1: Create a paragraph element and a button, then make the button change the text and color of the paragraph.
+                            </h3>
+                            <h3>
+                                Practice 2: Make a paragraph element and a button, then make the button change the colour of the text every time you click on it to a random colour... then change the text to show the RGB values of said color!
+                            </h3>
+                            <h3>
+                                &emsp;(To put a variable inside of a string, instead of using quotations ('') you can use graves (``) instead, and instead of square brackets[] you use ${} to call a variable instead.)
+                            </h3>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class = "footer" id = "main-text">
-                <a class = "LectureButton bottombuttons" href="lesson-5-page.html">Previous Lesson</a>
-                <a class = "LectureButton bottombuttons" href="lesson-7-page.html">Next Lesson</a>
-            </div>
-        </section>
+        <div class = "footer" id = "main-text">
+            <a class = "LectureButton bottombuttons" href="lesson-6-page.html">Previous Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-8-page.html">Next Lesson</a>
+        </div>
+    </section>
 
-        <div id = "main_side" class="main_menu"></div>
-    </body>
+    <div id = "main_side" class="main_menu"></div>
+</body>
 
     <div class = "loader"></div>
     <div class = "loading" src = "Imgs_and_stuff/rat.jpg"></div>

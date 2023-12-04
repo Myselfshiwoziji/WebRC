@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lesson 8</title>
+    <title>Lesson 9</title>
     <link rel ="stylesheet" href = "Styles/loadingpage.css">
     <link rel = "icon" type = "image/x-icon" href = "Imgs_and_stuff/pngwing.com (1).png">
     <link rel = "stylesheet" href = "Styles/mainpage.css">
@@ -11,332 +11,157 @@
 
 <body>
     <section class = "showcase" id = "main">
-            <header class = "pageheader">
-                <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web@RC&gt;</a></h2>
-                <span class = "main_toggle" onclick="openNav()"></span>
-            </header>
-            
-                <div class = "main_text" id = "main-text">
-                    <h2>
-                        Lesson 8:
-                        <br>
-                        Game Development: Introduction to Phaser
-                    </h2>
-                    <dialog class = "Lecture" id="LectureVid">
-                        <div class = "LectureVideo">
-                            <div>
-                                <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 8 Video Recording:</h2>                               
-                                <button id = "closeButtonModal" style = "margin-bottom: 10px; margin-top: 50px;"></button>
-                            </div>
-                            <video id = "modalVideo"controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
-                                <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
-                            </video>
+        <header class = "pageheader">
+            <h2 class="main_logo" id = "main-logo"><a href = "index.html">&lt;Web@RC&gt;</a></h2>
+            <span class = "main_toggle" onclick="openNav()"></span>
+        </header>
         
-                        </div>
-                    </dialog>
-                    <a data-open-modal class = "LectureButton" id = "openModal">Watch Recording</a>
-                    <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
-              </div>
-       
+        <div class = "main_text" id = "main-text">
+            <h2>
+                Lesson 9:
+                <br>
+                Phaser continuation
+            </h2>
+    
+            <dialog class = "Lecture" id="LectureVid">
+                <div class = "LectureVideo">
+                    <div>
+                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 9 Video Recording:</h2>                               
+                        <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+                    </div>
+                    <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
+                        <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
+                    </video>
+
+                </div>
+            </dialog>
+            <a data-open-modal class = "LectureButton" onclick="LectureVid.showModal()">Watch Lecture</a>
+            <video class = "main_video" src= "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" autoplay loop muted playsinline preload = "none"></video>
+
+        </div>
 
         <div class = "lessonformat">
             <div class = "container">
                 <div class = "tabs">
-                    <h3 class = "letab active">Setting up phaser</h3>
-                    <h3 class = "letab">Classes and Sub-classes</h3>
-                    <h3 class = "letab">Making sprites</h3>
-                    <h3 class = "letab">Time, Delta and other time related events</h3>
-                    <h3 class = "letab">Stringing everything together</h3>
+                    <h3 class = "active letab">Player and Enemies spawning</h3>
+                    <h3 class = "letab">Weapons and UI</h3>
+                    <h3 class = "letab">Scores and Game overs</h3>
+                    <h3 class = "letab">Upgrades and replayability</h3>
                 </div>
-
-                <div class = "tab-content">
+                    
+                    <div class = "tab-content">
                     <div class = "active fade">
-                            <h2 class = "HeaderPoint">Its almost time to get typing!</h2><h3>Final stretch, once we set everything up, you can begin making your game!</h3>
-                            <div class = "inactive">
-                                <h2 class = "contentTitle">Downloading phaser</h2>
-                                <a href = "https://phaser.io/download/stable" target = "_blank">
-                                    Click this link to go to the website to download phaser.
-                                </a>
-                                
-                                <h2 class = "contentTitle">Downloading Nodejs</h2>
-                                <a href = "https://nodejs.org/en/download" target="_blank">
-                                    Click me to go to the website to download Nodejs.
-                                </a>
-    
-                                <h2 class = "contentTitle">Copy and paste this command in your repositories terminal in Visual Studio Code</h2>
-                                <h3>
-                                    git clone git@github.com:photonstorm/phaser3-project-template.git MyProject
-                                    <br>cd MyProject
-                                    <br>npm install
-                                    <br>npm start
-                                </h3>
-    
-                            </div>
-                        </div>
-
-                        <div class = "fade">
-                        <h2 class = "HeaderPoint">What are classes?</h2>
+                        <h2 class = "HeaderPoint">What is JSON?</h2>
                         <h3>
-                            Classes in Javascript are an easy way to define and create objects with a blueprint for their properties and methods. Much like Json, they can be used to easily store information about an object.
+                            JSON, or JavaScript Object Notation, is a file format designed to store key-value pairs of variables in a human readable format.
+                            Although designed for JavaScript, many programming languages now parse JSON, making it a valuable format to store and transmit data between programs.
                         </h3>
 
-                        <h2 class = "contentTitle">Method</h2>
+                        <h2 class = "contentTitle">Creating a JSON File</h2>
                         <h3>
-                            Methods in Javascript are functions that are associated with a class or an object, which represents behavior or actions that objects of the class can perform. When a method is called, it can access and manipulate the data within the object it belongs to, and it can also interact with other objects or perform other operations.
+                            Like with other file types, give your file a name ending in <code>.json</code> to declare it for JSON. Such as:
                         </h3>
-
-                        <h2 class = "contentTitle">Constructor</h2>
                         <h3>
-                            A constructor is a special method that is called when an instance of a class is created. It is used to initialize the newly created object and to set initial values for its properties and perform any other setup that may be required.
-                             Think of it like attributes that a class has, that is loaded before any of the methods take place.
+                            <code>examplefile.json</code>
                         </h3>
-
-                        <h2 class = "contentTitle">Making classes</h2>
+                        <h2 class = "contentTitle">What can JSON be used for?</h2>
+                        <h2>
+                            &nbsp;&nbsp;Storing Data/ Data transmittion
+                            </h2>
                         <h3>
-                            To make a class, you use the syntax:
-                            <code>class example {
-                                <br>&emsp;constructor(property1, property2) {
-                                <br>&emsp;&emsp;this.property1 = some property 1;
-                                <br>&emsp;&emsp;this.property2 = some property 2;
-                                <br>&emsp;}
-
-                                <br><br>&emsp;method1 {
-                                    <br>&emsp;&emsp;method logic here
-                                <br>&emsp;}
-
-                                <br><br>&emsp;method2 {
-                                    <br>&emsp;&emsp;method logic here
-                                <br>&emsp;}
-                                <br>}
-                            </code>
-                            <br><br>Keep in mind that you can have as many properties and methods as you want. To assign something to a class, use the syntax: 
-                            <br><code>let name_of_object = new example(property1, property2)</code><br> but replace name of object with the name of what you want to call it, example to your class name, and the properties.
-                            <br><br> To call a method, use the syntax:
-                            <br><code>name_of_object.method1()</code><br> and replace the placeholders accordingly.
-
-                        </h3>
-                        
-                        <h2 class = "contentTitle">Example of classes</h2>
-                        <h3>Say, you want to have a class 'Circle' that you can call, and you want to be able to get its area. You can make a class like this:<code>
-                            <br>class Circle {
-                                <br>&emsp;constructor(radius) {
-                                    <br>&emsp;&emsp;this.radius = radius;
-                                <br>&emsp;}
-                              
-                                <br><br>&emsp;getArea() {
-                                    <br>&emsp;&emsp;return Math.PI * this.radius * this.radius;
-                                <br>&emsp;}
-                              
-                                <br><br>&emsp;setRadius(newRadius) {
-                                    <br>&emsp;&emsp;this.radius = newRadius;
-                                <br>&emsp;}
-                              <br>}</code>
-                              <br> In this example, you can see that the properties are radius, and the methods are getArea() and setRadius(newRadius).
-                        </h3>
-                        <h3><br>
-                            Or, you want to have a counter that you can add or delete values from: <code>
-                                <br>class Counter {
-                                    <br>&emsp;constructor() {
-                                        <br>&emsp;&emsp;this.count = 0;
-                                    <br>&emsp;}
-                                  
-                                    <br><br>&emsp;increment() {
-                                        <br>&emsp;&emsp;this.count++;
-                                    <br>&emsp;}
-                                  
-                                    <br><br>&emsp;decrement() {
-                                        <br>&emsp;&emsp;this.count--;
-                                    <br>&emsp;}
-                                  <br>}
-                            </code>
-                            <br><br>As you can see, calling the increment() function in the class Counter would raise it by 1, while calling decrement() would decrease the counter by 1.
-
-                        </h3>
-
-                        <h2 class = "contentTitle">Subclasses</h2>
-                        <h3>
-                            Sub-classes, also known as derived classes or child classes, are classes that inherit properties and methods from another class, known as the superclass, base class, or parent class. When a class inherits from another class, it automatically gains access to all the public and protected members (properties and methods) of the parent class.
-                            The sub-class can also add its own methods and properties, as well as override or extend the behavior of the inherited methods.
-
-                            For example, consider this class:<code>
-                            class Animal {
-                                <br>&emsp;constructor(name) {
-                                    <br>&emsp;&emsp;this.name = name;
-                                <br>&emsp;}
-                                
-                                <br>&emsp;speak() {
-                                    <br>&emsp;&emsp;console.log(this.name + ' makes a noise.');
-                                <br>&emsp;}
-                              <br>}</code>
-
-                              <br>As seen from the example, the class animal makes a noise whenever it speaks. However, what if we specifically want a dog (which belongs under the class animal) to bark instead? 
-                              To do that, we can assign a sub-class:
-                              <code>
-                                <br>class Dog extends Animal {
-                                    <br>&emsp;speak() {
-                                        <br>&emsp;&emsp;console.log(this.name + ' barks.');
-                                    <br>&emsp;}
-                                  <br>}
-                              </code>
-                              
-                              <br>As seen from above, you can use <code>extend</code> to make a subclass (in this case dog of animal), which has all the properties of the class <code>animal</code> but also special methods.
-
-                              The syntax to make a subclass is:
-                              <code>
-                                <br> class subclass_name extends parent_class_name {
-                                    <br>&emsp;method {
-                                        <br>&emsp;&emsp; method logic here
-                                    <br>&emsp;}
-                                <br>}
-                              </code>
-
-                        </h3>
-
-                        <h2 class = "contentTitle">Superclass</h2>
-                        <h3>
-                            As the name suggests, superclass is the opposite of subclass; used specifically in subclass to refer to its parent class, usually in the method or constructor of a subclass. It is particularly useful in cases where you are extending a class using the "extends" keyword and need to access and initialize the parent class's properties.
-                            To reference a superclass, the syntax is:
-                            <br><code>
-                                method {
-                                    <br>&emsp; method logic
-                                <br>&emsp; super()
-                                    <br>&emsp; method logic
-                                <br>}
-                            </code>
+                            JSON is often used to send data between a server and a client as part of web APIs (Application Programming Interfaces). It allows for structured and organized transfer of data, making it ideal for applications that interact with remote servers.
                         </h3>
                     </div>
-
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Making sprites</h2>
-                        <h3>
-                            To make sprites, I recommend you use a software that makes a sprite sheet for you, given that you draw the animations. This reduces the amount of load on the local host when loading an animation, which can improve its optimisation.
-                            However, if you are not familiar with spritesheets or do not have a software that can do such thing, putting pngs of animations are also fine. If you don't have a sprite making software, there is this <a href = "https://www.piskelapp.com/p/create/sprite">Online application</a> that can make pixel art, although you can make other sprites.
-                        </h3>
-                        <h2 class = "contentTitle">create()</h2>
-                        <h3>
-                        Create(), not to be confused with object.create(), a default command in Javascript, in phaser is defined as a special built-in constructor to generate game content, without the need of external files. Within the <code>create()</code> method, you can include code to create sprites, set up physics, add text or buttons, and perform various other initializations necessary for setting up the game environment. For example:
-                        <br><code>create() {
-                            <br>&emsp;var screen = this.add.image(100, 100, 'screen'); //we will talk about adding sprites later on
-                            <br>&emsp;this.add.text(50, 50, 'Welcome to the game', { font: '24px Arial', fill: '#ffffff' });
-                            <br>&emsp;Other methods or functions...
-                        <br>}</code>
-                        <br>Note that the syntax for adding sprites is <code>this.add.sprite(x coordinate, y coordinate, sprite1, sprite2, ...)</code>, where x and y coordinates are measured from the top left of the screen (0,0) in pixels.
-                        <br>Thus, the general syntax for create would be:<code>
-                        <br>create() {
-                            <br>&emsp;var object = this.add.sprite(x-coordinate,y-coordinate, sprite1, sprite2, ...)
-                            <br>&emsp;Methods or functions of sprite
-                        <br>}</code>
-                        <br>Be sure to switch object, coordinates, and sprites accordingly.
-                        </h3>
-
-                        <h2 class = "contentTitle">createPlayer()</h2>
-                        <h3> This command is quite self-explanatory... it creates the player. You use the syntax:
-                            <br>createPlayer() {
-                                <br>&emsp;const player = this.physics.add.sprite(x-coordinate, y-coordinate, sprite )
-                                <br>&emsp;player.setCollideWorldBounds(true) // this is to ensure the player doesnt fall out of your screen
-
-                                <br><br>&emsp;this.anims.create({
-                                    <br>&emsp;&emsp;key: 
-                                    <br>&emsp;&emsp;frames:
-                                    <br>&emsp;&emsp;frameRate:
-                                    <br>&emsp;&emsp;repeat: // -1 for infinite looping
-
-                                <br>&emsp;})
-                            <br>}
-                        </h3>
-
-                        <h2 class = "contentTitle">preload()</h2>
-                        <h3>
-                            The preload() function is a function you put inside of a class where it preloads everything in the class as you call it (similar to an instructor). However, as implied, they are already loaded before you call the class, meaning they are global variables.
-                        </h3>
-                    </div>
-
-                    <div class = "fade">
-                        <h2 class = "HeaderPoint">Update(time, delta)</h2>
-                        <h3>This function can be broken down to its parameters:
                         <div class = "inactive">
-                            <h2 class = "contentTitle"> time</h2>
+                            <h2 class = "HeaderPoint">JSON Syntax</h2>
                             <h3>
-                                Represents the current game time or timestamp, usually obtained from the game engine or framework. It can be used for time-based calculations, animations, or game state changes.
+                                JSON data comes in a form similar to JavaScript Objects or Python Dictionaries: with key-value pairs.
+                                Each value (either a number, string, boolean, array, null, or nested key-value pair) is assigned a string name (the key), from which the value can be called.
                             </h3>
-                            
-                            <h2 class = "contentTitle">delta</h2>
                             <h3>
-                                Indicates the time elapsed since the last frame was rendered. It's often used to normalize movement and ensure consistent behavior across frame rates.
+                                However, JSON syntax is a lot stricter than Python or JavaScript!
+                                Every key must be a string, enclosed in double quotation marks (<code>""</code>), then followed by a colon (<code>:</code>), then the corresponding value. 
+                                If you wish to have multiple key pairs, they can be seperated by commas, but the final element can never have a comma. Here is an example of a JSON object:
                             </h3>
-
-                            <h2 class = "contentTitle">Piecing them together</h2>
                             <h3>
-                                Within your game code, you would typically define the update function as part of a game object, such as a player character, enemy, or any element that requires regular updates. 
-                                The update function is automatically called by the game engine or framework on every frame render, with the time and delta parameters being passed in. For example:
-                               
-                                <code><br>update(time, delta) {
-                                    <br>&emsp;update logic here
-                                    <br>&emsp;this.player.x += (10px * delta); // This would move the player 10px per frame. 
-                                    <br>&emsp;other logic based on time and delta
-                                    <br>}</code>
+                                {
+                                <br>&emsp;"name": "John Doe",
+                                <br>&&emsp;"age": 30,
+                                <br>&emsp;"email": "johndoe@example.com",
+                                <br>&emsp;"address": {
+                                <br>&emsp;&emsp;"street": "123 Main St",
+                                <br>&emsp;&emsp;"city": "Anytown",
+                                <br>&emsp;&emsp;"state": "Anystate",
+                                <br>&emsp;&emsp;"postalCode": "12345"
+                                <br>&emsp;},
+                                <br>&emsp;"phoneNumbers": [
+                                <br>&emsp;&emsp;{
+                                <br>&emsp;&emsp;&emsp;"type": "home",
+                                <br>&emsp;&emsp;&emsp;"number": "555-1234"
+                                <br>&emsp;&emsp;},
+                                <br>&emsp;&emsp;{
+                                <br>&emsp;&emsp;&emsp;"type": "work",
+                                <br>&emsp;&emsp;&emsp;"number": "555-5678"
+                                <br>&emsp;&emsp;}
+                                <br>&emsp;]
+                                <br>}
                             </h3>
-
-                            <h2 class = "contentTitle">Framerate and tickrate<h2>
-                                <h3>
-                                    Framerate refers to the number of individual frames or images that are displayed or rendered in one second. Note that this does not have any relevance with how much the game communicates with the server.
-                                    <br><br>However,tickrate refers to the frequency at which the game server or simulation engine updates and processes game states and interactions. This has nothing to do with framerate, and is a seperate quantity used to indicate how many times the computer sends information (ticks) to the server per second. So, you can have a framerate of 60fps, and a tickrate of 20tps (which means the game updates once every 3 frames), which is pretty standard in modern fps games.
-                                    <br><br>This is also whats meant as 'frameskip'. This is a technique usually used to reduce lag or load on the server, which basically skips irrelevant frames (frames that are not ticks) to improve performance. This sacrifices some graphical smoothness, but also reduces the latency.
-
-                                </h3>
+                            <h2 class = "contentTitle">Accessing JSON in JavaScript</h2>
+                            <h3>
+                                Accessing your JSON file in JavaScript is a little more complicated than defining an src or href as before.
+                                There are many ways to link a JSON file to your script, one way is with fetch API:
+                            </h3>
+                            <h3>
+                                <code>
+                                    fetch('./level-plan.json')
+                                    <br>.then(response => response.json())
+                                    <br>.then(data => {
+                                    <br>&emsp;var objectFromJSON = data;
+                                    <br>.})
+                                    <br>..catch(error => {
+                                    <br>&emsp;.console.log('Error:', error);
+                                    <br>.});
+                                </code>
+                            </h3>
                         </div>
-                        
                     </div>
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Why do we need JSON files?</h2>
+                        <div class = "inactive">
+                            <h2 class = "contentTitle">&nbsp;Backend</h2>
+                            <h3>
+                                This course will not be covering backend in our 9 lessons, but if you stay for lessons 10 - 12 (the extra lessons). we will talk about backend, nodes, animations, save data, etc. which can help you make an interactable website.
+                            </h3>
+                        </div>
+                        </div>
 
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Stringing everything together</h2>
+                        <h2 class = "HeaderPoint">Practice Work:</h2>
                         <div class = "inactive">
                             <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                Time to put everything together!
+                                Try to replicate this example below:
                             </h2>
-                            <h3>
-                                To put everything together, first you need to make some sprites. It doesnt have to be complicated, but i recommend making 3 types of sprites for our lessons (they will be used in the next lesson), 1 walking animation, 1 action animation (swinging of a sword, shooting of gun, or otherwise), and 1 dying animation, as well as atleast 1 background. (you can see where this is leading up to, we will be making a vampire-slayer or soul-knight type of survival game next lesson.)
-                                <br>For example:
 
-                            </h3>
+                            <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
 
-                            <h2 class = "contentTitle">Putting sprites in your repository</h2>
-                            <h3>
-                                This should be quite explanatory, but to put sprites, I recommend you to have a folder for your sprites, for easier referencing and developing. 
-                                You can simply import your spritesheets in the folder, like this:<br>
-                                <img src ="Imgs_and_stuff/rat.jpg" style = "width:400px; height:400px">
-                                <h3>If you want to, you can also have a seperate folder for backgrounds, although it is not necessary.</h3>
-                            </h3>
-
-                            <h2 class = "HeaderPoint">Creating your classes</h2>
-                            <h3>
-                                In phaser, the main class 'Phaser.scene' will be the class for scenes. To add a scene, you have to input a subclass as a child to the parent class Phaser.scene. And to make a loading screen, you have to use <code>export default class class_here extends Phaser.scene{}</code> instead. It is recommended that you save this scene as a loading or menu screen.
-                            </h3>
-
-                            <h2 class = "contentTitle">Classes: player</h2>
-                            <h3>
-                                For your player class, you should have the constructors for loading the sprite on the screen,
-                            </h3>
-
-                            <h2 class = "contentTitle">Classes: enemies</h2>
-                            <h3>
-                                For enemies, basic instructors would be their sprites and animations. We will talk more about AI tracking and actions next lesson.
-                            </h3>
-
-                            <h2 class = "contentTitle">UI, Background and loading screens</h2>
-                            <h3>
-                                For saving time, you can make these a general class, then assign subclasses of UI, Background and loading screen. We will talk more about why next lesson, as well as constructing the code for our game.
-                            </h3>
+                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
+                                Descriptions for the practice excerises below:
+                            </h2>
+                            <h3>Practice 1: Display a blue button with white text that says "Click Me!", this button should have the class of buttonStuff </h3>
+                            <h3>Practice 2: Display a piece of text that says "take me to Google" that when pressed, you get taken to the Google home page.</h3>
+                            <h3>Practice 3: Display an image of your choice with a height of 100px and a width of 100px</h3>
+                            <h3>Practice 4: Display a image of your choice and make it so that you can click the image to take you into another website</h3>
                         </div>
 
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
 
         <div class = "footer" id = "main-text">
-            <a class = "LectureButton bottombuttons" href="lesson-8-page.html">Previous Lesson</a>
-            <a class = "LectureButton bottombuttons" href="lesson-10-page.html">Next Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-9-page.html">Previous Lesson</a>
+            <a class = "LectureButton bottombuttons" href="lesson-10-backend-page.html">Next Lesson</a>
         </div>
     </section>
 
@@ -349,5 +174,5 @@
     <script src = "Javascript/sidemenu.js"></script>
     <script src = "Javascript/loader.js"></script>
     <script src= "Javascript/AlternativeContentDisplay.js"></script>
-    <script src = "Javascript/videoModal.js"></script>
+
 </html>
