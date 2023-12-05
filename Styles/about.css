@@ -21,6 +21,18 @@
     border-width: 3px;
 }
 
+.anchorAboutText{
+    color: white
+}
+
+.anchorAboutText:hover{
+    color:aqua
+}
+
+.anchorAboutText:active{
+    opacity: 0.7
+}
+
 .about-images img{
     border-radius: 50%;
     width: 200px;
