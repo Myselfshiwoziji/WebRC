@@ -44,9 +44,9 @@
                 <div class = "tabs">
                     <h3 class = "letab active">Setting up phaser</h3>
                     <h3 class = "letab">Classes and Sub-classes</h3>
-                    <h3 class = "letab">Making sprites</h3>
+                    <h3 class = "letab">Making sprites and creating the player</h3>
                     <h3 class = "letab">Keys and updates</h3>
-                    <h3 class = "letab">Stringing everything together</h3>
+                    <h3 class = "letab">Making the enemy</h3>
                 </div>
 
                 <div class = "tab-content">
@@ -227,10 +227,14 @@
                         </h3>
 
                         <h2 class = "contentTitle">createPlayer()</h2>
-                        <h3> This command is quite self-explanatory... it creates the player. You use the syntax:
-                            <br>createPlayer() {
+                        <h3> This is the method that I call for creating the player. you can rename it to however you like, but the purpose should remain the same: to create the player.
+                            To make the player, first you have to define the sprite using <code>const player = this.physics.add.sprite(x-coordinate, y-coordinate, sprite name)</code>. The x and y coodinates are where the player would spawn, and adding physics makes the object be able to move.
+                            <br>Then, you would need to do player.setCollideWorldBounds(true), to ensure that the player doesn't fall out of the screen (ofcourse, you can ignore this if it is intended in your game).
+                            <br>After that, you would need to input your animations, using the syntax: <br><code><br>this.anims.create({<br>&emsp;key: ,<br>&emsp;frames: ,<br>&emsp;frameRate: ,<br>&emsp;repeat: <br>})<br></code><br> where the key is whatever you want to name the animation (to call it later), frames being the individual frames using: <br><br><code>this.anims.generateFrameNumbers(sprite name, { start: starting frame, end: ending frame })</code><br><br> frameRate is the number of frames played per second (default being 60, but i advise around 10-12 if you have short anims of around 5 frames each), and repeats are the number of times you want the animation played. You can create as many animations as you wish, just make sure that they have a different key.
+                            Overall, your method for creating the player should look something like this:
+                            <br><br>createPlayer() {
                                 <br>&emsp;const player = this.physics.add.sprite(x-coordinate, y-coordinate, sprite )
-                                <br>&emsp;player.setCollideWorldBounds(true) // this is to ensure the player doesnt fall out of your screen
+                                <br>&emsp;player.setCollideWorldBounds(true) 
 
                                 <br><br>&emsp;this.anims.create({
                                     <br>&emsp;&emsp;key: 
@@ -244,7 +248,14 @@
 
                         <h2 class = "contentTitle">preload()</h2>
                         <h3>
-                            The preload() function is a function you put inside of a class where it preloads everything in the class as you call it (similar to an instructor). However, as implied, they are already loaded before you call the class, meaning they are global variables. For the purpose of these lessons, we encourge you to put the following objects in preload: Background images, Player & Enemy spritesheets, as well as CursorKeys and keyboard keys (Which will be discussed in the next lesson)
+                            The preload() function is a function you put inside of a class where it preloads everything in the class as you call it (similar to an instructor). However, as implied, they are already loaded before you call the class, meaning they are global variables. For the purpose of these lessons, we encourge you to put the following objects in preload: Background images, Player & Enemy spritesheets, as well as CursorKeys and keyboard keys (Which will be discussed in the next lesson). 
+                            Putting everything in, this should be what your preload() looks like right now:
+                            <code>preload(){ 
+                                <br>&emsp;this.load.image('Background', 'assets/game_banner.png')
+                                <br>&emsp;this.load.spritesheet('guy', 'assets/Stickman.png', {frameWidth: 28, frameHeight: 34})
+                                <br>&emsp;this.load.image('enemy', 'assets/enemy.png')                        
+                            <br>}</code>
+                            
                         </h3>
                     </div>
 
@@ -280,40 +291,56 @@
                             </h3>
                             <h2 class = "contentTitle">Cursor and Keyboard keys<h2>
                                 <h3>
-                                    As seen from above, Phaser itself does not recognise cursor and keyboard keys by default, so you'll have to import them. To import cursor keys (arrow, space) you use the syntax <code>this.cursors = createCursorKeys()</code> in preload() or create(), while if you want to import specific keys on your keyboard, use the syntax <code>var keys = this.input.keyboard.addKeys('add your key here', 'key 2', ...) in update() or create().</code>
+                                    As seen from above, Phaser itself does not recognise cursor and keyboard keys by default, so you'll have to import them. To import cursor keys (arrow keys and space bar) you use the syntax: <br> <code>this.cursors = createCursorKeys()</code><br> in preload() or create(), while if you want to import specific keys on your keyboard, use the syntax: <br> <code>var keys = this.input.keyboard.addKeys('add your key here', 'key 2', ...) </code><br>in update() or create().
                                 </h3>
                         </div>
                         
                     </div>
 
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Stringing everything together</h2>
+                        <h2 class = "HeaderPoint">Making enemies</h2>
                         <div class = "inactive">
                             <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                Time to put everything together!
-                            </h2>
+                            Time to make the enemies!</h2>
                             <h3>
-                                To put everything together, first you need to make some sprites. It doesnt have to be complicated, but i recommend making 3 types of sprites for our lessons (they will be used in the next lesson), 1 walking animation, 1 action animation (swinging of a sword, shooting of gun, or otherwise), and 1 dying animation, as well as atleast 1 background. (you can see where this is leading up to, we will be making a vampire-slayer or soul-knight type of survival game next lesson.)
-                                <br>For example:
+                                By this point, you should have some enemy sprites ready to use as your enemies. In this tutorial, We are going to make enemies that travel towards the player in a straight line.
 
                             </h3>
-
-                            <h2 class = "contentTitle">Putting sprites in your repository</h2>
+                            <h2 class = "contentTitle">Enemy class</h2>
                             <h3>
-                                This should be quite explanatory, but to put sprites, I recommend you to have a folder for your sprites, for easier referencing and developing. 
-                                You can simply import your spritesheets in the folder, like this:<br>
-                                <img src ="Imgs_and_stuff/rat.jpg" style = "width:400px; height:400px">
-                                <h3>If you want to, you can also have a seperate folder for backgrounds, although it is not necessary.</h3>
+                               Unfortunately, making enemies are not as simple as making the player. To make the enemies, I recommend opening a new file, and naming it <code>enemies.js</code>. Inside it, you should import phaser again, then use <code>export default class enemy_name {}</code> to make a class of enemies.
                             </h3>
 
-                            <h2 class = "HeaderPoint">Creating your classes</h2>
-                            <h3>
-                                In phaser, the main class 'Phaser.scene' will be the class for scenes. To add a scene, you have to input a subclass as a child to the parent class Phaser.scene. And to make a loading screen, you have to use <code>export default class class_here extends Phaser.scene{}</code> instead. It is recommended that you save this scene as a loading or menu screen.
+                            <h2 class = "contentTitle">Enemy constructor</h2>
+                            <h3>After making the class of enemies, you would want to add a constructor. Inside the constructor, you want it to recognise both the scene and the key, so you you can use the syntax:
+                                <code>constructor(scene, enemy = 'enemy') {
+                                    <br>&emsp;this.scene = scene
+                                    <br>&emsp;this.key = enemy
+                                    <br>&emsp;this._group = this.scene.physics.add.group()
+                                <br>}</code><br>
+                                to set your enemy constructor. the <code>_group</code> tag is to assign a group to every active enemy, so we don't have to set new code for each enemy that appears. Do note that it is good practice to set a function to call the group, with the syntax as follows (make sure it is out of the constructor):
+                                <code><br>get group()
+                                    <br>&emsp;{
+                                        <br>&emsp;&emsp;return this._group
+                                        <br>&emsp;}</code>
                             </h3>
 
-                            <h2 class = "contentTitle">Background and loading screens</h2>
-                            <h3>
-                                In this lesson, we are only going to be focusing on creating classes for background and loading screens. your loading screen should use the syntax <code>export default class class_here extends Phaser.scene{}</code> as mentioned above, while your other scenes can be defined as <code>class class_name extends Phaser.scene {}</code>.
+                            <h2 class = "contentTitle">Spawning the enemy</h2>
+                            <h3>To spawn the enemy, we are going to create a method in the class of enemies called<code>spawn()</code>. In the spawn, you want to clarify where the enemy spawns. Therefore, you should have the following syntax:</h3>
+                            <h3><code>spawn()
+                                <br>{
+                                    <br>&emsp;const xrand = Math.floor(Math.random() * 1701) // randomises the X axis at which the enemy spawns
+                                    <br>&emsp;const yrand = Math.floor(Math.random() * 1001) // randomises the Y axis at which the velocity spawns
+                            
+                            
+                                    <br>&emsp;const enemyguy = this.group.create(xrand, yrand, this.key) //creates an enemy which belongs to the group and has random coordinates
+                                    <br>&emsp;enemyguy.setVelocity(Phaser.Math.Between(-0, 0), 0) // setvelocity things to make sure it doesnt move
+                            
+                                    
+                            
+                                    <br>&emsp;return enemyguy
+                                <br>}</code></h3>
+
                         </div>
 
                     </div>
