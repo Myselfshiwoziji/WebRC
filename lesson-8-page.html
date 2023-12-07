@@ -46,7 +46,9 @@
                     <h3 class = "letab">Classes and Sub-classes</h3>
                     <h3 class = "letab">Making sprites and creating the player</h3>
                     <h3 class = "letab">Keys and updates</h3>
-                    <h3 class = "letab">Making the enemy</h3>
+                    <h3 class = "letab">Making the enemy and colliders</h3>
+                    <h3 class = "letab">Walls</h3>
+
                 </div>
 
                 <div class = "tab-content">
@@ -330,7 +332,7 @@
                             <h3><code>spawn()
                                 <br>{
                                     <br>&emsp;const xrand = Math.floor(Math.random() * 1701) // randomises the X axis at which the enemy spawns
-                                    <br>&emsp;const yrand = Math.floor(Math.random() * 1001) // randomises the Y axis at which the velocity spawns
+                                    <br>&emsp;const yrand = Math.floor(Math.random() * 1001) // randomises the Y axis at which the enemy spawns
                             
                             
                                     <br>&emsp;const enemyguy = this.group.create(xrand, yrand, this.key) //creates an enemy which belongs to the group and has random coordinates
@@ -339,8 +341,34 @@
                                     
                             
                                     <br>&emsp;return enemyguy
-                                <br>}</code></h3>
+                                <br>}</code><br>Then, to spawn the enemy, you simply use the syntax in create() in your main scene: 
+                            <code>
+                                this.name_your_spawn_function = new enemies(this, 'enemy') //you are free to change enemies to the name of your other js file, and 'enemy' to whatever you want to tag your enemies as.
+                            </code></h3>
 
+
+                            <h2 class = "contentTitle">Spawning mutliple enemies</h2>
+                            <h3>Often if your games, you wouldn't just want 1 enemy, right? now, ofcourse we can just run the spawn function more, but that would be tedious. Therefore, we are going to use a loop to spawn the enemies. Using the syntax:
+                                <code>
+                                    <br>function Count(i) { //change the name of the function to however you want
+                                        <br>&emsp;if (i &lt;= 4) { //change the value to how many enemies you want to spawn
+                                            <br>&emsp;&emsp;that.enemyspawn.spawn() // change enemyspawn and spawn to your defined functinos
+                                            <br>&emsp;&emsp;setTimeout(() => Count(i+1), 1000); //  change the value to how many miliseconds per enemy.
+                                            <br>&emsp;}
+                                            <br>}
+                                    <br>Count(1); //By the nature of computers starting at 0, putting the parameter as 2 will spawn exactly the number of enemies listed beside i. OR, you can use &lt; instead and start at 0.
+                                </code> </h3>
+                        </div>
+                    </div>
+
+                        <div class = "fade">
+                            <h2 class = "HeaderPoint">Making walls</h2>
+                            <div class = "inactive">
+                            <h3>Ofcourse,  you don't want the player to be able to travel everywhere, or have the game be too easy.</h3>
+                            <h2 class = "HeaderPoint">Creating the wall</h2>
+                            <h3>Similar to the player, we are going to create a new method to make walls.</h3>
+
+                            </div>
                         </div>
 
                     </div>
