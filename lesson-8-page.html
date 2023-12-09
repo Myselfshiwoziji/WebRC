@@ -46,8 +46,10 @@
                     <h3 class = "letab">Classes and Sub-classes</h3>
                     <h3 class = "letab">Making sprites and creating the player</h3>
                     <h3 class = "letab">Keys and updates</h3>
-                    <h3 class = "letab">Making the enemy and colliders</h3>
-                    <h3 class = "letab">Walls</h3>
+                    <h3 class = "letab">Making the enemies</h3>
+                    <h3 class = "letab">Walls and collisions</h3>
+                    <h3 class = "letab">Running the game</h3>
+
 
                 </div>
 
@@ -357,16 +359,53 @@
                                             <br>}
                                     <br>Count(1); //By the nature of computers starting at 0, putting the parameter as 2 will spawn exactly the number of enemies listed beside i. OR, you can use &lt; instead and start at 0.
                                 </code> </h3>
+                                <h3>We are going to discuss Enemy AI and pathfinding next lesson, so right now you should just have static enemies that spawn.</h3>
                         </div>
                     </div>
 
                         <div class = "fade">
                             <h2 class = "HeaderPoint">Making walls</h2>
                             <div class = "inactive">
-                            <h3>Ofcourse,  you don't want the player to be able to travel everywhere, or have the game be too easy.</h3>
-                            <h2 class = "HeaderPoint">Creating the wall</h2>
-                            <h3>Similar to the player, we are going to create a new method to make walls.</h3>
+                            <h3>Ofcourse,  you don't want the player to be able to travel everywhere, or have the game be too easy. Keep in mind that we are going to be adding collisions altogether next lesson (enemy collisions and wall collisions), so these walls don't really work for now... By this point, you should have an image of some wall.</h3>
+                            <h2 class = "HeaderPoint">Creating the walls</h2>
+                            <h3>Similar to the player, we are going to create a new method to make walls. Naming the method whatever you want, you basically just create an image of your wall wherever you want it to be. Thankfully, the syntax isn't that complicated:
+                                <code>
+                                    createWall() // or whatever you want to name your method
+                                    <br>{
+                                        <br>&emsp;const wall = this.physics.add.staticGroup() // don't worry if you don't know what this is, we will discuss it next lesson.
+                                
+                                        <br>&emsp;wall.create(1050, 300, 'wall').setScale(1.5).refreshBody() // creating the wall and scaling it up, rename 'wall' to whatever the image of your wall is called, add more if needed
+                                
+                                        <br>&emsp;return wall
+                                    <br>}<br>
+                                </code>
+                                With this code, to spawn a wall, you just use the syntax <code>this.createWall() in create()</code>, which should spawn your wall(s). It is also noted that you can add parameters into the method of its coordinates instead of them being fixed, if you fancy typing them in brackets outside instead.
+                                So, your wall code would look like this:<br>
+                                <code>
+                                    createWall(x, y) // or whatever you want to name your method
+                                    <br>{
+                                        <br>&emsp;const wall = this.physics.add.staticGroup() // don't worry if you don't know what this is, we will discuss it next lesson.
+                                
+                                        <br>&emsp;wall.create(x, y, 'wall').setScale(1.5).refreshBody() // creating the wall and scaling it up, rename 'wall' to whatever the image of your wall is called, add more if needed
+                                
+                                        <br>&emsp;return wall
+                                    <br>}
+                                </code>
+                            </h3>
 
+                            </div>
+                        </div>
+
+                        <div class = "fade">
+                            <h2 class = "HeaderPoint">Running the game</h2>
+                            <div class = "inactive">
+                                <h2 class = "contentTitle">Starting the game</h2>
+                                <h3>See if your code works! To run the game, go to your terminal and type:<br>
+                                    <code>
+                                        npm run start
+                                    </code>
+                                    <br>This should produce a localhost link and an online link. For now, click the localhost link and it should bring you to your game. Upon loading, you should see your player, and it being able to move with WASD or otherwise, some static enemies spawning, and some walls. If you do, thats great! Next lesson, we will be discussing how to make your game feel alive and fun. 
+                                </h3>
                             </div>
                         </div>
 
