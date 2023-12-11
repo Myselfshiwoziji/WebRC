@@ -48,7 +48,7 @@
                     <h3 class = "letab">Variables in JS</h3>
                     <h3 class = "letab">JavaScript Functions and parameters</h3>
                     <h3 class = "letab">Mathematical functions in JS</h3>
-                    <h3 class = "letab">If Else</h3>
+                    <h3 class = "letab">Conditionals</h3>
                     <h3 class = "letab">Practice Work</h3>
                 </div>
 
@@ -397,8 +397,8 @@
                     </div>
 
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">If Else</h2>
-                        <h2 class = "contentTitle">Conditional Statements</h2>
+                        <h2 class = "HeaderPoint">Conditional</h2>
+                        <h2 class = "contentTitle">Statements</h2>
                         <h3>
                             You'll need the conditional statements <code>if</code>, <code>else if</code>, and <code>else</code> if your code will run differently depending on the user's input.
                         </h3>
@@ -427,7 +427,7 @@
                         <h2>&nbsp;&nbsp;&nbsp; ==, ===</h2>
                         <h3>
                             Returns true if two values are the same. "==" is a loose equality comparison whereas "===" is a strict equality comparison which will also compare data type.
-                            This means ("1" == 1) will return true, whereas ("1" === 1) will return false.
+                            This means <code>("1" == 1)</code> will return true, whereas <code>("1" === 1)</code> will return false. This is because <code>"1"</code> is a string while <code>1</code> is an int.
                         </h3>
                         <h2>&nbsp;&nbsp;&nbsp; &lt;, &gt;</h2>
                         <h3>
@@ -440,6 +440,68 @@
                         </h3>
 
                         <h2 class = "contentTitle">Switch</h2>
+                        <h3>
+                            If you're performing basic equality checks for a single variable, Switch Statements are much more concise and readable alternative to if-else statements. An example of basic syntax is a follows:
+                        </h3>
+                        <h3>
+                            <code>
+                                const dev = "Ian"
+                                <br> switch (dev) {
+                                <br> &emsp; case "Osborn":
+                                <br> &emsp;&emsp; console.log(`${dev} is the repository owner.`);
+                                <br> &emsp;&emsp; break;
+                                <br>
+                                <br> &emsp; case "Colin":
+                                <br> &emsp;&emsp; console.log(`${dev} is a JSON enthusiast.`);
+                                <br> &emsp;&emsp; break;
+                                <br>
+                                <br> &emsp; case "Wan Hei":
+                                <br> &emsp;&emsp; console.log(`${dev} is an aspiring doctor.`);
+                                <br> &emsp;&emsp; break;
+                                <br>
+                                <br> &emsp; case "Nathan":
+                                <br> &emsp;&emsp; console.log(`${dev} is a Scratch expert.`);
+                                <br> &emsp;&emsp; break;
+                                <br>
+                                <br> &emsp; case "Ian":
+                                <br> &emsp;&emsp; console.log(`${dev} is our great and glorious supreme leader!`);
+                                <br> &emsp;&emsp; break;
+                                <br>
+                                <br> &emsp; default:
+                                <br> &emsp;&emsp; console.log(`Sorry! We don't know who ${dev} is!`);
+                                <br>}
+                            </code>
+                        </h3>
+                        <h3>
+                            In addition to a switch statement's cases, an additional <code>default:</code> case can be used with similar function to an <code>else</code> statement.
+                        </h3>
+                        <h3>
+                            Also note that a switch statement can only compare one variable against its equality to a value (or another variable) and cannot compare using other operators such as <code>!=</code> or <code>></code>.
+                            This is why switches can only be used when comparing one variable against a large number of possible discrete values.
+                        </h3>
+
+                        <h2 class = "contentTitle">Fall-Through</h2>
+
+                        <h3>
+                            When the value of the variable matches a case, it will run the case's code until the <code>break;</code> statement. If there is no <code>break;</code>, code for the following case will run as well, known as "fall-through:
+                        </h3>
+
+                        <h3>
+                            <code>
+                                const dev = "Ian"
+                                <br> switch (dev) {
+                                <br> &emsp; case "Osborn":
+                                <br> &emsp; case "Colin":
+                                <br> &emsp;&emsp; console.log(`${dev} is a WebRC developer.`);
+                                <br> &emsp;&emsp; break;
+                                <br> &emsp;&emsp; // both "Osborn" and "Colin" will execute this code.
+                                <br>
+                                <br> &emsp; case "Ian":
+                                <br> &emsp;&emsp; console.log(`${dev} is our great and glorious supreme leader!`);
+                                <br> &emsp;&emsp; break;
+                                <br>}
+                            </code>
+                        </h3>
                     </div>
 
                     <div class = "fade">
