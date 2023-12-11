@@ -44,6 +44,7 @@
                 <div class = "tabs">
                     <h3 class = "letab active">Setting up phaser</h3>
                     <h3 class = "letab">Classes and Sub-classes</h3>
+                    <h3 class = "letab">Groups and Children</h3>
                     <h3 class = "letab">Making sprites and creating the player</h3>
                     <h3 class = "letab">Keys and updates</h3>
                     <h3 class = "letab">Making the enemies</h3>
@@ -205,6 +206,41 @@
                                 <br>}
                             </code>
                         </h3>
+                    </div>
+
+                    <div class = "fade">
+                        <h2 class = "HeaderPoint">Groups and Children</h2>
+                        <h2 class = "contentTitle">Groups</h2>
+                        <h3>
+                            A group, more commonly known as a parent, is similar to a class, where it can be used to store information about an object. What differs it from a class, is that it cannot have sub-classes, where instead it has <b>children</b>, which are elements within the parent. These children can be referenced individually or as a collective whole (which will be shown below) and each of them will have the properties of the parent. Essentially, you can think of the child being a subclass of the parent.
+                        </h3>
+
+                        <h2 class = "contentTitle">ForEach()</h2>
+                        <h3>In JavaScript, the "forEach" method is used to iterate over elements in an array or element. It allows you to execute a function for each element, providing a clean and concise way to perform operations on array elements without needing to use a loop. For example: you have the list:<br>
+                             <code>array = [1, 2, 3, 4, 5]
+                                <br>array.ForEach(function(element) {
+                                    <br>&emsp;console.log(element)
+                                <br>});
+                             </code>
+                             <br>If you type this into your JavaScript file, you should see in the console, that 1, 2, 3, 4, 5 are displayed in order. The ForEach function, in short, executes a function for every child there is in the parent class. We will be using this to assign properties to enemies later. The general syntax for this function would be:
+                             <code>
+                                <br>array.ForEach(function(element) { // the function here indicates that for each element it is supposed to execute a function, which is indside the curly brackets.
+                                    <br>&emsp;logic here
+                                <br>});
+                             </code>
+                             <br>Where you can change array and element to whatever names and parameters you want.
+                            </h3>
+
+                            <h2 class = "contentTitle">[i]</h2>
+                            <h3>Instead of referencing every child, this function <b>only</b> executes code for the specific child i, where i is the n+1th child in the parent. So, using the example of the array above, if you type:
+                            <code>
+                                <br>console.log(array[2])
+                            </code>
+                            <br>What should appear in the console is the number 3, since that is the third element in the array, starting from 0.
+                            </h3>
+
+                            <h2 class = "contentTitle">querySelectorAll()</h2>
+                            <h3>Here is a shorthand way of referring to every child in a parent. </h3>
                     </div>
 
                     <div class = "fade">
