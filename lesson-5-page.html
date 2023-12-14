@@ -51,7 +51,7 @@
                     <div class = "tab-content">
                         <div class = "active fade">
                             <h2 class = "HeaderPoint">Animations</h2>
-                            <h3> Animations in HTML and CSS are techniques used to bring elements on a web page to life, creating movement and visual effects. They allow developers to add dynamic and interactive elements to their websites, enhancing the user experience.
+                            <h3> Animations in HTML and CSS are techniques used to bring elements on a web page to life, creating movement and visual effects. They allow developers to add dynamic and interactive elements to their websites, enhancing the user experience. In this course, we will teach you to use <code>@keyframe</code>, and <code>from ... to ...</code> to display simple animations.
                             </h3>
                         </div>
 
@@ -59,7 +59,7 @@
                         <div class = "fade">
                             <h2 class = "HeaderPoint">Making animations</h2>
                             <div class = "inactive">
-                                <h2 class = "contentTitle">Keyframes</h2>
+                                <h2 class = "contentTitle">Method 1: Keyframe percentages</h2>
                                 <h3> Keyframes are static frames where something happens. These will serve as your pivot points to manipulate your animation around, with the animations essentially being the smooth connections between the keyframes.
                                     <br>
                                     <br> To make a keyframe, you insert a <code>@keyframe</code> in CSS, then selecting your name, and assign what you want to keyframe to do. Use percentages to indicate what you want the keyframe to do at a specific completion precentage (starting at 0% and ending at 100%) For example:
@@ -87,8 +87,28 @@
 
                                 <h2 class = "contentTitle">id's with animations</h2>
                                 <h3>
-                                    Has you have seen above, you can see that we have used an ID for the 
+                                    Has you have seen above, you can see that we have used an ID to link the animation to the text, which is one of the main features of IDs, that they can bring properties of the ID to all of the elements that have the ID. 
 
+                                </h3>
+
+                                <h2 class = "contentTitle">Method 2: From ... To ...</h2>
+                                <h3>
+                                    From the text itself, it should be self explanatory on how this method works. Once you play the animation, it will go from 'from' all the way to 'end'. See the example below:
+                                    <code>
+                                        <br>@keyframes slidein {
+                                            <br>&emsp;from {
+                                              <br>&emsp;&emsp;margin-left: 100%;
+                                              <br>&emsp;&emsp;width: 300%; 
+                                            <br>&emsp;}
+                                          
+                                            <br>&emsp;to {
+                                              <br>&emsp;&emsp;margin-left: 0%;
+                                              <br>&emsp;&emsp;width: 100%;
+                                            <br>&emsp;}
+                                          <br>}
+                                    </code> 
+                                    <br>Then, simply insert your animation to your desired element in the way that you did with keyframes. Note that you would assign properties of the animation like speed, repeats, length, etc. in the ID and not the animation itself. 
+                                    Both methods work well, so just decide on which that you want to use. FOr the purpsoes of this lesson, most of the practices will be using method 1, but note that it is entirely valid to use method 2 as well.
                                 </h3>
 
                             </div>
