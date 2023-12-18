@@ -112,7 +112,7 @@
 
                             <h3>
                                 After this, we need to then create a new constant variable for our schema. For the purposes of this lesson, let's call it the "userSetupSchema". We then need to equate this constant to a new mongoose schema. To do this,
-                                we have to type in the "new" statement before typing mongoose.Schema with a curly bracket in the parathesis. If done correctly, this is what you should have so far:
+                                we have to type in the "new" statement before typing mongoose. Schema with a curly bracket in the parathesis. If done correctly, this is what you should have so far:
                             </h3>
 
                             <h3>
@@ -198,8 +198,8 @@
                             <h2 class = "contentTitle">.updateOne({}) and .updateMany({})</h2>
                             <h3>
                                 This function allows you to update a specifc document and its specific values in the database. This function works similarly to the other functions, but the syntax is a bit different. First, to update a document,
-                                you have to first specify a specific identifying trait for the document that you want to update. After that you have to then specify the specific section that you want to update and its new value. To demonstrate this, you can 
-                                write the following code <code>userInfo.updateOne({username: "Bob"}, {$set{ email: xXxBob2023@gmail.com}})</code>
+                                you have to first specify a specific identifying trait for the document that you want to update. After that you have to then specify the specific section that you want to update and its new value. <br/><br/>
+                                To demonstrate this, you can write the following code:<br/> <code>userInfo.updateOne({username: "Bob"}, {$set{ email: xXxBob2023@gmail.com}})</code>
                             </h3>
                             
                             <h3>

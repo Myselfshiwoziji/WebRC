@@ -13,7 +13,7 @@ If you do want to sign up to this club, you can sign up using [this link!](https
 - Ian Chan (IC0510)
 - Colin Chan (ColKol)
 - Wan Hei Kong (Snycretism)
-- Nathan Li
+- Nathan Li (curiosity93)
 
 Under the supervision of Pat Stafford.
 
