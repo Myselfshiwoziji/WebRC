@@ -5,6 +5,7 @@ function practiceFunction(){
     practice_element.style = "color: violet;";
 }
 
+//i dont think they need to know this
 function gRN(a, b) {
     var diff = b - a;
     var rando = Math.random();
