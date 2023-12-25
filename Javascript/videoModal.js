@@ -6,9 +6,11 @@ openModal.onclick = function(){
     document.getElementById("LectureVid").showModal();
 }
 
-openModal.onkeydown('W') = function(){
-    document.getElementById("modalVideo").pause();
-    document.getElementById("LectureVid").showModal();
+openModal.onkeydown = function(event){
+    if (event.key == " ") {
+        document.getElementById("modalVideo").pause();
+        document.getElementById("LectureVid").showModal();
+    }
 }
 
 button.onclick = function(){
