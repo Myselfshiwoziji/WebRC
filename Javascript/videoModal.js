@@ -6,6 +6,11 @@ openModal.onclick = function(){
     document.getElementById("LectureVid").showModal();
 }
 
+openModal.onkeydown('W') = function(){
+    document.getElementById("modalVideo").pause();
+    document.getElementById("LectureVid").showModal();
+}
+
 button.onclick = function(){
     document.getElementById("modalVideo").pause();
     document.getElementById("LectureVid").close();
