@@ -154,7 +154,7 @@
                                     <br>&emsp;}
                                   <br>}
                             </code>
-                            <br><br>As you can see, calling the increment() function in the class Counter would raise it by 1, while calling decrement() would decrease the counter by 1.
+                            <br><br>As you can see, calling the increment() function in the class Counter would raise it by 1, while calling decrement() would decrease the counter by 1. So, if you decide to run <code>Counter.increment()</code>, <code>this.count</code> would increase by 1.
 
                         </h3>
 
@@ -242,7 +242,9 @@
                             </h3>
 
                             <h2 class = "contentTitle">querySelectorAll()</h2>
-                            <h3>The querySelectorAll() method returns all children that has the elements listed in the parameters. You can then manipulate or access the elements in the list using standard JavaScript methods to iterate through the collection, such as forEach() or by index like an array. Keep in mind that the list returned by querySelectorAll() is not live, meaning it doesn't automatically update if the document changes. If elements that match the selectors are added or removed from the document after the list is created, it will not be automatically updated.</h3>
+                            <h3>The querySelectorAll() method returns all children that has the elements listed in the parameters. 
+                                You can then manipulate or access the elements in the list using standard JavaScript methods to iterate through the collection, such as forEach() or by index like an array. Keep in mind that the list returned by querySelectorAll() is not live, 
+                                meaning it doesn't automatically update if the document changes. If elements that match the selectors are added or removed from the document after the list is created, it will not be automatically updated.</h3>
                     </div>
 
                     <div class = "fade">
@@ -290,7 +292,7 @@
 
                         <h2 class = "contentTitle">preload()</h2>
                         <h3>
-                            The preload() function is a function you put inside of a class where it preloads everything in the class as you call it (similar to an instructor). However, as implied, they are already loaded before you call the class, meaning they are global variables. For the purpose of these lessons, we encourge you to put the following objects in preload: Background images, Player & Enemy spritesheets, as well as CursorKeys and keyboard keys (Which will be discussed in the next lesson). 
+                            The preload() function is a method you put inside of a class where it preloads everything in the class as you call it (similar to an instructor). However, as implied, they are already loaded before you call the class, meaning they are global variables. For the purpose of these lessons, we encourge you to put the following objects in preload: Background images, Player & Enemy spritesheets, as well as CursorKeys and keyboard keys (Which will be discussed in the next lesson). 
                             Putting everything in, this should be what your preload() looks like right now:
                             <code>preload(){ 
                                 <br>&emsp;this.load.image('Background', 'assets/game_banner.png')
@@ -306,7 +308,7 @@
                         <div class = "inactive">
                             <h2 class = "contentTitle">update()</h2>
                             <h3> The update() command is a command you put in your class which tells the game what to look out for when it updates in-game (depending on your framerate, it may go from 10-60 per second). Some examples which we will be using in the next lesson are: Movement keys (W,A,S,D), Left & Right mouse button click, Healthbar, and Stamina. Ofcourse, this selection is chosen because it will be relevant to our exercise, but note that anything that needs updating will be put here. Heres an example:
-                                <code><br>var keys = this.input.keyboard.addKeys("W,A,S,D")</code> // adds W, A, S, D keyboard keys to be detected by the game, if you want to use arrow keys, use the syntax: this.cursor = this.input.keyboard.createCursorKeys() and <b>put it in create() instead of update()</b>. Then, simply replace 'keys.A.isDown' with 'this.cursors.left.isDown' and do it for the other movement directions.
+                                <code><br>var keys = this.input.keyboard.addKeys("W,A,S,D")</code> // adds W, A, S, D keyboard keys to be detected by the game, if you want to use arrow keys, use the syntax: this.cursor = this.input.keyboard.createCursorKeys() and <b>put it in create() instead of update()</b>. Then, simply replace 'keys.A.isDown' with 'this.cursors.left.isDown' and do it for the other movement directions. You can change the parameters inside to change the speed.
                                     <code><br>if (keys.A.isDown)
                                     <br>{
                                         <br>&emsp;this.player.setVelocityX(-160)
