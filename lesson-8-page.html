@@ -71,7 +71,7 @@
                                     </code>
                                 </h3>
     
-                                <h2 class = "contentTitle">Copy and paste this command in your repositories terminal in Visual Studio Code</h2>
+                                <h2 class = "contentTitle">Copy and paste this command in your repositories terminal in Visual Studio Code and you should see some files pop up:</h2>
                                 <h3>
                                     <code>gh repo clone ourcade/phaser3-vite-template</code>
                                 </h3>
@@ -136,7 +136,7 @@
                                     <br>&emsp;&emsp;this.radius = newRadius;
                                 <br>&emsp;}
                               <br>}</code>
-                              <br> In this example, you can see that the properties are radius, and the methods are getArea() and setRadius(newRadius).
+                              <br> In this example, you can see that the properties are radius, and the methods are getArea() and setRadius(newRadius). By putting a number into <code>setRadius</code>, you can change the radius of the circle.
                         </h3>
                         <h3><br>
                             Or, you want to have a counter that you can add or delete values from: <code>
@@ -226,7 +226,7 @@
                              </code>
                              <br>If you type this into your JavaScript file, you should see in the console, that 1, 2, 3, 4, 5 are displayed in order. The ForEach function, in short, executes a function for every child there is in the parent class. We will be using this to assign properties to enemies later. The general syntax for this function would be:
                              <code>
-                                <br>array.ForEach(function(element) { // the function here indicates that for each element it is supposed to execute a function, which is indside the curly brackets.
+                                <br>array.ForEach(function(element) { // the function here indicates that for each element it is supposed to execute a function, which is inside the curly brackets.
                                     <br>&emsp;logic here
                                 <br>});
                              </code>
@@ -278,7 +278,7 @@
                             Overall, your method for creating the player should look something like this:
                             <br><br>createPlayer() {
                                 <br>&emsp;const player = this.physics.add.sprite(x-coordinate, y-coordinate, sprite )
-                                <br>&emsp;player.setCollideWorldBounds(true) 
+                                <br>&emsp;player.setCollideWorldBounds(true) // Set it to false or omit this line if you do not wish to include it in your game.
 
                                 <br><br>&emsp;this.anims.create({
                                     <br>&emsp;&emsp;key: 
