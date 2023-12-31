@@ -6,8 +6,6 @@
 
 If you're currently in the club, follow along with us! If you're not, there's still content, activities, and past recordings accessible on this website anytime.
 
-If you do want to sign up to this club, you can sign up using [this link!](https://docs.google.com/forms/d/e/1FAIpQLSfv2YXEf5MnJ_2BavxbwjZeHSE1UKH5R4Gpq15m8ispdFQnMw/viewform)
-
 ### Created By
 - Osborn Leung (Myselfshiwoziji)
 - Ian Chan (IC0510)
