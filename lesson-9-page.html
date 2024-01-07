@@ -44,9 +44,9 @@
             <div class = "container">
                 <div class = "tabs">
                     <h3 class = "active letab">Enemies and waves</h3>
-                    <h3 class = "letab">Path-finding</h3>
-                    <h3 class = "letab">Weapons and waves</h3>
-                    <h3 class = "letab">Healthbar and UIs</h3>
+                    <h3 class = "letab">Weapons</h3>
+                    <h3 class = "letab">Hitboxes</h3>
+                    <h3 class = "letab">User Interface</h3>
                 </div>
                     
                     <div class = "tab-content">
@@ -62,96 +62,70 @@
                            
                         </h3>
                         
-                        <h2 class = "contentTitle">What can JSON be used for?</h2>
-                        <h2>
-                            &nbsp;&nbsp;Storing Data/ Data transmittion
-                            </h2>
+                        <h2 class = "contentTitle">Adjusting speed</h2>
                         <h3>
-                            JSON is often used to send data between a server and a client as part of web APIs (Application Programming Interfaces). It allows for structured and organized transfer of data, making it ideal for applications that interact with remote servers.
+
                         </h3>
+
                     </div>
+
                     <div class = "fade">
                         <div class = "inactive">
-                            <h2 class = "HeaderPoint">JSON Syntax</h2>
+                            <h2 class = "HeaderPoint">Weapons</h2>
                             <h3>
-                                JSON data comes in a form similar to JavaScript Objects or Python Dictionaries: with key-value pairs.
-                                Each value (either a number, string, boolean, array, null, or nested key-value pair) is assigned a string name (the key), from which the value can be called.
+
                             </h3>
+
+                            <h2 class = "contentTitle">Making the weapons</h2>
                             <h3>
-                                However, JSON syntax is a lot stricter than Python or JavaScript!
-                                Every key must be a string, enclosed in double quotation marks (<code>""</code>), then followed by a colon (<code>:</code>), then the corresponding value. 
-                                If you wish to have multiple key pairs, they can be seperated by commas, but the final element can never have a comma. Here is an example of a JSON object:
+
                             </h3>
+
+                            <h2 class = "contentTitle">Weapon damage</h2>
                             <h3>
-                                {
-                                <br>&emsp;"name": "John Doe",
-                                <br>&emsp;"age": 30,
-                                <br>&emsp;"email": "johndoe@example.com",
-                                <br>&emsp;"address": {
-                                <br>&emsp;&emsp;"street": "123 Main St",
-                                <br>&emsp;&emsp;"city": "Anytown",
-                                <br>&emsp;&emsp;"state": "Anystate",
-                                <br>&emsp;&emsp;"postalCode": "12345"
-                                <br>&emsp;},
-                                <br>&emsp;"phoneNumbers": [
-                                <br>&emsp;&emsp;{
-                                <br>&emsp;&emsp;&emsp;"type": "home",
-                                <br>&emsp;&emsp;&emsp;"number": "555-1234"
-                                <br>&emsp;&emsp;},
-                                <br>&emsp;&emsp;{
-                                <br>&emsp;&emsp;&emsp;"type": "work",
-                                <br>&emsp;&emsp;&emsp;"number": "555-5678"
-                                <br>&emsp;&emsp;}
-                                <br>&emsp;]
-                                <br>}
-                            </h3>
-                            <h2 class = "contentTitle">Accessing JSON in JavaScript</h2>
-                            <h3>
-                                Accessing your JSON file in JavaScript is a little more complicated than defining an src or href as before.
-                                There are many ways to link a JSON file to your script, one way is with fetch API:
-                            </h3>
-                            <h3>
-                                <code>
-                                    fetch('./level-plan.json')
-                                    <br>.then(response => response.json())
-                                    <br>.then(data => {
-                                    <br>&emsp;var objectFromJSON = data;
-                                    <br>.})
-                                    <br>..catch(error => {
-                                    <br>&emsp;.console.log('Error:', error);
-                                    <br>.});
-                                </code>
+
                             </h3>
                         </div>
                     </div>
+
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Why do we need JSON files?</h2>
                         <div class = "inactive">
-                            <h2 class = "contentTitle">&nbsp;Backend</h2>
+                            <h2 class = "HeaderPoint">Hitboxes</h2>
                             <h3>
-                                This course will not be covering backend in our 9 lessons, but if you stay for lessons 10 - 12 (the extra lessons). we will talk about backend, nodes, animations, save data, etc. which can help you make an interactable website.
+
+                            </h3>
+
+                            <h2 class = "contentTitle">Regular hitboxes</h2>
+                            <h3>
+                                
+                            </h3>
+
+                            <h2 class = "contentTitle">Custom hitboxes</h2>
+                            <h3>
+
                             </h3>
                         </div>
-                        </div>
+                    </div>
 
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Practice Work:</h2>
+                        <h2 class = "HeaderPoint">User Interface</h2>
                         <div class = "inactive">
-                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                Try to replicate this example below:
-                            </h2>
+                            <h2 class = "contentTitle">&nbsp;Healthbar</h2>
+                            <h3>
 
-                            <iframe class = "PracticeExample" src = "lesson-2-page-practice.html" style = "height: 400px; width: 100%;" ></iframe>
+                            </h3>
 
-                            <h2 style = "margin-bottom: 20px; margin-left: 10px; margin-top: 20px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.2)">
-                                Descriptions for the practice excerises below:
-                            </h2>
-                            <h3>Practice 1: Display a blue button with white text that says "Click Me!", this button should have the class of buttonStuff </h3>
-                            <h3>Practice 2: Display a piece of text that says "take me to Google" that when pressed, you get taken to the Google home page.</h3>
-                            <h3>Practice 3: Display an image of your choice with a height of 100px and a width of 100px</h3>
-                            <h3>Practice 4: Display a image of your choice and make it so that you can click the image to take you into another website</h3>
+                            <h2 class = "contentTitle">&nbsp;Deathscreen</h2>
+                            <h3>
+                                
+                            </h3>
+
+                            <h2 class = "contentTitle">&nbsp;Starting/ Loading screen</h2>
+                            <h3>
+                                
+                            </h3>
+
                         </div>
-
                     </div>
                 </div>
             </div>
