@@ -59,7 +59,7 @@
 
                         <h2 class = "contentTitle">Pathfinding towards the player</h2>
                         <h3>
-                           
+                            
                         </h3>
                         
                         <h2 class = "contentTitle">Adjusting speed</h2>
@@ -73,17 +73,32 @@
                         <div class = "inactive">
                             <h2 class = "HeaderPoint">Weapons</h2>
                             <h3>
+                                For weapons, we are going to first attach the sprite to the player, then make the sprite rotate to point to the location of your cursor. First, insert your weapon sprite:
+                                <code> <br>
+                                    this.weapon = this.physics.add.image(this.player.x, this.player.y, 'weapon')
+                                </code> 
+                                <br>you can set the scale to whatever you need to.
+                            </h3>
+                            <h3>
+                                Then, you would want to make sure that the weapon sticks to the player, thus, we are going to update the weapon sprite to follow the player using:
+                                <code><br>
+                                    update() {
+                                        <br>&emsp;// other logic
+                                        <br>&emsp;this.weapon.this.sword.setPosition(this.player.x, this.player.y); // You can adjust the position which the weapon sticks to the &emsp;&emsp;&emsp;&emsp;&emsp;player by adding and subtracting to the this.player coordinantes
+                                        <br>
 
+                                    &emsp;}
+                                </code>
                             </h3>
 
-                            <h2 class = "contentTitle">Making the weapons</h2>
+                            <h2 class = "HeaderPoint">Turning the weapon</h2>
                             <h3>
-
+                                To turn the weapon, we need to first
                             </h3>
 
                             <h2 class = "contentTitle">Weapon damage</h2>
                             <h3>
-
+                                
                             </h3>
                         </div>
                     </div>
