@@ -67,7 +67,7 @@
                                 <h2 class = "contentTitle">Downloading phaser</h2>
                                 <h3>To download phaser, type this command into your terminal which you want Phaser to be on:
                                     <br><code>
-                                        npm install phaser
+                                        npm install phaser@3.70.0
                                     </code>
                                 </h3>
     
@@ -75,6 +75,10 @@
                                 <h3>
                                     <code>gh repo clone ourcade/phaser3-vite-template</code>
                                 </h3>
+
+                                <h2 class = "contentTitle">Put this in the HTML that you're going to develop your game in: </h2>
+                                &lt;script src="//cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.js"&gt;&lt;/script&gt;
+                                <br>&lt;script src="//cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"&gt;&lt;/script&gt;
     
                             </div>
                         </div>
@@ -333,9 +337,11 @@
                                     <br>}
                                     <br>else this.player.setVelocityY(0)</code>
                             </h3>
+                            <h3><br>Or alternatively, you can use <code>switch</code> here, but you would have to change it up slightly.</h3>
                             <h2 class = "contentTitle">Cursor and Keyboard keys<h2>
                                 <h3>
-                                    As seen from above, Phaser itself does not recognise cursor and keyboard keys by default, so you'll have to import them. To import cursor keys (arrow keys and space bar) you use the syntax: <br> <code>this.cursors = createCursorKeys()</code><br> in preload() or create(), while if you want to import specific keys on your keyboard, use the syntax: <br> <code>var keys = this.input.keyboard.addKeys('add your key here', 'key 2', ...) </code><br>in update() or create().
+                                    As seen from above, Phaser itself does not recognise cursor and keyboard keys by default, so you'll have to import them. To import cursor keys (arrow keys and space bar) you use the syntax: <br> <code>this.cursors = createCursorKeys()</code><br> in preload() or create(), while if you want to import specific keys on your keyboard,
+                                     use the syntax: <br> <code> var keys = this.input.keyboard.addKeys('add your key here', 'key 2', ...) </code><br>in update() or create(). and when referencing the keys, you would have to use <code>this.keys.</code> to reference the keys.
                                 </h3>
                         </div>
                         
