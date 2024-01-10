@@ -6,22 +6,31 @@
 
     <body style = "background-color: rgb(48,47,47);">
         <button id = "#thing" onclick="buttonclick()" style = "width: 100px; height: 50px;">Click me!</button>
-        <br /><p id = "#paragraph" style = "color:aliceblue; display: none; visibility: hidden;" >Hello</p>
-        
-    </body>
-    <script>
-            const text = document.querySelectorAll("#paragraph")
+        <br>
+        <div id = "paragraph" style = "color:aliceblue; display: none; visibility: hidden;">
+            <p>Suprise!</p>
+        </div>
+        <br>
+        <button id = "#thing" onclick="buttonclick()" style = "width: 100px; height: 50px;">Click me!</button>
+        <br><br>
+        <div id = "paragraph" style = "color:aliceblue; display: none; visibility: hidden;">
+            <p>Suprise!</p>
+        </div>
 
-            function buttonclick() {
-                 for (let i = 0; i < text.length; i++) {          
-                    if (text.style.display === 'none') {
-                        text.style.display = 'flex';
-                        text.style.visibility = "visible";
-                    } else {
-                        text.style.display = 'none';
-                        text.style.visibility = "hidden";
-                    }
+
+
+        
+        <script>
+            const text = document.querySelector("#paragraph")
+            function buttonclick(){
+                if(text.style.display == "none"){
+                    text.style.display = "flex"
+                    text.style.visibility = "visible"
+                } else {
+                    text.style.display = "none"
+                    text.style.visibility = "hidden"
                 }
-            } 
-    </script>
+            }
+        </script>
+    </body>
 </html>

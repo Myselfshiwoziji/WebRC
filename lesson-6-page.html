@@ -309,7 +309,17 @@
                         </h3>
                         <h3> Here is an example: Suppose you are making a quiz and want to make a hint button (with an id called Hintbutton) to display a hint (with id Hintparagraph), so you type:
                             <br> &nbsp;
-                            <br> function buttonclick() {
+                            <br>const hint = document.querySelector("#Hintparagraph")
+                            <br>function buttonclick(){
+                                <br>&emsp;if(hint.style.display == "none"){
+                                    <br>&emsp;&emsp;hint.style.display = "flex"
+                                    <br>&emsp;&emsp;hint.style.visibility = "visible"
+                                <br>&emsp;} else {
+                                    <br>&emsp;&emsp;hint.style.display = "none"
+                                    <br>&emsp;&emsp;hint.style.visibility = "hidden"
+                                <br>&emsp;}
+                            <br>}
+                            <!-- <br> function buttonclick() {
                             <br> &emsp;for (let i = 0; i &lt; document.querySelectorAll(#Hintbutton).length; i++) {
                             
                             <br> &emsp;&emsp;if (paragraph.style.display === 'none') {
@@ -320,15 +330,15 @@
                             <br> &emsp;&emsp;&emsp;paragraph.style.visibility = "hidden";
                             <br> &emsp;&emsp;}
                             <br> &emsp;}
-                            <br>} 
+                            <br>}  -->
                         </h3>
                         <h3><br> 
                             which produces the following results:
                         </h3>
                         <iframe src = "lesson-8-stuff/lesson-8-page-parameter-example.html" style = "width: auto; height: auto;"></iframe>
                         <br>
-                        <h3> However, you find that if you click any button in the iframe, all paragraphs with the id paragraph will show.</h3>
-                        <h3> so instead, using parameters, you can configurate the code accordingly:</h3>
+                        <h3> However, you find that if you click any button in the iframe, only one of the paragraphs are actually shown.</h3>
+                        <h3> So instead, using parameters, you can configurate the code accordingly:</h3>
                         <h3>
                             const hint_texts = document.getElementsByClassName("hint-text");
 
