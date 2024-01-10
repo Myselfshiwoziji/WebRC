@@ -20,14 +20,14 @@
             <h2>
                 Lesson 12:
                 <br>
-                User Data and authentication techniques
+                Cookies and Google
             </h2>
     
             <dialog class = "Lecture" id="LectureVid">
                 <div class = "LectureVideo">
                     <div>
-                        <h2 style = "margin-bottom: 10px; margin-top: 50px;">Lesson 9 Video Recording:</h2>                               
-                        <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 50px;"></button>
+                        <h2 style = "margin-bottom: 10px; margin-top: 35px;">Lesson 12 Video Recording:</h2>                               
+                        <button onclick="LectureVid.close()" style = "margin-bottom: 10px; margin-top: 30px;"></button>
                     </div>
                     <video controls = "true" autoplay = "false" style = "position:static; opacity: 1; object-fit: contain; height: 100%; width: 100%; display: block;">
                         <source src = "Imgs_and_stuff/blurred_video_of_scripts_being_typed (1080p).mp4" type = "video/mp4">
@@ -45,58 +45,78 @@
                 <div class = "tabs">
                     <h3 class = "active letab">Introduction to Cookies</h3>
                     <h3 class = "letab">Using Cookies</h3>
-                    <h3 class = "letab">JWT tokens and authentication</h3>
                     <h3 class = "letab">Google Authentication</h3>
                 </div>
                     
                 <div class = "tab-content">
                     <div class = "active fade">
-                        <h2 class = "HeaderPoint">What is the Backend?</h2>
+                        <h2 class = "HeaderPoint">Introduction to cookies</h2>
                         <h3>
-                            So far in the course you have been learning what developers call "Frontend development". Frontend development is the development of websites on a more visual and interactable level. For example,
-                            what you see in a website, the multiple interactable elements in a website, etc. Basically, Frontend Development is simply the development of the graphical user interface of a website. <br><br>
-
-                            However, the concept of Backend Development is the exact opposite. Backend Development is basically the development of the underlying systems in a website. For example, registration of users in a 
-                            website, login systems, authentication systems, transaction systems, etc. Thus, in this final portion of the course, we will teach you how to design systems for your website to give it even more 
-                            functionality, and we hope that by the end of it, you will become a full fledged Fullstack Developer!
+                            Cookies are one of the most important concepts to understand and utilise when making a website. Cookies are essetially small files of datat that can be stored on the client side
+                            without the need to be saved on the server side of the website. Essentially, it allows for data to be stored in a way such so that even without the use of WiFi it still exists. This can be very useful 
+                            when designing web applications as it allows for offline support.
+                        </h3>
+                        <h3>
+                            To first start using cookies, we can start by downloading a library which allows us to easily access, modify, create, and delete cookies from the browser. The library we are going to use is the 
+                            cookie parser library. To download this library, go to the terminal inside the Visual Studio Code app and type in <code>npm install cookie-parser</code>.
+                        </h3>
+                        <h3>
+                            After that, you can then call upon the cookie parser library inside any file in the project by requiring it at the top of the file by typing out:<br>
+                            <code>var cookies = require('cookie-parser')</code>
                         </h3>
                     </div>
                     <div class = "fade">
                         <div class = "inactive">
-                            <h2 class = "HeaderPoint">Importing libraries</h2>
-                            <h2 class = "contentTitle">Why do we import libraries?</h2>
+                            <h2 class = "HeaderPoint">Using Cookies</h2>
+                            <h2 class = "contentTitle">How to use the cookie parser library</h2>
                             <h3>
-                                Importing libraries are highly important when developing a Backend System, as they can help give your extra functions in your code in order to optimise runtime and 
-                                develop code faster and easier. Libraries can also provide you with new functions that base NodeJs does not support or provide. 
+                                The cookie parser library offers a variety of different functions that you can use in order to do a variety of different functions with cookies. Since we defined the cookie parser as cookies in the example above, we will be referring 
+                                to the library as cookies in the examples below to demonstrate how to use the library.
                             </h3>
-                            <h2 class = "contentTitle">How to import libraries</h2>
+ 
+                            <h2 class = "contentTitle">Creating a cookie</h2>
                             <h3>
-                                Importing libraries is quite easy to do for Nodejs files on Visual Studio Code. If you go to the terminal tab on the top of Visual Studio Code and click New Terminal you can open up the
-                                console for Visual Studio Code. Whenever you want to download libraries for NodeJS, you can search them up online, take the title of the library, and then in the console type:
+                                To create a cookie using this library, you can simply do this by using the function res.cookies(). Inside the brackets, you then have to define the name of the cookie as the first string, and then the value of the cookie afterwards. An 
+                                example of this would be:<br>
+                                <code>res.cookies("foo", "bar")</code>
+                            </h3>
 
+                            <h3>
+                                This code above basically creates a cookie in the browser that is named foo, and has the string value of bar. To check the cookies in your web application, you can go to the console of the browser, then click on the two arrows,
+                                and then click on application. This should show a variety of different aspects of the website, but the one we only need to focus on is the cookies section. So click that, and then check your cookies.
+                            </h3>
+
+                            <h3>
+                                Alternativly, you can also type in <code>console.log(req.cookies)</code> to console log the cookies in the web application.
+                            </h3>
+                            
+                            <h2 class = "contentTitle">Deleting a cookie</h2>
+                            <h3>
+                               Deleting a cookie is quite easy to do in cookie parser, as all you need to do is call upon the function res.clearCookie(). Inside the brackets, you then just type in the name of the cookie that you want to delete in string format. An example of this would be:<br>
+                               <code>res.clearCookie('foo')</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">Additional settings for cookies</h2>
+                            <h3>
+                                The cookie parser library also allows for specific settings for the cookies which you create and push to the browser. To do this, add an additional curly bracket after the value of the cookie is defined inside the res.cookies() function.
+                                This should give you code that looks like this:
+                                <br><code>res.cookies("foo", "bar", {<br>})</code>
                             </h3>
                             <h3>
-                                <div class = "codeDiv">
-                                <code>
-                                    npm install INSERT_TITLE_NAME
-                                </code>
-                                </div>
-                            </h3>
-                            <h2 class = "contentTitle">Libraries you need to import for this course</h2>
-                            <h3>
-                                For this course, we will be using a variety of libraries in order to assist us to create a variety of backend systems. Thus, please run this line of code in the console below before
-                                going any further:
+                                Inside this curly brackets, you can then define a couple of settings for the cookie. The first one is the maximum age of the cookie. This basically defines how long the cookie is allowed to exist for befire being deleted. This value is 
+                                measured in milliseconds (which is 1/1000th of a second). To define this, you can simply type inside the curly brackets maxAge: number, where number is basically the time you allow the cookie to exist.
                             </h3>
                             <h3>
-                                <div class = "codeDiv">
-                                <code>
-                                    npm install express --save passport-local bcrypt mongoose mongodb --save-dev nodemon
-                                </code>
-                                </div>
+                                The other option is expires, which sets a date to which the cookie will expire. You can do this by typing in expires: new Date("INSERT_DATE_HERE").
                             </h3>
-                            <h2 class = "contentTitle">Where to find NodeJS libraries</h2>
                             <h3>
-                                If you ever want to try and use other NodeJS libraries for access to other functions, you can use the website <a href = "https://www.npmjs.com/" target = "_blank">npmjs.com</a>!
+                                The third option is httpOnly, which basically means that the cookie will only appear or exist if the website is a http website. This allows for a layer of protection for the cookie from any possible XSS (Cross-Site Scripting) attacks that might 
+                                try to steal your cookie information. To do this, you can simply go to the curly brackets and type in httpsOnly: true. As a side note if you want to have multiple of these properties together you simply just seperate each one by using a comma.
+                            </h3>
+
+                            <h3>
+                                The final option is secure, which controls whether or not the cookie is set based on whether or not the website is an https website or not. This allows for further security protocals to be in place for the event that the data of a cookie might be stolen, as 
+                                https websites are highly secure due to their usage of encryption along with other special features. To do this, you can simply just type in the curly brackets secure: true.
                             </h3>
 
                         </div>
@@ -104,59 +124,230 @@
 
                     <div class = "fade">
                         <div class = "inactive">
-                            <h2 class = "HeaderPoint">Setting up your backend systems</h2>
+                            <h2 class = "HeaderPoint">Google Authentication Systems</h2>
                             <h3>
-                                To start developing your Backend Systems for your website, first download NodeJS from the internet. This JavaScript Runtime can help us use Javascript to create complex systems
-                                that can deal with the systems that we want to create.
+                                Much like discussed previously for the local authentication system other authentication systems are also supported. In this section, we will take a look at how to make a Google Authentication system!
                             </h3>
                             <h3>
-                                Once you finish downloading NodeJs to your system, start by making a new Javascript file and typing the following syntax below:
+                                To first setup, download the passport-google-oauth2 library by typing out the following code into the console of the VSC app:<br>
+                                <code>npm install passport-google-oauth2</code>
+                            </h3>
+
+                            <h2 class = "contentTitle">Setting up the passport strategy</h2>
+                            <h3>
+                                To set up the passport strategy for Google Authentication, you have to first make a new JavaScript file with the passport library, passport-google-oauth2 library, and the userInfo model made eariler in Lesson 11. For the purposes of this 
+                                explanation, we will be referring to the passport library as passport, the passport-google-oauth2 library as GoogleStrategy, and the userInfo model as userInfo. Much like the local strategy done in lesson 11, for this authentication system you will need to 
+                                require the passport-google-oauth2 as a .Strategy. 
                             </h3>
                             <h3>
+                                Doing all this will give you code that should look like this:<br>
                                 <div class = "codeDiv">
-                                <code>const express = require('express');<br>
-                                const app = express();<br>
-                                const bcrypt = require('bcrypt')<br>
-                                const passport = require('passport')<br>
-                                const mongoose = require('mongoose')<br><br>
-                                
-                                app.listen(3000)
-                                </code>
+                                    <code>
+                                        const Googlepassport = require('passport')<br>
+                                        var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
+                                        const userInfo = require('..//models/userCreation');
+                                    </code>
                                 </div>
-                            </h3>
-                            <h2 class = "contentTitle">Explanation for the code:</h2>
-                            <h3>
-                                The code above is a general setup for our server that we are going to run whenever we jumpstart out website. Of course, right now the code is barren due to us not putting in 
-                                any content or specific configurations for now. But to generally explain what is going on above in our small server Javascript file, basically the constant variables are helping us 
-                                declare which libraries we want to use in the server, and then designating them to a specific name (eg: the encryption library "Bcrypt" being assigned to the variable name "bcrypt"). 
-                                Typically, when you want to use a library in a NodeJS file you would use this simple format to call on it after you downloaded the library (there are some exceptions to this, and you will
-                                see the exceptions later on in the course).
                             </h3>
 
                             <h3>
-                                As for the line <code>const app = express();</code> this essentially is saying that we want the app to use express js as its main way of displaying content. Finally, the app.listen syntax
-                                allows us to define which port we want to host our server on. For now, since we don't have a real server, we will host it locally on our own individual machine. There is really not much reason
-                                as to why we chose to use port 3000 over port 5000 or other valid ones other than being standard protocol.
-                            </h3>
-                            <h2 class = "contentTitle">Running the NodeJS File</h2>
-                            <h3>
-                                Once you finish downloading your libraries and have this code done, what you can do is then go into the package.json file in your index on the right, and then 
-                                go to the "scripts" section and type in the code:<br>
+                                Now that the basic imports are done we can start working on the Google Strategy itself. So go into the code and use the passport.use() function on a new GoogleStrategy. Inside the passport.use() function,
+                                we then type new GoogleStrategy({}), and then type in four main parameters inside the curly brackets seperated with a comma. These four main parameters are: clientID, clientSecret, callbackURL, and passReqToCallback.
+                                Doing this should give you code that looks like this:
                                 <div class = "codeDiv">
-                                    <code>"devStart": "nodemon INSERT_FULL_JS_FILE_NAME"</code>
+                                    <code>
+                                        const Googlepassport = require('passport')<br>
+                                        var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
+                                        const userInfo = require('..//models/userCreation');<br><br>
+                                        passport.use(new GoogleStrategy({<br>
+                                            &nbsp;&nbsp;&nbsp;clientID: clientID,<br>
+                                            &nbsp;&nbsp;&nbsp;clientSecret: clientSecret,<br>
+                                            &nbsp;&nbsp;&nbsp;callbackURL: "callbackURL",<br>
+                                            &nbsp;&nbsp;&nbsp;passReqToCallback   : true
+                                        }))
+                                    </code>
                                 </div>
                             </h3>
+
+                            <h2 class="contentTitle">Setting up the ClientID</h2>
+
                             <h3>
-                                What this does is that it sets the syntax of devStart as a way to jumpstart the server for your backend systems. So go to the terminal, and then type in the line:
+                                Now, in order to access the Google Oauth 2.0 authentication functions we need to first use our own individual clientID's provided by Google. To do this, you can use a private Gmail account 
+                                and go to the Google Cloud webpage. You should then use your private account and create a new project. Inside this new Google Cloud project you should then access the API's and Services tab and then go to the library 
+                                tab inside the API and Services tab. Once in, you should then download the Google+ API.
                             </h3>
+
                             <h3>
-                                <div class = "codeDiv">
-                                    <code> npm run devStart</code>
+                                Now that thats done you can then go to the credentials tab to create a new credential for your Oauth 2.0 Client ID's. Inside this tab you should then select the application type to be a web application. For the Authorised Javascript Location, this 
+                                is where you typically put your domain, but since we are locally running the website, you can just type "https://localhost:port_number" (the port_number being the port number you chose when you first started making your backend system). Now, for the Authorised 
+                                Redirect URIs, you can just type in "https://localhost:port_number/auth/google/redirect". Please paste this pathway also in your callbackURL part of your new GoogleStrategy.
+                            </h3>
+
+                            <h3>
+                                Doing all of this will then finally generate a clientID for you to use and to be pasted as the value of the clientID portion of the new GoogleStrategy.<br>
+                                In case you need a visual tutorial for how to do this, <a href = "https://drive.google.com/file/d/1NkKysI0PLrFSoeZTl2gtNKY6HSJvke79/view?usp=sharing" target="_blank">here is a video demonstration for all of this</a>
+                            </h3>
+
+                            <h3>
+                                As for the clientSecret, that can be any random string that you want, as long as its secure and no one knows what it is!
+                            </h3>
+
+                            <h2 class = "contentTitle">Finishing up the strategy</h2>
+                            <h3>
+                                After all this, put a comma after the curly brackets in the new GoogleStrategy, and then make a async function with the parameters of request, accessToken, refreshToken, profile, and done.
+                                Inside this new async function, you should do an await command for finding a user with the email with the value of profile.emails[0].value.<br>
+                                Doing all of this should give you the following code:
+                                <div class="codeDiv">
+                                    <code>
+                                        const Googlepassport = require('passport')<br>
+                                        var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
+                                        const userInfo = require('..//models/userCreation');<br><br>
+                                        passport.use(new GoogleStrategy({<br>
+                                            &nbsp;&nbsp;&nbsp;clientID: clientID,<br>
+                                            &nbsp;&nbsp;&nbsp;clientSecret: clientSecret,<br>
+                                            &nbsp;&nbsp;&nbsp;callbackURL: "callbackURL",<br>
+                                            &nbsp;&nbsp;&nbsp;passReqToCallback   : true
+                                        },<br>
+                                        async function(request, accessToken, refreshToken, profile, done){<br>
+                                            &nbsp;&nbsp;&nbsp; await userInfo.findOne({email: profile.emails[0].value})<br>
+                                        }<br>
+                                        ))
+                                    </code>
                                 </div>
                             </h3>
+
                             <h3>
-                                Now what should happen is that you should now see that when you go to your browser of choice and then type in localhost:3000 you should see your new website. Of course, right now, there is no 
-                                content at all in the website, so go to the next part of this course and let's take a look at how we can add some html and css to help give this page an actual look.
+                                Now that you have that, you can then put a .then() function after the awaited command with the parameters of user and error. Inside the .then() function, put a if statement with the parameter of user,
+                                and inside that if statement return done with the values of null and user. Then put a else if statement afterwards with the conditions of !user, and in this scenario creating a new user using the values of 
+                                profile.displayName and profile.emails[0].value as the new username and email address for this new user. Then, simply save this new user to the database and return done with the values of null and the new user created.
+                            </h3>
+
+                            <h3>
+                                Finally, you can then put an else statement after all of this, and simply execute return done with null and error. Doing all of this will give you code that looks like this:
+                                <div class="codeDiv">
+                                    <code>
+                                        const Googlepassport = require('passport')<br>
+                                        var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
+                                        const userInfo = require('..//models/userCreation');<br><br>
+                                        passport.use(new GoogleStrategy({<br>
+                                            &nbsp;&nbsp;&nbsp;clientID: clientID,<br>
+                                            &nbsp;&nbsp;&nbsp;clientSecret: clientSecret,<br>
+                                            &nbsp;&nbsp;&nbsp;callbackURL: "callbackURL",<br>
+                                            &nbsp;&nbsp;&nbsp;passReqToCallback   : true
+                                        },<br>
+                                        async function(request, accessToken, refreshToken, profile, done){<br>
+                                            &nbsp;&nbsp;&nbsp; await userInfo.findOne({email: profile.emails[0].value}).then((user, error)=>{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(user){<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done(null, user);<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if(!user){<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const newGoogleUser = new userInfo ({<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username: profile.displayName,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: profile.emails[0].value,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;googleId: profile.id,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verified: true<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newGoogleUser.save()<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done (null, newGoogleUser)<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done(null, error)<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                            &nbsp;&nbsp;&nbsp;}<br>
+                                        }<br>
+                                        ))
+                                    </code>
+                                </div>
+
+                            </h3>
+
+                            <h3>
+                                Finally, much like the local strategy for logging in, we need to serialise and deserialise the user. So to do that, we can type out the passport.serializeUser() and passport.deserializeUser()
+                                functions outside of the passport.use function. For both serialize and deserializing, simply pass in the values of user and done for both in their parameters, and then have the line done(null, user) inside.
+                            </h3>
+
+                            <h3>
+                                Doing all of this finally leads to the completed authentication strategy that looks like this:
+                                <div class="codeDiv">
+                                    <code>
+                                        const Googlepassport = require('passport')<br>
+                                        var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
+                                        const userInfo = require('..//models/userCreation');<br><br>
+                                        passport.use(new GoogleStrategy({<br>
+                                            &nbsp;&nbsp;&nbsp;clientID: clientID,<br>
+                                            &nbsp;&nbsp;&nbsp;clientSecret: clientSecret,<br>
+                                            &nbsp;&nbsp;&nbsp;callbackURL: "callbackURL",<br>
+                                            &nbsp;&nbsp;&nbsp;passReqToCallback   : true
+                                        },<br>
+                                        async function(request, accessToken, refreshToken, profile, done){<br>
+                                            &nbsp;&nbsp;&nbsp; await userInfo.findOne({email: profile.emails[0].value}).then((user, error)=>{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(user){<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done(null, user);<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if(!user){<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const newGoogleUser = new userInfo ({<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username: profile.displayName,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: profile.emails[0].value,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;googleId: profile.id,<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verified: true<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newGoogleUser.save()<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done (null, newGoogleUser)<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done(null, error)<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                            &nbsp;&nbsp;&nbsp;}<br>
+                                        }<br>
+                                        ))<br><br>
+
+                                        passport.serializeUser((user, done)=>{<br>
+                                            &nbsp;&nbsp;&nbsp;done(null, user);<br>
+                                        })<br><br>
+                                          
+                                        passport.deserializeUser((user, done)=>{<br>
+                                            &nbsp;&nbsp;&nbsp;done(null, user);<br>
+                                        })
+                                    </code>
+                                </div>
+                            </h3>
+                            
+                            <h2 class="contentTitle">Final routing for the authentication to work</h2>
+                            <h3>
+                                Now that the actual strategy is done, all we need to finish up is the authentication redirect route that we set quite a bit ago. Firstly, make a new JS file for your Google 
+                                Authentication route. In this JS file, import the expressJS router like you normally do, and then import the regular passport as normal. Then, use the router.get function for the '/google' path,
+                                with a comma afterwards with the middleware of passport.authenticate('google', {scope: ['profile', 'email']}).
+                            </h3>
+
+                            <h3>
+                                Then, make another router.get function for the route of "/google/redirect" with the middleware of passport.authenticate("google") and a request response bracket. Inside this function, make an if else statement taking in 
+                                req.user as the parameter for the if statement. Inside the if statement, type in res.redirect('/INSERT_WANTED_PATH_HERE'), and in the else statement, redirect them back to the login page.
+                            </h3>
+
+                            <h3>
+                                Doing all of this should give you code that looks like this:
+                                <div class="codeDiv">
+                                    <code>
+                                        const router = require('express').Router();<br>
+                                        const Googlepassport = require('passport')<br><br>
+
+                                        router.get('/google', Googlepassport.authenticate("google", {scope: ['profile', 'email']}));<br><br>
+
+                                        router.get('/google/redirect', Googlepassport.authenticate("google"), (req,res)=>{<br>
+                                            &nbsp;&nbsp;&nbsp;if(req.user){<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/userpage')<br>
+                                            &nbsp;&nbsp;&nbsp;} else{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/users/login')<br>
+                                                &nbsp;&nbsp;&nbsp;}<br>
+                                        })<br><br>
+
+                                        module.exports = router
+                                    </code>
+                                </div>
+                            </h3>
+
+                            <h3>
+                                Finally, after all of this, you can go back to your server file and type app.use('/auth', authRoute), where authRoute is defined as a constant at the top of the server file with the value of require('INSERT_ROUTE_JS_FILE_NAME'), where the inside is basically what you named the new 
+                                route you made earlier.
+                            </h3>
+                            <h3>
+                                And voila! You now have a working Google Login System!
                             </h3>
                         </div>
                     </div>
