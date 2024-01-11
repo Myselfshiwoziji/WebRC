@@ -143,7 +143,7 @@
                                 Doing all this will give you code that should look like this:<br>
                                 <div class = "codeDiv">
                                     <code>
-                                        const Googlepassport = require('passport')<br>
+                                        const passport = require('passport')<br>
                                         var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
                                         const userInfo = require('..//models/userCreation');
                                     </code>
@@ -156,7 +156,7 @@
                                 Doing this should give you code that looks like this:
                                 <div class = "codeDiv">
                                     <code>
-                                        const Googlepassport = require('passport')<br>
+                                        const passport = require('passport')<br>
                                         var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
                                         const userInfo = require('..//models/userCreation');<br><br>
                                         passport.use(new GoogleStrategy({<br>
@@ -199,7 +199,7 @@
                                 Doing all of this should give you the following code:
                                 <div class="codeDiv">
                                     <code>
-                                        const Googlepassport = require('passport')<br>
+                                        const passport = require('passport')<br>
                                         var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
                                         const userInfo = require('..//models/userCreation');<br><br>
                                         passport.use(new GoogleStrategy({<br>
@@ -226,7 +226,7 @@
                                 Finally, you can then put an else statement after all of this, and simply execute return done with null and error. Doing all of this will give you code that looks like this:
                                 <div class="codeDiv">
                                     <code>
-                                        const Googlepassport = require('passport')<br>
+                                        const passport = require('passport')<br>
                                         var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
                                         const userInfo = require('..//models/userCreation');<br><br>
                                         passport.use(new GoogleStrategy({<br>
@@ -268,14 +268,14 @@
                                 Doing all of this finally leads to the completed authentication strategy that looks like this:
                                 <div class="codeDiv">
                                     <code>
-                                        const Googlepassport = require('passport')<br>
+                                        const passport = require('passport')<br>
                                         var GoogleStrategy = require('passport-google-oauth2').Strategy;<br>
                                         const userInfo = require('..//models/userCreation');<br><br>
                                         passport.use(new GoogleStrategy({<br>
                                             &nbsp;&nbsp;&nbsp;clientID: clientID,<br>
                                             &nbsp;&nbsp;&nbsp;clientSecret: clientSecret,<br>
                                             &nbsp;&nbsp;&nbsp;callbackURL: "callbackURL",<br>
-                                            &nbsp;&nbsp;&nbsp;passReqToCallback   : true
+                                            &nbsp;&nbsp;&nbsp;passReqToCallback   : true<br>
                                         },<br>
                                         async function(request, accessToken, refreshToken, profile, done){<br>
                                             &nbsp;&nbsp;&nbsp; await userInfo.findOne({email: profile.emails[0].value}).then((user, error)=>{<br>
@@ -325,11 +325,11 @@
                                 <div class="codeDiv">
                                     <code>
                                         const router = require('express').Router();<br>
-                                        const Googlepassport = require('passport')<br><br>
+                                        const passport = require('passport')<br><br>
 
-                                        router.get('/google', Googlepassport.authenticate("google", {scope: ['profile', 'email']}));<br><br>
+                                        router.get('/google', passport.authenticate("google", {scope: ['profile', 'email']}));<br><br>
 
-                                        router.get('/google/redirect', Googlepassport.authenticate("google"), (req,res)=>{<br>
+                                        router.get('/google/redirect', passport.authenticate("google"), (req,res)=>{<br>
                                             &nbsp;&nbsp;&nbsp;if(req.user){<br>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/userpage')<br>
                                             &nbsp;&nbsp;&nbsp;} else{<br>
