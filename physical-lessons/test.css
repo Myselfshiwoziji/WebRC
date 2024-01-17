@@ -1,8 +1,40 @@
 .test {
-    border: 3px solid blue;
+    border: 3px solid rgb(53, 53, 136);
     padding: 10px;
     margin: 20px;
     margin-top: 500px;
+    margin-bottom: 500px;
     display: inline-block;
+    color:bisque;
+    text-align: left;
+    background-color: rgb(55, 159, 170);
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
 
+}
+
+.background {
+    background-color: aquamarine;
+    border: 100px solid rgba(0,255,255,0,2);
+}
+
+/*comments*/
+.button {
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    margin-top: 3px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-right: 10px;
+    background-color: azure;
+    color:black;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: rgb(150, 163, 163);
+    border: 10px solid gray
 }
