@@ -1,21 +1,28 @@
 .test {
     border: 3px solid rgb(53, 53, 136);
     padding: 10px;
-    margin: 20px;
-    margin-top: 500px;
+    margin: 33px;
+    margin-top: 30vw;
     margin-bottom: 500px;
     display: inline-block;
     color:bisque;
     text-align: left;
-    background-color: rgb(55, 159, 170);
+    background-color: rgb(116, 139, 142);
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
+}
 
+.test:focus {
+    background-color:crimson
+}
+
+.test:active {
+    background-color: rgba(158, 60, 60, 0.9);
 }
 
 .background {
     background-color: aquamarine;
-    border: 100px solid rgba(0,255,255,0,2);
+    border: 100px solid rgba(0,255,255,0.2);
 }
 
 /*comments*/
