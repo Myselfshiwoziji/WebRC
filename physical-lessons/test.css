@@ -2,7 +2,7 @@
     border: 3px solid rgb(53, 53, 136);
     padding: 10px;
     margin: 33px;
-    margin-top: 30vw;
+    margin-top: 30px;
     margin-bottom: 500px;
     display: inline-block;
     color:bisque;
@@ -10,6 +10,8 @@
     background-color: rgb(116, 139, 142);
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    transition: 1s;
 }
 
 .test:focus {
@@ -39,9 +41,23 @@
     color:black;
     cursor: pointer;
     text-align: center;
+    transition: 0.3s;
 }
 
 .button:hover {
     background-color: rgb(150, 163, 163);
     border: 10px solid gray
+}
+
+.test:nth-child(2) {
+    color: green;
+}
+
+img:hover {
+    width: 7em;
+    height: 7em;
+}
+
+img {
+    transition: 2s;
 }

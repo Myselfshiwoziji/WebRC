@@ -58,6 +58,7 @@
 #practice_animation_3 {
     display: inline-block;
     animation: practice_3 5s linear infinite;
+    transition: 1s;
 }
 
 #practice_animation_3:hover {
