@@ -417,10 +417,9 @@
                     </div>
 
                     <div class = "fade">
-                        <h2 class = "HeaderPoint">Conditional</h2>
-                        <h2 class = "contentTitle">Statements</h2>
+                        <h2 class = "HeaderPoint">Conditional Statements</h2>
                         <h3>
-                            You'll need the conditional statements <code>if</code>, <code>else if</code>, and <code>else</code> if your code will run differently depending on the user's input.
+                            <code>if</code>, <code>else if</code>, and <code>else</code> are conditional statements: commands that allow you to execute different commands for different decisions.
                         </h3>
 
                         <h2>&nbsp;&nbsp;&nbsp; <code>if () {}</code></h2>
@@ -457,6 +456,26 @@
                         <h2>&nbsp;&nbsp;&nbsp; &lt;=, &gt;=</h2>
                         <h3>
                             Similar to the above inequalities, but also returns true if two values are equal.
+                        </h3>
+
+                        <h2 class = "contentTitle">Logical Operators</h2>
+                        <h3>
+                            If you want to check for multiple conditions, you'll need to use one of three <b>logical operators</b>. They're much like the idea of "unions" and "intersections" in probability.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; &&</h2>
+                        <h3>
+                            "And" operator: executes code only if all conditions are met, so <code>(1 == 1 && 2 == 2)</code> will run, but <code>(1 == 1 && 2 == 3)</code> will not.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; ||</h2>
+                        <h3>
+                            "Or" operator: executes code when at least one of the conditions are met, so <code>(1 == 1 && 2 == 2)</code> will run and <code>(1 == 1 && 2 == 3)</code> will also run because <code>(1 == 1)</code> is true.
+                        </h3>
+                        <h2>&nbsp;&nbsp;&nbsp; !</h2>
+                        <h3>
+                            "Not" operator: executes code when the condition is not met, similar to the <code>!=</code> conditional statement.
+                        </h3>
+                        <h3>
+                            Logical operators can be combined together with brackets, so you could create the statement <code>(x == 1 || (y == 2 && z == 2))</code>, which would run when either x is 1 or both y and z are 2.
                         </h3>
 
                         <h2 class = "contentTitle">Switch</h2>
